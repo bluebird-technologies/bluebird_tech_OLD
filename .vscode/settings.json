@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "prettier.endOfLine": "auto",
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
