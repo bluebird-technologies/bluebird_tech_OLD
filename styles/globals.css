@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  overflow-x: auto;
+}
+.title-1 {
+  @apply font-extrabold text-white leading-[64px] text-[52px];
+}
+.subtitle {
+  @apply text-secondary text-[16px] leading-[20px] font-bold uppercase;
+}
+.title-2 {
+  @apply text-[#1E2B3B] font-extrabold text-[35px] leading-[43px];
+}
+.subtitle + .title-2 {
+  @apply mt-[6px];
+}
+.title-2 + p {
+  @apply mt-[12px];
+}
+p {
+  @apply text-black text-[18px] leading-[22px] font-medium flex items-start;
+}

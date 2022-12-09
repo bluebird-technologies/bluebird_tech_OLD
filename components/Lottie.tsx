@@ -15,7 +15,7 @@ export function Lottie({
   });
 
   return (
-    <div className={className}>
+    <div className={`${className} pointer-events-none`}>
       <lottie-player ref={ref} src={src} speed="1" style={style} loop autoplay></lottie-player>
     </div>
   );

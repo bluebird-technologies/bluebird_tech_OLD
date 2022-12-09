@@ -10,9 +10,9 @@ export function Container({
   row?: boolean;
 }) {
   return (
-    <div className="w-full flex relative">
+    <div className="w-full flex">
       <div
-        className={`mx-auto ${wide ? 'max-w-[1280px]' : 'max-w-[1080px]'} ${
+        className={`mx-auto relative ${wide ? 'max-w-[1280px]' : 'max-w-[1080px]'} ${
           center ? 'items-center' : 'items-start'
         } px-8 w-full flex ${row ? 'flex-row' : 'flex-col'}`}
       >
