@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
 
 const navLeft = [
@@ -13,10 +14,23 @@ const navRight = [
 ];
 
 function NavItem({ label, href }: { label: string; href: string }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [width, setWidth] = useState<number | undefined>(undefined);
+
+  // ensure element do not jump when hovering/bold
+  useEffect(() => {
+    if (ref.current?.offsetWidth) {
+      console.log(Math.ceil(ref.current?.offsetWidth + 1 ?? 0));
+      setWidth(Math.ceil(ref.current?.offsetWidth));
+    }
+  }, [label]);
+
   return (
     <a
+      ref={ref}
       href={href}
-      className="text-white p-2 hover:font-bold transition text-[14px] leading-[17px] font-medium uppercase "
+      style={{ maxWidth: width }}
+      className="text-white p-2 hover:font-bold transition text-[14px] leading-[17px] font-medium uppercase whitespace-nowrap"
     >
       {label}
     </a>

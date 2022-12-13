@@ -3,16 +3,22 @@
 @tailwind utilities;
 
 body {
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 .title-1 {
-  @apply font-extrabold text-white leading-[64px] text-[52px];
+  @apply font-extrabold text-white leading-[64px] text-[52px] uppercase;
 }
 .subtitle {
-  @apply text-secondary text-[16px] leading-[20px] font-bold uppercase;
+  @apply text-highlight text-[16px] leading-[20px] font-bold uppercase;
 }
 .title-2 {
-  @apply text-[#1E2B3B] font-extrabold text-[35px] leading-[43px];
+  @apply text-primary font-extrabold text-[35px] leading-[43px];
+}
+.title-2.alt {
+  @apply text-white;
+}
+.title-2.secondary {
+  @apply text-secondary;
 }
 .subtitle + .title-2 {
   @apply mt-[6px];
@@ -22,4 +28,7 @@ body {
 }
 p {
   @apply text-black text-[18px] leading-[22px] font-medium flex items-start;
+}
+p.alt {
+  @apply text-white;
 }

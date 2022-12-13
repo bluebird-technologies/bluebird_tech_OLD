@@ -11,11 +11,11 @@ export function Tabs({ tabs }: { tabs: { label: string; content: ReactNode }[] }
             onClick={() => setActiveTab(tab.label)}
             className={`${
               activeTab === tab.label
-                ? 'text-white bg-primary cursor-default'
-                : 'bg-[#f1f1f1] text-primary hover:h-[51px] cursor-pointer'
+                ? 'text-white bg-secondary cursor-default'
+                : 'bg-[#f1f1f1] text-secondary hover:h-[51px] cursor-pointer'
             } ${i < tabs.length - 1 ? 'rounded-br-[32px]' : ''} ${
               i > 0 ? 'rounded-bl-[32px]' : ''
-            } border-t-[4px] pb-1 border-primary flex-1 text-[22px] leading-[27px]  h-[44px] flex items-center justify-center font-bold uppercase transition-all`}
+            } border-t-[4px] pb-1 border-secondary flex-1 text-[22px] leading-[27px]  h-[44px] flex items-center justify-center font-bold uppercase transition-all`}
           >
             {tab.label}
           </button>
