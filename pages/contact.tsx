@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
-    <div className=" flex-1 flex flex-col bg-[#b3d0f3] h-full">
+    <div className=" flex-1 flex flex-col bg-secondary h-full">
       <div
         style={{
           width: '100%',
