@@ -2,6 +2,14 @@ import React from 'react';
 import BluebirdSvg from '../public/contact/bluebird.svg';
 
 const Footer = () => {
+  const navItems = [
+    { name: 'Home', link: '/' },
+    { name: 'Why Bluebird', link: '/why-bluebird' },
+    { name: 'What we offer', link: '/what-we-offer' },
+    { name: 'Case Studies', link: '/case-studies' },
+    { name: 'Quote Calculator', link: '/quote-calculator' },
+    { name: 'Contact', link: '/contact' },
+  ];
   return (
     <footer className="flex flex-row flex-1 items-center justify-around">
       <div className="flex flex-1  my-4 items-center  flex-row ">
@@ -36,24 +44,15 @@ const Footer = () => {
       </div>
       <div>
         <ul className="flex flex-col flex-1  items-end">
-          <li>
-            <a className="uppercase font-medium text-end">Home</a>
-          </li>
-          <li>
-            <a className="uppercase font-medium text-end">Why Bluebird</a>
-          </li>
-          <li>
-            <a className="uppercase font-medium text-end">What we offer</a>
-          </li>
-          <li>
-            <a className="uppercase font-medium text-end">Case Studies</a>
-          </li>
-          <li>
-            <a className="uppercase font-medium text-end">Quote Calculator</a>
-          </li>
-          <li>
-            <a className="uppercase font-medium text-end">Contact</a>
-          </li>
+          {navItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a href={item.link} className="uppercase font-medium text-end">
+                  {item.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </footer>
