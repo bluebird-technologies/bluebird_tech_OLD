@@ -18,6 +18,7 @@ module.exports = {
         highlight: '#E97724',
         secondary: '#3D6895',
         orange: '#E45F16',
+        seashell: '#F1F1F1',
       },
     },
   },
