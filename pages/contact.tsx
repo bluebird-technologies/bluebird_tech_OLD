@@ -67,7 +67,7 @@ const Contact = () => {
           />
           <Button>Send</Button>
         </form>
-        <Lottie animationData={Card} loop={true} width={60} />;
+        <Lottie animationData={Card} loop={true} style={{ height: 300, width: 350 }} />;
       </div>
       <div
         style={{
