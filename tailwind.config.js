@@ -19,6 +19,7 @@ module.exports = {
         secondary: '#3D6895',
         orange: '#E45F16',
         seashell: '#F1F1F1',
+        white: '#FFFFFF',
       },
     },
   },
