@@ -172,10 +172,13 @@ const Why = () => {
         <h1 className="text-highlight font-bold text-3xl">AWARDS</h1>
         <Line />
         <Image
-          src={'/why/topSoftware.png'}
+          src={'/why/topDevelopers.png'}
           height={200}
           alt="top-software-developers"
           width={200}
+          style={{
+            marginTop: 20,
+          }}
         />
       </div>
       <Footer />
