@@ -1,5 +1,7 @@
 import React from 'react';
 import BluebirdSvg from '../public/contact/bluebird.svg';
+import FacebookIcon from '../public/facebook.svg';
+import LinkedInIcon from '../public/linkedin.svg';
 
 const Footer = () => {
   const navItems = [
@@ -43,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <ul className="flex flex-col flex-1  items-end">
+        <ul className="flex flex-col flex-1 mx-5 items-end">
           {navItems.map((item, index) => {
             return (
               <li key={index}>
@@ -53,6 +55,14 @@ const Footer = () => {
               </li>
             );
           })}
+          <div className="flex flex-row justify-between ">
+            <a>
+              <FacebookIcon style={{ marginRight: 10 }} />
+            </a>
+            <a>
+              <LinkedInIcon />
+            </a>
+          </div>
         </ul>
       </div>
     </footer>
