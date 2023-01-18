@@ -9,10 +9,40 @@ import { Button } from '../components/Button';
 import WaveLines from '../public/why/wave-lines.svg';
 import Lottie from 'lottie-react';
 import coderAnimation from '../public/why/teaLottie.json';
+import leanAnimation from '../public/why/leanAnimation.json';
+import personalAnimation from '../public/why/personalAnimation.json';
 import Line from '../public/why/line.svg';
 import Footer from '../components/Footer';
 
 const Why = () => {
+  type btnOptions = 'Lean' | 'Boutique' | 'Personal';
+  const [activeBtn, setActiveBtn] = React.useState<btnOptions>('Lean');
+
+  const coreValues: {
+    key: btnOptions;
+    description: string;
+    animation: any;
+  }[] = [
+    {
+      key: 'Boutique',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      animation: coderAnimation,
+    },
+    {
+      key: 'Lean',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      animation: leanAnimation,
+    },
+    {
+      key: 'Personal',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      animation: personalAnimation,
+    },
+  ];
+
   return (
     <div className=" flex-1 flex flex-col bg-seashell h-[100%]">
       <div
@@ -69,35 +99,50 @@ const Why = () => {
       </div>
       <div className="mx-32">
         <div className="flex flex-col w-full ">
-          <div className="flex mb-4 flex-1 items-center justify-center">
-            <h1 className="text-center font-bold italic text-3xl text-secondary">
-              WHAT SETS US APART
-            </h1>
-          </div>
-          <div className="flex flex-row items-center flex-1 justify-between">
-            <div className="flex flex-col">
-              <Button>BOUTIQUE</Button>
-              <Button backgroundColor="white" textColor="highlight" className="mt-4">
-                LEAN
-              </Button>
-              <Button backgroundColor="white" textColor="highlight" className="mt-4">
-                PERSONAL
-              </Button>
-            </div>
-            <div className="flex flex-1  justify-center items-center flex-col">
-              <WaveLines height={30} width={200} />
-              <h1 className="w-2/3">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet.{' '}
+          <div>
+            <div className="flex mb-4 flex-1 items-center justify-center">
+              <h1 className="text-center font-bold italic text-3xl text-secondary">
+                WHAT SETS US APART
               </h1>
             </div>
-            <Lottie
-              animationData={coderAnimation}
-              loop={true}
-              style={{ height: 200, width: 250 }}
-            />
+            <div className="flex flex-row items-center flex-1 justify-between">
+              <div className="flex flex-col">
+                <Button active={activeBtn === 'Boutique'} onClick={() => setActiveBtn('Boutique')}>
+                  Boutique
+                </Button>
+                <Button
+                  active={activeBtn === 'Lean'}
+                  className="mt-4"
+                  onClick={() => setActiveBtn('Lean')}
+                >
+                  Lean
+                </Button>
+                <Button
+                  active={activeBtn === 'Personal'}
+                  className="mt-4"
+                  onClick={() => setActiveBtn('Personal')}
+                >
+                  Personal
+                </Button>
+              </div>
+              {coreValues.map((item, index) => (
+                <div key={index}>
+                  {item.key === activeBtn && (
+                    <div className="flex flex-row items-center">
+                      <div className="flex flex-1  justify-center items-center flex-col">
+                        <WaveLines height={30} width={200} />
+                        <h1 className="w-2/3">{item.description}</h1>
+                      </div>
+                      <Lottie
+                        animationData={item.animation}
+                        loop={true}
+                        style={{ height: 300, width: 350 }}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
