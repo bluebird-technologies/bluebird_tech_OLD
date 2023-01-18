@@ -104,7 +104,7 @@ const Why = () => {
       <div>
         <div
           style={{
-            height: '85vh',
+            height: '100%',
             width: '100%',
             position: 'relative',
             backgroundImage: `url(/why/bluebackground.svg)`,
