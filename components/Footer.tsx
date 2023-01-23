@@ -11,7 +11,7 @@ const Footer = () => {
     { name: 'Contact', link: '/contact' },
   ];
   return (
-    <footer className="flex flex-row flex-1 items-center justify-around">
+    <footer className="flex bg-[#F1F1F1] flex-row flex-1 items-center justify-around">
       <div className="flex flex-1  my-4 items-center  flex-row ">
         <BluebirdSvg className="w-[150px]  h-[150px]" />
         <div className="ml-10">
