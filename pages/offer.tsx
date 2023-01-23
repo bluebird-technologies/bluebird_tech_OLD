@@ -1,14 +1,25 @@
 import { Container } from '../components/Container';
+import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
+import SwiggleLine from '../public/what-we-offer/swiggle.svg';
+import AngularLogo from '../public/what-we-offer/angular_solidBlack.svg';
+import DjangoLogo from '../public/what-we-offer/django-seeklogo.svg';
+import ReactNativeLogo from '../public/what-we-offer/react-native.svg';
+import VueLogo from '../public/what-we-offer/vue.svg';
+import WordpressLogo from '../public/what-we-offer/Wordpress-Logo.svg';
+import Lottie from 'lottie-react';
+import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
+import RigthArrow from '../public/right-arrow.svg';
+import { Button } from '../components/Button';
 
 export default function Offer() {
   return (
-    <div>
+    <div className="bg-secondary flex flex-1 flex-col">
       <div
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[77px] bg-secondary"
+        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] "
         style={{
-          backgroundImage: 'url(/primary-overlay.png)',
+          backgroundImage: 'url(/primary-overlay.svg)',
         }}
       >
         <Header />
@@ -56,8 +67,48 @@ export default function Offer() {
               </div>
             ))}
           </div>
+          <div className="flex flex-row mt-10 mx-3 w-[80vw]  justify-between">
+            <div className="">
+              <h1 className="text-white font-bold text-3xl">WEB DEVELOPMENT</h1>
+              <div>
+                <p className="mt-5 text-white">
+                  Using modern technologies combined with the latest web standards, we create
+                  performant, responsive, sleek, and secure websites. Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                  dolore magna aliquyam erat, sed diam
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-end  justify-center">
+              <SwiggleLine width={'50vw'} />
+              <div className="w-4/12 ">
+                <p className="text-highlight text-2xl text-right italic">
+                  Experts in technology that’s here to stay
+                </p>
+                <div className="flex justify-between ">
+                  <AngularLogo height={100} width={100} />
+                  <ReactNativeLogo />
+                  <VueLogo />
+                </div>
+                <div className="flex justify-around items-center ">
+                  <DjangoLogo />
+                  <WordpressLogo />
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </div>
+      <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
+        <h1 className="text-white text-3xl font-bold">ACCELERATE YOUR WEBSITE TODAY</h1>
+        <Lottie animationData={websiteAnimation} loop={true} width={20} height={20} />
+        <Button>Get Started</Button>
+      </div>
+      <div className="bg-primary flex flex-1 py-20 items-center justify-center flex-row">
+        <h1 className="text-white text-2xl font-bold mr-5">EXPLORE OUR OTHER SERVICES</h1>
+        <RigthArrow />
+      </div>
+      <Footer />
     </div>
   );
 }
