@@ -1,3 +1,5 @@
+import React from 'react';
+import { useState } from 'react';
 import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
@@ -12,12 +14,16 @@ import Lottie from 'lottie-react';
 import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
 import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
+import WebDevelopment from '../components/Solutions/WebDevelopment';
+import AppDevelopment from '../components/Solutions/AppDevelopment';
 
 export default function Offer() {
+  const [solutionOption, setSolutionOption] = useState<string>('Web Development');
+
   return (
     <div className="bg-secondary flex flex-1 flex-col">
       <div
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] "
+        className="w-full bg-cover  bg-bottom flex flex-col items-center relative pt-[60px] pb-[150px] "
         style={{
           backgroundImage: 'url(/primary-overlay.svg)',
         }}
@@ -33,8 +39,11 @@ export default function Offer() {
           <div className="flex w-full mt-[92px]">
             {items.map((i) => (
               <div
+                onClick={() => setSolutionOption(i.label)}
                 key={i.label}
-                className="flex-1 flex flex-col items-center text-highlight hover:text-secondary group transition-all"
+                className={`flex-1 flex flex-col items-center ${
+                  i.label === solutionOption ? 'text-secondary group ' : ''
+                } text-highlight hover:text-secondary group transition-all`}
               >
                 <div className="w-16 h-16">
                   {/* <picture>
@@ -63,40 +72,18 @@ export default function Offer() {
                     <div key={i}>{t}</div>
                   ))}
                 </div>
-                <div className="w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:my-[-2px]" />
+                <div
+                  className={`w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] ${
+                    i.label === solutionOption
+                      ? 'bg-highlight border-[#FFFFFF27] h-[30px] w-[30px] my-[-2px]'
+                      : ''
+                  } group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:`}
+                />
               </div>
             ))}
           </div>
-          <div className="flex flex-row mt-10 mx-3 w-[80vw]  justify-between">
-            <div className="">
-              <h1 className="text-white font-bold text-3xl">WEB DEVELOPMENT</h1>
-              <div>
-                <p className="mt-5 text-white">
-                  Using modern technologies combined with the latest web standards, we create
-                  performant, responsive, sleek, and secure websites. Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                  dolore magna aliquyam erat, sed diam
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-end  justify-center">
-              <SwiggleLine width={'50vw'} />
-              <div className="w-4/12 ">
-                <p className="text-highlight text-2xl text-right italic">
-                  Experts in technology that’s here to stay
-                </p>
-                <div className="flex justify-between ">
-                  <AngularLogo height={100} width={100} />
-                  <ReactNativeLogo />
-                  <VueLogo />
-                </div>
-                <div className="flex justify-around items-center ">
-                  <DjangoLogo />
-                  <WordpressLogo />
-                </div>
-              </div>
-            </div>
-          </div>
+          {solutionOption === 'Web Development' && <WebDevelopment />}
+          {solutionOption === 'App Development' && <AppDevelopment />}
         </Container>
       </div>
       <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
