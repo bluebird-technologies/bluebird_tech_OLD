@@ -1,10 +1,9 @@
 import React from 'react';
 import SwiggleLine from '../../public/what-we-offer/swiggle.svg';
-import AngularLogo from '../../public/what-we-offer/angular_solidBlack.svg';
-import DjangoLogo from '../../public/what-we-offer/django-seeklogo.svg';
+import FlutterLogo from '../../public/what-we-offer/flutter-logo.svg';
+import IonicLogo from '../../public/what-we-offer/ionic-logo.svg';
+import XamarinLogo from '../../public/what-we-offer/xamarin-logo.svg';
 import ReactNativeLogo from '../../public/what-we-offer/react-native.svg';
-import VueLogo from '../../public/what-we-offer/vue.svg';
-import WordpressLogo from '../../public/what-we-offer/Wordpress-Logo.svg';
 
 function AppDevelopment() {
   return (
@@ -28,18 +27,22 @@ function AppDevelopment() {
               </p>
             </div>
           </div>
-          <div className="mt-2 w-3/12">
+          <div className="mt-2">
             <p className="text-highlight text-2xl text-right italic">
               Experts in technology that’s here to stay
             </p>
-            <div className="flex justify-between mt-4 ">
-              <AngularLogo height={100} width={100} />
-              <ReactNativeLogo />
-              <VueLogo />
-            </div>
-            <div className="flex justify-around items-center ">
-              <DjangoLogo />
-              <WordpressLogo />
+            <div className="w-full">
+              <div className="flex justify-between  mt-4 ">
+                <FlutterLogo />
+                <ReactNativeLogo height={100} width={100} />
+              </div>
+              <div
+                className="flex justify-between 
+               mt-12"
+              >
+                <IonicLogo />
+                <XamarinLogo />
+              </div>
             </div>
           </div>
         </div>
