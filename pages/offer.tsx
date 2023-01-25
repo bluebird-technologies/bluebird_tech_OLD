@@ -1,21 +1,15 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
-import SwiggleLine from '../public/what-we-offer/swiggle.svg';
-import AngularLogo from '../public/what-we-offer/angular_solidBlack.svg';
-import DjangoLogo from '../public/what-we-offer/django-seeklogo.svg';
-import ReactNativeLogo from '../public/what-we-offer/react-native.svg';
-import VueLogo from '../public/what-we-offer/vue.svg';
-import WordpressLogo from '../public/what-we-offer/Wordpress-Logo.svg';
+
 import Lottie from 'lottie-react';
 import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
 import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
-import WebDevelopment from '../components/Solutions/WebDevelopment';
-import AppDevelopment from '../components/Solutions/AppDevelopment';
+import { solutions } from '../sections/WhatWeOfferBig/solutions';
+import SolutionsCard from '../components/SolutionsCard';
 
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
@@ -82,8 +76,20 @@ export default function Offer() {
               </div>
             ))}
           </div>
-          {solutionOption === 'Web Development' && <WebDevelopment />}
-          {solutionOption === 'App Development' && <AppDevelopment />}
+          {solutions.map((item, key) => (
+            <>
+              {solutionOption === item.title && (
+                <SolutionsCard
+                  title={item.title}
+                  catchPhrase={item.catchPhrase}
+                  firstParagraphDescription={item.firstParagraphDescription}
+                  secondParagraphDescription={item.secondParagraphDescription}
+                  icons={item.icons}
+                  key={key}
+                />
+              )}
+            </>
+          ))}
         </Container>
       </div>
       <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
