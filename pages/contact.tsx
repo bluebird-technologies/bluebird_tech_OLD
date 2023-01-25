@@ -84,13 +84,10 @@ const Contact = () => {
       </div>
       <div
         style={{
-          width: '100%',
-          height: '430px',
-          position: 'relative',
-          backgroundImage: `url(/contact/lightBackground.svg)`,
+          backgroundImage: `url(/light-overlay.png)`,
           backgroundRepeat: 'no-repeat',
         }}
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] bg-secondary  "
+        className=" w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] bg-white "
       >
         <Footer />
       </div>
