@@ -88,7 +88,7 @@ const Contact = () => {
           backgroundRepeat: 'no-repeat',
           height: '500px',
         }}
-        className=" w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] bg-secondary "
+        className=" w-full bg-cover bg-bottom flex flex-col items-center relative justify-center pt-[140px] pb-[90px] bg-secondary "
       >
         <Footer />
       </div>
