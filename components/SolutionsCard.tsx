@@ -9,6 +9,8 @@ export interface Props {
   icons: ReactNode[] | 'string'[];
   numOfCols?: number;
   numOfRows?: number;
+  secondLayerTitle?: string;
+  secondLayerLottie?: Record<string, unknown>;
 }
 
 function SolutionsCard({
@@ -44,9 +46,9 @@ function SolutionsCard({
               <p className="mt-5 text-white">{secondParagraphDescription}</p>
             </div>
             <div className="w-3/5">
-              <div className={`grid gap-4 grid-cols-${cols} grid-rows-${row}  mt-4 `}>
+              <div className={`flex w-2/3  justify-around flex-wrap items-center`}>
                 {icons.map((item, key) => (
-                  <div className="grid" key={key}>
+                  <div className="" key={key}>
                     {item}
                   </div>
                 ))}

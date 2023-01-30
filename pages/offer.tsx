@@ -85,6 +85,8 @@ export default function Offer() {
                   firstParagraphDescription={item.firstParagraphDescription}
                   secondParagraphDescription={item.secondParagraphDescription}
                   icons={item.icons}
+                  numOfCols={item.numOfCols}
+                  numOfRows={item.numOfRows}
                   key={key}
                 />
               )}
@@ -92,11 +94,27 @@ export default function Offer() {
           ))}
         </Container>
       </div>
-      <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
-        <h1 className="text-white text-3xl font-bold">ACCELERATE YOUR WEBSITE TODAY</h1>
-        <Lottie animationData={websiteAnimation} loop={true} width={20} height={20} />
-        <Button>Get Started</Button>
-      </div>
+
+      {solutions.map((item, key) => (
+        <>
+          {solutionOption === item.title && (
+            <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
+              <h1 className="text-white text-3xl font-bold">{item.secondLayerTitle}</h1>
+              <Lottie
+                animationData={item.secondLayerLottie}
+                style={{
+                  marginTop: 30,
+                  marginBottom: 30,
+                }}
+                loop={true}
+                width={25}
+                height={25}
+              />
+              <Button>Get Started</Button>
+            </div>
+          )}
+        </>
+      ))}
       <div className="bg-primary flex flex-1 py-20 items-center justify-center flex-row">
         <h1 className="text-white text-2xl font-bold mr-5">EXPLORE OUR OTHER SERVICES</h1>
         <RigthArrow />

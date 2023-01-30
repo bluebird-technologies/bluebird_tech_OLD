@@ -17,6 +17,12 @@ import figma from './icons/figma';
 import adobe from './icons/adobe';
 import webflow from './icons/webflow';
 import layer from './icons/layer';
+import webDevelopmentAnimation from '../../public/what-we-offer/websiteAnimation.json';
+import appDevelopmentAnimation from '../../public/what-we-offer/appAnimation.json';
+import structureAnimation from '../../public/what-we-offer/structure.json';
+import productAnimation from '../../public/what-we-offer/product.json';
+import uiAnimation from '../../public/what-we-offer/ui.json';
+import outsourcingAnimation from '../../public/what-we-offer/outsourcing.json';
 
 export const solutions: Props[] = [
   {
@@ -29,6 +35,8 @@ export const solutions: Props[] = [
     icons: [angular, reactNative, vue, django, wordpress],
     numOfCols: 3,
     numOfRows: 2,
+    secondLayerTitle: 'Accelerate your website today',
+    secondLayerLottie: webDevelopmentAnimation,
   },
   {
     title: 'App Development',
@@ -38,8 +46,10 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [flutter, reactNative, ionic, xamarin],
-    numOfCols: 2,
+    numOfCols: 3,
     numOfRows: 2,
+    secondLayerTitle: 'Ready your website today',
+    secondLayerLottie: appDevelopmentAnimation,
   },
   {
     title: 'Infrastructure Development',
@@ -51,6 +61,8 @@ export const solutions: Props[] = [
     icons: [transport, logistic, banking, it, services, database],
     numOfCols: 3,
     numOfRows: 3,
+    secondLayerTitle: 'Got something in mind',
+    secondLayerLottie: structureAnimation,
   },
   {
     title: 'Product Management',
@@ -62,6 +74,8 @@ export const solutions: Props[] = [
     icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
     numOfCols: 3,
     numOfRows: 2,
+    secondLayerTitle: 'Sounds good',
+    secondLayerLottie: productAnimation,
   },
   {
     title: 'UX/UI Design',
@@ -71,8 +85,10 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [figma, adobe, layer, webflow],
-    numOfCols: 2,
+    numOfCols: 3,
     numOfRows: 2,
+    secondLayerTitle: 'Bring your ideas to life',
+    secondLayerLottie: uiAnimation,
   },
   {
     title: 'Developer Outsourcing',
@@ -82,5 +98,9 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
+    numOfCols: 3,
+    numOfRows: 2,
+    secondLayerTitle: 'In need of an expert',
+    secondLayerLottie: outsourcingAnimation,
   },
 ];
