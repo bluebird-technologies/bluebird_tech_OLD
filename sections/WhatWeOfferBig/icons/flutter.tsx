@@ -2,9 +2,9 @@ export default (
   <svg
     id="Google-flutter-logo"
     xmlns="http://www.w3.org/2000/svg"
-    width="232.882"
-    height="71.571"
-    viewBox="0 0 252.882 71.571"
+    width="216.463"
+    height="59.822"
+    viewBox="0 0 236.463 79.822"
   >
     <path
       id="Path_2910"

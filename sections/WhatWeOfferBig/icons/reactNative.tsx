@@ -2,9 +2,9 @@ export default (
   <svg
     id="react-native-1"
     xmlns="http://www.w3.org/2000/svg"
-    width="60"
-    height="60"
-    viewBox="0 0 84.156 91.788"
+    width="216.463"
+    height="59.822"
+    viewBox="0 0 236.463 79.822"
   >
     <g id="react-native-1-2" data-name="react-native-1" transform="translate(0)" opacity="0.6">
       <path
