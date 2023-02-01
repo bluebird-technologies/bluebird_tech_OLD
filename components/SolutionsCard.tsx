@@ -1,63 +1,58 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { SolutionType } from '../pages/offer';
 import SwiggleLine from '../public/what-we-offer/swiggle.svg';
+import IconLayout from './Solutions/IconLayout';
 
 export interface Props {
-  title: string;
-  firstParagraphDescription: string;
-  secondParagraphDescription: string;
-  catchPhrase: string;
-  icons: ReactNode[] | 'string'[];
-  numOfCols?: number;
-  numOfRows?: number;
-  secondLayerTitle?: string;
-  secondLayerLottie?: Record<string, unknown>;
+  item: SolutionType;
 }
 
-function SolutionsCard({
-  title,
-  firstParagraphDescription,
-  secondParagraphDescription,
-  catchPhrase,
-  icons,
-  numOfCols,
-  numOfRows,
-}: Props) {
-  const cols = numOfCols ?? 2;
-  const row = numOfRows ?? 2;
+function SolutionsCard({ item }: Props) {
+  const {
+    title,
+    catchPhrase,
+    firstParagraphDescription,
+    secondParagraphDescription,
+    icons,
+    amtItemsInFirstRow,
+    centerSecondRow,
+  } = item;
 
-  console.log(cols, row);
   return (
-    <div className="flex flex-row  mt-28 mx-3 w-[80vw]  justify-between">
-      <div className="">
-        <div className="flex flex-1 flex-row justify-between">
-          <h1 className="text-white font-bold uppercase text-5xl"> {title.split(' ')[0]}</h1>
-          <SwiggleLine className="ml-20" width={'50vw'} />
+    <div className="flex flex-col mt-28 w-[70vw]">
+      {/* heading section */}
+      <div className="w-full mb-14">
+        <div className="flex w-full">
+          <h1 className="text-white font-bold uppercase text-5xl">{title.split(' ')[0]}</h1>
+          <SwiggleLine className="ml-20 -mt-5" width={'60vw'} />
         </div>
-        <div className="flex flex-col  w-full">
-          <div className="flex flex-row mt-4 items-center justify-between">
-            <h1 className="text-white font-bold uppercase text-5xl">{title.split(' ')[1]}</h1>
-            <p className="text-highlight w-3/12 text-2xl text-right italic">{catchPhrase}</p>
+        <h1 className="text-white font-bold uppercase text-5xl">{title.split(' ')[1]}</h1>
+      </div>
+      {/* parralel sections */}
+      <div className="flex flex-row">
+        {/* left section */}
+        <div className="w-3/5">
+          <div className="mr-32">
+            <p className="text-white">
+              {firstParagraphDescription} <b />
+            </p>
+            <p className="mt-5 text-white">{secondParagraphDescription}</p>
           </div>
-          <div className="flex flex-row mt-2 justify-between ">
-            <div className="w-3/6">
-              <p className="mt-5 text-white">
-                {firstParagraphDescription} <b />
-              </p>
-              <p className="mt-5 text-white">{secondParagraphDescription}</p>
-            </div>
-            <div className="w-3/5">
-              <div className={`flex w-2/3  justify-around flex-wrap items-center`}>
-                {icons.map((item, key) => (
-                  <div className="" key={key}>
-                    {item}
-                  </div>
-                ))}
-              </div>
+        </div>
+        {/* right section */}
+        <div className="w-2/5 -mt-24">
+          <div className="flex justify-end">
+            <div className="flex flex-col w-full ml-32 justify-end space-y-8">
+              <p className="text-highlight text-2xl text-right italic">{catchPhrase}</p>
+              <IconLayout
+                icons={icons}
+                amtIconsRowOne={amtItemsInFirstRow}
+                rowTwoCenter={centerSecondRow}
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-end  w-2/5 justify-center"></div>
     </div>
   );
 }

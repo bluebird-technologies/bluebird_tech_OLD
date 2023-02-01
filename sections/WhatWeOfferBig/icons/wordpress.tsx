@@ -2,9 +2,9 @@ export default (
   <svg
     id="Wordpress-Logo"
     xmlns="http://www.w3.org/2000/svg"
-    width="60"
-    height="60"
     viewBox="0 0 97.709 97.706"
+    height="60"
+    className="w-full h-full"
   >
     <path
       id="Path_2905"

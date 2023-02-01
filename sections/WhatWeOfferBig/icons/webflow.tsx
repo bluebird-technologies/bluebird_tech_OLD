@@ -2,9 +2,9 @@ export default (
   <svg
     id="Webflow_logo"
     xmlns="http://www.w3.org/2000/svg"
-    width="207.523"
     height="52.488"
     viewBox="0 0 207.523 52.488"
+    className="w-full h-full"
   >
     <path
       id="Webflow_logo-2"

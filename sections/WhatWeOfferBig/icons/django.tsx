@@ -1,5 +1,5 @@
 export default (
-  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 87 87">
+  <svg xmlns="http://www.w3.org/2000/svg" height="60" className="w-full h-full" viewBox="0 0 87 87">
     <g id="django-seeklogo.com" transform="translate(0)">
       <rect
         id="Rectangle_406"

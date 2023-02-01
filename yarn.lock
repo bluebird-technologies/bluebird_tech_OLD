@@ -2899,7 +2899,7 @@ lottie-react@^2.3.1:
   dependencies:
     lottie-web "^5.9.4"
 
-lottie-web@^5.10.0, lottie-web@^5.10.1, lottie-web@^5.9.4:
+lottie-web@^5.10.0, lottie-web@^5.9.4:
   version "5.10.1"
   resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.10.1.tgz"
   integrity sha512-u17bVNf/vA3oK9Wkyb1Vpo83WUIEQwaT0GeEN0qcvaExizyJ/RjmcbjSDj0CnwQCtpGqTgYhqprCC7cTWuXMNw==

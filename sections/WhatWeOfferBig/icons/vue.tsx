@@ -2,9 +2,9 @@ export default (
   <svg
     id="vue"
     xmlns="http://www.w3.org/2000/svg"
-    width="60"
     height="60"
     viewBox="0 0 78.102 67.872"
+    className="w-full h-full"
   >
     <g id="Group_1010" data-name="Group 1010" opacity="0.6">
       <path

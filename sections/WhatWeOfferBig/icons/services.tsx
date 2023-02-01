@@ -3,9 +3,9 @@ export default (
     id="Component_110_1"
     data-name="Component 110 – 1"
     xmlns="http://www.w3.org/2000/svg"
-    width="112"
     height="132.784"
     viewBox="0 0 112 132.784"
+    className="w-full h-full"
   >
     <g id="Layer_x0020_1" transform="translate(21.687 0)" opacity="0.6">
       <path

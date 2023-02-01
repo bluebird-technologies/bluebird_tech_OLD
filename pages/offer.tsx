@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
@@ -10,6 +10,18 @@ import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
 import { solutions } from '../sections/WhatWeOfferBig/solutions';
 import SolutionsCard from '../components/SolutionsCard';
+
+export interface SolutionType {
+  title: string;
+  firstParagraphDescription: string;
+  secondParagraphDescription: string;
+  catchPhrase: string;
+  icons: ReactNode[] | 'string'[];
+  amtItemsInFirstRow: number;
+  centerSecondRow: boolean;
+  secondLayerTitle: string;
+  secondLayerLottie: any; // type error from the data
+}
 
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
@@ -37,7 +49,7 @@ export default function Offer() {
                 key={i.label}
                 className={`flex-1 flex flex-col items-center ${
                   i.label === solutionOption ? 'text-secondary group ' : ''
-                } text-highlight hover:text-secondary group transition-all`}
+                } text-highlight hover:text-secondary hover:cursor-pointer group transition-all`}
               >
                 <div className="w-16 h-16">
                   {/* <picture>
@@ -77,20 +89,7 @@ export default function Offer() {
             ))}
           </div>
           {solutions.map((item, key) => (
-            <>
-              {solutionOption === item.title && (
-                <SolutionsCard
-                  title={item.title}
-                  catchPhrase={item.catchPhrase}
-                  firstParagraphDescription={item.firstParagraphDescription}
-                  secondParagraphDescription={item.secondParagraphDescription}
-                  icons={item.icons}
-                  numOfCols={item.numOfCols}
-                  numOfRows={item.numOfRows}
-                  key={key}
-                />
-              )}
-            </>
+            <>{solutionOption === item.title && <SolutionsCard item={item} key={key} />}</>
           ))}
         </Container>
       </div>

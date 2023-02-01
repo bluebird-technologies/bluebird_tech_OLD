@@ -2,9 +2,9 @@ export default (
   <svg
     id="xamarin-logo-svg-vector"
     xmlns="http://www.w3.org/2000/svg"
-    width="89.711"
     height="79.822"
     viewBox="0 0 89.711 79.822"
+    className="w-full h-full"
   >
     <path
       id="xamarin-logo-svg-vector-2"

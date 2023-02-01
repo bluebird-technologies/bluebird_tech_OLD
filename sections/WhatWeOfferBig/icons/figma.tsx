@@ -2,9 +2,9 @@ export default (
   <svg
     id="figma-ar21"
     xmlns="http://www.w3.org/2000/svg"
-    width="181.645"
     height="86.707"
     viewBox="0 0 181.645 86.707"
+    className="w-full h-full"
   >
     <path
       id="Path_2918"

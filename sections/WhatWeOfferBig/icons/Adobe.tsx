@@ -2,9 +2,9 @@ export default (
   <svg
     id="Adobe_Illustrator_CC_icon"
     xmlns="http://www.w3.org/2000/svg"
-    width="90.792"
     height="88.931"
     viewBox="0 0 90.792 88.931"
+    className="w-full h-full"
   >
     <path
       id="Path_2928"

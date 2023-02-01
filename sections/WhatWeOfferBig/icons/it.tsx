@@ -1,5 +1,10 @@
 export default (
-  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="129.031" viewBox="0 0 80 129.031">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="129.031"
+    viewBox="0 0 80 129.031"
+    className="w-full h-full"
+  >
     <defs>
       <clipPath id="clip-path">
         <rect

@@ -2,9 +2,9 @@ export default (
   <svg
     id="Layer_2_1_"
     xmlns="http://www.w3.org/2000/svg"
-    width="87.678"
     height="85.486"
     viewBox="0 0 87.678 85.486"
+    className="w-full h-full"
   >
     <g id="Surfaces">
       <g id="UI_UX_Surface">

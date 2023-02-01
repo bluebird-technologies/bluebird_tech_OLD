@@ -1,5 +1,5 @@
 export default (
-  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" height="90" viewBox="0 0 90 90">
     <g id="angular_solidBlack" transform="translate(0)">
       <path
         id="Path_2900"

@@ -1,8 +1,8 @@
 export default (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="101.951"
     height="110.073"
+    className="w-full h-full"
     viewBox="0 0 101.951 110.073"
   >
     <g id="Component_107_1" data-name="Component 107 – 1" transform="translate(0 0)">

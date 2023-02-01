@@ -1,5 +1,10 @@
 export default (
-  <svg xmlns="http://www.w3.org/2000/svg" width="84" height="113.727" viewBox="0 0 84 128.248">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="113.727"
+    viewBox="0 0 84 128.248"
+    className="w-full h-full"
+  >
     <g id="Component_108_1" data-name="Component 108 – 1" transform="translate(1)">
       <g id="train-310470" transform="translate(15.897)" opacity="0.6">
         <path

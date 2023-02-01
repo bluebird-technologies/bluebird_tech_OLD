@@ -1,4 +1,3 @@
-import { Props } from '../../components/SolutionsCard';
 import angular from './icons/angular';
 import reactNative from './icons/reactNative';
 import vue from './icons/vue';
@@ -14,7 +13,7 @@ import it from './icons/it';
 import services from './icons/services';
 import database from './icons/database';
 import figma from './icons/figma';
-import adobe from './icons/adobe';
+import adobe from './icons/Adobe';
 import webflow from './icons/webflow';
 import layer from './icons/layer';
 import webDevelopmentAnimation from '../../public/what-we-offer/websiteAnimation.json';
@@ -23,8 +22,9 @@ import structureAnimation from '../../public/what-we-offer/structure.json';
 import productAnimation from '../../public/what-we-offer/product.json';
 import uiAnimation from '../../public/what-we-offer/ui.json';
 import outsourcingAnimation from '../../public/what-we-offer/outsourcing.json';
+import { SolutionType } from '../../pages/offer';
 
-export const solutions: Props[] = [
+export const solutions: SolutionType[] = [
   {
     title: 'Web Development',
     firstParagraphDescription:
@@ -33,8 +33,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [angular, reactNative, vue, django, wordpress],
-    numOfCols: 3,
-    numOfRows: 2,
+    amtItemsInFirstRow: 3,
+    centerSecondRow: true,
     secondLayerTitle: 'Accelerate your website today',
     secondLayerLottie: webDevelopmentAnimation,
   },
@@ -46,8 +46,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [flutter, reactNative, ionic, xamarin],
-    numOfCols: 3,
-    numOfRows: 2,
+    amtItemsInFirstRow: 2,
+    centerSecondRow: false,
     secondLayerTitle: 'Ready your website today',
     secondLayerLottie: appDevelopmentAnimation,
   },
@@ -59,8 +59,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [transport, logistic, banking, it, services, database],
-    numOfCols: 3,
-    numOfRows: 3,
+    amtItemsInFirstRow: 3,
+    centerSecondRow: false,
     secondLayerTitle: 'Got something in mind',
     secondLayerLottie: structureAnimation,
   },
@@ -72,8 +72,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
-    numOfCols: 3,
-    numOfRows: 2,
+    amtItemsInFirstRow: 3,
+    centerSecondRow: false,
     secondLayerTitle: 'Sounds good',
     secondLayerLottie: productAnimation,
   },
@@ -85,8 +85,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [figma, adobe, layer, webflow],
-    numOfCols: 3,
-    numOfRows: 2,
+    amtItemsInFirstRow: 2,
+    centerSecondRow: false,
     secondLayerTitle: 'Bring your ideas to life',
     secondLayerLottie: uiAnimation,
   },
@@ -98,8 +98,8 @@ export const solutions: Props[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
-    numOfCols: 3,
-    numOfRows: 2,
+    amtItemsInFirstRow: 3,
+    centerSecondRow: true,
     secondLayerTitle: 'In need of an expert',
     secondLayerLottie: outsourcingAnimation,
   },
