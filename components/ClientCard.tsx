@@ -10,8 +10,8 @@ export interface Props {
 function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageSrc }: Props) {
   return (
     <div className="flex group  w-full relative flex-1 h-[300px]  flex-col items-center">
-      <div className="hidden  absolute w-full z-10 h-[280px] left-3 opacity-50 bg-black group-hover:block ">
-        <div className="flex flex-col h-[300px]  justify-center px-5 ">
+      <div className="hidden  absolute w-full z-10 h-[280px] left-2 opacity-50 bg-black group-hover:block ">
+        <div className="flex flex-col h-[300px]  justify-center px-5 pb-5 ">
           <div>{clientLogo}</div>
           <div>
             {responsibilities.map((item, key) => (
@@ -21,7 +21,7 @@ function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageS
             ))}
           </div>
           <div className="flex  items-end justify-end">
-            <a href="#" className="uppercase font-bold text-lg text-highlight">
+            <a href="#" className="uppercase font-medium text-lg text-highlight">
               View Project
             </a>
           </div>
