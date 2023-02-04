@@ -8,14 +8,18 @@ import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
-    <div className=" flex-1 flex flex-col bg-secondary h-full">
-      <div
-        style={{
-          backgroundImage: `url(/primary-overlay.png)`,
-          backgroundRepeat: 'no-repeat',
-        }}
-        className=" w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[90px] bg-secondary "
-      >
+    <div className=" flex-1 flex flex-col h-full">
+      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
+        <div
+          className="bg-primary h-full"
+          style={{
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Header />
         <div className="flex z-1 relative flex-col mt-20 items-center">
           <h3 className="text-[27px] font-mediumitalic italic text-highlight">Get in Touch</h3>
@@ -26,8 +30,8 @@ const Contact = () => {
           <Swiggle />
         </div>
       </div>
-      <div className="flex flex-row px-20  justify-center items-center">
-        <form className="flex flex-1 my-8  flex-col items-center justify-center">
+      <div className="flex flex-row px-20 justify-center items-center bg-secondary py-32 -mt-32">
+        <form className="flex flex-1 my-8 flex-col items-center justify-center">
           <input
             className=" my-4 px-3 font-normal rounded-[20px] h-12 w-[518px]"
             type={'text'}
@@ -80,17 +84,21 @@ const Contact = () => {
           width={30}
           height={30}
         />
-        ;
       </div>
-      <div
-        style={{
-          backgroundImage: `url(/inverse-light-overlay.svg)`,
-          backgroundRepeat: 'no-repeat',
-          height: '500px',
-        }}
-        className=" w-full bg-cover bg-bottom flex flex-col items-center relative justify-center pt-[140px] pb-[90px] bg-secondary "
-      >
-        <Footer />
+      <div className="relative w-full flex flex-col items-center justify-center pt-[140px] pb-[90px] -mt-32">
+        <div
+          className="bg-[#F1F1F1] h-full"
+          style={{
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderTopLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+          }}
+        />
+        <div className="z-10 w-full">
+          <Footer />
+        </div>
       </div>
     </div>
   );
