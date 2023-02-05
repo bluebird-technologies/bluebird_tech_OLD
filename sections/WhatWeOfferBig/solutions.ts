@@ -32,7 +32,7 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: [angular, reactNative, vue, django, wordpress],
+    content: { contentType: 'icon', icons: [angular, reactNative, vue, django, wordpress] },
     amtItemsInFirstRow: 3,
     centerSecondRow: true,
     secondLayerTitle: 'Accelerate your website today',
@@ -45,7 +45,7 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: [flutter, reactNative, ionic, xamarin],
+    content: { contentType: 'icon', icons: [flutter, reactNative, ionic, xamarin] },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'Ready your website today',
@@ -58,7 +58,7 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: [transport, logistic, banking, it, services, database],
+    content: { contentType: 'icon', icons: [transport, logistic, banking, it, services, database] },
     amtItemsInFirstRow: 3,
     centerSecondRow: false,
     secondLayerTitle: 'Got something in mind',
@@ -71,7 +71,10 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
+    content: {
+      contentType: 'text',
+      icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
+    },
     amtItemsInFirstRow: 3,
     centerSecondRow: false,
     secondLayerTitle: 'Sounds good',
@@ -84,7 +87,7 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: [figma, adobe, layer, webflow],
+    content: { contentType: 'icon', icons: [figma, webflow, adobe, layer] },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'Bring your ideas to life',
@@ -97,7 +100,26 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
+    content: {
+      contentType: 'text',
+      icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
+    },
+    amtItemsInFirstRow: 3,
+    centerSecondRow: true,
+    secondLayerTitle: 'In need of an expert',
+    secondLayerLottie: outsourcingAnimation,
+  },
+  {
+    title: 'API Development',
+    firstParagraphDescription:
+      'WLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. ',
+    secondParagraphDescription:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    catchPhrase: '',
+    content: {
+      contentType: 'text',
+      icons: [''],
+    },
     amtItemsInFirstRow: 3,
     centerSecondRow: true,
     secondLayerTitle: 'In need of an expert',

@@ -3,9 +3,8 @@ import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
-
+// import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
 import Lottie from 'lottie-react';
-import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
 import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
 import { solutions } from '../sections/WhatWeOfferBig/solutions';
@@ -16,7 +15,10 @@ export interface SolutionType {
   firstParagraphDescription: string;
   secondParagraphDescription: string;
   catchPhrase: string;
-  icons: ReactNode[] | 'string'[];
+  content: {
+    contentType: 'text' | 'icon';
+    icons: ReactNode[] | 'string'[];
+  };
   amtItemsInFirstRow: number;
   centerSecondRow: boolean;
   secondLayerTitle: string;
@@ -25,15 +27,21 @@ export interface SolutionType {
 
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
+  console.log(solutionOption);
 
   return (
-    <div className="bg-secondary flex flex-1 flex-col">
-      <div
-        className="w-full bg-cover  bg-bottom flex flex-col items-center relative pt-[60px] pb-[150px] "
-        style={{
-          backgroundImage: 'url(/primary-overlay.svg)',
-        }}
-      >
+    <div className="flex flex-1 flex-col">
+      <div className="w-full bg-cover bg-bottom flex flex-col items-center relative pb-[150px]">
+        <div
+          className="bg-primary h-full"
+          style={{
+            position: 'absolute',
+            left: '-41%',
+            width: '180vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Header />
         <Container center>
           <h1 className="title-1 mt-[82px]">
@@ -94,31 +102,47 @@ export default function Offer() {
         </Container>
       </div>
 
-      {solutions.map((item, key) => (
-        <>
-          {solutionOption === item.title && (
-            <div className="bg-secondary flex flex-1 py-10 flex-col items-center justify-center">
-              <h1 className="text-white text-3xl font-bold">{item.secondLayerTitle}</h1>
-              <Lottie
-                animationData={item.secondLayerLottie}
-                style={{
-                  marginTop: 30,
-                  marginBottom: 30,
-                }}
-                loop={true}
-                width={25}
-                height={25}
-              />
-              <Button>Get Started</Button>
-            </div>
-          )}
-        </>
-      ))}
-      <div className="bg-primary flex flex-1 py-20 items-center justify-center flex-row">
-        <h1 className="text-white text-2xl font-bold mr-5">EXPLORE OUR OTHER SERVICES</h1>
-        <RigthArrow />
+      <div className="flex bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
+        {solutions.map((item) => (
+          // TODO the last solution API development has no content/ lottie animation associated with it
+          // for now it has the same info as developer outsourcing section
+          <>
+            {solutionOption === item.title && (
+              <div className="flex flex-1 flex-col items-center justify-center">
+                <h1 className="text-white text-5xl font-extrabold">{item.secondLayerTitle}</h1>
+                {/* TODO design has different sizes for each animation, maybe make size dynamic... might be overkill */}
+                <Lottie
+                  animationData={item.secondLayerLottie}
+                  style={{
+                    marginTop: 30,
+                    marginBottom: 30,
+                    width: '450px',
+                    height: '450px',
+                  }}
+                  loop={true}
+                />
+                <Button className="px-12 py-4 bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
+                  <span className="uppercase text-white text-[16px] font-semibold">
+                    Get Started
+                  </span>
+                </Button>
+              </div>
+            )}
+          </>
+        ))}
       </div>
-      <Footer />
+
+      <div className="bg-primary flex flex-1 py-16 flex-row justify-center">
+        <a href={'/'} className="text-white text-4xl font-bold">
+          <div className="flex items-center justify-center">
+            <h1 className="mr-5">EXPLORE OUR OTHER SERVICES</h1>
+            <RigthArrow />
+          </div>
+        </a>
+      </div>
+      <div className="z-10 w-full bg-[#F1F1F1] pb-[90px]">
+        <Footer />
+      </div>
     </div>
   );
 }
