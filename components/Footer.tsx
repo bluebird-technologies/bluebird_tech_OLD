@@ -1,5 +1,5 @@
 import React from 'react';
-import BluebirdSvg from '../public/contact/bluebird.svg';
+import { Container } from './Container';
 
 const Footer = () => {
   const navItems = [
@@ -11,51 +11,60 @@ const Footer = () => {
     { name: 'Contact', link: '/contact' },
   ];
   return (
-    <footer className="flex flex-row flex-1 items-center justify-around">
-      <div className="flex flex-1  my-4 items-center  flex-row ">
-        <BluebirdSvg className="w-[150px]  h-[150px]" />
-        <div className="ml-10">
-          <div className="flex flex-1 my-4 items-center  flex-row ">
-            <div className="w-[250px]">
-              <h1 className="text-primary font-bold">FIND US AT</h1>
-              <h3 className="text-primary">
-                Fujairah Creative City Free Zone Creative Tower Fujairah, United Arab Emirates PO
-                Box 4422
-              </h3>
+    <Container wide>
+      <div className="mt-20 w-full bg-[#F1F1F1]">
+        <div className="flex items-center w-full">
+          <picture>
+            <source srcSet="/home/logo.svg" type="image/svg+xml" />
+            <img src="/home/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
+          </picture>
+          <div className="text-[18px] leading-[21px] ml-4">
+            <div className="border-b-2 border-primary pb-6 mb-6 flex items-end">
+              <div>
+                <div className="font-semibold uppercase  mb-1">Find us at</div>
+                <div className="font-normal">
+                  Fujairah Creative City Free Zone
+                  <br /> Creative Tower
+                  <br /> Fujairah
+                  <br /> United Arab Emirates
+                  <br /> PO Box 4422
+                </div>
+              </div>
+              <div className="text-highlight text-[22px] mx-10 font-bold mb-14">and</div>
+              <div className="font-normal">
+                Cedarwood House
+                <br /> Ballywoods Office Park
+                <br /> 33 Ballyclare Drive <br />
+                Bryanston, Johannesburg
+                <br />
+                South Africa
+                <br /> 2191
+              </div>
             </div>
-            <div className="mx-5">
-              <h3 className="text-highlight font-bold text-lg">and</h3>
-            </div>
-            <div className="w-[270px]">
-              <h3 className="text-primary">
-                Cedarwood House Ballywoods Office Park 33 Ballyclare Drive Bryanston Johannesburg
-                South Africa 2191
-              </h3>
+            <div>
+              <div className="font-semibold uppercase  mb-1">Contact us</div>
+              <div className="font-normal">info@bluebird.dev</div>
             </div>
           </div>
-          <div className="flex flex-1 border-t-2 border-primary items-start">
-            <div className="mt-4">
-              <h1 className="text-primary font-bold">CONTACT US AT</h1>
-              <h3 className="text-primary">info@bluebird.dev</h3>
-            </div>
-            <div className="mt-4  border-2" />
+          <div className="flex-1">
+            <ol className="text-primary font-semibold text-[14px] leading-[20px] text-right uppercase">
+              {navItems.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <a
+                      href={item.link}
+                      className="uppercase font-semibold text-end hover:text-secondary"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
         </div>
       </div>
-      <div>
-        <ul className="flex flex-col flex-1  items-end">
-          {navItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a href={item.link} className="uppercase font-medium text-end">
-                  {item.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </footer>
+    </Container>
   );
 };
 
