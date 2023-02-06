@@ -1,11 +1,11 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import ArrowSvg from '../../public/case-studies/arrow.svg';
-import SwiggleSvg from '../../public/case-studies/swiggle.svg';
-import QuoteSvg from '../../public/case-studies/quote.svg';
-import CircularArrowSvg from '../../public/case-studies/circular-arrow.svg';
-import BlueSwiggle from '../../public/case-studies/blue-swiggle.svg';
-import ArrowLeftSvg from '../../public/arrow-left.svg';
+import ArrowSvg from 'public/case-studies/arrow.svg';
+import SwiggleSvg from 'public/case-studies/swiggle.svg';
+import QuoteSvg from 'public/case-studies/quote.svg';
+import CircleArrow from './icons/circle-arrow';
+import BlueSwiggle from 'public/case-studies/blue-swiggle.svg';
+import ArrowLeftSvg from 'public/arrow-left.svg';
 import Image from 'next/image';
 import Footer from '../../components/Footer';
 import lottieAnimation from '../../public/lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json';
@@ -153,51 +153,67 @@ function CaseStudiesDetailsView() {
           </div>
         </div>
       </div>
-      <div className="bg-secondary flex flex-1 flex-col items-center justify-center py-12">
-        <h1 className="text-white font-bold text-2xl">OUR APPROACH</h1>
-        <div className="flex flex-row items-center justify-start mt-8 w-3/4  ">
-          <p className="text-highlight text-2xl">What did we need to know?</p>
-          <SwiggleSvg width="600" className="ml-16" />
+      <div className="bg-secondary flex flex-1 flex-col py-12 w-full">
+        <h1 className="text-white font-bold text-2xl text-center justify-center">OUR APPROACH</h1>
+
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col w-3/5">
+            <div className="flex justify-start mt-[50px]">
+              <h2 className="text-highlight text-4xl pr-6">What did we need to know?</h2>
+              <SwiggleSvg width="600" className="" />
+            </div>
+            <div className="flex flex-col mt-[50px]">
+              <ul>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  What were the banks’ limitations? Which technologies do they use?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  What was our average amount of projected collections? Per day? Per month?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  Are we able to find a better way to handle the banks’ file-based systems?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  How can we be better than the competitions’ systems?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  How do we simplify some of the concepts?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  How do we secure the whole process?
+                </li>
+                <li className="text-white text-3xl leading-[3rem] list-disc">
+                  How do we test the system?
+                </li>
+              </ul>
+            </div>
+            <div className="flex justify-start mt-[80px]">
+              <h2 className="text-highlight text-4xl pr-6">How did we uncover this info?</h2>
+              <SwiggleSvg width="600" className="" />
+            </div>
+          </div>
         </div>
-        <div className="flex w-3/4 mt-8 flex-1 flex-col ">
-          <ul>
-            <li className="text-white text-xl list-disc">
-              What were the banks’ limitations? Which technologies do they use?
-            </li>
-            <li className="text-white text-xl list-disc">
-              What was our average amount of projected collections? Per day? Per month?
-            </li>
-            <li className="text-white text-xl list-disc">
-              Are we able to find a better way to handle the banks’ file-based systems?
-            </li>
-            <li className="text-white text-xl list-disc">
-              How can we be better than the competitions’ systems?
-            </li>
-            <li className="text-white text-xl list-disc">
-              How do we simplify some of the concepts?
-            </li>
-            <li className="text-white text-xl list-disc">How do we secure the whole process?</li>
-            <li className="text-white text-xl list-disc">How do we test the system?</li>
-          </ul>
-        </div>
-        <div className="flex flex-row items-center justify-start mt-8 w-3/4 ">
-          <p className="text-highlight text-2xl">How did we uncover this info?</p>
-          <SwiggleSvg width="600" className="ml-16" />
-        </div>
-        <div className="flex flex-row mt-8 items-center">
-          <CircularArrowSvg />
-          <ul>
-            <li className="text-white list-disc text-lg mb-8">
-              Going through bank integration specification documents
-            </li>
-            <li className="text-white list-disc text-lg mb-8">Speaking to stakeholders</li>
-            <li className="text-white list-disc text-lg mb-8">
-              Researching the tech available on cloud platforms such as AWS
-            </li>
-            <li className="text-white list-disc text-lg mb-8">
-              Looking at best practices for enterprise systems
-            </li>
-          </ul>
+
+        <div className="flex mt-8 w-full px-[200px]">
+          <div className="mr-[100px]">
+            <div className="w-[800px]">{CircleArrow}</div>
+          </div>
+          <div>
+            <ul>
+              <li className="text-white list-disc text-3xl leading-[3rem]">
+                Going through bank integration specification documents
+              </li>
+              <li className="text-white list-disc text-3xl leading-[3rem]">
+                Speaking to stakeholders
+              </li>
+              <li className="text-white list-disc text-3xl leading-[3rem]">
+                Researching the tech available on cloud platforms such as AWS
+              </li>
+              <li className="text-white list-disc text-3xl leading-[3rem]">
+                Looking at best practices for enterprise systems
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="bg-gray flex flex-1  flex-col items-center justify-center py-12">
