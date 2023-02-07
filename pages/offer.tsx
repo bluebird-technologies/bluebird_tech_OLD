@@ -25,9 +25,39 @@ export interface SolutionType {
   secondLayerLottie: any; // type error from the data
 }
 
+enum titles {
+  'web' = 'Web Development',
+  'app' = 'App Development',
+  'infra' = 'Infrastructure Development',
+  'prodman' = 'Product Management',
+  'ux' = 'UX/UI Design',
+  'outsource' = 'Developer Outsourcing',
+  'api' = 'API Development',
+}
+
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
-  console.log(solutionOption);
+
+  const getWidth = (solutionTitle: string) => {
+    if (solutionTitle === titles.web) {
+      return '450px';
+    }
+    if (solutionTitle === titles.app) {
+      return '450px';
+    }
+    if (solutionTitle === titles.infra) {
+      return '450px';
+    }
+    if (solutionTitle === titles.prodman) {
+      return '450px';
+    }
+    if (solutionTitle === titles.ux) {
+      return '600px';
+    }
+    if (solutionTitle === titles.api) {
+      return '450px';
+    }
+  };
 
   return (
     <div className="flex flex-1 flex-col">
@@ -109,14 +139,16 @@ export default function Offer() {
           <>
             {solutionOption === item.title && (
               <div className="flex flex-1 flex-col items-center justify-center">
-                <h1 className="text-white text-5xl font-extrabold">{item.secondLayerTitle}</h1>
+                <h1 className="text-white text-5xl font-extrabold uppercase">
+                  {item.secondLayerTitle}
+                </h1>
                 {/* TODO design has different sizes for each animation, maybe make size dynamic... might be overkill */}
                 <Lottie
                   animationData={item.secondLayerLottie}
                   style={{
                     marginTop: 30,
                     marginBottom: 30,
-                    width: '450px',
+                    // width: getWidth(item.title),
                     height: '450px',
                   }}
                   loop={true}

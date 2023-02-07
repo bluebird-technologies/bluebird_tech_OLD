@@ -17,7 +17,7 @@ function SolutionsCard({ item }: Props) {
     amtItemsInFirstRow,
     centerSecondRow,
   } = item;
-  if (title === 'Developer Outsourcing' || title === 'API Development') {
+  if (title === 'Developer Outsourcing') {
     return (
       <div className="flex flex-col mt-28 mb-10 w-[70vw]">
         <div className="w-full mb-14">

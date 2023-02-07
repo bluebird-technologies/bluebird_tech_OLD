@@ -1,28 +1,34 @@
+import { SolutionType } from '../../pages/offer';
+import apiDevelopmentAnimation from '../../public/what-we-offer/apiDevelopment.json';
+import appDevelopmentAnimation from '../../public/what-we-offer/appAnimation.json';
+import outsourcingAnimation from '../../public/what-we-offer/outsourcing.json';
+import productAnimation from '../../public/what-we-offer/product.json';
+import structureAnimation from '../../public/what-we-offer/structure.json';
+import uiAnimation from '../../public/what-we-offer/ui.json';
+import webDevelopmentAnimation from '../../public/what-we-offer/websiteAnimation.json';
+import adobe from './icons/Adobe';
 import angular from './icons/angular';
-import reactNative from './icons/reactNative';
-import vue from './icons/vue';
+import banking from './icons/banking';
+import database from './icons/database';
 import django from './icons/django';
-import wordpress from './icons/wordpress';
+import dotnet from './icons/dotnet';
+import figma from './icons/figma';
 import flutter from './icons/flutter';
 import ionic from './icons/ionic';
-import xamarin from './icons/xamarin';
-import transport from './icons/transport';
-import logistic from './icons/logistic';
-import banking from './icons/banking';
 import it from './icons/it';
-import services from './icons/services';
-import database from './icons/database';
-import figma from './icons/figma';
-import adobe from './icons/Adobe';
-import webflow from './icons/webflow';
+import java from './icons/java';
 import layer from './icons/layer';
-import webDevelopmentAnimation from '../../public/what-we-offer/websiteAnimation.json';
-import appDevelopmentAnimation from '../../public/what-we-offer/appAnimation.json';
-import structureAnimation from '../../public/what-we-offer/structure.json';
-import productAnimation from '../../public/what-we-offer/product.json';
-import uiAnimation from '../../public/what-we-offer/ui.json';
-import outsourcingAnimation from '../../public/what-we-offer/outsourcing.json';
-import { SolutionType } from '../../pages/offer';
+import logistic from './icons/logistic';
+import node from './icons/node';
+import nosql from './icons/nosql';
+import reactNative from './icons/reactNative';
+import services from './icons/services';
+import sql from './icons/sql';
+import transport from './icons/transport';
+import vue from './icons/vue';
+import webflow from './icons/webflow';
+import wordpress from './icons/wordpress';
+import xamarin from './icons/xamarin';
 
 export const solutions: SolutionType[] = [
   {
@@ -117,12 +123,12 @@ export const solutions: SolutionType[] = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: '',
     content: {
-      contentType: 'text',
-      icons: [''],
+      contentType: 'icon',
+      icons: [node, dotnet, java, nosql, sql],
     },
-    amtItemsInFirstRow: 3,
-    centerSecondRow: true,
-    secondLayerTitle: 'In need of an expert',
-    secondLayerLottie: outsourcingAnimation,
+    amtItemsInFirstRow: 2,
+    centerSecondRow: false,
+    secondLayerTitle: 'FOUND WHAT YOU’VE BEEN LOOKING FOR?',
+    secondLayerLottie: apiDevelopmentAnimation,
   },
 ];
