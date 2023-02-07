@@ -3,7 +3,6 @@ import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
-// import websiteAnimation from '../public/what-we-offer/websiteAnimation.json';
 import Lottie from 'lottie-react';
 import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
@@ -81,9 +80,11 @@ export default function Offer() {
                   {i.icon}
                 </div>
                 <div className="text-white text-[13px] leading-[15px] font-extrabold uppercase text-center my-4">
-                  {i.label.split(' ').map((t, i) => (
-                    <div key={i}>{t}</div>
-                  ))}
+                  {i.label !== 'API & System Development' ? (
+                    i.label.split(' ').map((t, i) => <div key={i}>{t}</div>)
+                  ) : (
+                    <div>{i.label}</div>
+                  )}
                 </div>
                 <div
                   className={`w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] ${

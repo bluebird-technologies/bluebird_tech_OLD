@@ -43,11 +43,29 @@ function SolutionsCard({ item }: Props) {
     <div className="flex flex-col mt-28 mb-10 w-[70vw]">
       {/* heading section */}
       <div className="w-full mb-14">
-        <div className="flex w-full">
-          <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
-          <SwiggleLine className="ml-20 -mt-5" width={'60vw'} />
-        </div>
-        <h1 className="text-white font-extrabold uppercase text-5xl mt-2">{title.split(' ')[1]}</h1>
+        {title !== 'API & System Development' ? (
+          <div className="flex w-full">
+            <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
+            <SwiggleLine className="ml-20 -mt-5" width={'60vw'} />
+          </div>
+        ) : (
+          <div className="flex w-full">
+            <h1 className="text-white font-extrabold uppercase text-5xl">
+              {title.split(' ')[0]} {title.split(' ')[1]} {title.split(' ')[2]}
+            </h1>
+            <SwiggleLine className="ml-20 -mt-5" width={'40vw'} />
+          </div>
+        )}
+
+        {title !== 'API & System Development' ? (
+          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
+            {title.split(' ')[1]}
+          </h1>
+        ) : (
+          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
+            {title.split(' ')[3]}
+          </h1>
+        )}
       </div>
       {/* parralel sections */}
       <div className="flex flex-row">
