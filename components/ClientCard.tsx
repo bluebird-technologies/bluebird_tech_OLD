@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { useRouter } from 'next/navigation';
+import Router from 'next/router';
 
 export interface Props {
   clientName: string;
@@ -9,11 +9,14 @@ export interface Props {
 }
 
 function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageSrc }: Props) {
-  const router = useRouter();
-
   return (
     <div
-      onClick={() => router.push('/case-studies/details')}
+      onClick={() => {
+        Router.push({
+          pathname: '/case-studies/details',
+          query: { clientName },
+        });
+      }}
       className="flex group w-full relative flex-1 h-[300px] flex-col items-center cursor-pointer"
     >
       <div className="hidden absolute w-full z-10 h-[280px] left-2 opacity-50 bg-black group-hover:block ">
