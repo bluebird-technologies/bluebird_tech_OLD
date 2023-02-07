@@ -10,8 +10,15 @@ import Image from 'next/image';
 import Footer from '../../components/Footer';
 import lottieAnimation from '../../public/lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json';
 import Lottie from 'lottie-react';
+import { useRouter } from 'next/router';
+import { clientDetails } from '../../public/case-studies/client-details';
 
 function CaseStudiesDetailsView() {
+  const router = useRouter();
+  const { clientName } = router.query;
+  const data = clientDetails.filter((item) => item.clientName === clientName);
+  const clientData = data[0];
+
   return (
     <div className="relative">
       <div
@@ -26,12 +33,12 @@ function CaseStudiesDetailsView() {
       <div
         className="w-full bg-cover bg-bottom z-0 -mt-40 flex flex-col items-center relative justify-center "
         style={{
-          backgroundImage: 'url(/case-studies/revioBackground-2.png)',
+          backgroundImage: `url(${clientData?.coverImage})`,
           backgroundPosition: 'cover',
           height: '750px',
         }}
       >
-        <h1 className="text-highlight font-bold text-8xl">REVIO</h1>
+        <h1 className="text-highlight font-bold uppercase text-8xl">{clientData?.clientName}</h1>
       </div>
       <div
         className="w-full bg-cover h-full bg-bottom z-10 -mt-40 pt-12 px-12 flex flex-col items-center relative  "
@@ -41,15 +48,10 @@ function CaseStudiesDetailsView() {
           height: '1200px',
         }}
       >
-        <h1 className="text-white font-bold text-4xl">REVIO</h1>
-        <p className="text-white font-normal mt-4 text-2xl text-center">
-          We joined Revio shortly after their inception to add debit order collections as one of the
-          tools on their system. Integrating with local banking systems offered some very
-          interesting and unique challenges
-        </p>
+        <h1 className="text-white font-bold text-4xl capitalize">{clientData?.clientName}</h1>
+        <p className="text-white font-normal mt-4 text-2xl text-center">{clientData?.problem}</p>
         <p className="text-highlight font-normal my-4 text-2xl text-center">
-          Here is how we created a system that abstracts the bank’s payment and collection flows
-          into a more modern and simple to use API.
+          {clientData?.solution}
         </p>
         <ArrowSvg />
         <div className="flex w-full mt-8 items-center flex-row justify-center">
@@ -61,44 +63,18 @@ function CaseStudiesDetailsView() {
           />
         </div>
         <div className="px-36">
-          <div className=" mt-12">
-            <h1 className="text-white text-2xl font-normal">Concept Behind the Product</h1>
-            <p className="text-white text-xl mt-2 font-normal text-justify">
-              Direct debits (or debit orders) are generally a foreign concept for most international
-              clients, but for medium to large companies in South Africa this is the most effective
-              tool for collecting insurance premiums, rent, car payments, etc. on a large scale.
-            </p>
-          </div>
-          <div className=" mt-12">
-            <h1 className="text-white text-2xl font-normal">Gap in the Market </h1>
-            <p className="text-white text-xl mt-2 font-normal text-justify">
-              Give smaller businesses the opportunity to affordably play within the debit order
-              collection space. Handle large amounts of collections for larger businesses. Abstract
-              banking processes for clients. Transparency and early warning on negative collection
-              results.
-            </p>
-          </div>
-          <div className=" mt-12">
-            <h1 className="text-white text-2xl font-normal">The Problem </h1>
-            <p className="text-white text-xl mt-2 font-normal text-justify">
-              Easier way for clients to utilise the full suite of collection tools provided by the
-              banks. Mandate management (Create, Amendments and Authentication). Automatic recon and
-              settlement from intermediary accounts.
-            </p>
-          </div>
+          {clientData?.challenge.map((item, key) => (
+            <div className=" mt-12" key={key}>
+              <h1 className="text-white text-2xl font-normal">{item.title}</h1>
+              <p className="text-white text-xl mt-2 font-normal text-justify">{item.description}</p>
+            </div>
+          ))}
           <div className="flex flex-row w-full mt-8  justify-between">
-            <a href="#" className="text-white border rounded-full py-2 px-4">
-              System Architecture
-            </a>
-            <a href="#" className="text-white border rounded-full py-2 px-4">
-              Database Design
-            </a>
-            <a href="#" className="text-white border rounded-full py-2 px-4">
-              Infrastructure Design
-            </a>
-            <a href="#" className="text-white border rounded-full py-2 px-4">
-              Back-end Development
-            </a>
+            {clientData?.services.map((item, key) => (
+              <a key={key} href="#" className="text-white border rounded-full py-2 px-4">
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -114,7 +90,7 @@ function CaseStudiesDetailsView() {
             width="1000"
           />
           <span className="text-highlight text-2xl mt-12">Involved Team</span>
-          <span className="text-white text-2xl mt-12 font-bold"> 3 PEOPLE </span>
+          <span className="text-white text-2xl mt-12 font-bold">{clientData?.teamSize} PEOPLE</span>
         </div>
 
         <div
@@ -132,7 +108,7 @@ function CaseStudiesDetailsView() {
             }}
           >
             <Image
-              src="/../public/case-studies/clay.png"
+              src={clientData?.quoteSectionImage}
               alt="revio image"
               width={1000}
               height={1000}
@@ -164,27 +140,11 @@ function CaseStudiesDetailsView() {
             </div>
             <div className="flex flex-col mt-[50px]">
               <ul>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  What were the banks’ limitations? Which technologies do they use?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  What was our average amount of projected collections? Per day? Per month?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  Are we able to find a better way to handle the banks’ file-based systems?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  How can we be better than the competitions’ systems?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  How do we simplify some of the concepts?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  How do we secure the whole process?
-                </li>
-                <li className="text-white text-3xl leading-[3rem] list-disc">
-                  How do we test the system?
-                </li>
+                {clientData?.infoGathered.map((item, key) => (
+                  <li key={key} className="text-white text-3xl leading-[3rem] list-disc">
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="flex justify-start mt-[80px]">
@@ -200,18 +160,11 @@ function CaseStudiesDetailsView() {
           </div>
           <div>
             <ul>
-              <li className="text-white list-disc text-3xl leading-[3rem]">
-                Going through bank integration specification documents
-              </li>
-              <li className="text-white list-disc text-3xl leading-[3rem]">
-                Speaking to stakeholders
-              </li>
-              <li className="text-white list-disc text-3xl leading-[3rem]">
-                Researching the tech available on cloud platforms such as AWS
-              </li>
-              <li className="text-white list-disc text-3xl leading-[3rem]">
-                Looking at best practices for enterprise systems
-              </li>
+              {clientData?.infoGatheringMethod.map((item, key) => (
+                <li key={key} className="text-white list-disc text-3xl leading-[3rem]">
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -223,23 +176,11 @@ function CaseStudiesDetailsView() {
             <BlueSwiggle width="800" />
           </div>
           <ul>
-            <li className="text-black list-disc text-lg mb-2">
-              Talking to stakeholders to ask about possible pitfalls and known hiccups.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Created multiple iterations of entity relationship diagrams (ERD) to flesh out
-              possible database structures.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Drafted many flow diagrams to determine the lifecycle of a collection or mandate.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Discussed which technologies to use to solve problems created by older banking
-              technologies.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Discuss ways to test system without actually connecting to the bank
-            </li>
+            {clientData?.designProcess.map((item, key) => (
+              <li key={key} className="text-black list-disc text-lg mb-2">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
         <div>
@@ -248,30 +189,18 @@ function CaseStudiesDetailsView() {
             <BlueSwiggle width="800" />
           </div>
           <ul>
-            <li className="text-black list-disc text-lg mb-2">
-              Talking to stakeholders to ask about possible pitfalls and known hiccups.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Created multiple iterations of entity relationship diagrams (ERD) to flesh out
-              possible database structures.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Drafted many flow diagrams to determine the lifecycle of a collection or mandate.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Discussed which technologies to use to solve problems created by older banking
-              technologies.
-            </li>
-            <li className="text-black list-disc text-lg mb-2">
-              Discuss ways to test system without actually connecting to the bank
-            </li>
+            {clientData?.buildingProcess.map((item, key) => (
+              <li key={key} className="text-black list-disc text-lg mb-2">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div className="flex flex-1  flex-row h-[520px]">
         <div
           style={{
-            backgroundImage: 'url(/case-studies/revioLandingPage.png)',
+            backgroundImage: `url(${clientData?.resultsBackgroundImage})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
           }}
@@ -279,29 +208,25 @@ function CaseStudiesDetailsView() {
         >
           <div className="flex items-end justify-end ">
             <div className="flex bg-highlight ml-16 mb-20 flex-wrap h-[109px] px-8 w-[338px] items-center justify-center rounded-full">
-              <span className="text-white text-2xl">50 Contracted Clients at Present</span>
+              <span className="text-white text-2xl">{clientData?.clientResults}</span>
             </div>
           </div>
         </div>
         <div className="bg-secondary flex  w-2/5 flex-col  flex-wrap px-10 items-center justify-center">
           <h1 className="text-white text-4xl mb-4 uppercase font-bold">Results</h1>
           <ul className=" w-2/3 ">
-            <li className="text-white list-disc text-xl mb-2">
-              Mandate management made easy. Intuitive creation, authentication and amendment calls.
-            </li>
-            <li className="text-white list-disc text-lg mb-2">
-              Able to create collections from existing mandates to save time.
-            </li>
-            <li className="text-white list-disc text-lg mb-2">
-              Able to handle the processing of collections end-to-end.
-            </li>
-            <li className="text-white list-disc text-lg mb-2">
-              Comprehensive testing and monitoring
-            </li>
+            {clientData?.results.map((item, key) => (
+              <li key={key} className="text-white list-disc text-xl mb-2">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      <div className="flex flex-row bg-primary items-center justify-center py-12">
+      <div
+        onClick={() => router.push('/case-studies')}
+        className="flex flex-row bg-primary items-center justify-center py-12"
+      >
         <ArrowLeftSvg />
         <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
       </div>
