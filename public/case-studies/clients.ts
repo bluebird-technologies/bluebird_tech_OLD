@@ -14,7 +14,7 @@ export const clients: Props[] = [
     backgroundImageSrc: '../case-studies/revioBackground.png',
   },
   {
-    clientName: 'revio',
+    clientName: 'raubex',
     clientLogo: revio,
     responsibilities: [
       'System Architecture',
@@ -25,7 +25,7 @@ export const clients: Props[] = [
     backgroundImageSrc: '../case-studies/raubexBackground.png',
   },
   {
-    clientName: 'revio',
+    clientName: 'aurora',
     clientLogo: revio,
     responsibilities: [
       'System Architecture',
