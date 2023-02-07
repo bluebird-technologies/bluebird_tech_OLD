@@ -1,11 +1,11 @@
 export const clientDetails = [
   {
-    clientName: 'Revio',
+    clientName: 'revio',
     coverImage: 'revioBackground-2.png',
     problem:
       'We joined Revio shortly after their inception to add debit order collections as one of the tools on their system. Integrating with local banking systems offered some very interesting and unique challenges',
     solution:
-      'We joined Revio shortly after their inception to add debit order collections as one of the tools on their system. Integrating with local banking systems offered some very interesting and unique challenges',
+      'Here is how we created a system that abstracts the bank’s payment and collection flows into a more modern and simple to use API.',
     challenge: [
       {
         title: 'Concept Behind the Product',
@@ -40,7 +40,7 @@ export const clientDetails = [
       'How do we secure the whole process?',
       'How do we test the system?',
     ],
-    infoGatheringActivities: [
+    infoGatheringMethod: [
       ' Going through bank integration specification documents',
       'Speaking to stakeholders',
       'Researching the tech available on cloud platforms such as AWS',
@@ -66,6 +66,73 @@ export const clientDetails = [
       'Able to handle the processing of collections end-to-end.',
       'Comprehensive testing and monitoring',
     ],
+    resultsBackgroundImage: '/case-studies/revioLandingPage.png',
     clientResults: '50 Contracted Clients at Present',
+  },
+  {
+    clientName: 'raubex',
+    coverImage: 'raubexBackground-2.png',
+    problem:
+      'Originally Bluebird was contracted to maintain a 2nd generation system for Raubex Building Group. As this system started scaling it started to show some serious cracks.',
+    solution:
+      'After about a year and a half, we convinced Raubex to rebuild this from the ground up.',
+    challenge: [
+      {
+        title: 'Concept Behind the Product',
+        description:
+          'The system needs to cater for the day-to-day operations at Raubex. This involves loading requisitions, creating orders and managing deliveries.',
+      },
+      {
+        title: 'Gap in the Market',
+        description:
+          'No affordable systems exist that focus specifically on the “building world”. A new system could open up the possibilities of automating tasks that have been manual up to this point.',
+      },
+      {
+        title: 'The Problem',
+        description:
+          'The previous system was very slow and sometimes even unusable. Some processes are manual and Excel-based.',
+      },
+    ],
+    services: [
+      'System Architecture',
+      'Database Design',
+      'Infrastructure Design',
+      'Back-end Development',
+      'Web Development',
+    ],
+    teamSize: 2,
+    quoteSectionImage: '/../public/case-studies/raubex-clay.png',
+    infoGathered: [
+      'We needed to determine a breakdown of all the intended roles and permissions ',
+      'Distill core concepts that would define the system',
+      'Determine regular process flows to optimise for scaling',
+      'Possible Architecture constraints(cloud hosting, email server hosting, internal firewall access, etc.).',
+    ],
+    infoGatheringMethod: [
+      'Calls and meetings with stakeholders',
+      ' Domain knowledge acquired by working on older system',
+      'Meetings with internal IT department',
+    ],
+    designProcess: [
+      'Created multiple iterations of entity relationship diagrams (ERD) to flesh out possible database structures.',
+      'Created wireframes to visualise the website flow and function. ',
+      'Determined which parts of the old system could be reused to not reinvent the wheel',
+    ],
+    buildingProcess: [
+      'Domain driven design principles on the backend to clean up the structure and make it more manageable and scalable.',
+      'Used our own internal boilerplate for the website structure(react, tailwind, d - man, etc.).',
+      ' Opted for a code - first database option to facilitate easy changes and maintenance.',
+      ' Hosted all infrastructure on Azure, with repo and CI / CD on Github.',
+    ],
+    results: [
+      'Multiple roles and permission based system.',
+      'Able to create, edit and delete Requisitions.',
+      'Able to create, edit and delete orders',
+      'Able to create deliveries and call - offs.',
+      'Able to export orders and deliveries to external accounting system.',
+      'Able to produce PDF quotes, orders and delivery notes.',
+    ],
+    resultsBackgroundImage: '/case-studies/raubexLandingPage.png',
+    clientResults: 'Used as the main system actively at the company',
   },
 ];
