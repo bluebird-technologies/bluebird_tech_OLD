@@ -68,6 +68,7 @@ export const clientDetails = [
     ],
     resultsBackgroundImage: '/case-studies/revioLandingPage.png',
     clientResults: '50 Contracted Clients at Present',
+    solutionsImage: '',
   },
   {
     clientName: 'raubex',
@@ -134,5 +135,65 @@ export const clientDetails = [
     ],
     resultsBackgroundImage: '/case-studies/raubexLandingPage.png',
     clientResults: 'Used as the main system actively at the company',
+    solutionsImage: '/../public/case-studies/raubex-solutions.png',
+  },
+  {
+    clientName: 'aurora',
+    coverImage: 'auroraBackground-2.png',
+    problem:
+      'Aurora was initially built by another development company. They lacked adaptability which resulted in an unmaintainable code base. We were initially tasked only to finish the original MVP, but it soon became clear that we had to re-write everything.',
+    solution: 'The original project ran for more than one year, and we rebuilt it in three months.',
+    challenge: [
+      {
+        title: 'Concept Behind the Product',
+        description:
+          'The system needs to cater for the day-to-day operations at Raubex. This involves loading requisitions, creating orders and managing deliveries.',
+      },
+      {
+        title: 'Gap in the Market',
+        description:
+          'Their goal at this time was to become the tool for carbon footprint awareness and offsetting, ultimately creating a more sustainable world.',
+      },
+      {
+        title: 'The Problem',
+        description:
+          'TGeneral lack of awareness and effort on many individuals when it comes to living in and creating a more sustainable world.',
+      },
+    ],
+    services: [
+      'Web App Architecture and Development',
+      'API Architecture and Development',
+      'Cloud Hosting',
+      'China Deployment',
+    ],
+    teamSize: 4,
+    quoteSectionImage: '/../public/case-studies/aurora-clay.png',
+    infoGathered: [
+      'The most complex part of the initial product was how the App’s questions translated into carbon emissions. The project we took over had an obscure implementation, constructed and implemented by certain data scientists with whom we had no contact with.',
+      'We have never launched a product in China before.We had to learn the requirements around hosting as well as determine which dependencies would need to be replaced due to their firewall.',
+    ],
+    infoGatheringMethod: [
+      'By digging into the unstructured and undocumented calculation functions, we were able to determine the original intention and design a calculation engine which was both easy to work with as well as scalable',
+      'Lots of research in China hosting as well as WeChat business application process and documentation.',
+    ],
+    designProcess: [
+      'Determine architecture for dynamic quiz and dynamic calculation engine',
+      'Work through several entity relation diagrams for the new database.',
+      'Ensure configurability using Retool.',
+    ],
+    buildingProcess: [
+      'Implement code-first database solution and .NET API.',
+      'Build Authentication, dynamic quiz engine and dynamic calculation engine.',
+      'Build React web application in parallel with API features.',
+      'Setup CI / CD for development and production environments.',
+    ],
+    results: [
+      'A very user-friendly carbon footprint calculator and awareness tool, built to be highly configurable and scalable.',
+      'The user would enter on the quiz and answer lifestyle questions around food consumption, travel usage and other sustainability focused areas.',
+      'The app would suggest tips on what they can do to offset their emissions based on their quiz input.',
+    ],
+    solutionsImage: '/../public/case-studies/aurora-solutions.png',
+    resultsBackgroundImage: '/case-studies/auroraLandingPage.png',
+    clientResults: 'Company and product bought by the largest insurance company in Africa',
   },
 ];
