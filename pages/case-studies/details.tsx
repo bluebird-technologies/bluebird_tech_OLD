@@ -20,7 +20,7 @@ function CaseStudiesDetailsView() {
   const clientData = data[0];
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-1 flex-col">
       <div
         className="w-full z-10 bg-cover bg-bottom   items-center relative pt-[60px] pb-[77px] "
         style={{
@@ -31,11 +31,11 @@ function CaseStudiesDetailsView() {
         <Header />
       </div>
       <div
-        className="w-full bg-cover bg-bottom z-0 -mt-40 flex flex-col items-center relative justify-center "
+        className="w-full bg-cover bg-bottom z-0 -mt-52 flex flex-col items-center relative justify-center "
         style={{
           backgroundImage: `url(${clientData?.coverImage})`,
           backgroundPosition: 'cover',
-          height: '750px',
+          height: '850px',
         }}
       >
         <h1 className="text-highlight font-bold uppercase text-8xl">{clientData?.clientName}</h1>
@@ -69,16 +69,20 @@ function CaseStudiesDetailsView() {
               <p className="text-white text-xl mt-2 font-normal text-justify">{item.description}</p>
             </div>
           ))}
-          <div className="flex flex-row w-full mt-8  justify-between">
+          <div className="flex flex-row w-full mt-8 mr-2  justify-between">
             {clientData?.services.map((item, key) => (
-              <a key={key} href="#" className="text-white border rounded-full py-2 px-4">
+              <a
+                key={key}
+                href="#"
+                className="text-white border text-center rounded-full py-2 mr-2 px-4"
+              >
                 {item}
               </a>
             ))}
           </div>
         </div>
       </div>
-      <div className="bg-primary flex flex-row -mt-40 px-20 py-8 items-center justify-center">
+      <div className="bg-primary flex flex-row -mt-80 h-[1100px] px-20 py-8 items-center justify-center">
         <div className="flex flex-col  ml-60 ">
           <QuoteSvg />
           <p className="w-[250px] -mt-20 text-white text-2xl">QUOTE/FEEDBACK FROM KEY PERSON</p>
@@ -109,9 +113,8 @@ function CaseStudiesDetailsView() {
           >
             <Image
               src={clientData?.quoteSectionImage}
-              alt="revio image"
-              width={1000}
-              height={1000}
+              alt={clientData?.clientName + 'image'}
+              fill
             />
           </div>
           <div
@@ -154,14 +157,44 @@ function CaseStudiesDetailsView() {
           </div>
         </div>
 
-        <div className="flex mt-8 w-full px-[200px]">
-          <div className="mr-[100px]">
-            <div className="w-[800px]">{CircleArrow}</div>
+        <div className="flex mt-8 w-full  flex-row items-center justify-center px-[200px]">
+          <div className="mr-[100px]   ">
+            {clientData?.clientName === 'revio' ? (
+              <div className="w-[800px] relative">
+                {CircleArrow}
+                <div className="absolute">
+                  <span className="absolute bottom-[200px] left-[280px] font-bold text-2xl text-center">
+                    1-4 WEEKS
+                  </span>
+                  <span className="absolute text-white font-bold text-2xl -left-[100px] bottom-[290px]">
+                    DEVELOPMENT
+                  </span>
+                  <span className="absolute text-white font-bold text-2xl left-[550px] bottom-[200px]">
+                    DESIGN
+                  </span>
+                  <span className="absolute text-white font-bold text-2xl left-[50px] -bottom-[70px]">
+                    ANALYSIS
+                  </span>
+                  <span className="absolute text-white font-bold text-2xl left-[600px] -bottom-[70px]">
+                    DELIVERY
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <Image
+                  src={clientData?.solutionsImage}
+                  alt={clientData?.clientName + 'image'}
+                  height={2500}
+                  width={2500}
+                />
+              </div>
+            )}
           </div>
           <div>
             <ul>
               {clientData?.infoGatheringMethod.map((item, key) => (
-                <li key={key} className="text-white list-disc text-3xl leading-[3rem]">
+                <li key={key} className="text-white list-disc mb-4 text-3xl leading-[3rem]">
                   {item}
                 </li>
               ))}
@@ -197,18 +230,18 @@ function CaseStudiesDetailsView() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-1  flex-row h-[520px]">
+      <div className="flex flex-1  flex-row h-[620px]">
         <div
           style={{
             backgroundImage: `url(${clientData?.resultsBackgroundImage})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
           }}
-          className="flex flex-1  "
+          className="flex flex-1 bg-black"
         >
           <div className="flex items-end justify-end ">
-            <div className="flex bg-highlight ml-16 mb-20 flex-wrap h-[109px] px-8 w-[338px] items-center justify-center rounded-full">
-              <span className="text-white text-2xl">{clientData?.clientResults}</span>
+            <div className="flex bg-highlight ml-16 mb-20 flex-wrap h-[109px] px-8 w-[360px] items-center justify-center rounded-full">
+              <span className="text-white text-xl">{clientData?.clientResults}</span>
             </div>
           </div>
         </div>
