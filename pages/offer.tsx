@@ -1,16 +1,45 @@
+import React, { ReactNode, useState } from 'react';
 import { Container } from '../components/Container';
+import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
+import Lottie from 'lottie-react';
+import RigthArrow from '../public/right-arrow.svg';
+import { Button } from '../components/Button';
+import { solutions } from '../sections/WhatWeOfferBig/solutions';
+import SolutionsCard from '../components/SolutionsCard';
+
+export interface SolutionType {
+  title: string;
+  firstParagraphDescription: string;
+  secondParagraphDescription: string;
+  catchPhrase: string;
+  content: {
+    contentType: 'text' | 'icon';
+    icons: ReactNode[] | 'string'[];
+  };
+  amtItemsInFirstRow: number;
+  centerSecondRow: boolean;
+  secondLayerTitle: string;
+  secondLayerLottie: any; // type error from the data
+}
 
 export default function Offer() {
+  const [solutionOption, setSolutionOption] = useState<string>('Web Development');
+
   return (
-    <div>
-      <div
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[77px] bg-secondary"
-        style={{
-          backgroundImage: 'url(/primary-overlay.png)',
-        }}
-      >
+    <div className="flex flex-1 flex-col">
+      <div className="w-full bg-cover bg-bottom flex flex-col items-center relative pb-[150px]">
+        <div
+          className="bg-primary h-full"
+          style={{
+            position: 'absolute',
+            left: '-41%',
+            width: '180vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Header />
         <Container center>
           <h1 className="title-1 mt-[82px]">
@@ -22,8 +51,11 @@ export default function Offer() {
           <div className="flex w-full mt-[92px]">
             {items.map((i) => (
               <div
+                onClick={() => setSolutionOption(i.label)}
                 key={i.label}
-                className="flex-1 flex flex-col items-center text-highlight hover:text-secondary group transition-all"
+                className={`flex-1 flex flex-col items-center ${
+                  i.label === solutionOption ? 'text-secondary group ' : ''
+                } text-highlight hover:text-secondary hover:cursor-pointer group transition-all`}
               >
                 <div className="w-16 h-16">
                   {/* <picture>
@@ -48,15 +80,66 @@ export default function Offer() {
                   {i.icon}
                 </div>
                 <div className="text-white text-[13px] leading-[15px] font-extrabold uppercase text-center my-4">
-                  {i.label.split(' ').map((t, i) => (
-                    <div key={i}>{t}</div>
-                  ))}
+                  {i.label !== 'API & System Development' ? (
+                    i.label.split(' ').map((t, i) => <div key={i}>{t}</div>)
+                  ) : (
+                    <div>{i.label}</div>
+                  )}
                 </div>
-                <div className="w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:my-[-2px]" />
+                <div
+                  className={`w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] ${
+                    i.label === solutionOption
+                      ? 'bg-highlight border-[#FFFFFF27] h-[30px] w-[30px] my-[-2px]'
+                      : ''
+                  } group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:`}
+                />
               </div>
             ))}
           </div>
+          {solutions.map((item, key) => (
+            <>{solutionOption === item.title && <SolutionsCard item={item} key={key} />}</>
+          ))}
         </Container>
+      </div>
+
+      <div className="flex bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
+        {solutions.map((item) => (
+          <>
+            {solutionOption === item.title && (
+              <div className="flex flex-1 flex-col items-center justify-center">
+                <h1 className="text-white text-5xl font-extrabold uppercase">
+                  {item.secondLayerTitle}
+                </h1>
+                <Lottie
+                  animationData={item.secondLayerLottie}
+                  style={{
+                    marginTop: 30,
+                    marginBottom: 30,
+                    height: '450px',
+                  }}
+                  loop={true}
+                />
+                <Button className="px-12 py-4 bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
+                  <span className="uppercase text-white text-[16px] font-semibold">
+                    Get Started
+                  </span>
+                </Button>
+              </div>
+            )}
+          </>
+        ))}
+      </div>
+
+      <div className="bg-primary flex flex-1 py-16 flex-row justify-center">
+        <a href={'/'} className="text-white text-4xl font-bold">
+          <div className="flex items-center justify-center">
+            <h1 className="mr-5">EXPLORE OUR OTHER SERVICES</h1>
+            <RigthArrow />
+          </div>
+        </a>
+      </div>
+      <div className="z-10 w-full bg-[#F1F1F1] pb-[90px]">
+        <Footer />
       </div>
     </div>
   );
