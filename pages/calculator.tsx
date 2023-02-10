@@ -3,6 +3,8 @@ import { Container } from '../components/Container';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import Swiggle from '../public/swiggle.svg';
+import Lottie from 'lottie-react';
+import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
 
 function calculator() {
   return (
@@ -28,14 +30,24 @@ function calculator() {
             </Container>
 
             <Container wide>
-              <div className="flex  self-end flex-1  flex-col w-2/6">
-                <p className=" text-white font-normal mb-4 text-sm">
-                  Intro line of what this page is about (Get an estimate of what you want done).
-                </p>
-                <p className=" text-white font-normal text-base">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                </p>
+              <div className="flex  flex-1 items-center flex-row justify-between">
+                <Lottie
+                  animationData={LottieFile}
+                  style={{
+                    height: '250px',
+                    transform: 'rotate(280deg)',
+                  }}
+                  loop={true}
+                />
+                <div className="w-2/4">
+                  <p className=" text-white font-normal mb-4 text-lg">
+                    Intro line of what this page is about (Get an estimate of what you want done).
+                  </p>
+                  <p className=" text-white font-normal text-lg">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                  </p>
+                </div>
               </div>
             </Container>
           </div>
@@ -45,11 +57,11 @@ function calculator() {
         <div className="bg-secondary flex-1  ">
           <p className="text-white italic text-2xl font-normal">I want to:</p>
           <Swiggle width={420} className="mt-4" />
-          <div className="flex flex-1 justify-between mt-16  flex-row ">
+          <div className="flex flex-1 justify-start mt-16  flex-row ">
             <button className=" w-[200px] h-12 font-bold text-xl text-dark transition delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full ">
               Build a Platform
             </button>
-            <button className=" w-[320px] h-12 font-bold text-xl text-dark transition  delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full ">
+            <button className=" w-[320px] h-12 ml-40 font-bold text-xl text-dark transition  delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full ">
               Find a Particular Resource
             </button>
           </div>
