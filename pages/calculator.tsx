@@ -5,8 +5,10 @@ import { Header } from '../components/Header';
 import Swiggle from '../public/swiggle.svg';
 import Lottie from 'lottie-react';
 import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
+import { useRouter } from 'next/router';
 
-function calculator() {
+function Calculator() {
+  const router = useRouter();
   return (
     <div className="flex-1 flex flex-col h-full">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
@@ -58,7 +60,10 @@ function calculator() {
           <p className="text-white italic text-2xl font-normal">I want to:</p>
           <Swiggle width={420} className="mt-4" />
           <div className="flex flex-1 justify-start mt-16  flex-row ">
-            <button className=" w-[200px] h-12 font-bold text-xl text-dark transition delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full ">
+            <button
+              onClick={() => router.push('/calculator/platformChoice')}
+              className=" w-[200px] h-12 font-bold text-xl text-dark transition delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full "
+            >
               Build a Platform
             </button>
             <button className=" w-[320px] h-12 ml-40 font-bold text-xl text-dark transition  delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full ">
@@ -72,4 +77,4 @@ function calculator() {
   );
 }
 
-export default calculator;
+export default Calculator;
