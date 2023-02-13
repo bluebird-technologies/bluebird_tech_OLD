@@ -22,6 +22,10 @@ function Calculator() {
       title: 'Product Manager',
       checked: false,
     },
+     {
+      title: 'Graphic Designer',
+      checked: false,
+    },
   ];
 
   const [items, setItems] = useState(checkBoxItems);
