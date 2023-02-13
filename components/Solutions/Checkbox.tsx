@@ -10,10 +10,10 @@ export interface CheckboxProps {
 
 export const Checkbox = ({ title, checked, onPressHandler }: CheckboxProps) => {
   return (
-    <div>
+    <div className="flex flex-1 mt-4 items-center justify-between mb-2">
       <div
         onClick={() => onPressHandler()}
-        className="flex flex-row justify-between items-center mb-2"
+        className="flex flex-1 flex-row justify-between items-center"
       >
         <h1>{title}</h1>
         {checked && <Icon path={mdiCheck} size={1} color={'#E97724'} />}
