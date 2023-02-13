@@ -5,6 +5,7 @@ import AppleIcon from '../../public/calculator/appleIcon.svg';
 import AndroidIcon from '../../public/calculator/androidIcon.svg';
 import WebIcon from '../../public/calculator/webIcon.svg';
 import MultiPlatformIcon from '../../public/calculator/multiPlatformIcon.svg';
+import Calculator from '../../components/Calculator';
 function platformChoice() {
   return (
     <div className="flex-1 flex flex-col h-full">
@@ -21,19 +22,19 @@ function platformChoice() {
         />
         <Header />
       </div>
-      <div className="bg-secondary flex-1 py-52 -mt-40">
+      <div className="bg-secondary flex-1 flex pt-60 pb-16 px-20 w-full -mt-40">
         <Container wide>
-          <div className="w-2/3 mt-8">
+          <div className=" ">
             <h3 className="text-white text-3xl font-medium ">
               What type of platform are you building?
             </h3>
-            <div className="w-2/3 mt-8">
+            <div className="w-5/6 mt-8">
               <span className="text-white text-base  ">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
               </span>
             </div>
-            <div className="flex flex-row justify-between w-2/3 mt-6">
+            <div className="flex flex-row justify-between w-5/6 mt-6">
               <div className="flex flex-col items-center justify-center">
                 <AppleIcon />
                 <div className="flex -mt-6 items-center">
@@ -60,6 +61,9 @@ function platformChoice() {
               </div>
             </div>
           </div>
+        </Container>
+        <Container>
+          <Calculator />
         </Container>
       </div>
     </div>
