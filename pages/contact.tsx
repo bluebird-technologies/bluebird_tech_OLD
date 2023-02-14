@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
-    <div className=" flex-1 flex flex-col h-full">
+    <div className="flex-1 flex flex-col h-full">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
           className="bg-primary h-full"
@@ -46,7 +46,7 @@ const Contact = () => {
             <select
               title="options"
               placeholder="Reason for contacting us (select)"
-              className=" mx-3 font-medium h-10 opacity-1 w-[518px] border-0 focus:outline-none   "
+              className="mx-3 font-medium h-10 opacity-1 w-[518px] border-0 focus:outline-none"
               id="contact-select"
               style={{
                 appearance: 'none',
@@ -62,7 +62,7 @@ const Contact = () => {
             </select>
           </div>
           <input
-            className=" my-4 px-3  rounded-[20px] h-12 w-[518px]"
+            className=" my-4 px-3 rounded-[20px] h-12 w-[518px]"
             type={'email'}
             placeholder={'Your email'}
           />
