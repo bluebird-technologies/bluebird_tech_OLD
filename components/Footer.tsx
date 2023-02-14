@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from './Container';
 
 const Footer = () => {
   const navItems = [
@@ -11,7 +10,7 @@ const Footer = () => {
     { name: 'Contact', link: '/contact' },
   ];
   return (
-    <div className="py-20 w-full h-full flex flex-1 bg-grey">
+    <div className="w-full h-full flex flex-1 bg-grey py-20 px-32">
       <div className="flex items-center w-full">
         <picture>
           <source srcSet="/home/logo.svg" type="image/svg+xml" />
