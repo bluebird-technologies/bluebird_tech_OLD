@@ -4,7 +4,11 @@ import { Button } from './Button';
 import animation from '../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
 import { Checkbox } from './Solutions/Checkbox';
 
-function Calculator() {
+interface Props {
+  platformType: string;
+}
+
+function Calculator({ platformType }: Props) {
   const checkBoxItems = [
     {
       title: 'Front End Developer',
@@ -22,7 +26,7 @@ function Calculator() {
       title: 'Product Manager',
       checked: false,
     },
-     {
+    {
       title: 'Graphic Designer',
       checked: false,
     },
@@ -42,20 +46,33 @@ function Calculator() {
 
   return (
     <div className="bg-white h-[450px]  py-4 px-2 w-[350px]">
-      <div className="h-[400px] overflow-y-auto overflow-x-hidden scrollbar-hii">
-        <input
-          placeholder="Platform"
-          className="outline-none border w-full  border-t-0 border-x-0 border-b-gray"
-        />
-        <div className=" pb-1 w-2/3 mt-4 flex flex-row justify-between ">
+      <div className="h-[400px] overflow-y-auto overflow-x-hidden ">
+        <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-gray">
+          <label className="text-gray italic">Platform</label>
           <input
-            placeholder="Title"
-            className="outline-none border border-t-0 border-x-0 border-b-gray italics"
+            type="text"
+            placeholder="platform"
+            className="outline-none placeholder-transparent text-right w-2/3  text-primary font-bold underline"
+            value={platformType}
           />
-          <input
-            placeholder="Time"
-            className="outline-none  border border-t-0 border-x-0 border-b-gray ml-3 first-line:italics w-[88px]"
-          />
+        </div>
+        <div className=" pb-1 w-full mt-4 flex flex-row justify-between ">
+          <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-gray">
+            <label className="text-gray italic">Title</label>
+            <input
+              type="text"
+              placeholder="title"
+              className="outline-none text-right w-3/5 placeholder-transparent text-primary underline"
+            />
+          </div>
+          <div className="flex flex-1 flex-row  border justify-between pb-1  border-t-0 border-x-0 ml-2 border-b-gray">
+            <label className="text-gray italic">Time</label>
+            <input
+              type="text"
+              placeholder="time"
+              className="outline-none placeholder-transparent text-right w-3/5 text-primary underline"
+            />
+          </div>
         </div>
         <h2 className="text-gray text-base font-medium mt-4 border-b w-12 ">Total:</h2>
         <div>
