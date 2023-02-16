@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import ArrowSvg from 'public/case-studies/arrow.svg';
+import VerticalScribbles from './icons/VerticalScribbles';
 import SwiggleSvg from 'public/case-studies/swiggle.svg';
 import QuoteSvg from 'public/case-studies/quote.svg';
 import CircleArrow from './icons/circle-arrow';
@@ -12,6 +12,7 @@ import lottieAnimation from '../../public/lottie/355a04a6-668d-4fcc-aae2-d2af145
 import Lottie from 'lottie-react';
 import { useRouter } from 'next/router';
 import { clientDetails } from '../../public/case-studies/client-details';
+import HeadingWithLine from '../../components/CaseStudies/HeadingWithLine';
 
 function CaseStudiesDetailsView() {
   const router = useRouter();
@@ -21,13 +22,17 @@ function CaseStudiesDetailsView() {
 
   return (
     <div className="relative flex flex-1 flex-col">
-      <div
-        className="w-full z-10 bg-cover bg-bottom   items-center relative pt-[60px] pb-[77px] "
-        style={{
-          backgroundImage: 'url(/primary-overlay.png)',
-          objectFit: 'contain',
-        }}
-      >
+      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px] z-10">
+        <div
+          className="bg-primary h-full"
+          style={{
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Header />
       </div>
       <div
@@ -40,36 +45,53 @@ function CaseStudiesDetailsView() {
       >
         <h1 className="text-highlight font-bold uppercase text-8xl">{clientData?.clientName}</h1>
       </div>
-      <div
-        className="w-full bg-cover h-full bg-bottom z-10 -mt-40 pt-12 px-12 flex flex-col items-center relative  "
-        style={{
-          backgroundImage: 'url(/double-curve-primary-overlay.svg)',
-          backgroundPosition: 'cover',
-          height: '1200px',
-        }}
-      >
-        <h1 className="text-white font-bold text-4xl capitalize">{clientData?.clientName}</h1>
-        <p className="text-white font-normal mt-4 text-2xl text-center">{clientData?.problem}</p>
-        <p className="text-highlight font-normal my-4 text-2xl text-center">
-          {clientData?.solution}
-        </p>
-        <ArrowSvg />
-        <div className="flex w-full mt-8 items-center flex-row justify-center">
-          <p className="text-highlight  font-normal text-2xl text-center">The Challenge</p>
-          <SwiggleSvg
-            style={{
-              marginLeft: '200px',
-            }}
-          />
+      <div className="w-full bg-cover h-full -mt-[200px] pt-12 px-12 flex flex-col items-center relative z-20">
+        <div
+          className="bg-secondary h-full -z-10"
+          style={{
+            position: 'absolute',
+            left: '-26%',
+            width: '150vw',
+            borderTopLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+          }}
+        />
+        <div
+          className="bg-secondary -z-10"
+          style={{
+            position: 'absolute',
+            height: '50%',
+            top: '60%',
+            left: '-26%',
+            width: '150vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
+        <div className="flex flex-col w-full max-w-4xl items-center justify-center space-y-12">
+          <h1 className="text-white font-bold text-5xl capitalize mt-16">
+            {clientData?.clientName}
+          </h1>
+          <p className="text-white font-normal text-2xl text-center">{clientData?.problem}</p>
+          <p className="text-highlight font-normal text-2xl text-center">{clientData?.solution}</p>
+          <>{VerticalScribbles}</>
         </div>
-        <div className="px-36">
+
+        <div className="flex w-full max-w-7xl justify-center px-4">
+          <p className="text-highlight font-normal text-4xl text-center whitespace-nowrap mr-12">
+            The Challenge
+          </p>
+          <SwiggleSvg />
+        </div>
+
+        <div className="text-xl max-w-6xl mt-20">
           {clientData?.challenge.map((item, key) => (
-            <div className=" mt-12" key={key}>
-              <h1 className="text-white text-2xl font-normal">{item.title}</h1>
-              <p className="text-white text-xl mt-2 font-normal text-justify">{item.description}</p>
+            <div className="mb-16" key={key}>
+              <h1 className="text-white text-2xl font-normal mb-4">{item.title}</h1>
+              <p className="text-white text-xl font-normal text-justify">{item.description}</p>
             </div>
           ))}
-          <div className="flex flex-row w-full mt-8 mr-2  justify-between">
+          <div className="flex flex-row w-full justify-between">
             {clientData?.services.map((item, key) => (
               <a
                 key={key}
@@ -82,7 +104,8 @@ function CaseStudiesDetailsView() {
           </div>
         </div>
       </div>
-      <div className="bg-primary flex flex-row -mt-80 h-[1100px] px-20 py-8 items-center justify-center">
+
+      <div className="bg-primary flex flex-row -mt-40 h-[1100px] px-20 py-8 items-center justify-center">
         <div className="flex flex-col  ml-60 ">
           <QuoteSvg />
           <p className="w-[250px] -mt-20 text-white text-2xl">QUOTE/FEEDBACK FROM KEY PERSON</p>
@@ -132,33 +155,38 @@ function CaseStudiesDetailsView() {
           </div>
         </div>
       </div>
-      <div className="bg-secondary flex flex-1 flex-col py-12 w-full">
-        <h1 className="text-white font-bold text-2xl text-center justify-center">OUR APPROACH</h1>
+      <div className="bg-secondary flex flex-1 flex-col w-full">
+        <h1 className="text-white font-bold text-4xl text-center justify-center mt-20">
+          OUR APPROACH
+        </h1>
 
-        <div className="flex justify-center items-center">
-          <div className="flex flex-col w-3/5">
-            <div className="flex justify-start mt-[50px]">
-              <h2 className="text-highlight text-4xl pr-6">What did we need to know?</h2>
-              <SwiggleSvg width="600" className="" />
+        <div className="flex justify-center items-center mt-12">
+          <div className="flex flex-col">
+            <HeadingWithLine text="What did we need to know?" swiggleOption="1" />
+
+            <div className="flex flex-row w-full justify-center items-center mt-12">
+              <div className="flex flex-col max-w-5xl justify-center">
+                <ul>
+                  {clientData?.infoGathered.map((item, key) => (
+                    <li key={key} className="text-white text-3xl leading-[3rem] list-disc">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="flex flex-col mt-[50px]">
-              <ul>
-                {clientData?.infoGathered.map((item, key) => (
-                  <li key={key} className="text-white text-3xl leading-[3rem] list-disc">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex justify-start mt-[80px]">
-              <h2 className="text-highlight text-4xl pr-6">How did we uncover this info?</h2>
-              <SwiggleSvg width="600" className="" />
-            </div>
+
+            <HeadingWithLine
+              text="How did we uncover this info?"
+              swiggleOption="1"
+              className="mt-12"
+            />
           </div>
         </div>
 
-        <div className="flex mt-8 w-full  flex-row items-center justify-center px-[200px]">
-          <div className="mr-[100px]   ">
+        <div className="flex mt-8 w-full flex-row items-center justify-center px-[200px] pb-[100px]">
+          <div className="mr-[100px]">
+            {/* TODO use flex wrap or something similar to make this image fold into its own row on less wide resolutions */}
             {clientData?.clientName === 'revio' ? (
               <div className="w-[800px] relative">
                 {CircleArrow}
@@ -202,35 +230,34 @@ function CaseStudiesDetailsView() {
           </div>
         </div>
       </div>
-      <div className="bg-gray flex flex-1  flex-col items-center justify-center py-12">
-        <div>
-          <div className="flex flex-row my-8">
-            <p className="text-highlight mr-4 text-2xl">Designing Process</p>
-            <BlueSwiggle width="800" />
+      <div className="bg-gray w-full flex flex-1  flex-col items-center justify-center py-12">
+        <HeadingWithLine text="Designing Process" swiggleOption={'2'} />
+
+        <div className="flex w-full justify-center mt-12">
+          <div className="max-w-6xl">
+            <ul>
+              {clientData?.designProcess.map((item, key) => (
+                <li key={key} className="text-black list-disc text-2xl mb-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {clientData?.designProcess.map((item, key) => (
-              <li key={key} className="text-black list-disc text-lg mb-2">
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
-        <div>
-          <div className="flex flex-row  my-8">
-            <p className="text-highlight mr-4 text-2xl">Building Process</p>
-            <BlueSwiggle width="800" />
+        <HeadingWithLine text="Building Process" swiggleOption={'2'} className="mt-12" />
+        <div className="flex w-full justify-center mt-12">
+          <div className="max-w-6xl">
+            <ul>
+              {clientData?.buildingProcess.map((item, key) => (
+                <li key={key} className="text-black list-disc text-2xl mb-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {clientData?.buildingProcess.map((item, key) => (
-              <li key={key} className="text-black list-disc text-lg mb-2">
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
-      <div className="flex flex-1  flex-row h-[620px]">
+      <div className="flex flex-1 flex-row h-[620px]">
         <div
           style={{
             backgroundImage: `url(${clientData?.resultsBackgroundImage})`,
@@ -258,7 +285,7 @@ function CaseStudiesDetailsView() {
       </div>
       <div
         onClick={() => router.push('/case-studies')}
-        className="flex flex-row bg-primary items-center justify-center py-12"
+        className="flex flex-row bg-primary items-center justify-center py-12 cursor-pointer"
       >
         <ArrowLeftSvg />
         <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
