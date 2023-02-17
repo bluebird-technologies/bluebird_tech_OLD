@@ -1,8 +1,10 @@
 import Lottie from 'lottie-react';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Button } from './Button';
 import animation from '../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
-import { Checkbox } from './Solutions/Checkbox';
+import { CalculatorContextType, CalculatorContext } from '../contexts/calculatorContext';
+import Icon from '@mdi/react';
+import { mdiCheck } from '@mdi/js';
 
 interface Props {
   platformType: string;
@@ -32,17 +34,8 @@ function Calculator({ platformType }: Props) {
     },
   ];
 
-  const [items, setItems] = useState(checkBoxItems);
-  const updateChecked = (index: number) => {
-    setItems((prevItems) =>
-      prevItems.map((item, i) => {
-        if (i === index) {
-          return { ...item, checked: !item.checked };
-        }
-        return item;
-      })
-    );
-  };
+  const { platform, optimisticHours, pessimisticHours, resources } =
+    useContext<CalculatorContextType>(CalculatorContext);
 
   return (
     <div className="bg-white h-[450px]  py-4 px-2 w-[350px]">
@@ -53,7 +46,7 @@ function Calculator({ platformType }: Props) {
             type="text"
             placeholder="platform"
             className="outline-none placeholder-transparent text-right w-2/3  text-primary font-bold underline"
-            value={platformType}
+            value={platform}
           />
         </div>
         <div className=" pb-1 w-full mt-4 flex flex-row justify-between ">
@@ -78,11 +71,11 @@ function Calculator({ platformType }: Props) {
         <div>
           <div className="flex flex-row justify-between mt-4">
             <p className="text-primary text-base">Optimistic</p>
-            <p className="text-primary text-base">0 hours</p>
+            <p className="text-primary text-base">{optimisticHours + ' hours'}</p>
           </div>
           <div className="flex flex-row justify-between mt-4">
             <p className="text-primary text-base">Pessimistic</p>
-            <p className="text-primary text-base">0 hours</p>
+            <p className="text-primary text-base">{pessimisticHours + ' hours'}</p>
           </div>
           <div className="flex flex-1 justify-center mt-8 items-center">
             <Button>Calculate</Button>
@@ -91,13 +84,13 @@ function Calculator({ platformType }: Props) {
         </div>
         <div className="mt-4">
           <h1 className="text-primary font-semibold text-center">Your Team:</h1>
-          {items.map((item, key) => (
-            <Checkbox
-              title={item.title}
-              checked={item.checked}
-              key={key}
-              onPressHandler={() => updateChecked(key)}
-            />
+          {resources.map((item, key) => (
+            <div key={key} className="flex flex-1 mt-4 items-center justify-between mb-2">
+              <div className="flex flex-1 flex-row justify-between items-center">
+                <h1>{item}</h1>
+                <Icon path={mdiCheck} size={1} color={'#E97724'} />
+              </div>
+            </div>
           ))}
         </div>
       </div>
