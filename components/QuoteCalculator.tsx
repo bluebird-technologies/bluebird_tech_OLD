@@ -10,7 +10,7 @@ interface Props {
   platformType: string;
 }
 
-function Calculator({ platformType }: Props) {
+function QuoteCalculator({ platformType }: Props) {
   const checkBoxItems = [
     {
       title: 'Front End Developer',
@@ -98,4 +98,4 @@ function Calculator({ platformType }: Props) {
   );
 }
 
-export default Calculator;
+export default QuoteCalculator;
