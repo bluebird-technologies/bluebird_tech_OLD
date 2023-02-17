@@ -71,7 +71,7 @@ function Calculator() {
             <Swiggle width={420} className="mt-4" />
             <div className="flex flex-1 justify-start mt-16  flex-row ">
               <button
-                onClick={() => router.push('/calculator/platformChoice')}
+                onClick={() => router.push('/calculator/quoteWizard')}
                 className=" w-[200px] h-12 font-bold text-xl text-dark transition delay-100 bg-white hover:-translate-y-1 hover:scale-95  hover:border-[2px] hover:border-black duration-300 rounded-full "
               >
                 Build a Platform
