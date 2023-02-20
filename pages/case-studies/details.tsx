@@ -4,7 +4,6 @@ import VerticalScribbles from './icons/VerticalScribbles';
 import SwiggleSvg from 'public/case-studies/swiggle.svg';
 import QuoteSvg from 'public/case-studies/quote.svg';
 import CircleArrow from './icons/circle-arrow';
-import BlueSwiggle from 'public/case-studies/blue-swiggle.svg';
 import ArrowLeftSvg from 'public/arrow-left.svg';
 import Image from 'next/image';
 import Footer from '../../components/Footer';
