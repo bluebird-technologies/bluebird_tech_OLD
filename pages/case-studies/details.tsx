@@ -105,7 +105,7 @@ function CaseStudiesDetailsView() {
         </div>
       </div>
 
-      <div className="bg-primary flex flex-row -mt-40 h-[1100px] px-20 py-8 items-center justify-center">
+      <div className="bg-primary relative flex flex-row -mt-40 h-[1100px] w-full px-20 py-8 items-center justify-center overflow-hidden">
         <div className="flex flex-col  ml-60 ">
           <QuoteSvg />
           <p className="w-[250px] -mt-20 text-white text-2xl">QUOTE/FEEDBACK FROM KEY PERSON</p>
@@ -120,38 +120,19 @@ function CaseStudiesDetailsView() {
           <span className="text-white text-2xl mt-12 font-bold">{clientData?.teamSize} PEOPLE</span>
         </div>
 
-        <div
-          style={{
-            position: 'relative',
-          }}
-        >
-          <div
-            className="h-40 -ml-[600px] w-80 mt-40"
-            style={{
-              position: 'relative',
-              zIndex: 5,
-              height: '700px',
-              width: '1000px',
-            }}
-          >
-            <Image
-              src={clientData?.quoteSectionImage}
-              alt={clientData?.clientName + 'image'}
-              fill
-            />
-          </div>
-          <div
-            style={{
-              width: '100px',
-              position: 'absolute',
-              height: '100px',
-              zIndex: 1,
-              marginTop: '0px',
-              top: '180px',
-              left: '-40px',
-            }}
-          >
-            <Lottie animationData={lottieAnimation} loop={true} className="  w-[500px] h-[500px]" />
+        <div className="absolute h-full w-full">
+          <div className="relative w-full h-full">
+            <div className="absolute top-[250px] -right-[150px] w-[800px] h-[800px] z-10">
+              <Lottie animationData={lottieAnimation} loop={true} className="w-[800px] h-[800px]" />
+            </div>
+            <div className="absolute right-0 bottom-0 z-20">
+              <Image
+                src={clientData?.quoteSectionImage}
+                alt={clientData?.clientName + 'image'}
+                width={600}
+                height={600}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -267,12 +248,14 @@ function CaseStudiesDetailsView() {
           className="flex flex-1 bg-black"
         >
           <div className="flex items-end justify-end ">
-            <div className="flex bg-highlight ml-16 mb-20 flex-wrap h-[109px] px-8 w-[360px] items-center justify-center rounded-full">
-              <span className="text-white text-xl">{clientData?.clientResults}</span>
+            <div className="flex bg-highlight ml-16 mb-20 flex-wrap py-4 px-8 w-[500px] items-center justify-center rounded-full">
+              <span className="text-white font-medium text-2xl text-center">
+                {clientData?.clientResults}
+              </span>
             </div>
           </div>
         </div>
-        <div className="bg-secondary flex  w-2/5 flex-col  flex-wrap px-10 items-center justify-center">
+        <div className="bg-secondary flex w-2/5 flex-col flex-wrap px-10 py-7 items-center justify-center">
           <h1 className="text-white text-4xl mb-4 uppercase font-bold">Results</h1>
           <ul className=" w-2/3 ">
             {clientData?.results.map((item, key) => (
