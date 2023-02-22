@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import VerticalScribbles from './icons/VerticalScribbles';
+import VerticalScribbles from '../../components/CaseStudies/icons/VerticalScribbles';
 import SwiggleSvg from 'public/case-studies/swiggle.svg';
 import QuoteSvg from 'public/case-studies/quote.svg';
-import CircleArrow from './icons/circle-arrow';
+import CircleArrow from '../../components/CaseStudies/icons/circle-arrow';
 import ArrowLeftSvg from 'public/arrow-left.svg';
 import Image from 'next/image';
 import Footer from '../../components/Footer';
