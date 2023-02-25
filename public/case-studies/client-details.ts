@@ -41,7 +41,7 @@ export const clientDetails = [
       'How do we test the system?',
     ],
     infoGatheringMethod: [
-      ' Going through bank integration specification documents',
+      'Going through bank integration specification documents',
       'Speaking to stakeholders',
       'Researching the tech available on cloud platforms such as AWS',
       'Looking at best practices for enterprise systems',

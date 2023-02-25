@@ -16,7 +16,7 @@ function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageS
     <div
       onClick={() => {
         Router.push({
-          pathname: '/case-studies/details',
+          pathname: `/case-studies/${clientName}`,
           query: { clientName },
         });
       }}
