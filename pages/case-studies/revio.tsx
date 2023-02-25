@@ -18,7 +18,7 @@ function RevioDetails() {
 
   const clientDetails = {
     clientName: 'revio',
-    coverImage: 'revioBackground-2.png',
+    coverImage: '',
     problem:
       'We joined Revio shortly after their inception to add debit order collections as one of the tools on their system. Integrating with local banking systems offered some very interesting and unique challenges',
     solution:

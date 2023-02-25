@@ -17,7 +17,7 @@ function AuroraDetails() {
 
   const clientDetails = {
     clientName: 'aurora',
-    coverImage: 'auroraBackground-2.png',
+    coverImage: '',
     problem:
       'Aurora was initially built by another development company. They lacked adaptability which resulted in an unmaintainable code base. We were initially tasked only to finish the original MVP, but it soon became clear that we had to re-write everything.',
     solution: 'The original project ran for more than one year, and we rebuilt it in three months.',
@@ -91,16 +91,16 @@ function AuroraDetails() {
         <Header />
       </div>
       <div
-        className="w-full bg-cover bg-bottom -z-10 -mt-52 flex flex-col items-center relative justify-center "
+        className="w-full bg-cover bg-bottom -z-10 -mt-24 flex flex-col items-center relative justify-center "
         style={{
-          backgroundImage: `url(revioBackground-2.png)`,
+          backgroundImage: `url(auroraBackground-2.png)`,
           backgroundPosition: 'cover',
           height: '850px',
         }}
       >
         <h1 className="text-highlight font-bold uppercase text-8xl">{clientDetails.clientName}</h1>
       </div>
-      <div className="w-full bg-cover h-full -mt-[200px] pt-12 px-12 flex flex-col items-center relative z-20">
+      <div className="w-full bg-cover h-full -mt-[250px] pt-12 px-12 flex flex-col items-center relative z-20">
         <div
           className="bg-secondary h-full -z-20"
           style={{

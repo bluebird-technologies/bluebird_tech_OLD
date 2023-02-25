@@ -17,7 +17,7 @@ function RaubexDetails() {
 
   const clientDetails = {
     clientName: 'raubex',
-    coverImage: 'raubexBackground-2.png',
+    coverImage: '',
     problem:
       'Originally Bluebird was contracted to maintain a 2nd generation system for Raubex Building Group. As this system started scaling it started to show some serious cracks.',
     solution:
@@ -101,14 +101,14 @@ function RaubexDetails() {
       <div
         className="w-full bg-cover bg-bottom -z-10 -mt-52 flex flex-col items-center relative justify-center "
         style={{
-          backgroundImage: `url(revioBackground-2.png)`,
+          backgroundImage: `url(raubexBackground-2.png)`,
           backgroundPosition: 'cover',
-          height: '850px',
+          height: '1000px',
         }}
       >
         <h1 className="text-highlight font-bold uppercase text-8xl">{clientDetails.clientName}</h1>
       </div>
-      <div className="w-full bg-cover h-full -mt-[200px] pt-12 px-12 flex flex-col items-center relative z-20">
+      <div className="w-full bg-cover h-full -mt-[250px] pt-12 px-12 flex flex-col items-center relative z-20">
         <div
           className="bg-secondary h-full -z-20"
           style={{
