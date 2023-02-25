@@ -17,6 +17,7 @@ module.exports = {
         primary: '#1E2B3B',
         highlight: '#E97724',
         secondary: '#3D6895',
+        grey: '#F1F1F1',
       },
     },
   },
