@@ -56,9 +56,11 @@ const Contact = () => {
               <option disabled selected value="">
                 Reason for contacting us (select)
               </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="option1">In need of development work</option>
+              <option value="option2">Apply for a job</option>
+              <option value="option3">Outstaffing</option>
+              <option value="option3">Formal Quote</option>
+              <option value="option3">General Enquiry</option>
             </select>
           </div>
           <input
