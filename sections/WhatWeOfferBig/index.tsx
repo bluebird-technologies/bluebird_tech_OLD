@@ -33,6 +33,6 @@ export const items = [
   },
   {
     icon: api,
-    label: 'Web Development',
+    label: 'API & System Development',
   },
 ];

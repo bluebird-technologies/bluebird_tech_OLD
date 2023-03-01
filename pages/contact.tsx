@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
-    <div className=" flex-1 flex flex-col h-full">
+    <div className="flex-1 flex flex-col h-full">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
           className="bg-primary h-full"
@@ -46,7 +46,7 @@ const Contact = () => {
             <select
               title="options"
               placeholder="Reason for contacting us (select)"
-              className=" mx-3 font-medium h-10 opacity-1 w-[518px] border-0 focus:outline-none   "
+              className="mx-3 font-medium h-10 opacity-1 w-[518px] border-0 focus:outline-none"
               id="contact-select"
               style={{
                 appearance: 'none',
@@ -56,13 +56,15 @@ const Contact = () => {
               <option disabled selected value="">
                 Reason for contacting us (select)
               </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="option1">In need of development work</option>
+              <option value="option2">Apply for a job</option>
+              <option value="option3">Outstaffing</option>
+              <option value="option3">Formal Quote</option>
+              <option value="option3">General Enquiry</option>
             </select>
           </div>
           <input
-            className=" my-4 px-3  rounded-[20px] h-12 w-[518px]"
+            className=" my-4 px-3 rounded-[20px] h-12 w-[518px]"
             type={'email'}
             placeholder={'Your email'}
           />
