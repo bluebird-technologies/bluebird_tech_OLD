@@ -31,6 +31,10 @@ import PerformanceIcon from 'public/calculator/performanceIcon.svg';
 import ContentIcon from 'public/calculator/contentIcon.svg';
 import AnalyticsIcon from 'public/calculator/analyticsIcon.svg';
 import CmsIcon from 'public/calculator/cmsIcon.svg';
+import CalendarIcon from 'public/calculator/calendar.svg';
+import BookingsIcon from 'public/calculator/bookings.svg';
+import LiveTrackingIcon from 'public/calculator/liveTracking.svg';
+import MapsIntegrationIcon from 'public/calculator/maps-integration.svg';
 import Calculator from '../../components/QuoteCalculator';
 import SelectedScreen from '../../components/Calculator/SelectedScreen';
 import {
@@ -38,8 +42,10 @@ import {
   CalculatorContextType,
   Resources,
 } from '../../contexts/calculatorContext';
+import { useRouter } from 'next/router';
 
 function QuoteWizard() {
+  const router = useRouter();
   interface Screen {
     id: number;
     title: string;
@@ -165,12 +171,18 @@ function QuoteWizard() {
     {
       title: 'Yes',
       icon: <YesIcon />,
-      onclick: () => setSelectedScreen(screens[4]),
+      onclick: () => {
+        setSelectedScreen(screens[3]);
+        setHasDesginer(true);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon />,
-      onclick: () => setSelectedScreen(screens[4]),
+      onclick: () => {
+        setSelectedScreen(screens[3]);
+        setHasDesginer(false);
+      },
     },
   ];
 
@@ -178,17 +190,44 @@ function QuoteWizard() {
     {
       title: 'MVP',
       icon: <MVPIcon />,
-      onclick: () => setSelectedScreen(screens[3]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: hasDesigner ? prev.optimisticHours + 20 : prev.optimisticHours + 40,
+          pessimisticHours: hasDesigner ? prev.optimisticHours + 29 : prev.optimisticHours + 57,
+          platform: prev.platform,
+          resources: [],
+        }));
+        setSelectedScreen(screens[4]);
+      },
     },
     {
       title: 'Stock',
       icon: <StockIcon />,
-      onclick: () => setSelectedScreen(screens[3]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: hasDesigner ? prev.optimisticHours + 30 : prev.optimisticHours + 60,
+          pessimisticHours: hasDesigner ? prev.optimisticHours + 43 : prev.optimisticHours + 86,
+          platform: prev.platform,
+          resources: [],
+        }));
+        setSelectedScreen(screens[4]);
+      },
     },
     {
       title: 'Beautiful',
       icon: <BeautifulIcon />,
-      onclick: () => setSelectedScreen(screens[3]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: hasDesigner ? prev.optimisticHours + 40 : prev.optimisticHours + 80,
+          pessimisticHours: hasDesigner ? prev.optimisticHours + 57 : prev.optimisticHours + 114,
+          platform: prev.platform,
+          resources: [],
+        }));
+        setSelectedScreen(screens[4]);
+      },
     },
   ];
 
@@ -196,22 +235,56 @@ function QuoteWizard() {
     {
       title: 'Email',
       icon: <EmailIcon />,
-      onclick: () => setSelectedScreen(screens[5]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 15,
+          pessimisticHours: prev.optimisticHours + 21,
+          platform: prev.platform,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[5]);
+      },
     },
     {
       title: 'Social',
       icon: <SocialIcon />,
-      onclick: () => setSelectedScreen(screens[5]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 15,
+          pessimisticHours: prev.optimisticHours + 21,
+          platform: prev.platform,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[5]);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon2 />,
-      onclick: () => setSelectedScreen(screens[5]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        setSelectedScreen(screens[5]);
+      },
     },
     {
       title: 'Not Sure',
       icon: <NotSureIcon />,
-      onclick: () => setSelectedScreen(screens[5]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 5,
+          pessimisticHours: prev.optimisticHours + 7,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[5]);
+      },
     },
   ];
 
@@ -219,83 +292,271 @@ function QuoteWizard() {
     {
       title: 'Yes',
       icon: <YesIcon2 />,
-      onclick: () => setSelectedScreen(screens[6]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 30,
+          pessimisticHours: prev.optimisticHours + 43,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[6]);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon3 />,
-      onclick: () => setSelectedScreen(screens[6]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        setSelectedScreen(screens[6]);
+      },
     },
     {
       title: 'Not Sure',
       icon: <NotSureIcon2 />,
-      onclick: () => setSelectedScreen(screens[6]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 5,
+          pessimisticHours: prev.optimisticHours + 7,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[6]);
+      },
     },
   ];
   const screen7Btns: Buttons[] = [
     {
       title: 'Yes',
       icon: <YesIcon3 />,
-      onclick: () => setSelectedScreen(screens[7]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 15,
+          pessimisticHours: prev.optimisticHours + 21,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[7]);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon4 />,
-      onclick: () => setSelectedScreen(screens[7]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        setSelectedScreen(screens[7]);
+      },
     },
     {
       title: 'Not Sure',
       icon: <NotSureIcon3 />,
-      onclick: () => setSelectedScreen(screens[7]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 5,
+          pessimisticHours: prev.optimisticHours + 7,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[7]);
+      },
     },
   ];
   const screen8Btns: Buttons[] = [
     {
       title: 'Subscription Plans',
       icon: <SubscriptionIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 40,
+          pessimisticHours: prev.optimisticHours + 57,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[8]);
+      },
     },
     {
       title: 'Payment Processing',
       icon: <PaymentIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 80,
+          pessimisticHours: prev.optimisticHours + 114,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[8]);
+      },
     },
     {
       title: 'Shopping Cart',
       icon: <CartIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 100,
+          pessimisticHours: prev.optimisticHours + 143,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[8]);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon5 />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        setSelectedScreen(screens[8]);
+      },
     },
   ];
   const screen9Btns: Buttons[] = [
     {
       title: 'CMS Integration',
       icon: <CmsIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 30,
+          pessimisticHours: prev.optimisticHours + 43,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[9]);
+      },
     },
     {
       title: 'Performance Monitoring',
       icon: <PerformanceIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 40,
+          pessimisticHours: prev.optimisticHours + 57,
+          resources: [],
+        }));
+        setSelectedScreen(screens[9]);
+      },
     },
     {
       title: 'Moderation/ Content Approval',
       icon: <ContentIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 40,
+          pessimisticHours: prev.optimisticHours + 57,
+          resources: [Resources.BE],
+        }));
+        setSelectedScreen(screens[9]);
+      },
     },
     {
       title: 'Usage Analytics',
       icon: <AnalyticsIcon />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 25,
+          pessimisticHours: prev.optimisticHours + 36,
+          resources: [],
+        }));
+        setSelectedScreen(screens[9]);
+      },
     },
     {
       title: 'No',
       icon: <NoIcon5 />,
-      onclick: () => setSelectedScreen(screens[8]),
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        setSelectedScreen(screens[9]);
+      },
+    },
+  ];
+
+  const screen10Btns: Buttons[] = [
+    {
+      title: 'Calendar',
+      icon: <CalendarIcon />,
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 50,
+          pessimisticHours: prev.optimisticHours + 71,
+          resources: [Resources.BE],
+        }));
+        router.push('/calculator/quoteEstimate');
+      },
+    },
+    {
+      title: 'Bookings',
+      icon: <BookingsIcon />,
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 40,
+          pessimisticHours: prev.optimisticHours + 57,
+          resources: [Resources.BE],
+        }));
+        router.push('/calculator/quoteEstimate');
+      },
+    },
+    {
+      title: 'Live GPS and Tracking',
+      icon: <LiveTrackingIcon />,
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 80,
+          pessimisticHours: prev.optimisticHours + 114,
+          resources: [Resources.BE],
+        }));
+        router.push('/calculator/quoteEstimate');
+      },
+    },
+    {
+      title: 'Maps Integration',
+      icon: <MapsIntegrationIcon />,
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 80,
+          pessimisticHours: prev.optimisticHours + 114,
+          resources: [Resources.BE],
+        }));
+        router.push('/calculator/quoteEstimate');
+      },
+    },
+    {
+      title: 'No',
+      icon: <NoIcon5 />,
+      onclick: () => {
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.optimisticHours + 0,
+          resources: [],
+        }));
+        router.push('/calculator/quoteEstimate');
+      },
     },
   ];
 
@@ -331,7 +592,7 @@ function QuoteWizard() {
 
     {
       id: 5,
-      title: 'Do you have a designer',
+      title: 'Do People have to login',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
       buttons: screen5Btns,
@@ -364,6 +625,13 @@ function QuoteWizard() {
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
       buttons: screen9Btns,
     },
+    {
+      id: 10,
+      title: 'Dates and Location',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      buttons: screen10Btns,
+    },
   ];
 
   const [selectedType, setSelectedType] = useState('');
@@ -374,6 +642,7 @@ function QuoteWizard() {
     pessimisticHours: 0,
     resources: [],
   });
+  const [hasDesigner, setHasDesginer] = useState<boolean>(false);
 
   return (
     <CalculatorContext.Provider value={calculatorValue}>
