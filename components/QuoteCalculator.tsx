@@ -6,11 +6,8 @@ import { CalculatorContextType, CalculatorContext } from '../contexts/calculator
 import Icon from '@mdi/react';
 import { mdiCheck } from '@mdi/js';
 
-interface Props {
-  platformType: string;
-}
 
-function QuoteCalculator({ platformType }: Props) {
+function QuoteCalculator() {
   const { platform, optimisticHours, pessimisticHours, resources } =
     useContext<CalculatorContextType>(CalculatorContext);
 

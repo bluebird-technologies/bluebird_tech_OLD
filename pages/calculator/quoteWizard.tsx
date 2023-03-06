@@ -718,7 +718,6 @@ function QuoteWizard() {
     },
   ];
 
-  const [selectedType, setSelectedType] = useState('');
   const [selectedScreen, setSelectedScreen] = useState<number>(0);
   const [calculatorValue, setCalculatorValue] = useState<CalculatorContextType>({
     platform: '',
@@ -785,7 +784,7 @@ function QuoteWizard() {
             </div>
           </Container>
           <Container>
-            <Calculator platformType={selectedType} />
+            <Calculator />
           </Container>
         </div>
       </div>
