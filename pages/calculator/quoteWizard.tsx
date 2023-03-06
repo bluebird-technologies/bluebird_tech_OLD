@@ -37,6 +37,7 @@ import LiveTrackingIcon from 'public/calculator/liveTracking.svg';
 import MapsIntegrationIcon from 'public/calculator/maps-integration.svg';
 import Calculator from '../../components/QuoteCalculator';
 import SelectedScreen from '../../components/Calculator/SelectedScreen';
+import RightArrow from '../../public/right-arrow.svg';
 import {
   CalculatorContext,
   CalculatorContextType,
@@ -75,7 +76,9 @@ function QuoteWizard() {
           platform: 'Apple',
           resources: [Resources.MD],
         }));
-        setSelectedScreen(screens[1]);
+        setSelectedScreen(1);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -89,7 +92,9 @@ function QuoteWizard() {
           platform: 'Android',
           resources: [Resources.MD],
         }));
-        setSelectedScreen(screens[1]);
+        setSelectedScreen(1);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -103,7 +108,9 @@ function QuoteWizard() {
           platform: 'Web',
           resources: [Resources.FE],
         }));
-        setSelectedScreen(screens[1]);
+        setSelectedScreen(1);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -117,7 +124,9 @@ function QuoteWizard() {
           platform: 'Multi-Platform',
           resources: [Resources.MD, Resources.FE, Resources.BE],
         }));
-        setSelectedScreen(screens[1]);
+        setSelectedScreen(1);
+        setOptimisticHours((prev) => [...prev, 80]);
+        setPessimisticHours((prev) => [...prev, 114]);
       },
     },
   ];
@@ -132,9 +141,12 @@ function QuoteWizard() {
           optimisticHours: prev.optimisticHours + 20,
           pessimisticHours: prev.pessimisticHours + 29,
           platform: prev.platform,
+          size: 'Small',
           resources: [],
         }));
-        setSelectedScreen(screens[2]);
+        setSelectedScreen(2);
+        setOptimisticHours((prev) => [...prev, 20]);
+        setPessimisticHours((prev) => [...prev, 29]);
       },
     },
     {
@@ -146,9 +158,12 @@ function QuoteWizard() {
           optimisticHours: prev.optimisticHours + 40,
           pessimisticHours: prev.pessimisticHours + 57,
           platform: prev.platform,
+          size: 'Medium',
           resources: [Resources.PM],
         }));
-        setSelectedScreen(screens[2]);
+        setSelectedScreen(2);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -160,9 +175,12 @@ function QuoteWizard() {
           optimisticHours: prev.optimisticHours + 60,
           pessimisticHours: prev.pessimisticHours + 86,
           platform: prev.platform,
+          size: 'Large',
           resources: [Resources.PM],
         }));
-        setSelectedScreen(screens[2]);
+        setSelectedScreen(2);
+        setOptimisticHours((prev) => [...prev, 60]);
+        setPessimisticHours((prev) => [...prev, 86]);
       },
     },
   ];
@@ -172,16 +190,32 @@ function QuoteWizard() {
       title: 'Yes',
       icon: <YesIcon />,
       onclick: () => {
-        setSelectedScreen(screens[3]);
+        setSelectedScreen(3);
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
+          hasDesigner: true,
+        }));
         setHasDesginer(true);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
     {
       title: 'No',
       icon: <NoIcon />,
       onclick: () => {
-        setSelectedScreen(screens[3]);
+        setSelectedScreen(3);
+        setCalculatorValue((prev) => ({
+          ...calculatorValue,
+          hasDesigner: false,
+          optimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
+        }));
         setHasDesginer(false);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
   ];
@@ -194,11 +228,14 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: hasDesigner ? prev.optimisticHours + 20 : prev.optimisticHours + 40,
-          pessimisticHours: hasDesigner ? prev.optimisticHours + 29 : prev.optimisticHours + 57,
+          pessimisticHours: hasDesigner ? prev.pessimisticHours + 29 : prev.pessimisticHours + 57,
           platform: prev.platform,
           resources: [],
+          ux_ui: 'MVP',
         }));
-        setSelectedScreen(screens[4]);
+        setSelectedScreen(4);
+        setOptimisticHours((prev) => [...prev, hasDesigner ? 20 : 40]);
+        setPessimisticHours((prev) => [...prev, hasDesigner ? 29 : 57]);
       },
     },
     {
@@ -208,11 +245,14 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: hasDesigner ? prev.optimisticHours + 30 : prev.optimisticHours + 60,
-          pessimisticHours: hasDesigner ? prev.optimisticHours + 43 : prev.optimisticHours + 86,
+          pessimisticHours: hasDesigner ? prev.pessimisticHours + 43 : prev.pessimisticHours + 86,
           platform: prev.platform,
           resources: [],
+          ux_ui: 'Stock',
         }));
-        setSelectedScreen(screens[4]);
+        setSelectedScreen(4);
+        setOptimisticHours((prev) => [...prev, hasDesigner ? 30 : 60]);
+        setPessimisticHours((prev) => [...prev, hasDesigner ? 43 : 86]);
       },
     },
     {
@@ -222,11 +262,14 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: hasDesigner ? prev.optimisticHours + 40 : prev.optimisticHours + 80,
-          pessimisticHours: hasDesigner ? prev.optimisticHours + 57 : prev.optimisticHours + 114,
+          pessimisticHours: hasDesigner ? prev.pessimisticHours + 57 : prev.pessimisticHours + 114,
           platform: prev.platform,
           resources: [],
+          ux_ui: 'Beautiful',
         }));
-        setSelectedScreen(screens[4]);
+        setSelectedScreen(4);
+        setOptimisticHours((prev) => [...prev, hasDesigner ? 40 : 80]);
+        setPessimisticHours((prev) => [...prev, hasDesigner ? 57 : 114]);
       },
     },
   ];
@@ -239,11 +282,14 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 15,
-          pessimisticHours: prev.optimisticHours + 21,
+          pessimisticHours: prev.pessimisticHours + 21,
           platform: prev.platform,
           resources: [Resources.BE],
+          loginType: ['Email'],
         }));
-        setSelectedScreen(screens[5]);
+        setOptimisticHours((prev) => [...prev, 15]);
+        setPessimisticHours((prev) => [...prev, 21]);
+        setSelectedScreen(5);
       },
     },
     {
@@ -253,11 +299,14 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 15,
-          pessimisticHours: prev.optimisticHours + 21,
+          pessimisticHours: prev.pessimisticHours + 21,
           platform: prev.platform,
           resources: [Resources.BE],
+          loginType: ['Social'],
         }));
-        setSelectedScreen(screens[5]);
+        setOptimisticHours((prev) => [...prev, 15]);
+        setPessimisticHours((prev) => [...prev, 21]);
+        setSelectedScreen(5);
       },
     },
     {
@@ -267,10 +316,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
-        setSelectedScreen(screens[5]);
+        setSelectedScreen(5);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
     {
@@ -280,10 +331,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 5,
-          pessimisticHours: prev.optimisticHours + 7,
+          pessimisticHours: prev.pessimisticHours + 7,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[5]);
+        setSelectedScreen(5);
+        setOptimisticHours((prev) => [...prev, 5]);
+        setPessimisticHours((prev) => [...prev, 7]);
       },
     },
   ];
@@ -296,10 +349,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 30,
-          pessimisticHours: prev.optimisticHours + 43,
+          pessimisticHours: prev.pessimisticHours + 43,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[6]);
+        setSelectedScreen(6);
+        setOptimisticHours((prev) => [...prev, 30]);
+        setPessimisticHours((prev) => [...prev, 43]);
       },
     },
     {
@@ -309,10 +364,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
-        setSelectedScreen(screens[6]);
+        setSelectedScreen(6);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
     {
@@ -322,10 +379,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 5,
-          pessimisticHours: prev.optimisticHours + 7,
+          pessimisticHours: prev.pessimisticHours + 7,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[6]);
+        setSelectedScreen(6);
+        setOptimisticHours((prev) => [...prev, 5]);
+        setPessimisticHours((prev) => [...prev, 7]);
       },
     },
   ];
@@ -337,10 +396,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 15,
-          pessimisticHours: prev.optimisticHours + 21,
+          pessimisticHours: prev.pessimisticHours + 21,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[7]);
+        setSelectedScreen(7);
+        setOptimisticHours((prev) => [...prev, 15]);
+        setPessimisticHours((prev) => [...prev, 21]);
       },
     },
     {
@@ -350,10 +411,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
-        setSelectedScreen(screens[7]);
+        setSelectedScreen(7);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
     {
@@ -363,10 +426,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 5,
-          pessimisticHours: prev.optimisticHours + 7,
+          pessimisticHours: prev.pessimisticHours + 7,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[7]);
+        setSelectedScreen(7);
+        setOptimisticHours((prev) => [...prev, 5]);
+        setPessimisticHours((prev) => [...prev, 7]);
       },
     },
   ];
@@ -378,10 +443,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 40,
-          pessimisticHours: prev.optimisticHours + 57,
+          pessimisticHours: prev.pessimisticHours + 57,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[8]);
+        setSelectedScreen(8);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -391,10 +458,13 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 80,
-          pessimisticHours: prev.optimisticHours + 114,
+          pessimisticHours: prev.pessimisticHours + 114,
           resources: [Resources.BE],
+          payments: 'Payment Processing',
         }));
-        setSelectedScreen(screens[8]);
+        setSelectedScreen(8);
+        setOptimisticHours((prev) => [...prev, 80]);
+        setPessimisticHours((prev) => [...prev, 114]);
       },
     },
     {
@@ -404,10 +474,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 100,
-          pessimisticHours: prev.optimisticHours + 143,
+          pessimisticHours: prev.pessimisticHours + 143,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[8]);
+        setSelectedScreen(8);
+        setOptimisticHours((prev) => [...prev, 100]);
+        setPessimisticHours((prev) => [...prev, 143]);
       },
     },
     {
@@ -417,10 +489,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
-        setSelectedScreen(screens[8]);
+        setSelectedScreen(8);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
   ];
@@ -432,10 +506,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 30,
-          pessimisticHours: prev.optimisticHours + 43,
+          pessimisticHours: prev.pessimisticHours + 43,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[9]);
+        setSelectedScreen(9);
+        setOptimisticHours((prev) => [...prev, 30]);
+        setPessimisticHours((prev) => [...prev, 43]);
       },
     },
     {
@@ -445,10 +521,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 40,
-          pessimisticHours: prev.optimisticHours + 57,
+          pessimisticHours: prev.pessimisticHours + 57,
           resources: [],
         }));
-        setSelectedScreen(screens[9]);
+        setSelectedScreen(9);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -458,10 +536,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 40,
-          pessimisticHours: prev.optimisticHours + 57,
+          pessimisticHours: prev.pessimisticHours + 57,
           resources: [Resources.BE],
         }));
-        setSelectedScreen(screens[9]);
+        setSelectedScreen(9);
+        setOptimisticHours((prev) => [...prev, 40]);
+        setPessimisticHours((prev) => [...prev, 57]);
       },
     },
     {
@@ -471,10 +551,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 25,
-          pessimisticHours: prev.optimisticHours + 36,
+          pessimisticHours: prev.pessimisticHours + 36,
           resources: [],
         }));
-        setSelectedScreen(screens[9]);
+        setSelectedScreen(9);
+        setOptimisticHours((prev) => [...prev, 25]);
+        setPessimisticHours((prev) => [...prev, 36]);
       },
     },
     {
@@ -484,10 +566,12 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
-        setSelectedScreen(screens[9]);
+        setSelectedScreen(9);
+        setOptimisticHours((prev) => [...prev, 0]);
+        setPessimisticHours((prev) => [...prev, 0]);
       },
     },
   ];
@@ -500,7 +584,7 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 50,
-          pessimisticHours: prev.optimisticHours + 71,
+          pessimisticHours: prev.pessimisticHours + 71,
           resources: [Resources.BE],
         }));
         router.push('/calculator/quoteEstimate');
@@ -513,7 +597,7 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 40,
-          pessimisticHours: prev.optimisticHours + 57,
+          pessimisticHours: prev.pessimisticHours + 57,
           resources: [Resources.BE],
         }));
         router.push('/calculator/quoteEstimate');
@@ -526,7 +610,7 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 80,
-          pessimisticHours: prev.optimisticHours + 114,
+          pessimisticHours: prev.pessimisticHours + 114,
           resources: [Resources.BE],
         }));
         router.push('/calculator/quoteEstimate');
@@ -539,7 +623,7 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 80,
-          pessimisticHours: prev.optimisticHours + 114,
+          pessimisticHours: prev.pessimisticHours + 114,
           resources: [Resources.BE],
         }));
         router.push('/calculator/quoteEstimate');
@@ -552,7 +636,7 @@ function QuoteWizard() {
         setCalculatorValue((prev) => ({
           ...calculatorValue,
           optimisticHours: prev.optimisticHours + 0,
-          pessimisticHours: prev.optimisticHours + 0,
+          pessimisticHours: prev.pessimisticHours + 0,
           resources: [],
         }));
         router.push('/calculator/quoteEstimate');
@@ -635,14 +719,27 @@ function QuoteWizard() {
   ];
 
   const [selectedType, setSelectedType] = useState('');
-  const [selectedScreen, setSelectedScreen] = useState(screens[0]);
+  const [selectedScreen, setSelectedScreen] = useState<number>(0);
   const [calculatorValue, setCalculatorValue] = useState<CalculatorContextType>({
     platform: '',
     optimisticHours: 0,
     pessimisticHours: 0,
     resources: [],
   });
+  const [optimisticHours, setOptimisticHours] = useState<number[]>([]);
+  const [pessimisticHours, setPessimisticHours] = useState<number[]>([]);
   const [hasDesigner, setHasDesginer] = useState<boolean>(false);
+
+  const backBtnHandler = () => {
+    setSelectedScreen((prev) => prev - 1);
+    setCalculatorValue((prev) => ({
+      ...prev,
+      optimisticHours: prev.optimisticHours - optimisticHours[optimisticHours.length - 1],
+      pessimisticHours: prev.pessimisticHours - pessimisticHours[pessimisticHours.length - 1],
+    }));
+    setOptimisticHours((prev) => prev.slice(0, -1));
+    setPessimisticHours((prev) => prev.slice(0, -1));
+  };
 
   return (
     <CalculatorContext.Provider value={calculatorValue}>
@@ -662,7 +759,30 @@ function QuoteWizard() {
         </div>
         <div className="bg-secondary flex-1 flex pt-60 pb-16 px-20 w-full -mt-40">
           <Container wide>
-            <SelectedScreen screen={selectedScreen} />
+            <SelectedScreen screen={screens[selectedScreen]} />
+            <div className="flex flex-1  justify-between w-full">
+              {selectedScreen !== 0 && (
+                <button
+                  onClick={() => backBtnHandler()}
+                  className="text-white font-medium text-xl flex items-center justify-center"
+                >
+                  <RightArrow className="origin-center rotate-180 mr-4" />
+                  BACK
+                </button>
+              )}
+              <div></div>
+              {selectedScreen !== screens.length - 1 && (
+                <button
+                  onClick={() =>
+                    setSelectedScreen((prev) => (prev < screens.length ? prev + 1 : prev))
+                  }
+                  className="text-white font-medium text-xl flex items-center justify-center"
+                >
+                  NEXT
+                  <RightArrow className="mr-4" />
+                </button>
+              )}
+            </div>
           </Container>
           <Container>
             <Calculator platformType={selectedType} />
