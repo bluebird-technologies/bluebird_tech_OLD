@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { Container } from '../../components/Container';
 import { Header } from '../../components/Header';
 import AppleIcon from '../../public/calculator/appleIcon.svg';

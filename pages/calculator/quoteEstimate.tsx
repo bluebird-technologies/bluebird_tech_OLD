@@ -29,6 +29,7 @@ function QuoteEstimate() {
           </div>
         </Container>
       </div>
+      <div className="bg-black flex flex-1"></div>
     </div>
   );
 }
