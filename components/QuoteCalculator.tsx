@@ -11,29 +11,6 @@ interface Props {
 }
 
 function QuoteCalculator({ platformType }: Props) {
-  const checkBoxItems = [
-    {
-      title: 'Front End Developer',
-      checked: false,
-    },
-    {
-      title: 'Backend Developer',
-      checked: false,
-    },
-    {
-      title: 'Mobile Developer',
-      checked: false,
-    },
-    {
-      title: 'Product Manager',
-      checked: false,
-    },
-    {
-      title: 'Graphic Designer',
-      checked: false,
-    },
-  ];
-
   const { platform, optimisticHours, pessimisticHours, resources } =
     useContext<CalculatorContextType>(CalculatorContext);
 
@@ -47,6 +24,7 @@ function QuoteCalculator({ platformType }: Props) {
             placeholder="platform"
             className="outline-none placeholder-transparent text-right w-2/3  text-primary font-bold underline"
             value={platform}
+            onChange={() => null}
           />
         </div>
         <div className=" pb-1 w-full mt-4 flex flex-row justify-between ">
