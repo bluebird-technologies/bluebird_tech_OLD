@@ -4,6 +4,11 @@ export interface CalculatorContextType {
   platform: string;
   optimisticHours: number;
   pessimisticHours: number;
+  size?: string;
+  ux_ui?: string;
+  hasDesigner?: boolean;
+  loginType?: string[];
+  payments?: string;
   resources: string[] | [];
 }
 
