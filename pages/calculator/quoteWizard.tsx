@@ -64,6 +64,13 @@ function QuoteWizard() {
     onclick: () => void;
   }
 
+  /**
+   * Buttons are basically used to update the calculator context values based on users choice.
+   * Each button has an optimistic and pessimistic value attached.
+   * Aside updating the total value for the optimistic and pessimistic context values, each click also updates an array that stores
+   * the selected optimistic/pessimistic values to ensure onclick of the  back button the context values gets updated.
+   */
+
   const screen1Btns: Buttons[] = [
     {
       title: 'Apple iOS',
@@ -644,6 +651,10 @@ function QuoteWizard() {
     },
   ];
 
+  /**
+   * Each screen for the calculator component divided into an array of objects.
+   * Note: Buttons are simply the clickable icons.
+   */
   const screens: Screen[] = [
     {
       id: 1,
@@ -729,6 +740,7 @@ function QuoteWizard() {
   const [pessimisticHours, setPessimisticHours] = useState<number[]>([]);
   const [hasDesigner, setHasDesginer] = useState<boolean>(false);
 
+  // handle back events which involves subtraction of previously added optimsitic and pessimistic hours
   const backBtnHandler = () => {
     setSelectedScreen((prev) => prev - 1);
     setCalculatorValue((prev) => ({
@@ -760,6 +772,7 @@ function QuoteWizard() {
           <Container wide>
             <SelectedScreen screen={screens[selectedScreen]} />
             <div className="flex flex-1  justify-between w-full">
+              {/*If user is on the first screen hide the back  button */}
               {selectedScreen !== 0 && (
                 <button
                   onClick={() => backBtnHandler()}
@@ -770,6 +783,7 @@ function QuoteWizard() {
                 </button>
               )}
               <div></div>
+              {/*If user has navigated the length of the screen array hide the next button */}
               {selectedScreen !== screens.length - 1 && (
                 <button
                   onClick={() =>
