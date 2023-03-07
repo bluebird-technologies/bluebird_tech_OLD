@@ -1,4 +1,6 @@
 import React from 'react';
+import FacebookIcon from '../public/facebook.svg';
+import LinkedinIcon from '../public/linkedin.svg';
 
 const Footer = () => {
   const navItems = [
@@ -41,7 +43,7 @@ const Footer = () => {
           </div>
           <div>
             <div className="font-semibold uppercase  mb-1">Contact us</div>
-            <div className="font-normal">info@bluebird.dev</div>
+            <div className="font-normal">info@bluebird.tech</div>
           </div>
         </div>
         <div className="flex-1">
@@ -59,6 +61,14 @@ const Footer = () => {
               );
             })}
           </ol>
+          <div className="flex flex-row justify-end mt-2">
+            <a href="#">
+              <LinkedinIcon className="mr-2" />
+            </a>
+            <a href="#">
+              <FacebookIcon />
+            </a>
+          </div>
         </div>
       </div>
     </div>
