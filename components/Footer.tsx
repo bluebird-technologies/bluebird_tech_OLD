@@ -62,10 +62,10 @@ const Footer = () => {
             })}
           </ol>
           <div className="flex flex-row justify-end mt-2">
-            <a href="#">
+            <a href="https://www.linkedin.com/company/bluebirddev/">
               <LinkedinIcon className="mr-2" />
             </a>
-            <a href="#">
+            <a href="https://www.facebook.com/BluebirdDevelopment">
               <FacebookIcon />
             </a>
           </div>
