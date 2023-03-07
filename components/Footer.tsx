@@ -6,7 +6,7 @@ const Footer = () => {
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Why Bluebird', link: '/why-bluebird' },
-    { name: 'What we offer', link: '/what-we-offer' },
+    { name: 'What we offer', link: '/offer' },
     { name: 'Case Studies', link: '/case-studies' },
     { name: 'Quote Calculator', link: '/quote-calculator' },
     { name: 'Contact', link: '/contact' },
