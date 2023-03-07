@@ -61,9 +61,9 @@ const Footer = () => {
               );
             })}
           </ol>
-          <div className="flex flex-row justify-end mt-2">
+          <div className="flex flex-row justify-end mt-4">
             <a href="https://www.linkedin.com/company/bluebirddev/">
-              <LinkedinIcon className="mr-2" />
+              <LinkedinIcon className="mr-4" />
             </a>
             <a href="https://www.facebook.com/BluebirdDevelopment">
               <FacebookIcon />
