@@ -21,4 +21,4 @@ export const clientIcons = [
   'theDelta.svg',
   'thorchain.svg',
   'tweak.svg',
-]
+];
