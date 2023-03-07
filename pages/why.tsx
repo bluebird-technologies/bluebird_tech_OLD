@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import underline from '../components/WhyBluebird/icons/underline';
-import orangeCircle from '../components/WhyBluebird/icons/orange-circle';
 import orangeCircleSelected from '../components/WhyBluebird/icons/orange-circle-selected';
 import blueCircle from '../components/WhyBluebird/icons/blue-circle';
-import blueCircleSelected from '../components/WhyBluebird/icons/blue-circle-selected';
 import { Button } from '../components/Button';
-import WaveLines from '../public/why/wave-lines.svg';
+import waveLines from '../components/WhyBluebird/icons/wave-lines';
 import Lottie from 'lottie-react';
 import coderAnimation from '../public/why/teaLottie.json';
 import leanAnimation from '../public/why/leanAnimation.json';
@@ -14,10 +12,11 @@ import personalAnimation from '../public/why/personalAnimation.json';
 import Line from '../public/why/line.svg';
 import Footer from '../components/Footer';
 import { CircleButton } from '../components/WhyBluebird/CircleButton';
+import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverlayTextContainer';
 
 const Why = () => {
   type btnOptions = 'Lean' | 'Boutique' | 'Personal';
-  const [activeBtn, setActiveBtn] = React.useState<btnOptions>('Lean');
+  const [activeBtn, setActiveBtn] = React.useState<btnOptions>('Boutique');
 
   const coreValues: {
     key: btnOptions;
@@ -78,7 +77,7 @@ const Why = () => {
           </div>
         </div>
 
-        {/* post heading section */}
+        {/* Post Heading section */}
         <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start mt-12 px-12 xl:px-48 2xl:px-60">
           <div className="w-1/2 relative pr-0 2xl:pr-16">
             <picture>
@@ -95,13 +94,13 @@ const Why = () => {
                   <div className="pl-16">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
-                      icon={orangeCircle}
+                      icon={blueCircle}
                       text="VISION"
                     />
                   </div>
                 )}
                 {!isFirstSelected ? (
-                  <CircleButton disabled icon={blueCircleSelected} text="MISSION" />
+                  <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
                 ) : (
                   <CircleButton
                     onClick={() => setIsFirstSelected((prev) => !prev)}
@@ -135,112 +134,155 @@ const Why = () => {
         </div>
       </div>
 
-      <div className="mx-32 mt-12">
-        <div className="flex flex-col w-full">
-          <div>
-            <div className="flex mb-4 flex-1 items-center justify-center">
-              <h1 className="text-center font-bold italic text-3xl text-secondary">
-                WHAT SETS US APART
-              </h1>
+      {/* What Sets us apart Section */}
+      <div className="w-full h-[900px] relative">
+        <div
+          className="absolute bg-grey h-[1050px] -mt-[150px] w-full top-0 left-0"
+          style={{ zIndex: -5 }}
+        />
+        <div className="flex flex-col w-full justify-center h-[full] pt-24">
+          <h1 className="text-center font-bold text-5xl text-secondary uppercase">
+            <span className="italic">WHAT SETS US </span>
+            <span className="font-extrabold">APART?</span>
+          </h1>
+          <div className="flex mt-12 px-40">
+            <div className="flex-none w-[350px] flex flex-col space-y-16 justify-start mr-32">
+              {coreValues.map((val, i) => {
+                return (
+                  <Button
+                    key={i}
+                    active={activeBtn !== val.key}
+                    className="h-[75px] text-center items-center justify-center max-w-[400px]"
+                    onClick={() => setActiveBtn(val.key)}
+                  >
+                    <span className="text-3xl">{val.key}</span>
+                  </Button>
+                );
+              })}
             </div>
-            <div className="flex flex-row items-center flex-1 justify-between">
-              <div className="flex flex-col">
-                <Button active={activeBtn === 'Boutique'} onClick={() => setActiveBtn('Boutique')}>
-                  Boutique
-                </Button>
-                <Button
-                  active={activeBtn === 'Lean'}
-                  className="mt-4"
-                  onClick={() => setActiveBtn('Lean')}
-                >
-                  Lean
-                </Button>
-                <Button
-                  active={activeBtn === 'Personal'}
-                  className="mt-4"
-                  onClick={() => setActiveBtn('Personal')}
-                >
-                  Personal
-                </Button>
+            <div className="flex-1 flex flex-col">
+              <div className="w-[300px]">{waveLines}</div>
+              <div className="pt-8">
+                {coreValues.map((res) => {
+                  if (res.key === activeBtn) {
+                    return (
+                      <p key={res.key} className="text-2xl">
+                        {res.description}
+                      </p>
+                    );
+                  }
+                })}
               </div>
+            </div>
+            <div className="flex-1 flex">
               {coreValues.map((item, index) => (
-                <div key={index}>
-                  {item.key === activeBtn && (
-                    <div className="flex flex-row items-center">
-                      <div className="flex flex-1  justify-center items-center flex-col">
-                        <WaveLines height={30} width={200} />
-                        <h1 className="w-2/3">{item.description}</h1>
-                      </div>
-                      <Lottie
-                        animationData={item.animation}
-                        loop={true}
-                        style={{ height: 300, width: 350 }}
-                      />
-                    </div>
-                  )}
+                <div key={index} className={item.key === 'Personal' ? '-mt-24' : ''}>
+                  {item.key === activeBtn && <Lottie animationData={item.animation} loop={true} />}
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div>
+
+      {/* Culture section */}
+      <div className="relative -mt-60">
         <div
+          className="h-full bg-secondary"
           style={{
-            height: '100%',
-            width: '100%',
-            position: 'relative',
-            backgroundImage: `url(/why/bluebackground.svg)`,
-            backgroundRepeat: 'no-repeat',
-            paddingTop: '20px',
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderTopLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+            zIndex: -1,
           }}
-          className="flex-1 pb-10 item-center "
-        >
-          <div className=" flex flex-1 justify-center">
-            <div className="relative flex flex-col flex-1 mt-20">
-              <div className="flex flex-1 items-center justify-center">
-                <h1 className="text-white text-center text-3xl font-bold">CULTURE</h1>
+        />
+        <div className="flex flex-col w-full h-[1300px]">
+          <div className="flex w-full items-center justify-center mt-32">
+            <h1 className="text-white text-center text-5xl font-extrabold">CULTURE</h1>
+          </div>
+          <div className="flex flex-col w-full h-[1300px]">
+            {/* relative containers for each image group */}
+            {/* relative container #1 */}
+            <div className="relative w-full group">
+              <div
+                className="absolute top-0 left-0 -rotate-90 ml-32 mt-16 group-hover:scale-125 transition duration-150"
+                style={{
+                  zIndex: 5,
+                }}
+              >
+                <ImageOverlayTextContainer text="diversity" />
               </div>
-              {/* <div className="relative mx-10 mt-14 flex  justify-around">
-                <Image
-                  src={'/why/handshake.png'}
-                  alt="handshake"
-                  width={250}
-                  height={100}
-                  style={{
-                    height: '100%',
-                    width: '34%',
-                    objectFit: 'contain',
-                  }}
-                />
-                <Image
-                  src={'/why/meeting.png'}
-                  alt="handshake"
-                  width={300}
-                  height={100}
-                  style={{
-                    height: '100%',
-                    width: '35%',
-                    marginTop: 50,
-                    objectFit: 'contain',
-                  }}
-                />
-                <Image
-                  src={'/why/music.png'}
-                  alt="handshake"
-                  width={210}
-                  height={100}
-                  style={{
-                    height: '100%',
-                    width: '100%',
-                    position: 'absolute',
-                    objectFit: 'contain',
-                    top: 90,
-                  }}
-                />
-              </div> */}
-              <div className="px-8 flex-1 mt-24 items-center justify-center">
-                <h1 className="text-white  text-center font-bold">
+
+              <div className="absolute ml-24 left-0 top-0 min-w-[600px] w-[35vw] origin-left transition duration-150 overflow-hidden">
+                <picture>
+                  <source srcSet="/why/handshake.png" />
+                  <img
+                    className="p-0 m-0 group-hover:scale-110 origin-left transition duration-500"
+                    src="/why/handshake.png"
+                    alt="handshake"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            {/* relative container #2 */}
+            <div className="relative w-full group">
+              <div
+                className="absolute top-0 ml-[30vw] mt-8 group-hover:scale-125 transition duration-150"
+                style={{
+                  zIndex: 5,
+                  top: '0',
+                  left: '34%',
+                }}
+              >
+                <ImageOverlayTextContainer text="word 3" />
+              </div>
+              <div className="absolute mr-24 mt-16 right-0 top-0 min-w-[500px] w-[35vw] group-hover:scale-110 transition duration-150 overflow-hidden">
+                <picture>
+                  <source srcSet="/why/meeting.png" />
+                  <img
+                    className="p-0 m-0 group-hover:scale-110 origin-bottom transition duration-300"
+                    src="/why/meeting.png"
+                    alt="meeting"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            {/* relative container #3 */}
+            <div className="relative w-full group">
+              <div
+                className="absolute max-h-[740px] mt-[600px] left-0 group-hover:scale-110 transition duration-150"
+                style={{
+                  zIndex: 5,
+                  top: '0',
+                  left: '34%',
+                }}
+              >
+                <ImageOverlayTextContainer text="digital nomads" />
+              </div>
+              <div
+                className="absolute max-h-[740px] mt-[12vh] min-w-[380px] w-[30vw] scale-90 group-hover:scale-100 transition duration-150 overflow-hidden"
+                style={{
+                  top: '0',
+                  left: '34%',
+                }}
+              >
+                <picture>
+                  <source srcSet="/why/music.png" />
+                  <img
+                    className="p-0 m-0 group-hover:scale-125 transition duration-500"
+                    src="/why/music.png"
+                    alt="music"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div className="flex justify-center items-end h-full mb-24">
+              <div className="max-w-[1200px] min-w-[400px]">
+                <h1 className="text-white text-center text-2xl">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                   vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
@@ -251,18 +293,17 @@ const Why = () => {
           </div>
         </div>
       </div>
-      <div className="px-8 flex flex-1 py-8  items-center flex-col bg-primary justify-center">
-        <h1 className="text-highlight font-bold text-3xl">AWARDS</h1>
+
+      {/* Awards section */}
+      <div className="py-24 flex flex-1 items-center flex-col bg-primary justify-center">
+        <h1 className="text-highlight font-extrabold text-4xl pb-6">AWARDS</h1>
         <Line />
-        {/* <Image
-          src={'/why/topDevelopers.png'}
-          height={200}
-          alt="top-software-developers"
-          width={200}
-          style={{
-            marginTop: 20,
-          }}
-        /> */}
+        <div className="max-w-[350px] mt-16">
+          <picture>
+            <source srcSet="/why/topDevelopers.png" />
+            <img src="/why/topDevelopers.png" alt="award" />
+          </picture>
+        </div>
       </div>
       <Footer />
     </div>
