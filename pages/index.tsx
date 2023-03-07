@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import Footer from '../components/Footer';
@@ -21,7 +22,9 @@ export default function Home() {
             TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
           </h1>
           <div className="w-[138px] h-[4px] bg-secondary my-[44px]"></div>
-          <Button>See what we offer</Button>
+          <Button>
+            <a href="#offer">See what we offer</a>
+          </Button>
           <div className="overflow-hidden">
             <Lottie
               style={{ width: '578px' }}
@@ -49,7 +52,9 @@ export default function Home() {
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
           accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
           sanctus est Lorem ipsum dolor sit amet.
-          <Button className="ml-[38px] mt-1">read more</Button>
+          <Button className="ml-[38px] mt-1">
+            <Link href="/why-bluebird">read more</Link>
+          </Button>
         </p>
         <Tabs
           tabs={[
@@ -91,7 +96,9 @@ export default function Home() {
           <source srcSet="/home/swiggle.svg" type="image/svg+xml" />
           <img src="/home/swiggle.svg" alt="Swiggle" className="w-[813px] mt-[20px]" />
         </picture>
-        <WhatWeOffer />
+        <div id="offer">
+          <WhatWeOffer />
+        </div>
       </Container>
       <div className="bg-[#f1f1f1] pt-[72px]">
         <Container center>
