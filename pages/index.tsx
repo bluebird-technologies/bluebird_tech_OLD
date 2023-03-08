@@ -6,7 +6,6 @@ import { Header } from '../components/Header';
 import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
-import { clientIcons } from '../components/clientIcons';
 import ClientIcons from '../public/home/ClientIcons';
 
 export default function Home() {
