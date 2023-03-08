@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { clients } from '../public/case-studies/clients';
 import DownArrow from '../public/down-arrow.svg';
+import { Lottie } from '../components/Lottie';
 
 function caseStudies() {
   return (
@@ -20,6 +21,19 @@ function caseStudies() {
           }}
         />
         <Header />
+        <div className="overflow-hidden">
+         <Lottie
+            style={{ width: '750px' }}
+            src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
+            className="absolute left-0 "
+          />
+          <Lottie
+            style={{ width: '300px' }}
+            src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
+            className="absolute left-[400px] bottom-[200px] "
+          />
+         
+        </div>
 
         <div className="relative flex flex-col items-center mt-20">
           <h2 className="title-1 alt">CASE STUDIES</h2>
