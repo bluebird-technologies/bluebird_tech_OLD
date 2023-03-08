@@ -40,11 +40,7 @@ export function IntroAndChallengeSection({
         ))}
         <div className="flex flex-row w-full justify-between">
           {services.map((item, key) => (
-            <a
-              key={key}
-              href="#"
-              className="text-white border text-center rounded-full py-2 mr-2 px-4"
-            >
+            <a key={key} className="text-white border text-center rounded-full py-2 mr-2 px-4">
               {item}
             </a>
           ))}
