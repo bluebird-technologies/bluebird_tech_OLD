@@ -22,7 +22,7 @@ function caseStudies() {
         />
         <Header />
         <div className="overflow-hidden">
-         <Lottie
+          <Lottie
             style={{ width: '750px' }}
             src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
             className="absolute left-0 "
@@ -32,7 +32,6 @@ function caseStudies() {
             src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
             className="absolute left-[400px] bottom-[200px] "
           />
-         
         </div>
 
         <div className="relative flex flex-col items-center mt-20">
