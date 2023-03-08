@@ -21,10 +21,10 @@ export function IntroAndChallengeSection({
 }: IntroAndChallengeSectionProps) {
   return (
     <>
-      <div className="flex flex-col w-full max-w-4xl items-center justify-center space-y-12">
+      <div className="flex flex-col w-full max-w-6xl items-center justify-center space-y-12">
         <h1 className="text-white font-bold text-5xl capitalize mt-16">{clientName}</h1>
         <p className="text-white font-normal text-2xl text-center">{problem}</p>
-        <p className="text-highlight font-normal text-2xl text-center">{solution}</p>
+        <p className="text-highlight max-w-4xl font-normal text-2xl text-center">{solution}</p>
         <>{VerticalScribbles}</>
       </div>
       <div className="flex w-full max-w-7xl justify-center px-4 pt-24">
