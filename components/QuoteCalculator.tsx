@@ -6,7 +6,6 @@ import { CalculatorContextType, CalculatorContext } from '../contexts/calculator
 import Icon from '@mdi/react';
 import { mdiCheck } from '@mdi/js';
 
-
 function QuoteCalculator() {
   const { platform, optimisticHours, pessimisticHours, resources } =
     useContext<CalculatorContextType>(CalculatorContext);
@@ -14,8 +13,8 @@ function QuoteCalculator() {
   return (
     <div className="bg-white h-[450px]  py-4 px-2 w-[350px]">
       <div className="h-[400px] overflow-y-auto overflow-x-hidden ">
-        <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-gray">
-          <label className="text-gray italic">Platform</label>
+        <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-lightGrey">
+          <label className="text-lightGrey italic">Platform</label>
           <input
             type="text"
             placeholder="platform"
@@ -25,16 +24,16 @@ function QuoteCalculator() {
           />
         </div>
         <div className=" pb-1 w-full mt-4 flex flex-row justify-between ">
-          <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-gray">
-            <label className="text-gray italic">Title</label>
+          <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-lightGrey">
+            <label className="text-lightGrey italic">Title</label>
             <input
               type="text"
               placeholder="title"
               className="outline-none text-right w-3/5 placeholder-transparent text-primary underline"
             />
           </div>
-          <div className="flex flex-1 flex-row  border justify-between pb-1  border-t-0 border-x-0 ml-2 border-b-gray">
-            <label className="text-gray italic">Time</label>
+          <div className="flex flex-1 flex-row  border justify-between pb-1  border-t-0 border-x-0 ml-2 border-b-lightGrey">
+            <label className="text-lightGrey italic">Time</label>
             <input
               type="text"
               placeholder="time"
@@ -42,7 +41,7 @@ function QuoteCalculator() {
             />
           </div>
         </div>
-        <h2 className="text-gray text-base font-medium mt-4 border-b w-12 ">Total:</h2>
+        <h2 className="text-lightGrey text-base font-medium mt-4 border-b w-12 ">Total:</h2>
         <div>
           <div className="flex flex-row justify-between mt-4">
             <p className="text-primary text-base">Optimistic</p>
