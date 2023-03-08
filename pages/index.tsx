@@ -7,6 +7,7 @@ import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
 import { clientIcons } from '../components/clientIcons';
+import ClientIcons from '../public/home/ClientIcons';
 
 export default function Home() {
   return (
@@ -107,18 +108,7 @@ export default function Home() {
             SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
           </h2>
           <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
-
-          <div className="grid grid-cols-1 mb-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {clientIcons.map((fileName, index) => (
-              <div key={index} className="flex items-center justify-center  rounded-lg p-4">
-                <img
-                  src={`/client-icons/${fileName}`}
-                  alt={fileName}
-                  className="max-w-full max-h-full"
-                />
-              </div>
-            ))}
-          </div>
+          <ClientIcons />
         </Container>
       </div>
       <div className="pt-[55px] pb-[100px] bg-primary shadow-[0px 9px 11px #00000029]">
