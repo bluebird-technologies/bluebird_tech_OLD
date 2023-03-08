@@ -2,7 +2,7 @@ import React from 'react';
 import VerticalScribbles from './icons/VerticalScribbles';
 import SwiggleSvg from '/public/case-studies/swiggle.svg';
 import Lottie from 'lottie-react';
-import flashingLottieOrange from '../../public/lottie/30286239-fb21-47f3-ab15-7495d639d72c.json';
+import flashingLottieWhite from '../../public/lottie/30286239-fb21-47f3-ab15-7495d639d72c.json';
 
 interface IntroAndChallengeSectionProps {
   clientName: string;
@@ -36,16 +36,16 @@ export function IntroAndChallengeSection({
 
       <div className="text-xl max-w-6xl mt-20">
         {challenges.map((item, key) => (
-          <div className="mb-16" key={key}>
-            <div className="flex flex-row items-center  justify-left">
-              <Lottie
-                animationData={flashingLottieOrange}
-                className={'h-20 flex-none  items-start w-16'}
-                loop={true}
-              />
-              <h1 className="text-white text-2xl font-normal ">{item.title}</h1>{' '}
+          <div className="mb-16 flex flex-row items-start" key={key}>
+            <Lottie
+              animationData={flashingLottieWhite}
+              className={' flex-none items-start w-16 '}
+              loop={true}
+            />
+            <div>
+              <h1 className="text-white text-2xl font-normal ">{item.title}</h1>
+              <p className="text-white text-xl font-normal text-justify">{item.description}</p>
             </div>
-            <p className="text-white text-xl font-normal text-justify">{item.description}</p>
           </div>
         ))}
         <div className="flex flex-row w-full justify-between">
