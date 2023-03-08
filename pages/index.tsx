@@ -53,7 +53,7 @@ export default function Home() {
           accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
           sanctus est Lorem ipsum dolor sit amet.
           <Button className="ml-[38px] mt-1">
-            <Link href="/why-bluebird">read more</Link>
+            <Link href="/why">read more</Link>
           </Button>
         </p>
         <Tabs

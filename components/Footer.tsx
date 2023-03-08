@@ -5,7 +5,7 @@ import LinkedinIcon from '../public/linkedin.svg';
 const Footer = () => {
   const navItems = [
     { name: 'Home', link: '/' },
-    { name: 'Why Bluebird', link: '/why-bluebird' },
+    { name: 'Why Bluebird', link: '/why' },
     { name: 'What we offer', link: '/offer' },
     { name: 'Case Studies', link: '/case-studies' },
     { name: 'Quote Calculator', link: '/quote-calculator' },
