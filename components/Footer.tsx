@@ -1,10 +1,12 @@
 import React from 'react';
+import FacebookIcon from '../public/facebook.svg';
+import LinkedinIcon from '../public/linkedin.svg';
 
 const Footer = () => {
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Why Bluebird', link: '/why-bluebird' },
-    { name: 'What we offer', link: '/what-we-offer' },
+    { name: 'What we offer', link: '/offer' },
     { name: 'Case Studies', link: '/case-studies' },
     { name: 'Quote Calculator', link: '/quote-calculator' },
     { name: 'Contact', link: '/contact' },
@@ -41,7 +43,7 @@ const Footer = () => {
           </div>
           <div>
             <div className="font-semibold uppercase  mb-1">Contact us</div>
-            <div className="font-normal">info@bluebird.dev</div>
+            <div className="font-normal">info@bluebird.tech</div>
           </div>
         </div>
         <div className="flex-1">
@@ -59,6 +61,14 @@ const Footer = () => {
               );
             })}
           </ol>
+          <div className="flex flex-row justify-end mt-4">
+            <a href="https://www.linkedin.com/company/bluebirddev/">
+              <LinkedinIcon className="mr-4" />
+            </a>
+            <a href="https://www.facebook.com/BluebirdDevelopment">
+              <FacebookIcon />
+            </a>
+          </div>
         </div>
       </div>
     </div>
