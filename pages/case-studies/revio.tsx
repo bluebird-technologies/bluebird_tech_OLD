@@ -230,7 +230,7 @@ function RevioDetails() {
           <div className="w-2/5">
             <ul>
               {clientDetails?.infoGatheringMethod.map((item, key) => (
-                <li key={key} className="text-white list-disc mb-4 text-2xl leading-[3rem]">
+                <li key={key} className="text-white list-disc  mb-6 text-2xl leading-8">
                   {item}
                 </li>
               ))}
