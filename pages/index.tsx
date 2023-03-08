@@ -102,11 +102,12 @@ export default function Home() {
         </div>
       </Container>
       <div className="bg-[#f1f1f1] pt-[72px]">
-        <Container center>
+        <Container wide>
           <h2 className="title-2">
             SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
           </h2>
           <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
+
           <ClientIcons />
         </Container>
       </div>
