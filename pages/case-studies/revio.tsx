@@ -155,8 +155,8 @@ function RevioDetails() {
         <div className="flex w-full mt-60">
           <div className="w-1/3 pl-64">
             <QuoteSvg />
-            <p className="text-white text-2xl pb-1">QUOTE/FEEDBACK</p>
-            <p className="text-white text-2xl pb-16">FROM KEY PERSON</p>
+            <p className="text-white text-[35px] pb-8">QUOTE/FEEDBACK</p>
+            <p className="text-white text-[35px] leading-10 pb-16">FROM KEY PERSON</p>
 
             <div className="relative">
               <div
