@@ -1,6 +1,5 @@
 import React from 'react';
-import Icon from '@mdi/react';
-import { mdiCheck } from '@mdi/js';
+import { Checkmark } from '../Calculator/icons/Checkmark';
 
 export interface CheckboxProps {
   title: string;
@@ -16,7 +15,11 @@ export const Checkbox = ({ title, checked, onPressHandler }: CheckboxProps) => {
         className="flex flex-1 flex-row justify-between items-center"
       >
         <h1>{title}</h1>
-        {checked && <Icon path={mdiCheck} size={1} color={'#E97724'} />}
+        {checked && (
+          <div className="text-highlight h-[30px]">
+            <Checkmark />
+          </div>
+        )}
       </div>
     </div>
   );

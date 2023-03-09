@@ -3,8 +3,7 @@ import React, { useContext } from 'react';
 import { Button } from './Button';
 import animation from '../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
 import { CalculatorContextType, CalculatorContext } from '../contexts/calculatorContext';
-import Icon from '@mdi/react';
-import { mdiCheck } from '@mdi/js';
+import { Checkmark } from './Calculator/icons/Checkmark';
 
 function QuoteCalculator() {
   const { platform, optimisticHours, pessimisticHours, resources } =
@@ -54,7 +53,7 @@ function QuoteCalculator() {
           <div className="flex flex-1 justify-center mt-8 items-center">
             <Button>Calculate</Button>
           </div>
-          <Lottie animationData={animation} style={{}} loop={true} />
+          <Lottie animationData={animation} loop={true} />
         </div>
         <div className="mt-4">
           <h1 className="text-primary font-semibold text-center">Your Team:</h1>
@@ -62,7 +61,10 @@ function QuoteCalculator() {
             <div key={key} className="flex flex-1 mt-4 items-center justify-between mb-2">
               <div className="flex flex-1 flex-row justify-between items-center">
                 <h1>{item}</h1>
-                <Icon path={mdiCheck} size={1} color={'#E97724'} />
+                <div>check</div>
+                <div className="text-highlight h-[30px]">
+                  <Checkmark />
+                </div>
               </div>
             </div>
           ))}
