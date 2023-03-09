@@ -61,7 +61,7 @@ const Contact = () => {
             placeholder={'Your email'}
           />
           <textarea
-            rows={10}
+            rows={5}
             cols={50}
             className="w-[518px] my-3 px-3 py-4 text-lg rounded-[22px] min-h-10"
             placeholder="Your message"
