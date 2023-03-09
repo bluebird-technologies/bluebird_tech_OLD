@@ -19,22 +19,22 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
     <div
       className={`bg-white ${
         !isOpened ? 'rounded-[20px]' : 'rounded-t-[20px]'
-      }  items-center w-[518px] `}
+      }  items-center w-[518px]  my-4  `}
     >
       <div
         onClick={() => setIsOpened((prev) => !prev)}
-        className={'flex flex-1  my-4  px-2 justify-between items-center'}
+        className={'flex flex-1 py-4  px-2 justify-between items-center'}
       >
         <span className="text-lg">{selectedOption ? selectedOption : placeholder}</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={isOpened ? 'chevron-up.svg' : 'chevron-down.svg'} alt="chevron down " />
       </div>
       {isOpened && (
-        <div className="pb-2 ">
+        <div className="">
           {options.map((item, key) => (
             <div
               onClick={() => handleSelect(item)}
-              className="mb-2 border border-b border-t-0 pb-2"
+              className="pt-2 pb-4 border border-b border-t-0 flex hover:bg-[#CBCBCB] "
               key={key}
             >
               <span className="font-medium text-lg px-2">{item}</span>
