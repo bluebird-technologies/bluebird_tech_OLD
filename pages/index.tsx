@@ -101,8 +101,8 @@ export default function Home() {
           <WhatWeOffer />
         </div>
       </Container>
-      <div className="bg-[#f1f1f1] pt-[72px]">
-        <Container wide>
+      <div className="flex flex-1 w-full bg-[#f1f1f1] pt-[72px]">
+        <Container center>
           <h2 className="title-2">
             SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
           </h2>
