@@ -13,19 +13,20 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
   const handleSelect = (option: string) => {
     selectedItem(option);
     setSelectedOption(option);
+    setIsOpened((prev) => !prev);
   };
 
   return (
     <div
       className={`bg-white ${
         !isOpened ? 'rounded-[20px]' : 'rounded-t-[20px]'
-      }  items-center w-[518px]  my-4  `}
+      }  items-center w-[518px]  my-2  `}
     >
       <div
         onClick={() => setIsOpened((prev) => !prev)}
         className={'flex flex-1 py-4  px-2 justify-between items-center'}
       >
-        <span className="text-lg">{selectedOption ? selectedOption : placeholder}</span>
+        <span className="text-lg font-medium">{selectedOption ? selectedOption : placeholder}</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={isOpened ? 'chevron-up.svg' : 'chevron-down.svg'} alt="chevron down " />
       </div>
@@ -37,7 +38,7 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
               className="pt-2 pb-4 border border-b border-t-0 flex hover:bg-[#CBCBCB] "
               key={key}
             >
-              <span className="font-medium text-lg px-2">{item}</span>
+              <span className="font-semibold text-lg px-2">{item}</span>
             </div>
           ))}
         </div>
