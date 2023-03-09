@@ -66,7 +66,9 @@ const Contact = () => {
             className="w-[518px] my-3 px-3 py-4 text-lg rounded-[22px] min-h-10"
             placeholder="Your message"
           />
-          <Button>Send</Button>
+          <Button className="w-40 flex flex-1 items-center justify-center text-lg mt-8">
+            Send
+          </Button>
         </form>
         <Lottie
           animationData={Card}
