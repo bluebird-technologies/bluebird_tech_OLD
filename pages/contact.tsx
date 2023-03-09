@@ -41,12 +41,12 @@ const Contact = () => {
       <div className="flex flex-row px-20 justify-center items-center bg-secondary py-32 -mt-32">
         <form className="flex flex-1 my-8 flex-col items-center justify-center">
           <input
-            className="py-4 my-4 px-3 text-lg rounded-[20px]  w-[518px]"
+            className="py-4 my-3 px-3 text-lg rounded-[20px]  w-[518px]"
             type={'text'}
             placeholder={'Your name'}
           />
           <input
-            className=" py-4 my-4 px-3 font-normal rounded-[20px] text-lg  w-[518px]"
+            className=" py-4 my-3 px-3 font-normal rounded-[20px] text-lg  w-[518px]"
             type={'text'}
             placeholder={'Your company (optional)'}
           />
@@ -56,14 +56,14 @@ const Contact = () => {
             selectedItem={(option) => console.log(option)}
           />
           <input
-            className=" my-4 px-3 rounded-[20px] text-lg py-4 w-[518px]"
+            className=" my-3 px-3 rounded-[20px] text-lg py-4 w-[518px]"
             type={'email'}
             placeholder={'Your email'}
           />
           <textarea
             rows={10}
             cols={50}
-            className="w-[518px] my-4 px-3 py-4 text-lg rounded-[22px] min-h-10"
+            className="w-[518px] my-3 px-3 py-4 text-lg rounded-[22px] min-h-10"
             placeholder="Your message"
           />
           <Button>Send</Button>
