@@ -5,8 +5,16 @@ import Swiggle from '../public/contact/wave-line.svg';
 import Lottie from 'lottie-react';
 import Card from '../public/contact/cardAnimation.json';
 import Footer from '../components/Footer';
+import SelectDropdown from '../components/SelectDropdown';
 
 const Contact = () => {
+  const dropdownOptions = [
+    'In need of development work',
+    'Apply for a job',
+    'Outstaffing',
+    'Formal Quote',
+    'General Enquiry',
+  ];
   return (
     <div className="flex-1 flex flex-col h-full">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
@@ -42,7 +50,7 @@ const Contact = () => {
             type={'text'}
             placeholder={'Your company (optional)'}
           />
-          <div className="flex h-12 my-4  bg-white items-center w-[518px] rounded-[20px]">
+          {/* <div className="flex h-12 my-4  bg-white items-center w-[518px] rounded-[20px]">
             <select
               title="options"
               placeholder="Reason for contacting us (select)"
@@ -62,7 +70,11 @@ const Contact = () => {
               <option value="option3">Formal Quote</option>
               <option value="option3">General Enquiry</option>
             </select>
-          </div>
+          </div> */}
+          <SelectDropdown
+            placeholder="Reason for contacting us(select)"
+            options={dropdownOptions}
+          />
           <input
             className=" my-4 px-3 rounded-[20px] h-12 w-[518px]"
             type={'email'}
