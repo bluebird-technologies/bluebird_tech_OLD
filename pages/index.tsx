@@ -102,12 +102,14 @@ export default function Home() {
         </div>
       </Container>
       <div className="flex flex-1 w-full bg-[#f1f1f1] pt-[72px]">
-        <Container center>
-          <h2 className="title-2">
-            SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
-          </h2>
-          <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
-
+        <Container wide>
+          <div className="flex flex-col w-full flex-1 items-center justify-center">
+            <h2 className="title-2 text-center">
+              SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B] text-center">WORKED</span>{' '}
+              WITH
+            </h2>
+            <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
+          </div>
           <ClientIcons />
         </Container>
       </div>
