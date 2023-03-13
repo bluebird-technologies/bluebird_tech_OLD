@@ -1,78 +1,62 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import twenty2Seven from '../client-icons/22seven';
+import bankTech from '../client-icons/bankTech';
+import ambercircle from '../client-icons/ambercircle';
+import asklulo from '../client-icons/asklulo';
+import breez from '../client-icons/breez';
+import bsc from '../client-icons/bsc';
+import bvnk from '../client-icons/bvnk';
+import coinDirect from '../client-icons/coinDirect';
+import craft from '../client-icons/craft';
+import doctorly from '../client-icons/doctorly';
+import duepay from '../client-icons/duepay';
+import greensun from '../client-icons/greensun';
+import layUp from '../client-icons/layUp';
+import overlap from '../client-icons/overlap';
+import pepsi from '../client-icons/pepsi';
+import polygonProp from '../client-icons/polygonProp';
+import pump_abraison from '../client-icons/pump_abraison';
+import raubex from '../client-icons/raubex';
+import revix from '../client-icons/revix';
+import theDelta from '../client-icons/theDelta';
+import thorchain from '../client-icons/thorchain';
+import tweak from '../client-icons/tweak';
 
 export default function ClientIcons() {
   return (
     <div className="w-full h-full">
       <div className="flex flex-row items-center my-8  justify-between">
-        <img src={'/client-icons/22seven.svg'} alt={'22seven'} className="max-w-full max-h-full" />
-        <img
-          src={'/client-icons/bankTech.svg'}
-          alt={'bankTech'}
-          className="max-w-full  max-h-full"
-        />
-        <img src={'/client-icons/revix.svg'} alt={'revix'} className="max-w-full max-h-full" />
-        <img src={'/client-icons/layup.svg'} alt={'layup'} className="max-w-full max-h-full" />
+        <div>{twenty2Seven}</div>
+        <div>{bankTech}</div>
+        <div>{revix}</div>
+        <div>{layUp}</div>
       </div>
       <div className="flex flex-row items-center my-8 px-8 justify-between">
-        <img src={'/client-icons/duepay.svg'} alt={'duepay'} className="max-w-full max-h-full" />
-        <img
-          src={'/client-icons/doctorly.svg'}
-          alt={'doctorly'}
-          className="max-w-full max-h-full"
-        />
-        <img
-          src={'/client-icons/thorchain.svg'}
-          alt={'thorchain'}
-          className="max-w-full max-h-full"
-        />
+        <div>{duepay}</div>
+        <div>{doctorly}</div>
+        <div>{thorchain}</div>
       </div>
       <div className="flex flex-row items-center my-8 justify-between ">
-        <img
-          src={'/client-icons/theDelta.svg'}
-          alt={'theDelta'}
-          className="max-w-full max-h-full"
-        />
-        <img src={'/client-icons/raubex.svg'} alt={'raubex'} className="max-w-full max-h-full" />
-        <img
-          src={'/client-icons/pump_abraison.svg'}
-          alt={'pump_abraison'}
-          className="max-w-full max-h-full"
-        />
-        <img
-          src={'/client-icons/coinDirect.svg'}
-          alt={'coinDirect'}
-          className="max-w-full max-h-full"
-        />
+        <div>{theDelta}</div>
+        <div>{raubex}</div>
+        <div>{pump_abraison}</div>
       </div>
       <div className="flex flex-row items-center my-8 justify-between ">
-        <img src={'/client-icons/bvnk.svg'} alt={'bvnk'} className="max-w-full max-h-full" />
-        <img src={'/client-icons/craft.svg'} alt={'craft'} className="max-w-full max-h-full" />
-        <img src={'/client-icons/pepsi.svg'} alt={'pepsi'} className="max-w-full max-h-full" />
-        <img src={'/client-icons/breez.svg'} alt={'breez'} className="max-w-full max-h-full" />
+        <div>{bvnk}</div>
+        <div>{craft}</div>
+        <div>{pepsi}</div>
+        <div>{breez}</div>
       </div>
       <div className="flex flex-row items-center my-8 px-8 justify-between ">
-        <img
-          src={'/client-icons/greensun.svg'}
-          alt={'greensun'}
-          className="max-w-full max-h-full"
-        />
-        <img src={'/client-icons/bsc.svg'} alt={'bsc'} className="max-w-full max-h-full" />
-        <img
-          src={'/client-icons/polygonProp.svg'}
-          alt={'polygonProp'}
-          className="max-w-full max-h-full"
-        />
+        <div>{greensun}</div>
+        <div>{bsc}</div>
+        <div>{polygonProp}</div>
       </div>
       <div className="flex flex-row items-center my-8 justify-between ">
-        <img src={'/client-icons/overlap.svg'} alt={'overlap'} className="max-w-full max-h-full" />
-        <img
-          src={'/client-icons/ambercircle.svg'}
-          alt={'ambercircle'}
-          className="max-w-full max-h-full"
-        />
-        <img src={'/client-icons/asklulo.svg'} alt={'asklulo'} className="max-w-full max-h-full" />
-        <img src={'/client-icons/tweak.svg'} alt={'tweak'} className="max-w-full max-h-full" />
+        <div>{overlap}</div>
+        <div>{ambercircle}</div>
+        <div>{asklulo}</div>
+        <div>{tweak }</div>
       </div>
     </div>
   );
