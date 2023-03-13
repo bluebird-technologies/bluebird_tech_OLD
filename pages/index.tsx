@@ -7,8 +7,10 @@ import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="">
       <div
@@ -127,6 +129,7 @@ export default function Home() {
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
+              onClick={() => router.push('/case-studies/revio')}
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
@@ -142,6 +145,7 @@ export default function Home() {
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
+              onClick={() => router.push('/case-studies/raubex')}
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
@@ -157,6 +161,7 @@ export default function Home() {
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
+              onClick={() => router.push('/case-studies/aurora')}
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px] ">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
