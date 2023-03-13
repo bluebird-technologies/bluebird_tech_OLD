@@ -6,6 +6,7 @@ import { Header } from '../components/Header';
 import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -122,28 +123,50 @@ export default function Home() {
           <p className="alt">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
           <div className="mt-[85px] flex space-x-[29px]">
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom relative"
+              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
             >
-              <div className="bg-[#3D6895] inline-flex h-[59px] rounded-full items-center absolute bottom-0 left-0 mb-[13px]">
-                <div className="bg-white h-full w-[59px] rounded-full"></div>
-                <div className="text-[35px] leading-[43px] text-white font-medium px-4">REVIO</div>
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/revio.png" alt="revio icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  REVIO
+                </span>
               </div>
             </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom"
+              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
-            ></div>
+            >
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/raubex.png" alt="raubex icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  RAUBEX
+                </span>
+              </div>
+            </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom"
+              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
-            ></div>
+            >
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px] ">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/aurora.png" alt="aurora icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  AURORA
+                </span>
+              </div>
+            </div>
           </div>
         </Container>
       </div>
@@ -159,7 +182,9 @@ export default function Home() {
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
-          <Button>Get in touch</Button>
+          <Button>
+            <Link href="/contact">Get in touch</Link>
+          </Button>
         </Container>
       </div>
       <div className="bg-[#F1F1F1] pb-[54px]">
