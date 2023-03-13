@@ -9,7 +9,7 @@ import { Lottie } from '../components/Lottie';
 function caseStudies() {
   return (
     <div>
-      <div className="w-full flex flex-col items-center relative h-[94vh]">
+      <div className="w-full flex flex-col items-center relative h-[68vh]">
         <div
           className="bg-primary h-full"
           style={{
@@ -23,14 +23,14 @@ function caseStudies() {
         <Header />
         <div className="overflow-hidden">
           <Lottie
-            style={{ width: '750px' }}
+            style={{ width: '650px' }}
             src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
-            className="absolute left-0 "
+            className="absolute  -left-40 bottom-60 "
           />
           <Lottie
-            style={{ width: '300px' }}
+            style={{ width: '250px' }}
             src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
-            className="absolute left-[400px] bottom-[200px] "
+            className="absolute left-[400px] bottom-[150px] "
           />
         </div>
 
