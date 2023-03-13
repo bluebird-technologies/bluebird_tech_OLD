@@ -3,7 +3,7 @@ export default (
     id="Component_228_1"
     data-name="Component 228 – 1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     width="236.401"
     height="73.85"
     viewBox="0 0 236.401 73.85"

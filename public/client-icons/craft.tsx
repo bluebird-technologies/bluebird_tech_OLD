@@ -1,7 +1,7 @@
 export default (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     width="176.979"
     height="59.433"
     viewBox="0 0 176.979 59.433"
@@ -20,7 +20,7 @@ export default (
     <g
       id="Component_222_1"
       data-name="Component 222 – 1"
-      style="mix-blend-mode: normal;isolation: isolate"
+      // style="mix-blend-mode: normal;isolation: isolate"
     >
       <g id="Group_1660" data-name="Group 1660" opacity="0.43" clip-path="url(#clip-path)">
         <g id="Group_1659" data-name="Group 1659" transform="translate(0 0)">
