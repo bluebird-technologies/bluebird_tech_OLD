@@ -148,10 +148,10 @@ function RaubexDetails() {
       <div className="relative flex -mt-20 h-[1100px] w-full overflow-hidden">
         <div className="absolute bg-primary h-[1100px] w-full overflow-hidden -z-10" />
         <div className="flex w-full mt-60">
-          <div className="w-1/3 pl-64">
+          <div className="w-2/3 pl-64">
             <QuoteSvg />
-            <p className="text-white text-2xl pb-1">QUOTE/FEEDBACK</p>
-            <p className="text-white text-2xl pb-16">FROM KEY PERSON</p>
+            <p className="text-white text-5xl pb-1">QUOTE/FEEDBACK</p>
+            <p className="text-white text-5xl pb-16">FROM KEY PERSON</p>
 
             <div className="relative">
               <div
@@ -162,9 +162,9 @@ function RaubexDetails() {
               >
                 <SwiggleSvg width="1000" />
               </div>
-              <p className="text-highlight italic">- Name & Job Title</p>
+              <p className="text-highlight italic text-3xl">- Name & Job Title</p>
             </div>
-            <p className="text-highlight text-2xl pt-32">Involved Team</p>
+            <p className="text-highlight text-3xl pt-32">Involved Team</p>
           </div>
           <div className="relative w-2/3">
             <div
@@ -175,7 +175,7 @@ function RaubexDetails() {
             >
               <Lottie animationData={flashingLottieOrange} loop={true} />
             </div>
-            <picture className="">
+            <picture className="absolute top-60">
               <source srcSet="/case-studies/raubex-clay.png" />
               <img
                 src="/case-studies/raubex-clay.png"
