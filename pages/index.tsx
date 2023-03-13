@@ -159,7 +159,9 @@ export default function Home() {
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
-          <Button>Get in touch</Button>
+          <Button>
+            <Link href="/contact">Get in touch</Link>
+          </Button>
         </Container>
       </div>
       <div className="bg-[#F1F1F1] pb-[54px]">
