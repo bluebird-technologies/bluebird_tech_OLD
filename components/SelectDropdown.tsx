@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import chevronDown from '../public/chevron-down';
+import chevronUp from '../public/chevron-up';
 interface Props {
   placeholder: string;
   options: string[];
@@ -27,8 +28,7 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
         className={'flex flex-1 py-4  px-4 justify-between items-center'}
       >
         <span className="text-lg font-medium">{selectedOption ? selectedOption : placeholder}</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={isOpened ? 'chevron-up.svg' : 'chevron-down.svg'} alt="chevron down " />
+        <div>{isOpened ? chevronUp : chevronDown}</div>
       </div>
       {isOpened && (
         <div className="">
