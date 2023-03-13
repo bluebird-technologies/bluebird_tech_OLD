@@ -194,7 +194,7 @@ function AuroraDetails() {
               <div className="flex flex-col max-w-5xl justify-center">
                 <ul>
                   {clientDetails?.infoGathered.map((item, key) => (
-                    <li key={key} className="text-white text-2xl leading-[3rem] list-disc">
+                    <li key={key} className="text-white text-2xl mb-6 leading-8 list-disc">
                       {item}
                     </li>
                   ))}

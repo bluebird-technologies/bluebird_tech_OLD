@@ -202,7 +202,7 @@ function RaubexDetails() {
               <div className="flex flex-col max-w-5xl justify-center">
                 <ul>
                   {clientDetails?.infoGathered.map((item, key) => (
-                    <li key={key} className="text-white text-2xl leading-[3rem] list-disc">
+                    <li key={key} className="text-white text-2xl mb-6 leading-8 list-disc">
                       {item}
                     </li>
                   ))}
@@ -233,7 +233,7 @@ function RaubexDetails() {
           <div className="w-2/5">
             <ul>
               {clientDetails?.infoGatheringMethod.map((item, key) => (
-                <li key={key} className="text-white list-disc mb-4 text-2xl leading-[3rem]">
+                <li key={key} className="text-white list-disc mb-6 text-2xl leading-[3rem]">
                   {item}
                 </li>
               ))}
