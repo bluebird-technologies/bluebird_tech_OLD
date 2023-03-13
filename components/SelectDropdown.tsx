@@ -24,7 +24,7 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
     >
       <div
         onClick={() => setIsOpened((prev) => !prev)}
-        className={'flex flex-1 py-4  px-2 justify-between items-center'}
+        className={'flex flex-1 py-4  px-4 justify-between items-center'}
       >
         <span className="text-lg font-medium">{selectedOption ? selectedOption : placeholder}</span>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,7 +38,7 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
               className="pt-2 pb-4 border border-b border-t-0 flex hover:bg-[#CBCBCB] "
               key={key}
             >
-              <span className="font-semibold text-lg px-2">{item}</span>
+              <span className="font-semibold text-lg px-4">{item}</span>
             </div>
           ))}
         </div>
