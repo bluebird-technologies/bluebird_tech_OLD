@@ -9,7 +9,7 @@ import { Lottie } from '../components/Lottie';
 function caseStudies() {
   return (
     <div>
-      <div className="w-full flex flex-col items-center relative h-[68vh]">
+      <div className={`w-full flex flex-col items-center relative h-[900px]`}>
         <div
           className="bg-primary h-full"
           style={{
@@ -30,7 +30,7 @@ function caseStudies() {
           <Lottie
             style={{ width: '250px' }}
             src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
-            className="absolute left-[400px] bottom-[150px] "
+            className="absolute left-80 bottom-[150px] "
           />
         </div>
 
