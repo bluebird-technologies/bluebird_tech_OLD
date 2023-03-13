@@ -40,6 +40,7 @@ export default function ClientIcons() {
         <div>{theDelta}</div>
         <div>{raubex}</div>
         <div>{pump_abraison}</div>
+        <div>{coinDirect}</div>
       </div>
       <div className="flex flex-row items-center my-8 justify-between ">
         <div>{bvnk}</div>
