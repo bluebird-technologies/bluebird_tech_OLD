@@ -10,7 +10,7 @@ function QuoteCalculator() {
     useContext<CalculatorContextType>(CalculatorContext);
 
   return (
-    <div className="bg-white h-[450px]  py-4 px-2 w-[350px]">
+    <div className="bg-white h-[700px] py-4 px-2 w-full">
       <div className="h-[400px] overflow-y-auto overflow-x-hidden ">
         <div className="flex flex-1 flex-row border justify-between pb-1  border-t-0 border-x-0 border-b-lightGrey">
           <label className="text-lightGrey italic">Platform</label>
@@ -61,7 +61,6 @@ function QuoteCalculator() {
             <div key={key} className="flex flex-1 mt-4 items-center justify-between mb-2">
               <div className="flex flex-1 flex-row justify-between items-center">
                 <h1>{item}</h1>
-                <div>check</div>
                 <div className="text-highlight h-[30px]">
                   <Checkmark />
                 </div>

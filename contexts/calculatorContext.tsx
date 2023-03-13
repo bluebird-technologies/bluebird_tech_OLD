@@ -4,6 +4,8 @@ export interface CalculatorContextType {
   platform: string;
   optimisticHours: number;
   pessimisticHours: number;
+  // optimisticHourTracker: number[];
+  // pessimisticHourTracker: number[];
   size?: string;
   ux_ui?: string;
   hasDesigner?: boolean;
@@ -27,6 +29,8 @@ const initialValue = {
   optimisticHours: 0,
   pessimisticHours: 0,
   resources: [''],
+  // optimisticHourTracker: [],
+  // pessimisticHourTracker: [],
 };
 
 export const CalculatorContext = createContext(initialValue);
