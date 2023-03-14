@@ -129,7 +129,7 @@ export default function Home() {
           <p className="alt text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
           <div className="mt-[80px] flex space-x-[29px]">
             <div
-              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
@@ -145,7 +145,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
@@ -161,7 +161,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
