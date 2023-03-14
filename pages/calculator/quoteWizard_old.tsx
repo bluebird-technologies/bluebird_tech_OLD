@@ -35,7 +35,7 @@ import CalendarIcon from 'public/calculator/calendar.svg';
 import BookingsIcon from 'public/calculator/bookings.svg';
 import LiveTrackingIcon from 'public/calculator/liveTracking.svg';
 import MapsIntegrationIcon from 'public/calculator/maps-integration.svg';
-import Calculator from '../../components/QuoteCalculator';
+import Calculator from '../../components/Calculator/QuoteCalculator';
 import SelectedScreen from '../../components/Calculator/SelectedScreen';
 import RightArrow from '../../public/right-arrow.svg';
 import {

@@ -2,9 +2,11 @@ import AppleIcon from '../icons/AppleIcon';
 import AndroidIcon from '../icons/AndroidIcon';
 import WebIcon from '../icons/WebIcon';
 import MultiPlatformIcon from '../icons/MultiPlatformIcon';
+import smallIcon from '../icons/small';
+import mediumIcon from '../icons/medium';
+import largeIcon from '../icons/large';
 
 export interface TFormCardConfig {
-  formIndex: number;
   title: string;
   description: string;
   // backButton?: React.ReactNode;
@@ -14,13 +16,12 @@ export interface TFormCardConfig {
     title: string;
     icon: React.ReactNode;
     optimisticHours?: number;
-    pessmisticHours?: number;
+    pessimisticHours?: number;
   }[];
 }
 
 export const FormConfigs: TFormCardConfig[] = [
   {
-    formIndex: 1,
     title: 'What type of platform are you building?',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
@@ -30,33 +31,32 @@ export const FormConfigs: TFormCardConfig[] = [
         title: 'Apple iOS',
         icon: AppleIcon,
         optimisticHours: 40,
-        pessmisticHours: 57,
+        pessimisticHours: 57,
       },
       {
         optionIndex: 2,
         title: 'Android',
         icon: AndroidIcon,
         optimisticHours: 40,
-        pessmisticHours: 57,
+        pessimisticHours: 57,
       },
       {
         optionIndex: 3,
         title: 'Web',
         icon: WebIcon,
         optimisticHours: 40,
-        pessmisticHours: 57,
+        pessimisticHours: 57,
       },
       {
         optionIndex: 4,
         title: 'Multi-Platform',
         icon: MultiPlatformIcon,
         optimisticHours: 80,
-        pessmisticHours: 114,
+        pessimisticHours: 114,
       },
     ],
   },
   {
-    formIndex: 2,
     title: 'How big is your platform?',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
@@ -64,23 +64,23 @@ export const FormConfigs: TFormCardConfig[] = [
       {
         optionIndex: 1,
         title: 'Small',
-        icon: 'smallIcon',
+        icon: smallIcon,
         optimisticHours: 20,
-        pessmisticHours: 29,
+        pessimisticHours: 29,
       },
       {
         optionIndex: 2,
         title: 'Medium',
-        icon: 'mediumIcon',
+        icon: mediumIcon,
         optimisticHours: 40,
-        pessmisticHours: 57,
+        pessimisticHours: 57,
       },
       {
         optionIndex: 3,
         title: 'Large',
-        icon: 'largeIcon',
+        icon: largeIcon,
         optimisticHours: 60,
-        pessmisticHours: 86,
+        pessimisticHours: 86,
       },
     ],
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface TFormOption {
   optionIndex: number;
@@ -11,7 +11,7 @@ interface TFormOption {
 export interface FormCardProps {
   title: string;
   description: string;
-  setSelectedOption: ({ option }: { option: TFormOption }) => void;
+  // setSelectedOption: ({ option }: { option: TFormOption }) => void;
   backButton?: boolean;
   goBack?: () => void;
   fwdButton?: boolean;
@@ -22,13 +22,30 @@ function FormCard({
   title,
   description,
   options,
-  setSelectedOption,
+  // setSelectedOption,
   backButton,
   goBack,
   fwdButton,
 }: FormCardProps) {
   // todo pass this value down from the data, to catch the one screen where its different
   const alignOptionsLeft = false;
+
+  const [currentOptionSelection, setCurrentOptionSelection] = useState<number[]>([]);
+
+  const handleClick = (key: number) => {
+    const tempOptions = currentOptionSelection;
+    if (tempOptions.includes(key)) {
+      const index = tempOptions.indexOf(key);
+      if (index !== -1) {
+        tempOptions.splice(index, 1);
+      }
+      return;
+    }
+
+    tempOptions.push(key);
+    setCurrentOptionSelection(tempOptions);
+  };
+
   return (
     <div className="flex flex-col">
       <h3 className="text-white text-4xl font-semibold">{title}</h3>
@@ -44,11 +61,7 @@ function FormCard({
       >
         {options.map((option) => (
           <div
-            onClick={() =>
-              setSelectedOption({
-                option,
-              })
-            }
+            onClick={() => handleClick(option.optionIndex)}
             key={option.optionIndex}
             className="cursor-pointer justify-center items-center text-center"
           >

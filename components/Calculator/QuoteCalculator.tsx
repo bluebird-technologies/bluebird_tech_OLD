@@ -1,9 +1,9 @@
 import Lottie from 'lottie-react';
 import React, { useContext } from 'react';
-import { Button } from './Button';
-import animation from '../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
-import { CalculatorContextType, CalculatorContext } from '../contexts/calculatorContext';
-import { Checkmark } from './Calculator/icons/Checkmark';
+import { Button } from '../Button';
+import animation from '../../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
+import { CalculatorContextType, CalculatorContext } from '../../contexts/calculatorContext';
+import { Checkmark } from './icons/Checkmark';
 
 function QuoteCalculator() {
   const { platform, optimisticHours, pessimisticHours, resources } =
