@@ -1,63 +1,86 @@
 import React from 'react';
-import twenty2Seven from '../client-icons/22seven';
-import bankTech from '../client-icons/bankTech';
-import ambercircle from '../client-icons/ambercircle';
-import asklulo from '../client-icons/asklulo';
-import breez from '../client-icons/breez';
-import bsc from '../client-icons/bsc';
-import bvnk from '../client-icons/bvnk';
-import coinDirect from '../client-icons/coinDirect';
-import craft from '../client-icons/craft';
-import doctorly from '../client-icons/doctorly';
-import duepay from '../client-icons/duepay';
-import greensun from '../client-icons/greensun';
-import layUp from '../client-icons/layUp';
-import overlap from '../client-icons/overlap';
-import pepsi from '../client-icons/pepsi';
-import polygonProp from '../client-icons/polygonProp';
-import pump_abraison from '../client-icons/pump_abraison';
-import raubex from '../client-icons/raubex';
-import revix from '../client-icons/revix';
-import theDelta from '../client-icons/theDelta';
-import thorchain from '../client-icons/thorchain';
-import tweak from '../client-icons/tweak';
+import Image from 'next/image';
 
 export default function ClientIcons() {
   return (
     <div className="w-full h-full">
-      <div className="flex flex-row items-center my-8  justify-between">
-        <div>{twenty2Seven}</div>
-        <div>{bankTech}</div>
-        <div>{revix}</div>
-        <div>{layUp}</div>
+      <div className="flex flex-row items-center py-12  justify-between">
+        <div>
+          <Image height={220} width={220} alt="22seven" src="/client-icons/22seven.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="bankTech" src="/client-icons/bankTech.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="revix" src="/client-icons/revix.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="layUp" src="/client-icons/layup.svg" />
+        </div>
       </div>
-      <div className="flex flex-row items-center my-8 px-8 justify-between">
-        <div>{duepay}</div>
-        <div>{doctorly}</div>
-        <div>{thorchain}</div>
+      <div className="flex flex-row items-center py-12 px-12 justify-between">
+        <div>
+          <Image height={220} width={220} alt="duepay" src="/client-icons/duepay.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="FameShopping" src="/client-icons/fameShopping.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="ThorChain" src="/client-icons/thorchain.svg" />
+        </div>
       </div>
-      <div className="flex flex-row items-center my-8 justify-between ">
-        <div>{theDelta}</div>
-        <div>{raubex}</div>
-        <div>{pump_abraison}</div>
-        <div>{coinDirect}</div>
+      <div className="flex flex-row items-center py-12 justify-between ">
+        <div>
+          <Image height={220} width={220} alt="Evuna" src="/client-icons/evuna.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="raubex" src="/client-icons/raubex.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} src="/client-icons/pump_abrasion.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="Coindirect" src="/client-icons/coinDirect.svg" />
+        </div>
       </div>
-      <div className="flex flex-row items-center my-8 justify-between ">
-        <div>{bvnk}</div>
-        <div>{craft}</div>
-        <div>{pepsi}</div>
-        <div>{breez}</div>
+      <div className="flex flex-row items-center py-12 px-12 justify-between ">
+        <div>
+          <Image height={220} width={220} alt="bvnk" src="/client-icons/bvnk.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="craft" src="/client-icons/craft.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="Pepsi" src="/client-icons/pepsi.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="breez" src="/client-icons/breez.svg" />
+        </div>
       </div>
-      <div className="flex flex-row items-center my-8 px-8 justify-between ">
-        <div>{greensun}</div>
-        <div>{bsc}</div>
-        <div>{polygonProp}</div>
+      <div className="flex flex-row items-center py-12 px-12 justify-between ">
+        <div>
+          <Image height={220} width={220} alt="Greensun" src="/client-icons/greensun.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="bsc" src="/client-icons/bsc.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="PolygonProp" src="/client-icons/polygonProp.svg" />
+        </div>
       </div>
-      <div className="flex flex-row items-center my-8 justify-between ">
-        <div>{overlap}</div>
-        <div>{ambercircle}</div>
-        <div>{asklulo}</div>
-        <div>{tweak }</div>
+      <div className="flex flex-row items-center py-12 justify-between ">
+        <div>
+          <Image height={220} width={220} alt="Overlap" src="/client-icons/overlap.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="Ambercircle" src="/client-icons/ambercircle.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="Asklulo" src="/client-icons/asklulo.svg" />
+        </div>
+        <div>
+          <Image height={220} width={220} alt="Tweak" src="/client-icons/tweak.svg" />
+        </div>
       </div>
     </div>
   );
