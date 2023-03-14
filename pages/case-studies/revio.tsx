@@ -153,7 +153,7 @@ function RevioDetails() {
       <div className="relative flex -mt-20 h-[1100px] w-full overflow-hidden">
         <div className="absolute bg-primary h-[1100px] w-full overflow-hidden -z-10" />
         <div className="flex w-full mt-60">
-          <div className="w-2/3 pl-64">
+          <div className="w-1/2 pl-64">
             <QuoteSvg />
             <p className="text-white text-5xl pb-8">QUOTE/FEEDBACK</p>
             <p className="text-white text-5xl leading-10 pb-16">FROM KEY PERSON</p>
@@ -171,7 +171,7 @@ function RevioDetails() {
             </div>
             <p className="text-highlight text-3xl pt-32">Involved Team</p>
           </div>
-          <div className="relative w-2/3">
+          <div className="relative w-1/2">
             <div
               className="absolute right-[250px] top-[200px] scaleLottiex4"
               style={{
