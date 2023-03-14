@@ -118,14 +118,18 @@ export default function Home() {
           ></div>
         </Container>
       </div>
-      <div className="pt-[55px] pb-[100px] bg-primary shadow-[0px 9px 11px #00000029]">
+      <div className="pt-[55px] pb-[80px] bg-primary shadow-[0px 9px 11px #00000029]">
         <Container>
-          <div className="subtitle mt-[91px]">Case studies</div>
-          <h2 className="title-2 alt">SEE OUR LATEST WORK</h2>
-          <p className="alt">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-          <div className="mt-[85px] flex space-x-[29px]">
+          <div className="subtitle mt-[30px] text-2xl">
+            <span className="text-2xl">Case studies</span>
+          </div>
+          <h2 className="title-2 alt">
+            <span className="text-5xl">SEE OUR LATEST WORK</span>
+          </h2>
+          <p className="alt text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+          <div className="mt-[80px] flex space-x-[29px]">
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
@@ -141,7 +145,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
@@ -157,7 +161,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom flex flex-1 items-end"
+              className="w-[380px] h-[300px] bg-cover bg-bottom flex flex-1 items-end"
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
