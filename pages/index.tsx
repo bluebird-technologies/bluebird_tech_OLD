@@ -133,7 +133,7 @@ export default function Home() {
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
-                  <Image src="/revio.png" alt="revio icon" fill />
+                  <Image src="/images/revio.png" alt="revio icon" fill />
                 </div>
                 <span className="text-[35px] leading-[43px] text-white font-medium px-4">
                   REVIO
