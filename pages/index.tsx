@@ -149,7 +149,7 @@ export default function Home() {
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
-                  <Image src="/raubex.png" alt="raubex icon" fill />
+                  <Image src="/images/raubex.png" alt="raubex icon" fill />
                 </div>
                 <span className="text-[35px] leading-[43px] text-white font-medium px-4">
                   RAUBEX
@@ -165,7 +165,7 @@ export default function Home() {
             >
               <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px] ">
                 <div className="bg-white h-full w-[59px] relative rounded-full">
-                  <Image src="/aurora.png" alt="aurora icon" fill />
+                  <Image src="/images/aurora.png" alt="aurora icon" fill />
                 </div>
                 <span className="text-[35px] leading-[43px] text-white font-medium px-4">
                   AURORA
@@ -179,7 +179,7 @@ export default function Home() {
       <div
         className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[77px] bg-[#F1F1F1]"
         style={{
-          backgroundImage: 'url(/secondary-overlay.png)',
+          backgroundImage: 'url(/images/secondary-overlay.png)',
         }}
       >
         <Container center>
