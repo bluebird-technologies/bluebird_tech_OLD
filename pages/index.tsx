@@ -180,14 +180,19 @@ export default function Home() {
         </Container>
       </div>
 
-      <div
-        className="w-full bg-cover bg-bottom flex flex-1 flex-col items-center relative pt-[60px] pb-[77px] bg-[#F1F1F1]"
-        style={{
-          backgroundImage: 'url(/secondary-overlay.png)',
-        }}
-      >
+      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-32">
+        <div
+          className="bg-secondary h-full"
+          style={{
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Container center>
-          <h2 className="title-2 alt">HAVE A PROJECT IN MIND?</h2>
+          <h2 className="title-2 alt mt-24">HAVE A PROJECT IN MIND?</h2>
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
@@ -196,6 +201,9 @@ export default function Home() {
           </Button>
         </Container>
       </div>
+
+      <div className="bg-[#F1F1F1] h-[150px] -mt-32" />
+
       <div className="bg-[#F1F1F1] pb-[54px]">
         <Footer />
       </div>
