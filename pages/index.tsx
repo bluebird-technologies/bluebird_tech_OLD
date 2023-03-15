@@ -106,13 +106,6 @@ export default function Home() {
             SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
           </h2>
           <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[64px]"></div>
-          {/* <div className="mb-[76px] text-red-500">{twentytwoSeven}</div> */}
-          <div
-            className="w-[304px] h-[40px] bg-cover bg-bottom flex flex-col items-center relative bg-opacity-80 "
-            style={{
-              backgroundImage: 'url(/companies/22seven.svg)',
-            }}
-          ></div>
         </Container>
       </div>
       <div className="pt-[55px] pb-[100px] bg-primary shadow-[0px 9px 11px #00000029]">
