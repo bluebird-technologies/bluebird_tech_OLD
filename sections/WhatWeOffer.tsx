@@ -35,9 +35,9 @@ export function WhatWeOffer() {
       <div className="w-1/4 px-[20px] flex items-center">
         <h2 className="title-2 secondary">WHAT WE OFFER</h2>
       </div>
-      {items.map((i) => (
+      {items.map((i, index) => (
         <div
-          key={i.label}
+          key={index}
           className="w-1/4"
           style={
             {
