@@ -20,7 +20,6 @@ function NavItem({ label, href }: { label: string; href: string }) {
   // ensure element do not jump when hovering/bold
   useEffect(() => {
     if (ref.current?.offsetWidth) {
-      console.log(Math.ceil(ref.current?.offsetWidth + 1 ?? 0));
       setWidth(Math.ceil(ref.current?.offsetWidth));
     }
   }, [label]);
