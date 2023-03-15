@@ -37,7 +37,12 @@ export default function ClientIcons() {
           <Image height={220} width={220} alt="raubex" src="/client-icons/raubex.svg" />
         </div>
         <div>
-          <Image height={220} width={220} src="/client-icons/pump_abrasion.svg" />
+          <Image
+            height={220}
+            width={220}
+            alt="Pump and abrasion"
+            src="/client-icons/pump_abrasion.svg"
+          />
         </div>
         <div>
           <Image height={220} width={220} alt="Coindirect" src="/client-icons/coinDirect.svg" />
