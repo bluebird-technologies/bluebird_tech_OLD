@@ -35,16 +35,8 @@ export function WhatWeOffer() {
       <div className="w-1/4 px-[20px] flex items-center">
         <h2 className="title-2 secondary">WHAT WE OFFER</h2>
       </div>
-      {items.map((i) => (
-        <div
-          key={i.label}
-          className="w-1/4"
-          style={
-            {
-              // boxShadow: '2px 4px 16px #00000029',
-            }
-          }
-        >
+      {items.map((i, index) => (
+        <div key={index} className="w-1/4">
           <div className="mx-[16px] shadow-[2px_4px_16px_#00000029] pt-[22px] pb-[18px] px-[20px] rounded-[25px] hover:-mt-2 transition-all">
             <div className="w-[54px] h-[54px] rounded-full shadow-[2px_4px_16px_#00000029] flex items-center justify-center p-3">
               <picture>

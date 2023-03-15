@@ -6,8 +6,12 @@ import { Header } from '../components/Header';
 import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
+import ClientIcons from '../public/home/ClientIcons';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="">
       <div
@@ -100,68 +104,104 @@ export default function Home() {
           <WhatWeOffer />
         </div>
       </Container>
-      <div className="bg-[#f1f1f1] pt-[72px]">
-        <Container center>
-          <h2 className="title-2">
-            SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B]">WORKED</span> WITH
-          </h2>
-          <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[64px]"></div>
-          {/* <div className="mb-[76px] text-red-500">{twentytwoSeven}</div> */}
-          <div
-            className="w-[304px] h-[40px] bg-cover bg-bottom flex flex-col items-center relative bg-opacity-80 "
-            style={{
-              backgroundImage: 'url(/companies/22seven.svg)',
-            }}
-          ></div>
+      <div className="flex flex-1 w-full bg-[#f1f1f1] pt-[72px]">
+        <Container wide>
+          <div className="flex flex-col w-full flex-1 items-center justify-center">
+            <h2 className="title-2 text-center">
+              SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B] text-center">WORKED</span>{' '}
+              WITH
+            </h2>
+            <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
+          </div>
+          <ClientIcons />
         </Container>
       </div>
-      <div className="pt-[55px] pb-[100px] bg-primary shadow-[0px 9px 11px #00000029]">
+      <div className="pt-[55px] pb-[80px] bg-primary shadow-[0px 9px 11px #00000029]">
         <Container>
-          <div className="subtitle mt-[91px]">Case studies</div>
-          <h2 className="title-2 alt">SEE OUR LATEST WORK</h2>
-          <p className="alt">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-          <div className="mt-[85px] flex space-x-[29px]">
+          <div className="subtitle mt-[30px] text-2xl">
+            <span className="text-2xl">Case studies</span>
+          </div>
+          <h2 className="title-2 alt">
+            <span className="text-5xl">SEE OUR LATEST WORK</span>
+          </h2>
+          <p className="alt text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+          <div className="mt-[80px] flex space-x-[29px]">
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom relative"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
+              onClick={() => router.push('/case-studies/revio')}
             >
-              <div className="bg-[#3D6895] inline-flex h-[59px] rounded-full items-center absolute bottom-0 left-0 mb-[13px]">
-                <div className="bg-white h-full w-[59px] rounded-full"></div>
-                <div className="text-[35px] leading-[43px] text-white font-medium px-4">REVIO</div>
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/images/revio.png" alt="revio icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  REVIO
+                </span>
               </div>
             </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
-            ></div>
+              onClick={() => router.push('/case-studies/raubex')}
+            >
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/images/raubex.png" alt="raubex icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  RAUBEX
+                </span>
+              </div>
+            </div>
             <div
-              className="w-[334px] h-[273px] bg-cover bg-bottom"
+              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
-            ></div>
+              onClick={() => router.push('/case-studies/aurora')}
+            >
+              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px] ">
+                <div className="bg-white h-full w-[59px] relative rounded-full">
+                  <Image src="/images/aurora.png" alt="aurora icon" fill />
+                </div>
+                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                  AURORA
+                </span>
+              </div>
+            </div>
           </div>
         </Container>
       </div>
 
-      <div
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[77px] bg-[#F1F1F1]"
-        style={{
-          backgroundImage: 'url(/secondary-overlay.png)',
-        }}
-      >
+      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-32">
+        <div
+          className="bg-secondary h-full"
+          style={{
+            position: 'absolute',
+            left: '-16%',
+            width: '130vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
         <Container center>
-          <h2 className="title-2 alt">HAVE A PROJECT IN MIND?</h2>
+          <h2 className="title-2 alt mt-24">HAVE A PROJECT IN MIND?</h2>
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
-          <Button>Get in touch</Button>
+          <Button>
+            <Link href="/contact">Get in touch</Link>
+          </Button>
         </Container>
       </div>
+
+      <div className="bg-[#F1F1F1] h-[150px] -mt-32" />
+
       <div className="bg-[#F1F1F1] pb-[54px]">
         <Footer />
       </div>

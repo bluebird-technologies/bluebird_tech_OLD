@@ -4,11 +4,12 @@ import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { clients } from '../public/case-studies/clients';
 import DownArrow from '../public/down-arrow.svg';
+import { Lottie } from '../components/Lottie';
 
 function caseStudies() {
   return (
     <div>
-      <div className="w-full flex flex-col items-center relative h-[94vh]">
+      <div className={`w-full flex flex-col items-center relative h-[900px]`}>
         <div
           className="bg-primary h-full"
           style={{
@@ -20,6 +21,18 @@ function caseStudies() {
           }}
         />
         <Header />
+        <div className="overflow-hidden">
+          <Lottie
+            style={{ width: '650px' }}
+            src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
+            className="absolute  -left-40 bottom-60 "
+          />
+          <Lottie
+            style={{ width: '250px' }}
+            src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
+            className="absolute left-80 bottom-[150px] "
+          />
+        </div>
 
         <div className="relative flex flex-col items-center mt-20">
           <h2 className="title-1 alt">CASE STUDIES</h2>
