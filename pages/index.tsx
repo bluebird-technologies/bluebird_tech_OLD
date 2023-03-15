@@ -181,9 +181,9 @@ export default function Home() {
       </div>
 
       <div
-        className="w-full bg-cover bg-bottom flex flex-col items-center relative pt-[60px] pb-[77px] bg-[#F1F1F1]"
+        className="w-full bg-cover bg-bottom flex flex-1 flex-col items-center relative pt-[60px] pb-[77px] bg-[#F1F1F1]"
         style={{
-          backgroundImage: 'url(/images/secondary-overlay.png)',
+          backgroundImage: 'url(/secondary-overlay.png)',
         }}
       >
         <Container center>
