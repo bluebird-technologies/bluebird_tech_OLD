@@ -1,4 +1,6 @@
-<svg id="Component_173_1" data-name="Component 173 – 1" xmlns="http://www.w3.org/2000/svg" width="90" height="120" viewBox="0 0 136.875 205.59">
+<svg id="Component_173_1" data-name="Component 173 – 1" xmlns="http://www.w3.org/2000/svg" width="136.875" viewBox="0 0 136.875 205.59"
+  style="width:100%; height:100%"
+>
   <g id="login" transform="translate(0 0.719)">
     <rect id="Rectangle_347" data-name="Rectangle 347" width="61.861" height="14.029" rx="7.014" transform="translate(97.849 151.156) rotate(-180)" fill="#e97724"/>
     <path id="Path_2741" data-name="Path 2741" d="M818.633,894.605H940.952a7.17,7.17,0,0,0,7.277-7.014h0a7.17,7.17,0,0,0-7.277-7.014H818.633a7.171,7.171,0,0,0-7.278,7.014h0A7.171,7.171,0,0,0,818.633,894.605Z" transform="translate(-811.355 -795.522)" fill="#fff"/>

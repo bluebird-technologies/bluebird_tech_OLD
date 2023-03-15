@@ -5,6 +5,8 @@ export interface CalculatorContextProps {
   setOptimisticArray: (val: number[]) => void;
   pessimisticArray: number[] | undefined;
   setPessimisticArray: (val: number[]) => void;
+  hasDesigner: boolean;
+  setHasDesigner: (val: boolean) => void;
 }
 
 // typescript is really bad with context. Online solution suggested using

@@ -5,6 +5,19 @@ import MultiPlatformIcon from '../icons/MultiPlatformIcon';
 import smallIcon from '../icons/small';
 import mediumIcon from '../icons/medium';
 import largeIcon from '../icons/large';
+import yesIcon from '../icons/yesIcon';
+import noIcon from '../icons/noIcon';
+import stockUx from '../icons/stockUX';
+import mvpIcon from '../icons/mvpIcon';
+import beautifulUxIcon from '../icons/beautifulUxIcon';
+import Social from '../icons/social';
+import Email from '../icons/Email';
+import LoginNotSure from '../icons/loginNotSure';
+import LoginNo from '../icons/logInNo';
+
+import NoIconPersonal from '../icons/personalProfile/NoIcon';
+import NotSureIconPersonal from '../icons/personalProfile/NotSureIcon';
+import YesIconPersonal from '../icons/personalProfile/YesIcon';
 
 export interface TFormCardConfig {
   title: string;
@@ -22,6 +35,7 @@ export interface TFormCardConfig {
 
 export const FormConfigs: TFormCardConfig[] = [
   {
+    // form 0
     title: 'What type of platform are you building?',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
@@ -57,6 +71,7 @@ export const FormConfigs: TFormCardConfig[] = [
     ],
   },
   {
+    // form 1
     title: 'How big is your platform?',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
@@ -84,44 +99,154 @@ export const FormConfigs: TFormCardConfig[] = [
       },
     ],
   },
+  {
+    // form 2
+    title: 'Do you have a designer?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'Yes',
+        icon: yesIcon,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+      {
+        optionIndex: 2,
+        title: 'No',
+        icon: noIcon,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+    ],
+  },
+  {
+    // form 3
+    title: 'What level of UX/UI do you want?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'MVP',
+        icon: mvpIcon,
+        optimisticHours: 40,
+        pessimisticHours: 57,
+      },
+      {
+        optionIndex: 2,
+        title: 'Stock',
+        icon: stockUx,
+        optimisticHours: 60,
+        pessimisticHours: 86,
+      },
+      {
+        optionIndex: 3,
+        title: 'Beautiful',
+        icon: beautifulUxIcon,
+        optimisticHours: 80,
+        pessimisticHours: 114,
+      },
+    ],
+  },
+  {
+    // form 4
+    title: 'Do People have to login?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'Email',
+        icon: Email,
+        optimisticHours: 15,
+        pessimisticHours: 21,
+      },
+      {
+        optionIndex: 2,
+        title: 'Social',
+        icon: Social,
+        optimisticHours: 15,
+        pessimisticHours: 21,
+      },
+      {
+        optionIndex: 3,
+        title: 'No',
+        icon: LoginNo,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+      {
+        optionIndex: 4,
+        title: 'Not sure',
+        icon: LoginNotSure,
+        optimisticHours: 5,
+        pessimisticHours: 7,
+      },
+    ],
+  },
+  {
+    // form 5
+    title: 'Do people create personal profiles?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'Yes',
+        icon: YesIconPersonal,
+        optimisticHours: 30,
+        pessimisticHours: 43,
+      },
+      {
+        optionIndex: 2,
+        title: 'No',
+        icon: NoIconPersonal,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+      {
+        optionIndex: 3,
+        title: 'Not sure',
+        icon: NotSureIconPersonal,
+        optimisticHours: 5,
+        pessimisticHours: 7,
+      },
+    ],
+  },
+  {
+    // form 6
+    // TODO add correct icons, re-using the previous for now
+    title: 'Does your app and website need to be connected?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'Yes',
+        icon: YesIconPersonal,
+        optimisticHours: 15,
+        pessimisticHours: 21,
+      },
+      {
+        optionIndex: 2,
+        title: 'No',
+        icon: NoIconPersonal,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+      {
+        optionIndex: 3,
+        title: 'Not sure',
+        icon: NotSureIconPersonal,
+        optimisticHours: 5,
+        pessimisticHours: 7,
+      },
+    ],
+  },
 ];
 
-// {
-//   formIndex: 2,
-//   title: 'How big is your platform?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen2Btns,
-// },
-// {
-//   formIndex: 3,
-//   title: 'Do you have a designer',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen3Btns,
-// },
-// {
-//   formIndex: 4,
-//   title: 'What level of UX/UI do you want?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen4Btns,
-// },
-
-// {
-//   formIndex: 5,
-//   title: 'Do People have to login',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen5Btns,
-// },
-// {
-//   formIndex: 6,
-//   title: 'Do people create personal profiles?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen6Btns,
-// },
 // {
 //   formIndex: 7,
 //   title: 'Does your app and website need to be connected?',

@@ -55,7 +55,7 @@ function FormCard({
             <div className="h-[120px] transition transform hover:scale-125 duration-300">
               {option.icon}
             </div>
-            <div className="text-center text-white font-medium text-xl">{option.title}</div>
+            <div className="text-center text-white font-medium text-xl mt-6">{option.title}</div>
           </div>
         ))}
       </div>

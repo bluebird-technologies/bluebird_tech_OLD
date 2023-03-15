@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="120" viewBox="0 0 128.463 192.859">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="192.859" viewBox="0 0 128.463 192.859"
+ style="width:100%; height:100%"
+>
   <defs>
     <filter id="Rectangle_359" x="0" y="0" width="128.463" height="120.165" filterUnits="userSpaceOnUse">
       <feOffset dx="0.685" dy="0.685" input="SourceAlpha"/>

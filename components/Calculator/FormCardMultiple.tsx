@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RightArrow from '../../public/right-arrow.svg';
 
 interface TFormOption {
   optionIndex: number;
@@ -11,22 +12,12 @@ interface TFormOption {
 export interface FormCardProps {
   title: string;
   description: string;
-  // setSelectedOption: ({ option }: { option: TFormOption }) => void;
-  backButton?: boolean;
-  goBack?: () => void;
-  fwdButton?: boolean;
+  goBack: () => void;
   options: TFormOption[];
+  submitSelection: () => void;
 }
 
-function FormCard({
-  title,
-  description,
-  options,
-  // setSelectedOption,
-  backButton,
-  goBack,
-  fwdButton,
-}: FormCardProps) {
+function FormCard({ title, description, options, goBack, submitSelection }: FormCardProps) {
   // todo pass this value down from the data, to catch the one screen where its different
   const alignOptionsLeft = false;
 
@@ -44,6 +35,14 @@ function FormCard({
 
     tempOptions.push(key);
     setCurrentOptionSelection(tempOptions);
+  };
+
+  const handleSubmit = () => {
+    // currentOptionSelection.map((option) => {
+    // })
+    console.log('options: ', options);
+    console.log('selections: ', currentOptionSelection);
+    submitSelection();
   };
 
   return (
@@ -72,13 +71,23 @@ function FormCard({
           </div>
         ))}
       </div>
-      {backButton && goBack && (
-        <div>
-          <button type="button" onClick={() => goBack()}>
-            BACK
-          </button>
-        </div>
-      )}
+
+      <div className="w-full flex justify-between">
+        <button
+          onClick={() => goBack()}
+          className="text-white font-medium text-xl flex items-center justify-center"
+        >
+          <RightArrow className="origin-center rotate-180 mr-4" />
+          BACK
+        </button>
+        <button
+          onClick={() => handleSubmit()}
+          className="text-white font-medium text-xl flex items-center justify-center"
+        >
+          <RightArrow className="origin-center mr-4" />
+          PROCEED
+        </button>
+      </div>
     </div>
   );
 }

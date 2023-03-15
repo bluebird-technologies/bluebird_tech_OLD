@@ -8,8 +8,6 @@ import { CalculatorContext } from '../components/Calculator/context/CalculatorCo
 import { FormSection } from '../components/Calculator/FormSection';
 
 function Calculator() {
-  // const calculatorContextObject = useContext(CalculatorContext);
-
   const [formSectionActive, setFormSectionActive] = useState(false);
 
   const [optimisticArray, setOptimisticArray] = useState<number[]>([]);
@@ -37,15 +35,6 @@ function Calculator() {
             </div>
             <div className="bg-secondary h-[1000px] w-full -mt-32">
               <div className="pt-32">
-                <div className="px-32">
-                  <button
-                    className="text-white"
-                    type="button"
-                    onClick={() => console.log(optimisticArray)}
-                  >
-                    LOG
-                  </button>
-                </div>
                 <FormSection />
               </div>
             </div>
