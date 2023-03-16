@@ -10,7 +10,7 @@ export default (
         ry="21.648"
         fill="none"
         className="stroke-current"
-        stroke-width="1"
+        strokeWidth="1"
       />
       <path
         id="Path_1655"
@@ -19,9 +19,9 @@ export default (
         transform="translate(-228.352 -117.505)"
         fill="none"
         className="stroke-current"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1"
       />
       <path
         id="Path_1656"
@@ -30,9 +30,9 @@ export default (
         transform="translate(-173.217 -228.352)"
         fill="none"
         className="stroke-current"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1"
       />
       <ellipse
         id="Ellipse_62"

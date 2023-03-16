@@ -7,7 +7,7 @@ export default (
           d="M797.862,3771.634a.47.47,0,0,0-.47.47v37.7a.47.47,0,0,0,.47.47h21.111a.47.47,0,0,0,.47-.47v-37.7a.47.47,0,0,0-.47-.47Zm.47.941H818.5v36.758H798.333Z"
           transform="translate(-797.393 -3771.634)"
           className="fill-current"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         />
         <path
           id="path2339"
@@ -15,15 +15,15 @@ export default (
           transform="translate(-802.355 -3784.166)"
           fill="none"
           className="stroke-current"
-          stroke-linejoin="round"
-          stroke-width="1"
-          fill-rule="evenodd"
+          strokeLinejoin="round"
+          strokeWidth="1"
+          fillRule="evenodd"
         />
         <path
           id="path2341"
           d="M797.857,3906.72h0l.008.009-.008-.009Z"
           transform="translate(-797.724 -3868.225)"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           opacity="0.1"
         />
       </g>
@@ -34,7 +34,7 @@ export default (
           transform="translate(-32.394 -5309.412)"
           fill="none"
           className="stroke-current"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <path
           id="path2366"
@@ -42,7 +42,7 @@ export default (
           transform="translate(-41.335 -5318.399)"
           fill="none"
           className="stroke-current"
-          stroke-width="1"
+          strokeWidth="1"
         />
       </g>
     </g>
