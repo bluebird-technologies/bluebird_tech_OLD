@@ -8,6 +8,7 @@ import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
 import { solutions } from '../sections/WhatWeOfferBig/solutions';
 import SolutionsCard from '../components/SolutionsCard';
+import Link from 'next/link';
 
 export interface SolutionType {
   title: string;
@@ -120,9 +121,11 @@ export default function Offer() {
                   loop={true}
                 />
                 <Button className="px-12 py-4 bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
-                  <span className="uppercase text-white text-[16px] font-semibold">
-                    Get Started
-                  </span>
+                  <Link href={'/calculator'}>
+                    <span className="uppercase text-white text-[16px] font-semibold">
+                      Get Started
+                    </span>
+                  </Link>
                 </Button>
               </div>
             )}
@@ -131,7 +134,7 @@ export default function Offer() {
       </div>
 
       <div className="bg-primary flex flex-1 py-16 flex-row justify-center">
-        <a href={'/'} className="text-white text-4xl font-bold">
+        <a href={'#'} className="text-white text-4xl font-bold">
           <div className="flex items-center justify-center">
             <h1 className="mr-5">EXPLORE OUR OTHER SERVICES</h1>
             <RigthArrow />
