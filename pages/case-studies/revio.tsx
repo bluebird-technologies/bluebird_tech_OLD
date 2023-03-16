@@ -263,7 +263,7 @@ function RevioDetails() {
         onClick={() => router.push('/case-studies')}
         className="flex flex-row bg-primary items-center justify-center py-12 cursor-pointer"
       >
-        {/* <ArrowLeftSvg /> */}
+        <ArrowLeftSvg />
         <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
       </div>
 
