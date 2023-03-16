@@ -1,4 +1,5 @@
 import React from 'react';
+import RightArrow from '../../public/right-arrow.svg';
 
 interface TFormOption {
   optionIndex: number;
@@ -14,7 +15,6 @@ export interface FormCardProps {
   setSelectedOption: ({ option }: { option: TFormOption }) => void;
   backButton?: boolean;
   goBack?: () => void;
-  fwdButton?: boolean;
   options: TFormOption[];
 }
 
@@ -25,7 +25,6 @@ function FormCard({
   setSelectedOption,
   backButton,
   goBack,
-  fwdButton,
 }: FormCardProps) {
   // todo pass this value down from the data, to catch the one screen where its different
   const alignOptionsLeft = false;
@@ -60,8 +59,12 @@ function FormCard({
         ))}
       </div>
       {backButton && goBack && (
-        <div>
-          <button type="button" onClick={() => goBack()}>
+        <div className="w-full flex justify-between mt-12">
+          <button
+            onClick={() => goBack()}
+            className="text-white font-medium text-xl flex items-center justify-center"
+          >
+            <RightArrow className="origin-center rotate-180 mr-4" />
             BACK
           </button>
         </div>

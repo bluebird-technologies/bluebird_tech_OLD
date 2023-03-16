@@ -11,7 +11,10 @@ export function FormSection() {
   const { optimisticArray, setOptimisticArray, pessimisticArray, setPessimisticArray } =
     useContext(CalculatorContext);
 
-  const handleNextForm = (optimistic: number, pessimistic: number) => {
+  const multiSelectionIndexes = [4, 7, 8, 9];
+  const hasBackButtonIndexes = [1, 2, 3, 4, 5, 6];
+
+  const handleSingleSelection = (optimistic: number, pessimistic: number) => {
     const tempOpt = optimisticArray;
     const tempPes = pessimisticArray;
     // push the new optimistic and pessimistic values into the array
@@ -21,24 +24,37 @@ export function FormSection() {
     tempPes.push(pessimistic);
     setOptimisticArray(tempOpt);
     setPessimisticArray(tempPes);
-    if (currentFormIndex < 6) {
-      setCurrentFormIndex((prev) => prev + 1);
-      return;
-    }
+
+    setCurrentFormIndex((prev) => prev + 1);
+    // todo this catch is likely unnecessary once the final submission is done through the multi form
+    // if (currentFormIndex < 6) {
+    //   setCurrentFormIndex((prev) => prev + 1);
+    //   return;
+    // }
     // after the if fails, we are on the last form and want to redirect to the quote screen with the values
   };
 
-  const handleBack = (optimistic: number, pessimistic: number) => {
-    console.log(optimistic, pessimistic);
+  const handleMultiSelection = (optimistic: number, pessimistic: number) => {
     const tempOpt = optimisticArray;
     const tempPes = pessimisticArray;
     tempOpt.push(optimistic);
     tempPes.push(pessimistic);
+
     setOptimisticArray(tempOpt);
     setPessimisticArray(tempPes);
-    if (currentFormIndex < 1) {
-      setCurrentFormIndex((prev) => prev + 1);
-    }
+
+    setCurrentFormIndex((prev) => prev + 1);
+  };
+
+  const handleBack = () => {
+    const tempOpt = optimisticArray;
+    const tempPes = pessimisticArray;
+    tempOpt.pop();
+    tempPes.pop();
+    setOptimisticArray(tempOpt);
+    setPessimisticArray(tempPes);
+
+    setCurrentFormIndex((prev) => prev - 1);
   };
 
   useEffect(() => {
@@ -59,23 +75,31 @@ export function FormSection() {
     <div className="flex pt-60 pb-16 bg-secondary w-full -mt-40 justify-between">
       <div className="flex grow max-w-[900px] ml-32">
         {/* some specific forms require a multi select instead */}
-        {(currentFormIndex === 4 || currentFormIndex === 8) && (
+        {multiSelectionIndexes.includes(currentFormIndex) && (
           <FormCardMultiple
+            currentIndex={currentFormIndex}
             title={forms[currentFormIndex].title}
             description={forms[currentFormIndex].description}
             options={forms[currentFormIndex].options}
             goBack={() => console.log()}
-            submitSelection={() => console.log()}
+            submitSelection={({ optimisticHours, pessimisticHours }) =>
+              handleMultiSelection(optimisticHours, pessimisticHours)
+            }
           />
         )}
 
-        {currentFormIndex !== 4 && currentFormIndex !== 8 && (
+        {!multiSelectionIndexes.includes(currentFormIndex) && (
           <FormCard
             title={forms[currentFormIndex].title}
             description={forms[currentFormIndex].description}
             setSelectedOption={(val) =>
-              handleNextForm(val.option.optimisticHours ?? 0, val.option.pessimisticHours ?? 0)
+              handleSingleSelection(
+                val.option.optimisticHours ?? 0,
+                val.option.pessimisticHours ?? 0
+              )
             }
+            backButton={hasBackButtonIndexes.includes(currentFormIndex)}
+            goBack={() => handleBack()}
             options={forms[currentFormIndex].options}
           />
         )}

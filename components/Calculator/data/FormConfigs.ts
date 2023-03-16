@@ -14,16 +14,31 @@ import Social from '../icons/social';
 import Email from '../icons/Email';
 import LoginNotSure from '../icons/loginNotSure';
 import LoginNo from '../icons/logInNo';
-
 import NoIconPersonal from '../icons/personalProfile/NoIcon';
 import NotSureIconPersonal from '../icons/personalProfile/NotSureIcon';
 import YesIconPersonal from '../icons/personalProfile/YesIcon';
+import NoIconConnected from '../icons/connected/NoIconConnected';
+import NotSureConnected from '../icons/connected/NotSureConnected';
+import YesConnected from '../icons/connected/YesConnected';
+import MarketplaceIcon from '../icons/payments/MarketplaceIcon';
+import PaymentNoIcon from '../icons/payments/PaymentNoIcon';
+import PaymentProcessingIcon from '../icons/payments/PaymentProcessingIcon';
+import ShoppingCartIcon from '../icons/payments/ShoppingCartIcon';
+import SubscriptionPlansIcon from '../icons/payments/SubscriptionPlansIcon';
+import CMSIconAdmin from '../icons/admin/CMSIconAdmin';
+import ModerateIconAdmin from '../icons/admin/ModerateIconAdmin';
+import NoIconAdmin from '../icons/admin/NoIconAdmin';
+import PerformanceIconAdmin from '../icons/admin/PerformanceIconAdmin';
+import UsageIconAdmin from '../icons/admin/UsageIconAdmin';
+import BookingsIcon from '../icons/dates/BookingsIcon';
+import DatesCalendarIcon from '../icons/dates/DatesCalendarIcon';
+import DatesNoIcon from '../icons/dates/DatesNoIcon';
+import LiveTrackingIcon from '../icons/dates/LiveTrackingIcon';
+import MapsIntegrationIcon from '../icons/dates/MapsIntegrationIcon';
 
 export interface TFormCardConfig {
   title: string;
   description: string;
-  // backButton?: React.ReactNode;
-  // fwdButton?: React.ReactNode;
   options: {
     optionIndex: number;
     title: string;
@@ -217,7 +232,6 @@ export const FormConfigs: TFormCardConfig[] = [
   },
   {
     // form 6
-    // TODO add correct icons, re-using the previous for now
     title: 'Does your app and website need to be connected?',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
@@ -225,53 +239,153 @@ export const FormConfigs: TFormCardConfig[] = [
       {
         optionIndex: 1,
         title: 'Yes',
-        icon: YesIconPersonal,
+        icon: YesConnected,
         optimisticHours: 15,
         pessimisticHours: 21,
       },
       {
         optionIndex: 2,
         title: 'No',
-        icon: NoIconPersonal,
+        icon: NoIconConnected,
         optimisticHours: 0,
         pessimisticHours: 0,
       },
       {
         optionIndex: 3,
         title: 'Not sure',
-        icon: NotSureIconPersonal,
+        icon: NotSureConnected,
         optimisticHours: 5,
         pessimisticHours: 7,
       },
     ],
   },
+  {
+    // form 7
+    title: 'Are there payments involved?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: `Subscription Plans`,
+        icon: SubscriptionPlansIcon,
+        optimisticHours: 40,
+        pessimisticHours: 57,
+      },
+      {
+        optionIndex: 2,
+        title: 'Payment Processing',
+        icon: PaymentProcessingIcon,
+        optimisticHours: 80,
+        pessimisticHours: 114,
+      },
+      {
+        optionIndex: 3,
+        title: 'Shopping Cart',
+        icon: ShoppingCartIcon,
+        optimisticHours: 100,
+        pessimisticHours: 143,
+      },
+      {
+        optionIndex: 4,
+        title: 'MarketPlace',
+        icon: MarketplaceIcon,
+        optimisticHours: 100,
+        pessimisticHours: 143,
+      },
+      {
+        optionIndex: 5,
+        title: 'No',
+        icon: PaymentNoIcon,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+    ],
+  },
+  {
+    // form 8
+    title: 'Do you want an admin portal?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'CMS Integration',
+        icon: CMSIconAdmin,
+        optimisticHours: 30,
+        pessimisticHours: 43,
+      },
+      {
+        optionIndex: 2,
+        title: 'Performance Monitoring',
+        icon: PerformanceIconAdmin,
+        optimisticHours: 40,
+        pessimisticHours: 57,
+      },
+      {
+        optionIndex: 3,
+        title: 'Moderation/ Content Approval',
+        icon: ModerateIconAdmin,
+        optimisticHours: 40,
+        pessimisticHours: 57,
+      },
+      {
+        optionIndex: 4,
+        title: 'Usage Analytics',
+        icon: UsageIconAdmin,
+        optimisticHours: 25,
+        pessimisticHours: 36,
+      },
+      {
+        optionIndex: 5,
+        title: 'No',
+        icon: NoIconAdmin,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+    ],
+  },
+  {
+    // form 9
+    title: 'Dates and Location?',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+    options: [
+      {
+        optionIndex: 1,
+        title: 'Calendar',
+        icon: DatesCalendarIcon,
+        optimisticHours: 50,
+        pessimisticHours: 71,
+      },
+      {
+        optionIndex: 2,
+        title: 'Bookings',
+        icon: BookingsIcon,
+        optimisticHours: 40,
+        pessimisticHours: 57,
+      },
+      {
+        optionIndex: 3,
+        title: 'Live GPS Tracking',
+        icon: LiveTrackingIcon,
+        optimisticHours: 80,
+        pessimisticHours: 114,
+      },
+      {
+        optionIndex: 4,
+        title: 'Maps Integration',
+        icon: MapsIntegrationIcon,
+        optimisticHours: 80,
+        pessimisticHours: 114,
+      },
+      {
+        optionIndex: 5,
+        title: 'No',
+        icon: DatesNoIcon,
+        optimisticHours: 0,
+        pessimisticHours: 0,
+      },
+    ],
+  },
 ];
-
-// {
-//   formIndex: 7,
-//   title: 'Does your app and website need to be connected?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen7Btns,
-// },
-// {
-//   formIndex: 8,
-//   title: 'Are there payments involved?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen8Btns,
-// },
-// {
-//   formIndex: 9,
-//   title: 'Do you want an admin portal?',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen9Btns,
-// },
-// {
-//   formIndex: 10,
-//   title: 'Dates and Location',
-//   description:
-//     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-//   buttons: screen10Btns,
-// },
