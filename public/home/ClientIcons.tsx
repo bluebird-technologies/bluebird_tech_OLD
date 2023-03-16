@@ -108,19 +108,20 @@ export default function ClientIcons() {
         </Link>
       </div>
       <div className="flex flex-row items-center py-12 justify-between ">
-        <Link href={'https://www.thedelta.io'}></Link>
-        <div>
-          <Image
-            height={220}
-            width={220}
-            style={{
-              width: 'auto',
-              height: 'auto',
-            }}
-            alt="The Delta"
-            src="/client-icons/theDelta.svg"
-          />
-        </div>
+        <Link href={'https://www.thedelta.io'}>
+          <div>
+            <Image
+              height={220}
+              width={220}
+              style={{
+                width: 'auto',
+                height: 'auto',
+              }}
+              alt="The Delta"
+              src="/client-icons/theDelta.svg"
+            />
+          </div>
+        </Link>
         <Link href={'https://raubex.com'}>
           <div>
             <Image
@@ -309,19 +310,20 @@ export default function ClientIcons() {
             />
           </div>
         </Link>
-        <Link href={'https://www.tweakcarbon.com/'}></Link>
-        <div>
-          <Image
-            height={220}
-            width={220}
-            style={{
-              width: 'auto',
-              height: 'auto',
-            }}
-            alt="Tweak"
-            src="/client-icons/tweak.svg"
-          />
-        </div>
+        <Link href={'https://www.tweakcarbon.com/'}>
+          <div>
+            <Image
+              height={220}
+              width={220}
+              style={{
+                width: 'auto',
+                height: 'auto',
+              }}
+              alt="Tweak"
+              src="/client-icons/tweak.svg"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
