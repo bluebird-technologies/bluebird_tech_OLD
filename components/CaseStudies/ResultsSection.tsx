@@ -21,17 +21,17 @@ export function ResultsSection({
         }}
         className="flex flex-1 bg-black"
       >
-        <div className="flex items-end justify-end ">
+        <div className="flex items-end justify-end">
           <div className="flex bg-highlight ml-16 mb-20 flex-wrap py-4 px-8 w-[500px] items-center justify-center rounded-full">
             <span className="text-white font-medium text-2xl text-center">{clientResults}</span>
           </div>
         </div>
       </div>
-      <div className="bg-secondary flex w-2/5 flex-col flex-wrap px-10 py-7 items-center justify-center">
-        <h1 className="text-white text-4xl mb-4 uppercase font-bold">Results</h1>
-        <ul className=" w-2/3 ">
+      <div className="bg-secondary flex w-2/5 flex-col flex-wrap px-16 py-7 justify-center">
+        <h1 className="text-white text-4xl uppercase font-bold my-4">Results</h1>
+        <ul className=" pb-4">
           {results.map((item, key) => (
-            <li key={key} className="text-white list-disc text-xl mb-2">
+            <li key={key} className="text-white list-disc text-2xl mb-2">
               {item}
             </li>
           ))}
