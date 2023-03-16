@@ -29,7 +29,7 @@ export function ResultsSection({
       </div>
       <div className="bg-secondary flex w-2/5 flex-col flex-wrap px-16 py-7">
         <h1 className="text-white text-4xl uppercase font-bold my-4">Results</h1>
-        <ul className=" ">
+        <ul className=" pb-4">
           {results.map((item, key) => (
             <li key={key} className="text-white list-disc text-2xl mb-2">
               {item}
