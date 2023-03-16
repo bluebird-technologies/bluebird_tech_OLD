@@ -243,7 +243,7 @@ function AuroraDetails() {
         />
       </div>
 
-      {/* Restults Section */}
+      {/* Results Section */}
       <div>
         <ResultsSection
           resultsBackgroundImageString={clientDetails?.resultsBackgroundImage}
