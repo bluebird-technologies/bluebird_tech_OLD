@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
+import Link from 'next/link';
 
 const navLeft = [
   { label: 'Home', href: '/' },
@@ -46,8 +47,10 @@ export function Header() {
           ))}
         </nav>
         <picture>
-          <source srcSet="/header/logo.svg" type="image/svg+xml" />
-          <img src="/header/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
+          <Link href="/">
+            <source srcSet="/header/logo.svg" type="image/svg+xml" />
+            <img src="/header/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
+          </Link>
         </picture>
         <nav className="flex flex-1 justify-around mt-3">
           {navRight.map((item) => (
