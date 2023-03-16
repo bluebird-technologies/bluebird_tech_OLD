@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import IconView from './IconView';
 import TextView from './TextView';
 
 interface IconRowProps {
-  icons: any[];
+  icons: ReactNode[];
   center?: boolean;
   contentType: 'text' | 'icon';
 }
