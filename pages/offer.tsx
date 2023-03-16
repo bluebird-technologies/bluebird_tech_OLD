@@ -21,7 +21,7 @@ export interface SolutionType {
   amtItemsInFirstRow: number;
   centerSecondRow: boolean;
   secondLayerTitle: string;
-  secondLayerLottie: any; // type error from the data
+  secondLayerLottie: unknown;
 }
 
 export default function Offer() {
