@@ -8,7 +8,7 @@ export default (
         transform="translate(331.19 2258.95)"
         fill="none"
         className="stroke-current"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
       <g id="Group_704" data-name="Group 704" transform="translate(1035.355 2405.307)">
         <path

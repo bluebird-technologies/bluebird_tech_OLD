@@ -14,9 +14,9 @@ export default (
             transform="translate(-162.194 -10.795)"
             fill="none"
             className="stroke-current"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
           />
         </g>
         <path
@@ -25,7 +25,7 @@ export default (
           transform="translate(-7.547 -75.972)"
           fill="none"
           className="stroke-current"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <g id="g869" transform="translate(3.351 1.557)">
           <circle
@@ -36,9 +36,9 @@ export default (
             transform="translate(0 0.058)"
             fill="none"
             className="stroke-current"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
           />
           <circle
             id="circle862"
@@ -48,9 +48,9 @@ export default (
             transform="translate(9.483 0.116)"
             fill="none"
             className="stroke-current"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
           />
           <circle
             id="circle864"
@@ -60,9 +60,9 @@ export default (
             transform="translate(4.741 0)"
             fill="none"
             className="stroke-current"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
           />
         </g>
         <g id="g946" transform="translate(4.071 10.73)">
@@ -75,9 +75,9 @@ export default (
               transform="translate(0 0)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
             <rect
               id="rect849"
@@ -87,9 +87,9 @@ export default (
               transform="translate(0.08 3.798)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
             <rect
               id="rect851"
@@ -99,9 +99,9 @@ export default (
               transform="translate(0.292 7.674)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
           </g>
           <g id="g903">
@@ -111,9 +111,9 @@ export default (
               transform="translate(-172.285 -49.711)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
             <path
               id="path888"
@@ -121,9 +121,9 @@ export default (
               transform="translate(-183.107 -45.153)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
             <path
               id="path890"
@@ -131,9 +131,9 @@ export default (
               transform="translate(-200.014 -49.711)"
               fill="none"
               className="stroke-current"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
             />
           </g>
         </g>
