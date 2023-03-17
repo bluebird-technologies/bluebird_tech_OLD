@@ -3,6 +3,7 @@ import FormCard from '../../components/Calculator/FormCard';
 import { FormConfigs } from '../../components/Calculator/data/FormConfigs';
 import { CalculatorContext } from './context/CalculatorContext';
 import FormCardMultiple from './FormCardMultiple';
+import { getDesigner, getPlatform, getPlatformSize } from './data/Utility';
 
 export function FormSection() {
   const {
@@ -11,7 +12,8 @@ export function FormSection() {
     pessimisticArray,
     setPessimisticArray,
     setHasDesigner,
-    setPlat,
+    setPlatform,
+    setPlatformSize,
   } = useContext(CalculatorContext);
 
   const forms = FormConfigs;
@@ -28,29 +30,20 @@ export function FormSection() {
     setOptimisticArray(tempOpt);
     setPessimisticArray(tempPes);
 
+    // need to access setters from here, so cannot move them to the util function
     if (currentFormIndex === 0) {
-      if (title === 'Apple iOS') {
-        setPlat('Apple iOS');
-      }
-      if (title === 'Android') {
-        setPlat('Android');
-      }
-      if (title === 'Web') {
-        setPlat('Web');
-      }
-      if (title === 'Multi-Platform') {
-        setPlat('Multi-Platform');
-      }
+      const res = getPlatform(title);
+      setPlatform({
+        title: res.title,
+        roles: res.roles,
+      });
     }
-
+    if (currentFormIndex === 1) {
+      setPlatformSize(getPlatformSize(title));
+    }
     if (currentFormIndex === 2) {
-      if (title === 'No') {
-        setHasDesigner(false);
-      } else {
-        setHasDesigner(true);
-      }
+      setHasDesigner(getDesigner(title));
     }
-
     setCurrentFormIndex((prev) => prev + 1);
   };
 

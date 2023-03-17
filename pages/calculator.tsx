@@ -4,7 +4,10 @@ import { Header } from '../components/Header';
 import Swiggle from '../public/swiggle.svg';
 import Lottie from 'lottie-react';
 import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
-import { CalculatorContext } from '../components/Calculator/context/CalculatorContext';
+import {
+  CalculatorContext,
+  OptionWithRole,
+} from '../components/Calculator/context/CalculatorContext';
 import { FormSection } from '../components/Calculator/FormSection';
 import QuoteCalculator from '../components/Calculator/QuoteCalculator';
 
@@ -13,8 +16,9 @@ function Calculator() {
 
   const [optimisticArray, setOptimisticArray] = useState<number[]>([]);
   const [pessimisticArray, setPessimisticArray] = useState<number[]>([]);
-  const [hasDesigner, setHasDesigner] = useState(false);
-  const [plat, setPlat] = useState('');
+  const [hasDesigner, setHasDesigner] = useState('');
+  const [platform, setPlatform] = useState<OptionWithRole>({ title: '', roles: [] });
+  const [platformSize, setPlatformSize] = useState('');
 
   const contextValue = {
     optimisticArray,
@@ -23,8 +27,10 @@ function Calculator() {
     setPessimisticArray,
     hasDesigner,
     setHasDesigner,
-    plat,
-    setPlat,
+    platform,
+    setPlatform,
+    platformSize,
+    setPlatformSize,
   };
 
   return (
