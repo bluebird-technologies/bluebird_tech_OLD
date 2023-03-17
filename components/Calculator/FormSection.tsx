@@ -26,12 +26,6 @@ export function FormSection() {
     setPessimisticArray(tempPes);
 
     setCurrentFormIndex((prev) => prev + 1);
-    // todo this catch is likely unnecessary once the final submission is done through the multi form
-    // if (currentFormIndex < 6) {
-    //   setCurrentFormIndex((prev) => prev + 1);
-    //   return;
-    // }
-    // after the if fails, we are on the last form and want to redirect to the quote screen with the values
   };
 
   const handleMultiSelection = (optimistic: number, pessimistic: number) => {
@@ -67,13 +61,9 @@ export function FormSection() {
     }
   }, [currentFormIndex, setOptimisticArray, setPessimisticArray]);
 
-  // <div className="w-[470px] mr-32">
-  //           <Calculator />
-  //         </div>
-
   return (
-    <div className="flex pt-60 pb-16 bg-secondary w-full -mt-40 justify-between">
-      <div className="flex grow max-w-[900px] ml-32">
+    <div className="flex pt-[280px] pb-16 bg-secondary w-full justify-between">
+      <div className="flex w-full">
         {/* some specific forms require a multi select instead */}
         {multiSelectionIndexes.includes(currentFormIndex) && (
           <FormCardMultiple
@@ -90,6 +80,7 @@ export function FormSection() {
 
         {!multiSelectionIndexes.includes(currentFormIndex) && (
           <FormCard
+            currentIndex={currentFormIndex}
             title={forms[currentFormIndex].title}
             description={forms[currentFormIndex].description}
             setSelectedOption={(val) =>

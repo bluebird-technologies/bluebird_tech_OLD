@@ -6,20 +6,29 @@ import Lottie from 'lottie-react';
 import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
 import { CalculatorContext } from '../components/Calculator/context/CalculatorContext';
 import { FormSection } from '../components/Calculator/FormSection';
+import QuoteCalculator from '../components/Calculator/QuoteCalculator';
 
 function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
 
   const [optimisticArray, setOptimisticArray] = useState<number[]>([]);
   const [pessimisticArray, setPessimisticArray] = useState<number[]>([]);
+  const [hasDesigner, setHasDesigner] = useState(false);
+
+  const contextValue = {
+    optimisticArray,
+    setOptimisticArray,
+    pessimisticArray,
+    setPessimisticArray,
+    hasDesigner,
+    setHasDesigner,
+  };
 
   return (
     <>
       {formSectionActive ? (
         <div>
-          <CalculatorContext.Provider
-            value={{ optimisticArray, setOptimisticArray, pessimisticArray, setPessimisticArray }}
-          >
+          <CalculatorContext.Provider value={contextValue}>
             <div className="w-full flex flex-col items-center relative h-[200px]">
               <div
                 className="bg-primary h-full"
@@ -33,11 +42,15 @@ function Calculator() {
               />
               <Header />
             </div>
-            <div className="bg-secondary h-[1000px] w-full -mt-32">
-              <div className="pt-32">
+            <div className="flex bg-secondary h-[1100px] w-full -mt-64">
+              <div className="flex grow pt-32 max-w-[900px] ml-32">
                 <FormSection />
               </div>
+              <div className="flex mt-[350px] ml-64 w-[440px]">
+                <QuoteCalculator />
+              </div>
             </div>
+            <Footer />
           </CalculatorContext.Provider>
         </div>
       ) : (

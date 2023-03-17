@@ -10,6 +10,7 @@ interface TFormOption {
 }
 
 export interface FormCardProps {
+  currentIndex: number;
   title: string;
   description: string;
   setSelectedOption: ({ option }: { option: TFormOption }) => void;
@@ -19,6 +20,7 @@ export interface FormCardProps {
 }
 
 function FormCard({
+  currentIndex,
   title,
   description,
   options,
@@ -26,8 +28,12 @@ function FormCard({
   backButton,
   goBack,
 }: FormCardProps) {
-  // todo pass this value down from the data, to catch the one screen where its different
-  const alignOptionsLeft = false;
+  const indexesForLeftAlign = [2];
+  let alignOptionsLeft = false;
+  if (indexesForLeftAlign.includes(currentIndex)) {
+    alignOptionsLeft = true;
+  }
+
   return (
     <div className="flex flex-col">
       <h3 className="text-white text-4xl font-semibold">{title}</h3>
@@ -37,7 +43,7 @@ function FormCard({
       <div
         className={
           alignOptionsLeft
-            ? 'flex flex-row mt-16 justify-start space-x-4'
+            ? 'flex flex-row mt-16 justify-start space-x-24'
             : 'flex flex-row mt-16 justify-between'
         }
       >
