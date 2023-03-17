@@ -6,7 +6,7 @@ import { Checkmark } from './icons/Checkmark';
 import { CalculatorContext } from './context/CalculatorContext';
 
 function QuoteCalculator() {
-  const { optimisticArray, pessimisticArray } = useContext(CalculatorContext);
+  const { optimisticArray, pessimisticArray, hasDesigner } = useContext(CalculatorContext);
 
   // const [optimisticTotal, setOptimisticTotal] = useState(0);
   const [tempval, setTempval] = useState(true);

@@ -15,13 +15,13 @@ export function FormSection() {
   const hasBackButtonIndexes = [1, 2, 3, 4, 5, 6];
 
   const handleSingleSelection = (optimistic: number, pessimistic: number) => {
-    const tempOpt = optimisticArray;
-    const tempPes = pessimisticArray;
+    const tempOpt = [...optimisticArray, optimistic];
+    const tempPes = [...pessimisticArray, pessimistic];
     // push the new optimistic and pessimistic values into the array
     // this will make it possible to pop the last index of the array off whenever
     // using the back button
-    tempOpt.push(optimistic);
-    tempPes.push(pessimistic);
+    // tempOpt.push(optimistic);
+    // tempPes.push(pessimistic);
     setOptimisticArray(tempOpt);
     setPessimisticArray(tempPes);
 
@@ -41,8 +41,8 @@ export function FormSection() {
   };
 
   const handleBack = () => {
-    const tempOpt = optimisticArray;
-    const tempPes = pessimisticArray;
+    const tempOpt = [...optimisticArray];
+    const tempPes = [...pessimisticArray];
     tempOpt.pop();
     tempPes.pop();
     setOptimisticArray(tempOpt);
