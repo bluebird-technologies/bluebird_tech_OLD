@@ -10,7 +10,7 @@ export interface CalculatorContextProps {
   setPessimisticArray: (val: number[]) => void;
 
   plat: string;
-  setPlat: (val: any) => void;
+  setPlat: (val: string) => void;
   platSize: platformSizeOption;
   setPlatSize: (val: platformSizeOption) => void;
 

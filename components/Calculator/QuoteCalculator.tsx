@@ -1,6 +1,5 @@
 import Lottie from 'lottie-react';
-import React, { useContext, useEffect, useState } from 'react';
-import { Button } from '../Button';
+import React, { useContext } from 'react';
 import animation from '../../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
 import { Checkmark } from './icons/Checkmark';
 import { CalculatorContext } from './context/CalculatorContext';
@@ -28,7 +27,6 @@ function QuoteCalculator() {
 
       <div className="flex flex-row mt-4 px-8">
         <div className="text-lightGrey text-xl italic">Title</div>
-        {/* <div className="text-lightGrey text-xl italic">Time</div> */}
       </div>
 
       <div className="border-t border-lightGrey mx-8 mt-4" />
@@ -62,8 +60,9 @@ function QuoteCalculator() {
 
       <div className="mt-64">
         <Lottie animationData={animation} loop={true} />
-        <Button onClick={() => console.log(hasDesigner)}>Calculate</Button>
       </div>
+      <div className="text-primary text-xl font-bold">Your Team</div>
+      {/* TODO your team section */}
     </div>
   );
 }

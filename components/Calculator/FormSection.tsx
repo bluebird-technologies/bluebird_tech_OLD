@@ -32,14 +32,14 @@ export function FormSection() {
       if (title === 'Apple iOS') {
         setPlat('Apple iOS');
       }
-      if (title === 'Apple iOS') {
-        setPlat('Apple iOS');
+      if (title === 'Android') {
+        setPlat('Android');
       }
-      if (title === 'Apple iOS') {
-        setPlat('Apple iOS');
+      if (title === 'Web') {
+        setPlat('Web');
       }
-      if (title === 'Apple iOS') {
-        setPlat('Apple iOS');
+      if (title === 'Multi-Platform') {
+        setPlat('Multi-Platform');
       }
     }
 
