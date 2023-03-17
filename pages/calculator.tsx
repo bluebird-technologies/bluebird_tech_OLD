@@ -14,6 +14,7 @@ function Calculator() {
   const [optimisticArray, setOptimisticArray] = useState<number[]>([]);
   const [pessimisticArray, setPessimisticArray] = useState<number[]>([]);
   const [hasDesigner, setHasDesigner] = useState(false);
+  const [plat, setPlat] = useState('');
 
   const contextValue = {
     optimisticArray,
@@ -22,6 +23,8 @@ function Calculator() {
     setPessimisticArray,
     hasDesigner,
     setHasDesigner,
+    plat,
+    setPlat,
   };
 
   return (

@@ -267,7 +267,7 @@ export const FormConfigs: TFormCardConfig[] = [
     options: [
       {
         optionIndex: 1,
-        title: `Subscription Plans`,
+        title: 'Subscription Plans',
         icon: SubscriptionPlansIcon,
         optimisticHours: 40,
         pessimisticHours: 57,

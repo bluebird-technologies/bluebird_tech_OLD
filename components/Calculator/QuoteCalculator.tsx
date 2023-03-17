@@ -6,15 +6,7 @@ import { Checkmark } from './icons/Checkmark';
 import { CalculatorContext } from './context/CalculatorContext';
 
 function QuoteCalculator() {
-  const { optimisticArray, pessimisticArray, hasDesigner } = useContext(CalculatorContext);
-
-  // const [optimisticTotal, setOptimisticTotal] = useState(0);
-  const [tempval, setTempval] = useState(true);
-
-  useEffect(() => {
-    // when checking the values of optimisticArray, they are updating. But i cant get the effect to trigger
-    console.log(optimisticArray);
-  }, [optimisticArray]);
+  const { optimisticArray, pessimisticArray, hasDesigner, plat } = useContext(CalculatorContext);
 
   const optimisticTotal = optimisticArray.reduce(
     (partialSum: number, a: number) => partialSum + a,
@@ -30,13 +22,13 @@ function QuoteCalculator() {
     <div className="bg-white max-h-[650px] w-full shadow-md overflow-scroll overflow-x-hidden scrollbar-hide">
       <div className="flex flex-row justify-between pt-10 px-8">
         <div className="text-lightGrey text-xl">Platform:</div>
-        <div className="text-primary text-xl font-semibold">Xyzabc</div>
+        <div className="text-primary text-xl font-semibold">{plat ?? ''}</div>
       </div>
       <div className="border-t border-lightGrey mx-8 mt-4" />
 
-      <div className="flex flex-row justify-between mt-4 px-8">
+      <div className="flex flex-row mt-4 px-8">
         <div className="text-lightGrey text-xl italic">Title</div>
-        <div className="text-lightGrey text-xl italic">Time</div>
+        {/* <div className="text-lightGrey text-xl italic">Time</div> */}
       </div>
 
       <div className="border-t border-lightGrey mx-8 mt-4" />
@@ -51,7 +43,7 @@ function QuoteCalculator() {
 
       <div className="flex flex-row justify-between mt-4 px-8">
         <div className="text-lightGrey text-xl italic">Designer</div>
-        <div className="text-primary text-xl font-bold">No</div>
+        <div className="text-primary text-xl font-bold">{hasDesigner ? 'Yes' : 'No'}</div>
       </div>
 
       <div className="flex flex-row justify-between mt-4 px-8">
@@ -70,7 +62,7 @@ function QuoteCalculator() {
 
       <div className="mt-64">
         <Lottie animationData={animation} loop={true} />
-        <Button onClick={() => setTempval((prev) => !prev)}>Calculate</Button>
+        <Button onClick={() => console.log(hasDesigner)}>Calculate</Button>
       </div>
     </div>
   );

@@ -36,9 +36,30 @@ function FormCard({
   const [currentOptionSelection, setCurrentOptionSelection] = useState<number[]>([]);
 
   const handleClickAdd = (key: number) => {
-    const tempOptions = [...currentOptionSelection];
-    tempOptions.push(key);
-    setCurrentOptionSelection(tempOptions);
+    const tempOptions = [...currentOptionSelection, key];
+    // there are multiple options that are a "no" like not sure and no, when those are picked they
+    // are the only one that can be selected
+    const noOptions =
+      currentIndex === 4
+        ? [3, 4]
+        : currentIndex === 7
+        ? [5]
+        : currentIndex === 8
+        ? [5]
+        : currentIndex === 9
+        ? [5]
+        : [];
+
+    if (noOptions.includes(key)) {
+      setCurrentOptionSelection([key]);
+    } else if (tempOptions.length > 1 && tempOptions.some((arr) => noOptions.includes(arr))) {
+      const newArr = tempOptions.filter(function (el) {
+        return noOptions.indexOf(el) < 0;
+      });
+      setCurrentOptionSelection(newArr);
+    } else {
+      setCurrentOptionSelection(tempOptions);
+    }
   };
 
   const handleClickRemove = (key: number) => {
@@ -52,6 +73,7 @@ function FormCard({
     const tempOpt: number[] = [];
     const tempPes: number[] = [];
 
+    // need to take all the options and sum up their hours
     options.map((option) => {
       if (currentOptionSelection.includes(option.optionIndex)) {
         if (option.optimisticHours) {
@@ -70,6 +92,7 @@ function FormCard({
   };
 
   useEffect(() => {
+    // this simply resets the selection every time a new form is navigated to
     setCurrentOptionSelection([]);
   }, [currentIndex]);
 
