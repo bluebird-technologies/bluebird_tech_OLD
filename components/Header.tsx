@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
 
@@ -45,10 +46,12 @@ export function Header() {
             <NavItem key={item.href} {...item} />
           ))}
         </nav>
-        <picture>
-          <source srcSet="/header/logo.svg" type="image/svg+xml" />
-          <img src="/header/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
-        </picture>
+        <Link href={'/'}>
+          <picture>
+            <source srcSet="/header/logo.svg" type="image/svg+xml" />
+            <img src="/header/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
+          </picture>
+        </Link>
         <nav className="flex flex-1 justify-around mt-3">
           {navRight.map((item) => (
             <NavItem key={item.href} {...item} />
