@@ -6,7 +6,7 @@ export default (
     className="w-full h-full"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_418"
           data-name="Rectangle 418"
@@ -18,7 +18,7 @@ export default (
     </defs>
     <g id="Component_111_1" data-name="Component 111 – 1" transform="translate(1.115)">
       <g id="Group_1038" data-name="Group 1038" transform="translate(12.276)" opacity="0.6">
-        <g id="Group_1037" data-name="Group 1037" clip-path="url(#clip-path)">
+        <g id="Group_1037" data-name="Group 1037" clipPath="url(#clipPath)">
           <path
             id="Path_3030"
             data-name="Path 3030"
@@ -33,9 +33,9 @@ export default (
 Solutions"
         transform="translate(38.885 106.031)"
         fill="#fff"
-        font-size="16"
-        font-family="Montserrat-Medium, Montserrat"
-        font-weight="500"
+        fontSize="16"
+        fontFamily="Montserrat-Medium, Montserrat"
+        fontWeight="500"
         opacity="0.6"
       >
         <tspan x="-39" y="0">

@@ -7,7 +7,7 @@ export default (
     className="w-full h-full"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <path fill="none" d="M0 0H835.309V430.415H0z" data-name="Rectangle 541"></path>
       </clipPath>
     </defs>
@@ -15,7 +15,7 @@ export default (
       fill="none"
       stroke="#e97724"
       strokeWidth="4"
-      clipPath="url(#clip-path)"
+      clipPath="url(#clipPath)"
       data-name="Group 1304"
     >
       <path

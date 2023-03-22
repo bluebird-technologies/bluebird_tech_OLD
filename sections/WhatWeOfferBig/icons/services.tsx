@@ -23,9 +23,9 @@ export default (
 Development"
       transform="translate(56 109.784)"
       fill="#fff"
-      font-size="16"
-      font-family="Montserrat-Medium, Montserrat"
-      font-weight="500"
+      fontSize="16"
+      fontFamily="Montserrat-Medium, Montserrat"
+      fontWeight="500"
       opacity="0.6"
     >
       <tspan x="-33" y="0">
