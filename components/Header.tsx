@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
-import Link from 'next/link';
 
 const navLeft = [
   { label: 'Home', href: '/' },
@@ -47,16 +46,16 @@ export function Header() {
             <NavItem key={item.href} {...item} />
           ))}
         </nav>
-        <picture>
           <Link href="/">
+        <picture>
             <source srcSet="/header/logo.svg" type="image/svg+xml" />
             <img
               src="/header/logo.svg"
               alt="Bluebird"
               className="w-[121px] mx-10 hover:cursor-pointer"
             />
-          </Link>
         </picture>
+          </Link>
         <nav className="flex flex-1 justify-around mt-3">
           {navRight.map((item) => (
             <NavItem key={item.href} {...item} />
