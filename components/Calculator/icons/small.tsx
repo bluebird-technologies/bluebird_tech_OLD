@@ -13,7 +13,7 @@ export default (
       transform="translate(12)"
       fill="#1e2b3b"
       stroke="#da7d3b"
-      stroke-width="5"
+      strokeWidth="5"
     >
       <ellipse cx="26" cy="25.5" rx="26" ry="25.5" stroke="none" />
       <ellipse cx="26" cy="25.5" rx="23.5" ry="23" fill="none" />

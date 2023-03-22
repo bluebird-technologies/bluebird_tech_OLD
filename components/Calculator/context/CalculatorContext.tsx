@@ -12,6 +12,8 @@ type uxOption = 'mvp' | 'stock' | 'beautiful';
 
 export interface OptionWithRole {
   title: string;
+  optimisticHours?: number;
+  pessimisticHours?: number;
   roles: RolesEnum[] | [];
 }
 
@@ -23,14 +25,27 @@ export interface CalculatorContextProps {
 
   platform: OptionWithRole;
   setPlatform: (val: OptionWithRole) => void;
-  platformSize: string;
-  setPlatformSize: (val: string) => void;
+  platformSize: OptionWithRole;
+  setPlatformSize: (val: OptionWithRole) => void;
+  uxLevel: OptionWithRole;
+  setUxLevel: (val: OptionWithRole) => void;
+  hasDesigner: OptionWithRole;
+  setHasDesigner: (val: OptionWithRole) => void;
 
-  hasDesigner: string;
-  setHasDesigner: (val: string) => void;
+  loginOptions: OptionWithRole[];
+  setLoginOptions: (val: OptionWithRole[]) => void;
 
-  ux: uxOption;
-  setUx: (val: uxOption) => void;
+  personalProfiles: OptionWithRole;
+  setPersonalProfiles: (val: OptionWithRole) => void;
+  connected: OptionWithRole;
+  setConnected: (val: OptionWithRole) => void;
+
+  payments: OptionWithRole[];
+  setPayments: (val: OptionWithRole[]) => void;
+  admin: OptionWithRole[];
+  setAdmin: (val: OptionWithRole[]) => void;
+  datesAndLocation: OptionWithRole[];
+  setDatesAndLocation: (val: OptionWithRole[]) => void;
 }
 
 // typescript problem with context. Online solution suggested using

@@ -13,7 +13,7 @@ export default (
       transform="translate(19.879)"
       fill="#1e2b3b"
       stroke="#da7d3b"
-      stroke-width="5"
+      strokeWidth="5"
     >
       <circle cx="36" cy="36" r="36" stroke="none" />
       <circle cx="36" cy="36" r="33.5" fill="none" />

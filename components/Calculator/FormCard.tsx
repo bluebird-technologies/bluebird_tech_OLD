@@ -1,7 +1,7 @@
 import React from 'react';
 import RightArrow from '../../public/right-arrow.svg';
 
-interface TFormOption {
+export interface TFormOption {
   optionIndex: number;
   title: string;
   icon: React.ReactNode;

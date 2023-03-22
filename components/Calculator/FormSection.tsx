@@ -3,7 +3,15 @@ import FormCard from '../../components/Calculator/FormCard';
 import { FormConfigs } from '../../components/Calculator/data/FormConfigs';
 import { CalculatorContext } from './context/CalculatorContext';
 import FormCardMultiple from './FormCardMultiple';
-import { getDesigner, getPlatform, getPlatformSize } from './data/Utility';
+import {
+  getDesigner,
+  getLoginOptions,
+  getPlatform,
+  getPlatformSize,
+  getUxLevel,
+} from './data/Utility';
+
+import { TFormOption } from './FormCard';
 
 export function FormSection() {
   const {
@@ -11,9 +19,17 @@ export function FormSection() {
     setOptimisticArray,
     pessimisticArray,
     setPessimisticArray,
+    hasDesigner,
     setHasDesigner,
     setPlatform,
     setPlatformSize,
+    setUxLevel,
+    setLoginOptions,
+    setPersonalProfiles,
+    setConnected,
+    setPayments,
+    setAdmin,
+    setDatesAndLocation,
   } = useContext(CalculatorContext);
 
   const forms = FormConfigs;
@@ -21,7 +37,7 @@ export function FormSection() {
   const multiSelectionIndexes = [4, 7, 8, 9];
   const hasBackButtonIndexes = [1, 2, 3, 4, 5, 6];
 
-  const handleSingleSelection = (optimistic: number, pessimistic: number, title: string) => {
+  const handleSingleSelection = (optimistic: number, pessimistic: number, option: TFormOption) => {
     // storing the latest selection in the array, so that it keeps track of each addition and easily
     // remove it on back button
     if (!optimisticArray || !pessimisticArray) return;
@@ -32,27 +48,77 @@ export function FormSection() {
 
     // need to access setters from here, so cannot move them to the util function
     if (currentFormIndex === 0) {
-      const res = getPlatform(title);
+      const res = getPlatform(option.title as 'Apple iOS' | 'Android' | 'Web' | 'Multi-Platform');
       setPlatform({
         title: res.title,
         roles: res.roles,
       });
     }
     if (currentFormIndex === 1) {
-      setPlatformSize(getPlatformSize(title));
+      const res = getPlatformSize(option.title as 'Small' | 'Medium' | 'Large');
+      setPlatformSize({
+        title: res.title,
+        roles: res.roles,
+      });
     }
     if (currentFormIndex === 2) {
-      setHasDesigner(getDesigner(title));
+      const res = getDesigner(option.title as 'Yes' | 'No');
+      setHasDesigner({
+        title: res.title,
+        roles: res.roles,
+      });
     }
+    if (currentFormIndex === 3) {
+      const res = getUxLevel(option.title as 'MVP' | 'Stock' | 'Beautiful', hasDesigner);
+      setUxLevel({
+        title: res.title,
+        roles: res.roles,
+      });
+    }
+    // if (currentFormIndex === 5) {
+    //   const res = getPlatformSize(option.title as 'Yes' | 'No' | 'Not sure');
+    //   setUxLevel({
+    //     title: res.title,
+    //     roles: res.roles,
+    //   });
+    // }
+    // if (currentFormIndex === 6) {
+    //   const res = getPlatformSize(option.title as 'Yes' | 'No' | 'Not sure');
+    //   setUxLevel({
+    //     title: res.title,
+    //     roles: res.roles,
+    //   });
+    // }
+
     setCurrentFormIndex((prev) => prev + 1);
   };
 
-  const handleMultiSelection = (optimistic: number, pessimistic: number) => {
+  const handleMultiSelection = (optimistic: number, pessimistic: number, selection: string[]) => {
     if (!optimisticArray || !pessimisticArray) return;
     const tempOpt = [...optimisticArray, optimistic];
     const tempPes = [...pessimisticArray, pessimistic];
     setOptimisticArray(tempOpt);
     setPessimisticArray(tempPes);
+
+    if (currentFormIndex === 4) {
+      const res = getLoginOptions({ selection });
+      setLoginOptions(res);
+    }
+
+    if (currentFormIndex === 7) {
+      const res = getLoginOptions({ selection });
+      setLoginOptions(res);
+    }
+
+    if (currentFormIndex === 8) {
+      const res = getLoginOptions({ selection });
+      setLoginOptions(res);
+    }
+
+    if (currentFormIndex === 9) {
+      const res = getLoginOptions({ selection });
+      setLoginOptions(res);
+    }
 
     setCurrentFormIndex((prev) => prev + 1);
   };
@@ -89,9 +155,9 @@ export function FormSection() {
             title={forms[currentFormIndex].title}
             description={forms[currentFormIndex].description}
             options={forms[currentFormIndex].options}
-            goBack={() => console.log()}
-            submitSelection={({ optimisticHours, pessimisticHours }) =>
-              handleMultiSelection(optimisticHours, pessimisticHours)
+            goBack={() => console.log('TODO add back for multi')}
+            submitSelection={({ optimisticHours, pessimisticHours, selection }) =>
+              handleMultiSelection(optimisticHours, pessimisticHours, selection)
             }
           />
         )}
@@ -105,7 +171,7 @@ export function FormSection() {
               handleSingleSelection(
                 val.option.optimisticHours ?? 0,
                 val.option.pessimisticHours ?? 0,
-                val.option.title
+                val.option
               )
             }
             backButton={hasBackButtonIndexes.includes(currentFormIndex)}

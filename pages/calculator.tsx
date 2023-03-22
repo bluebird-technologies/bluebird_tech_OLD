@@ -14,23 +14,52 @@ import QuoteCalculator from '../components/Calculator/QuoteCalculator';
 function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
 
+  // context state getters and setters. This tracks all the choices and the hours
+  // for the forms
   const [optimisticArray, setOptimisticArray] = useState<number[]>([]);
   const [pessimisticArray, setPessimisticArray] = useState<number[]>([]);
-  const [hasDesigner, setHasDesigner] = useState('');
   const [platform, setPlatform] = useState<OptionWithRole>({ title: '', roles: [] });
-  const [platformSize, setPlatformSize] = useState('');
+  const [platformSize, setPlatformSize] = useState<OptionWithRole>({ title: '', roles: [] });
+  const [uxLevel, setUxLevel] = useState<OptionWithRole>({ title: '', roles: [] });
+  const [hasDesigner, setHasDesigner] = useState<OptionWithRole>({ title: '', roles: [] });
+
+  const [loginOptions, setLoginOptions] = useState<OptionWithRole[] | []>([]);
+
+  const [personalProfiles, setPersonalProfiles] = useState<OptionWithRole>({
+    title: '',
+    roles: [],
+  });
+  const [connected, setConnected] = useState<OptionWithRole>({ title: '', roles: [] });
+
+  const [payments, setPayments] = useState<OptionWithRole[] | []>([]);
+  const [admin, setAdmin] = useState<OptionWithRole[] | []>([]);
+  const [datesAndLocation, setDatesAndLocation] = useState<OptionWithRole[] | []>([]);
 
   const contextValue = {
     optimisticArray,
     setOptimisticArray,
     pessimisticArray,
     setPessimisticArray,
-    hasDesigner,
-    setHasDesigner,
     platform,
     setPlatform,
     platformSize,
     setPlatformSize,
+    uxLevel,
+    setUxLevel,
+    hasDesigner,
+    setHasDesigner,
+    loginOptions,
+    setLoginOptions,
+    personalProfiles,
+    setPersonalProfiles,
+    connected,
+    setConnected,
+    payments,
+    setPayments,
+    admin,
+    setAdmin,
+    datesAndLocation,
+    setDatesAndLocation,
   };
 
   return (

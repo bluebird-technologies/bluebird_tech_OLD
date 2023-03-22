@@ -19,9 +19,11 @@ export interface FormCardProps {
   submitSelection: ({
     optimisticHours,
     pessimisticHours,
+    selection,
   }: {
     optimisticHours: number;
     pessimisticHours: number;
+    selection: string[];
   }) => void;
 }
 
@@ -72,6 +74,7 @@ function FormCard({
   const handleSubmit = () => {
     const tempOpt: number[] = [];
     const tempPes: number[] = [];
+    const selection: string[] = [];
 
     // need to take all the options and sum up their hours
     options.map((option) => {
@@ -82,13 +85,14 @@ function FormCard({
         if (option.pessimisticHours) {
           tempPes.push(option.pessimisticHours);
         }
+        selection.push(option.title);
       }
     });
 
     const optimisticHours = tempOpt.reduce((partialSum, a) => partialSum + a, 0);
     const pessimisticHours = tempPes.reduce((partialSum, a) => partialSum + a, 0);
 
-    submitSelection({ optimisticHours, pessimisticHours });
+    submitSelection({ optimisticHours, pessimisticHours, selection });
   };
 
   useEffect(() => {
