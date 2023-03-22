@@ -52,8 +52,8 @@ function caseStudies() {
 
       <div className="flex flex-1 relative -mt-40 w-full">
         <div className="flex flex-col justify-center items-center space-y-8 w-full">
-          {clients.map((item, key) => (
-            <div className="w-2/3" key={key}>
+          {clients.map((item) => (
+            <div className="w-2/3 z-10" key={item.clientName}>
               <ClientCard
                 clientName={item.clientName}
                 clientLogo={item.clientLogo}
