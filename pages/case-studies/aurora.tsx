@@ -98,7 +98,9 @@ function AuroraDetails() {
           height: '850px',
         }}
       >
-        <h1 className="text-highlight font-bold uppercase text-8xl">{clientDetails.clientName}</h1>
+        <h1 className="text-highlight font-bold uppercase text-8xl -mt-24">
+          {clientDetails.clientName}
+        </h1>
       </div>
       <div className="w-full bg-cover h-full -mt-[250px] pt-12 px-12 flex flex-col items-center relative z-20">
         <div
