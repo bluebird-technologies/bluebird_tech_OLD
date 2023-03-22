@@ -49,7 +49,11 @@ export function Header() {
         <picture>
           <Link href="/">
             <source srcSet="/header/logo.svg" type="image/svg+xml" />
-            <img src="/header/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
+            <img
+              src="/header/logo.svg"
+              alt="Bluebird"
+              className="w-[121px] mx-10 hover:cursor-pointer"
+            />
           </Link>
         </picture>
         <nav className="flex flex-1 justify-around mt-3">
