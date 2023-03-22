@@ -97,18 +97,20 @@ export default function Offer() {
               </div>
             ))}
           </div>
-          {solutions.map((item, key) => (
-            <>{solutionOption === item.title && <SolutionsCard item={item} key={key} />}</>
+          {solutions.map((item) => (
+            <div key={item.title}>
+              {solutionOption === item.title && <SolutionsCard item={item} />}
+            </div>
           ))}
         </Container>
       </div>
 
-      <div className="flex bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
+      <div className="flex  bg-secondary items-center justify-center pb-[150px] pt-[280px] -mt-[200px]">
         {solutions.map((item) => (
-          <>
+          <div key={item.title} className="  flex items-center justify-center">
             {solutionOption === item.title && (
-              <div className="flex flex-1 flex-col items-center justify-center">
-                <h1 className="text-white text-5xl font-extrabold uppercase">
+              <div className="flex flex-col   items-center  justify-center">
+                <h1 className="text-white text-5xl items-center font-extrabold uppercase">
                   {item.secondLayerTitle}
                 </h1>
                 <Lottie
@@ -129,7 +131,7 @@ export default function Offer() {
                 </Button>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
 
