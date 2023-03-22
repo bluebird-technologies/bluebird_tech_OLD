@@ -46,14 +46,14 @@ function SolutionsCard({ item }: Props) {
         {title !== 'API & System Development' ? (
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
-            <SwiggleLine className="ml-20 -mt-5" width={'60vw'} />
+            <SwiggleLine className="ml-20 -mt-5" />
           </div>
         ) : (
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">
               {title.split(' ')[0]} {title.split(' ')[1]} {title.split(' ')[2]}
             </h1>
-            <SwiggleLine className="ml-20 -mt-5" width={'40vw'} />
+            <SwiggleLine className="ml-20 -mt-5" />
           </div>
         )}
 

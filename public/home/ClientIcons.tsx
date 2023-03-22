@@ -1,91 +1,189 @@
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ClientIcons() {
   return (
     <div className="w-full h-full">
-      <div className="flex flex-row items-center py-12  justify-between">
-        <div>
-          <Image height={220} width={220} alt="22seven" src="/client-icons/22seven.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="bankTech" src="/client-icons/bankTech.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="revix" src="/client-icons/revix.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="layUp" src="/client-icons/layup.svg" />
-        </div>
+      <div className="flex flex-row items-center mb-14  justify-between ">
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.22seven.com'}>
+          <div>
+            <picture>
+              <img src="/client-icons/22seven.svg" alt="22seven" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bank.tech'}>
+          <div>
+            <picture>
+              <img src="/client-icons/bankTech.svg" alt="bank Tech" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://revix.com'}>
+          <div>
+            <picture>
+              <img src="/client-icons/revix.svg" alt="revix" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://layup.co.za'}>
+          <div>
+            <picture>
+              <img src="/client-icons/layup.svg" alt="layup" />
+            </picture>
+          </div>
+        </Link>
       </div>
-      <div className="flex flex-row items-center py-12 px-12 justify-between">
-        <div>
-          <Image height={220} width={220} alt="duepay" src="/client-icons/duepay.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="FameShopping" src="/client-icons/fameShopping.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="ThorChain" src="/client-icons/thorchain.svg" />
-        </div>
+      <div className="flex flex-row items-center mb-14  px-12 justify-between">
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.duepay.co.za'}>
+          <div>
+            <picture>
+              <img src="/client-icons/duepay.svg" alt="duepay" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.doctorly.de/en'}>
+          <div>
+            <picture>
+              <img src="/client-icons/doctorly.svg" alt="doctorly" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://thorchain.org'}>
+          <div>
+            <picture>
+              <img src="/client-icons/thorchain.svg" alt="thorchain" />
+            </picture>
+          </div>
+        </Link>
       </div>
-      <div className="flex flex-row items-center py-12 justify-between ">
-        <div>
-          <Image height={220} width={220} alt="Evuna" src="/client-icons/evuna.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="raubex" src="/client-icons/raubex.svg" />
-        </div>
-        <div>
-          <Image
-            height={220}
-            width={220}
-            alt="Pump and abrasion"
-            src="/client-icons/pump_abrasion.svg"
-          />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="Coindirect" src="/client-icons/coinDirect.svg" />
-        </div>
+      <div className="flex flex-row items-center mb-14  justify-between ">
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.thedelta.io'}>
+          <div>
+            <picture>
+              <img src="/client-icons/theDelta.svg" alt="theDelta" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://raubex.com'}>
+          <div>
+            <picture>
+              <img src="/client-icons/raubex.svg" alt="raubex" />
+            </picture>
+          </div>
+        </Link>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 "
+          href={'https://www.pabtglobal.com/'}
+        >
+          <div>
+            <picture>
+              <img src="/client-icons/pump_abrasion.svg" alt="Pump and abrasion" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.coindirect.com'}>
+          <div>
+            <picture>
+              <img src="/client-icons/coindirect.svg" alt="Coin Direct" />
+            </picture>
+          </div>
+        </Link>
       </div>
-      <div className="flex flex-row items-center py-12 px-12 justify-between ">
-        <div>
-          <Image height={220} width={220} alt="bvnk" src="/client-icons/bvnk.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="craft" src="/client-icons/craft.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="Pepsi" src="/client-icons/pepsi.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="breez" src="/client-icons/breez.svg" />
-        </div>
+      <div className="flex flex-row items-center mb-14  px-12 justify-between ">
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bvnk.com/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/bvnk.svg" alt="Bvnk" />
+            </picture>
+          </div>
+        </Link>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 "
+          href={'https://www.craft.financial/'}
+        >
+          <div>
+            <picture>
+              <img src="/client-icons/craft.svg" alt="Craft" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.pepsi.co.za/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/pepsi.svg" alt="Pepsi" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://breez.insure'}>
+          <div>
+            <picture>
+              <img src="/client-icons/breez.svg" alt="Breez" />
+            </picture>
+          </div>
+        </Link>
       </div>
-      <div className="flex flex-row items-center py-12 px-12 justify-between ">
-        <div>
-          <Image height={220} width={220} alt="Greensun" src="/client-icons/greensun.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="bsc" src="/client-icons/bsc.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="PolygonProp" src="/client-icons/polygonProp.svg" />
-        </div>
+      <div className="flex flex-row items-center mb-14  px-12 justify-between ">
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://greensun.co.za/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/greensun.svg" alt="Greensun" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bscglobal.com/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/bsc.svg" alt="Bsc global" />
+            </picture>
+          </div>
+        </Link>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 "
+          href={'https://www.polygonprop.com/'}
+        >
+          <div>
+            <picture>
+              <img src="/client-icons/polygonprop.svg" alt="Polygon prop" />
+            </picture>
+          </div>
+        </Link>
       </div>
-      <div className="flex flex-row items-center py-12 justify-between ">
-        <div>
-          <Image height={220} width={220} alt="Overlap" src="/client-icons/overlap.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="Ambercircle" src="/client-icons/ambercircle.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="Asklulo" src="/client-icons/asklulo.svg" />
-        </div>
-        <div>
-          <Image height={220} width={220} alt="Tweak" src="/client-icons/tweak.svg" />
-        </div>
+      <div className="flex flex-row items-center   mb-14  justify-between ">
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 "
+          href={'https://www.overlap-app.com'}
+        >
+          <div>
+            <picture>
+              <img src="/client-icons/overlap.svg" alt="Overlap" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://ambercircle.co.za/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/ambercircle.svg" alt="Ambercircle" />
+            </picture>
+          </div>
+        </Link>
+        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.asklulo.com/'}>
+          <div>
+            <picture>
+              <img src="/client-icons/asklulo.svg" alt="Asklulo" />
+            </picture>
+          </div>
+        </Link>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 "
+          href={'https://www.tweakcarbon.com/'}
+        >
+          <div>
+            <picture>
+              <img src="/client-icons/tweak.svg" alt="Pump and abrasion" />
+            </picture>
+          </div>
+        </Link>
       </div>
     </div>
   );
