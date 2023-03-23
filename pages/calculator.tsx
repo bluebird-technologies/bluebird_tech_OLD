@@ -4,15 +4,18 @@ import { Header } from '../components/Header';
 import Swiggle from '../public/swiggle.svg';
 import Lottie from 'lottie-react';
 import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
+import CalculatorAnimation from '../public/lottie/calculatelottie.json';
+
 import {
   CalculatorContext,
   OptionWithRole,
 } from '../components/Calculator/context/CalculatorContext';
 import { FormSection } from '../components/Calculator/FormSection';
-import QuoteCalculator from '../components/Calculator/QuoteCalculator';
+import QuoteCalculatorWidget from '../components/Calculator/QuoteCalculatorWidget';
 
 function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
+  const [showCalculationScreen, setShowCalculationScreen] = useState(false);
 
   // context state getters and setters. This tracks all the choices and the hours
   // for the forms
@@ -67,27 +70,82 @@ function Calculator() {
       {formSectionActive ? (
         <div>
           <CalculatorContext.Provider value={contextValue}>
-            <div className="w-full flex flex-col items-center relative h-[200px]">
-              <div
-                className="bg-primary h-full"
-                style={{
-                  position: 'absolute',
-                  left: '-16%',
-                  width: '130vw',
-                  borderBottomLeftRadius: '50%',
-                  borderBottomRightRadius: '50%',
-                }}
-              />
-              <Header />
-            </div>
-            <div className="flex bg-secondary h-[1100px] w-full -mt-64">
-              <div className="flex grow pt-32 max-w-[900px] ml-32">
-                <FormSection />
-              </div>
-              <div className="flex mt-[350px] ml-64 w-[440px]">
-                <QuoteCalculator />
-              </div>
-            </div>
+            {!showCalculationScreen && (
+              <>
+                <div className="w-full flex flex-col items-center relative h-[200px]">
+                  <div
+                    className="bg-primary h-full"
+                    style={{
+                      position: 'absolute',
+                      left: '-16%',
+                      width: '130vw',
+                      borderBottomLeftRadius: '50%',
+                      borderBottomRightRadius: '50%',
+                    }}
+                  />
+                  <Header />
+                </div>
+
+                <div className="flex bg-secondary h-[1100px] w-full -mt-64">
+                  <div className="flex grow pt-32 max-w-[900px] ml-12 2xl:ml-32">
+                    <FormSection setShowCalc={setShowCalculationScreen} />
+                  </div>
+                  <div className="flex mt-[350px] ml-12 2xl:ml-64 w-[440px] pr-12">
+                    <QuoteCalculatorWidget />
+                  </div>
+                </div>
+              </>
+            )}
+            {showCalculationScreen && (
+              <>
+                <div className="w-full flex flex-col items-center relative h-[800px]">
+                  <div
+                    className="bg-primary h-full"
+                    style={{
+                      position: 'absolute',
+                      left: '-16%',
+                      width: '130vw',
+                      borderBottomLeftRadius: '50%',
+                      borderBottomRightRadius: '50%',
+                    }}
+                  />
+                  <Header />
+                  <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
+                    <h1 className="uppercase text-5xl text-white font-bold w-full text-center">
+                      Your Quote Estimate
+                    </h1>
+                    <div className="flex w-full mt-6 px-64">
+                      <div className="w-3/5 border border-red-500">
+                        <p className="text-white text-xl">
+                          (Disclaimer)
+                          <br />
+                          <br />
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                          <br />
+                          sed diam nonumy eirmod tempor invidunt
+                          <br />
+                          ut labore et dolore magna aliquyam erat, sed diam
+                        </p>
+                      </div>
+                      <div className="w-2/5 border border-blue-500">
+                        <div>
+                          <Lottie
+                            animationData={CalculatorAnimation}
+                            style={{
+                              height: '350px',
+                            }}
+                            loop={true}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex bg-secondary h-[1100px] w-full -mt-64"></div>
+              </>
+            )}
+
             <Footer />
           </CalculatorContext.Provider>
         </div>

@@ -2,29 +2,84 @@ import Lottie from 'lottie-react';
 import React, { useContext, useEffect, useState } from 'react';
 import animation from '../../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
 import { Checkmark } from './icons/Checkmark';
-import { CalculatorContext } from './context/CalculatorContext';
-import { getAllRoles } from './data/Utility';
-import { resolve } from 'path/win32';
+import { CalculatorContext, OptionWithRole } from './context/CalculatorContext';
+import { calculateOptimisticHours, getAllRoles } from './data/Utility';
 
-function QuoteCalculator() {
-  const { optimisticArray, pessimisticArray, platform, platformSize, uxLevel, hasDesigner } =
-    useContext(CalculatorContext);
+function QuoteCalculatorWidget() {
+  const {
+    platform,
+    platformSize,
+    uxLevel,
+    hasDesigner,
+    loginOptions,
+    personalProfiles,
+    payments,
+    admin,
+    datesAndLocation,
+  } = useContext(CalculatorContext);
 
   const [teamMembers, setTeamMembers] = useState<string[]>([]);
+  const totals = calculateOptimisticHours({
+    platform,
+    platformSize,
+    uxLevel,
+    hasDesigner,
+    loginOptions,
+    personalProfiles,
+    payments,
+    admin,
+    datesAndLocation,
+  });
 
-  const optimisticTotal = optimisticArray.reduce(
-    (partialSum: number, a: number) => partialSum + a,
-    0
-  );
-
-  const pessimisticTotal = pessimisticArray.reduce(
-    (partialSum: number, a: number) => partialSum + a,
-    0
-  );
+  const optimisticTotal = totals.totalOptimistic;
+  const pessimisticTotal = totals.totalPessimistic;
 
   useEffect(() => {
+    const loginOptionsRolesAll: string[] = [];
+    loginOptions.forEach((opt: OptionWithRole) => {
+      if (opt.roles.length > 0) {
+        opt.roles.forEach((val) => {
+          loginOptionsRolesAll.push(val);
+        });
+      }
+    });
+    const paymentsRolesAll: string[] = [];
+    payments.forEach((opt: OptionWithRole) => {
+      if (opt.roles.length > 0) {
+        opt.roles.forEach((val) => {
+          loginOptionsRolesAll.push(val);
+        });
+      }
+    });
+    const adminRolesAll: string[] = [];
+    admin.forEach((opt: OptionWithRole) => {
+      if (opt.roles.length > 0) {
+        opt.roles.forEach((val) => {
+          loginOptionsRolesAll.push(val);
+        });
+      }
+    });
+    const datesAndLocationRolesAll: string[] = [];
+    datesAndLocation.forEach((opt: OptionWithRole) => {
+      if (opt.roles.length > 0) {
+        opt.roles.forEach((val) => {
+          loginOptionsRolesAll.push(val);
+        });
+      }
+    });
+
     const combineAndDisplayRoles = () => {
-      const allRolesArr = [].concat(platform.roles, platformSize.roles);
+      const allRolesArr = [].concat(
+        platform.roles,
+        platformSize.roles,
+        uxLevel.roles,
+        hasDesigner.roles,
+        loginOptionsRolesAll as [],
+        personalProfiles.roles,
+        paymentsRolesAll as [],
+        adminRolesAll as [],
+        datesAndLocationRolesAll as []
+      );
       const roles = getAllRoles(allRolesArr);
 
       return roles;
@@ -34,7 +89,17 @@ function QuoteCalculator() {
     if (res) {
       setTeamMembers(res);
     }
-  }, [platform, platformSize]);
+  }, [
+    platform,
+    platformSize,
+    uxLevel,
+    hasDesigner,
+    loginOptions,
+    personalProfiles,
+    payments,
+    admin,
+    datesAndLocation,
+  ]);
 
   return (
     <div className="bg-white max-h-[650px] w-full shadow-md overflow-scroll overflow-x-hidden scrollbar-hide">
@@ -102,7 +167,7 @@ function QuoteCalculator() {
   );
 }
 
-export default QuoteCalculator;
+export default QuoteCalculatorWidget;
 
 interface SectionHoursProps {
   title: string;
