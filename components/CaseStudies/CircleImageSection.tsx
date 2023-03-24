@@ -46,9 +46,6 @@ export function CircleImageSection() {
             <span className="absolute text-white font-bold text-2xl">DELIVERY</span>
           </div>
         </div>
-        {/* <span className="absolute text-white font-bold text-2xl left-[400px] -bottom-[70px]">
-          DELIVERY
-        </span> */}
       </div>
     </div>
   );
