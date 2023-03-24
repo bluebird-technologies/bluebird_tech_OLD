@@ -141,7 +141,7 @@ export default function Offer() {
           </div>
         </a>
       </div>
-      <div className="z-10 w-full bg-[#F1F1F1] pb-[90px]">
+      <div className="z-10 w-full bg-[#F1F1F1]">
         <Footer />
       </div>
     </div>
