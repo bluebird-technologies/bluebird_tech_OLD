@@ -89,9 +89,9 @@ export default (
 Solutions"
       transform="translate(47.96 90.727)"
       fill="#fff"
-      fontSize="16"
-      fontFamily="Montserrat-Medium, Montserrat"
-      fontWeight="500"
+      font-size="16"
+      font-family="Montserrat-Medium, Montserrat"
+      font-weight="500"
       opacity="0.6"
     >
       <tspan x="-34" y="0">

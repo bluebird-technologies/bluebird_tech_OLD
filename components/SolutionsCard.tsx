@@ -23,7 +23,7 @@ function SolutionsCard({ item }: Props) {
         <div className="w-full mb-14">
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
-            <SwiggleLine className="ml-20 -mt-5" />
+            <SwiggleLine className="ml-20 -mt-5" width={'60vw'} />
           </div>
           <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
             {title.split(' ')[1]}

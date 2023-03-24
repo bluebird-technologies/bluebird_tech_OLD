@@ -6,12 +6,12 @@ export default (
     className="w-full h-full"
   >
     <defs>
-      <clipPath id="clipPath">
+      <clipPath id="clip-path">
         <path fill="none" d="M0 0H145.727V111.593H0z" data-name="Rectangle 645"></path>
       </clipPath>
     </defs>
     <g data-name="Group 1558">
-      <g fill="#fff" clipPath="url(#clipPath)" data-name="Group 1557">
+      <g fill="#fff" clipPath="url(#clip-path)" data-name="Group 1557">
         <path
           d="M46.786 32.921V3.183C46.791.47 47.253 0 49.956 0h59.881c2.617 0 3.06.435 3.061 3.066q.012 30.042 0 60.082c0 2.534-.422 2.958-2.946 2.959q-30.042.015-60.083 0c-2.643 0-3.076-.439-3.078-3.048q-.012-15.071 0-30.142m3.281 29.987H109.7V3.208H50.067z"
           data-name="Path 4246"

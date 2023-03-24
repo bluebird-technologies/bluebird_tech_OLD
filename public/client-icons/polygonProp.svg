@@ -1,18 +1,18 @@
 <svg id="Component_227_1" data-name="Component 227 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="56.266" viewBox="0 0 326.254 56.266" style="width:100%; height:100%">
   <defs>
-    <clipPath id="clipPath">
+    <clipPath id="clip-path">
       <rect id="Rectangle_854" data-name="Rectangle 854" width="326.254" height="56.266" fill="none"/>
     </clipPath>
-    <clipPath id="clipPath-2">
+    <clipPath id="clip-path-2">
       <rect id="Rectangle_853" data-name="Rectangle 853" width="326.254" height="56.267" fill="none"/>
     </clipPath>
   </defs>
-  <g id="Group_1706" data-name="Group 1706" clipPath="url(#clipPath)">
+  <g id="Group_1706" data-name="Group 1706" clip-path="url(#clip-path)">
     <g id="Group_1705" data-name="Group 1705" transform="translate(0 0)" opacity="0.43">
-      <g id="Group_1704" data-name="Group 1704" clipPath="url(#clipPath-2)">
+      <g id="Group_1704" data-name="Group 1704" clip-path="url(#clip-path-2)">
         <g id="Group_1703" data-name="Group 1703" transform="translate(0 0)">
           <g id="Group_1702" data-name="Group 1702" transform="translate(0 0)">
-            <g id="Group_1701" data-name="Group 1701" clipPath="url(#clipPath-2)">
+            <g id="Group_1701" data-name="Group 1701" clip-path="url(#clip-path-2)">
               <path id="Path_4450" data-name="Path 4450" d="M209.059,38.208v3.8L66.225,41.02V37.208l142.834,1" transform="translate(25.381 14.26)" fill="#1e2b3b"/>
               <path id="Path_4451" data-name="Path 4451" d="M133,6.984V35.136H129.05V.388l4.66-.333,17.419,27.74V.375l3.832-.235V35.18l-4.323.206L133,6.984" transform="translate(49.46 0.021)" fill="#1e2b3b"/>
               <path id="Path_4452" data-name="Path 4452" d="M18.086,18.191C18.5,7.226,25.8-.4,35.8.132,41.572.438,46,3.186,48.462,8.327a20.45,20.45,0,0,1-.317,19.017c-2.924,5.6-7.889,8.129-14.141,7.994C27.711,35.2,22.947,32.316,20.4,26.554c-1.159-2.62-1.566-5.566-2.313-8.363m28.389-.154c-.585-4.021-1.876-7.99-3.969-10.485a10.268,10.268,0,0,0-16.371.739c-3.552,5.151-3.591,13.606-.086,18.763,4.076,6,12.845,6.286,16.8.217,1.772-2.714,2.448-6.133,3.621-9.233" transform="translate(6.932 0.041)" fill="#1e2b3b"/>
