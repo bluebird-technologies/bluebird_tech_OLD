@@ -97,7 +97,7 @@ export default function Offer() {
               </div>
             ))}
           </div>
-          {solutions.map((item, key) => (
+          {solutions.map((item) => (
             <div key={item.title}>
               {solutionOption === item.title && <SolutionsCard item={item} />}
             </div>
