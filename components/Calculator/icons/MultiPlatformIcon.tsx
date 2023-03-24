@@ -1,3 +1,3 @@
-import MultiPlatformIcon from 'public/calculator/multiPlatformIcon.svg';
+import MultiPlatformIcon from '/public/calculator/multiPlatformIcon.svg';
 
 export default <MultiPlatformIcon />;

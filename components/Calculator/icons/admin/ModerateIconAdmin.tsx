@@ -1,4 +1,4 @@
-import ModerateIconAdmin from 'public/Calculator/contentIcon.svg';
+import ModerateIconAdmin from '/public/Calculator/contentIcon.svg';
 
 export default (
   <div className="h-[140px]">
