@@ -1,4 +1,4 @@
-import BookingsIcon from '/public/Calculator/bookings.svg';
+import BookingsIcon from 'public/calculator/bookings.svg';
 
 export default (
   <div className="h-[140px]">

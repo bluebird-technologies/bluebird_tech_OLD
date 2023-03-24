@@ -1,4 +1,4 @@
-import PaymentProcessingIcon from '/public/Calculator/paymentIcon.svg';
+import PaymentProcessingIcon from 'public/calculator/paymentIcon.svg';
 
 export default (
   <div className="h-[140px]">

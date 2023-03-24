@@ -1,4 +1,4 @@
-import MapsIntegrationIcon from '/public/Calculator/maps-integration.svg';
+import MapsIntegrationIcon from 'public/calculator/maps-integration.svg';
 
 export default (
   <div className="h-[140px]">

@@ -1,4 +1,4 @@
-import MarketplaceIcon from '/public/Calculator/marketIcon.svg';
+import MarketplaceIcon from 'public/calculator/marketIcon.svg';
 
 export default (
   <div className="h-[140px]">

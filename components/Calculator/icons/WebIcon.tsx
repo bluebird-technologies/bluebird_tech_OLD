@@ -1,3 +1,3 @@
-import WebIcon from '/public/calculator/webIcon.svg';
+import WebIcon from 'public/calculator/webIcon.svg';
 
 export default <WebIcon />;

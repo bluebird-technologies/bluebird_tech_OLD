@@ -1,4 +1,4 @@
-import LogInNo from '/public/Calculator/login-no-icon.svg';
+import LogInNo from 'public/calculator/login-no-icon.svg';
 
 export default (
   <div className="h-[140px]">

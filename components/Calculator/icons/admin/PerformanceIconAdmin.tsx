@@ -1,4 +1,4 @@
-import PerformanceIconAdmin from '/public/Calculator/performanceIcon.svg';
+import PerformanceIconAdmin from 'public/calculator/performanceIcon.svg';
 
 export default (
   <div className="h-[140px]">
