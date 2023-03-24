@@ -97,15 +97,17 @@ export default function Offer() {
               </div>
             ))}
           </div>
-          {solutions.map((item, key) => (
-            <>{solutionOption === item.title && <SolutionsCard item={item} key={key} />}</>
+          {solutions.map((item) => (
+            <div key={item.title}>
+              {solutionOption === item.title && <SolutionsCard item={item} />}
+            </div>
           ))}
         </Container>
       </div>
 
-      <div className="flex bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
+      <div className="flex items-center justify-center bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
         {solutions.map((item) => (
-          <>
+          <div className="flex items-center justify-center" key={item.title}>
             {solutionOption === item.title && (
               <div className="flex flex-1 flex-col items-center justify-center">
                 <h1 className="text-white text-5xl font-extrabold uppercase">
@@ -129,7 +131,7 @@ export default function Offer() {
                 </Button>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
 
@@ -141,7 +143,7 @@ export default function Offer() {
           </div>
         </a>
       </div>
-      <div className="z-10 w-full bg-[#F1F1F1] pb-[90px]">
+      <div className="z-10 w-full bg-[#F1F1F1]">
         <Footer />
       </div>
     </div>
