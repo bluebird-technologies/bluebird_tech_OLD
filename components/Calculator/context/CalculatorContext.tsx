@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 
 export const enum RolesEnum {
   FE = 'Front end developer',
@@ -7,8 +7,6 @@ export const enum RolesEnum {
   D = 'Designer',
   PM = 'Product Manager',
 }
-
-type uxOption = 'mvp' | 'stock' | 'beautiful';
 
 export interface OptionWithRole {
   title: string;
