@@ -71,12 +71,6 @@ function FormCard({
     setCurrentOptionSelection(tempOptions);
   };
 
-  const isBrowser = () => typeof window !== 'undefined';
-  function scrollToTop() {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   const handleSubmit = () => {
     const tempOpt: number[] = [];
     const tempPes: number[] = [];
@@ -100,7 +94,7 @@ function FormCard({
 
     submitSelection({ optimisticHours, pessimisticHours, selection });
     if (currentIndex === 9) {
-      scrollToTop();
+      window.scrollTo(0, 0);
     }
   };
 
