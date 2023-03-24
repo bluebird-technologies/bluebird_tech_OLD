@@ -155,6 +155,7 @@ export function getLoginOptions({ selection }: MultiOptionsParams) {
           optimisticHours: 15,
           pessimisticHours: 21,
         });
+        break;
       case 'Social':
         options.push({
           title: 'Social',
@@ -162,8 +163,10 @@ export function getLoginOptions({ selection }: MultiOptionsParams) {
           optimisticHours: 15,
           pessimisticHours: 21,
         });
+        break;
       case 'No':
         options.push({ title: 'No', roles: [], optimisticHours: 0, pessimisticHours: 0 });
+        break;
       case 'Not sure':
         options.push({
           title: 'Not sure',
@@ -171,6 +174,7 @@ export function getLoginOptions({ selection }: MultiOptionsParams) {
           optimisticHours: 5,
           pessimisticHours: 7,
         });
+        break;
     }
   });
   return options;
@@ -187,6 +191,7 @@ export function getPayments({ selection }: MultiOptionsParams) {
           optimisticHours: 40,
           pessimisticHours: 57,
         });
+        break;
       case 'Payment Processing':
         options.push({
           title: 'Payment Processing',
@@ -194,6 +199,7 @@ export function getPayments({ selection }: MultiOptionsParams) {
           optimisticHours: 80,
           pessimisticHours: 114,
         });
+        break;
       case 'Shopping Cart':
         options.push({
           title: 'Shopping Cart',
@@ -201,6 +207,7 @@ export function getPayments({ selection }: MultiOptionsParams) {
           optimisticHours: 100,
           pessimisticHours: 143,
         });
+        break;
       case 'MarketPlace':
         options.push({
           title: 'MarketPlace',
@@ -208,6 +215,7 @@ export function getPayments({ selection }: MultiOptionsParams) {
           optimisticHours: 100,
           pessimisticHours: 143,
         });
+        break;
       case 'No':
         options.push({
           title: 'No',
@@ -215,6 +223,7 @@ export function getPayments({ selection }: MultiOptionsParams) {
           optimisticHours: 0,
           pessimisticHours: 0,
         });
+        break;
     }
   });
   return options;
@@ -231,6 +240,7 @@ export function getAdmin({ selection }: MultiOptionsParams) {
           optimisticHours: 30,
           pessimisticHours: 43,
         });
+        break;
       case 'Performance Monitoring':
         options.push({
           title: 'Performance Monitoring',
@@ -238,6 +248,7 @@ export function getAdmin({ selection }: MultiOptionsParams) {
           optimisticHours: 40,
           pessimisticHours: 57,
         });
+        break;
       case 'Moderation/ Content Approval':
         options.push({
           title: 'Moderation/ Content Approval',
@@ -245,6 +256,7 @@ export function getAdmin({ selection }: MultiOptionsParams) {
           optimisticHours: 40,
           pessimisticHours: 57,
         });
+        break;
       case 'Usage Analytics':
         options.push({
           title: 'Usage Analytics',
@@ -252,6 +264,7 @@ export function getAdmin({ selection }: MultiOptionsParams) {
           optimisticHours: 25,
           pessimisticHours: 36,
         });
+        break;
       case 'No':
         options.push({
           title: 'No',
@@ -259,6 +272,7 @@ export function getAdmin({ selection }: MultiOptionsParams) {
           optimisticHours: 0,
           pessimisticHours: 0,
         });
+        break;
     }
   });
 
@@ -276,6 +290,7 @@ export function getDates({ selection }: MultiOptionsParams) {
           optimisticHours: 50,
           pessimisticHours: 71,
         });
+        break;
       case 'Bookings':
         options.push({
           title: 'Bookings',
@@ -283,6 +298,7 @@ export function getDates({ selection }: MultiOptionsParams) {
           optimisticHours: 40,
           pessimisticHours: 57,
         });
+        break;
       case 'Live GPS Tracking':
         options.push({
           title: 'Live GPS Tracking',
@@ -290,6 +306,7 @@ export function getDates({ selection }: MultiOptionsParams) {
           optimisticHours: 80,
           pessimisticHours: 114,
         });
+        break;
       case 'Maps Integration':
         options.push({
           title: 'Maps Integration',
@@ -297,6 +314,7 @@ export function getDates({ selection }: MultiOptionsParams) {
           optimisticHours: 80,
           pessimisticHours: 114,
         });
+        break;
       case 'No':
         options.push({
           title: 'No',
@@ -304,6 +322,7 @@ export function getDates({ selection }: MultiOptionsParams) {
           optimisticHours: 0,
           pessimisticHours: 0,
         });
+        break;
     }
   });
   return options;
@@ -336,12 +355,13 @@ function extractHours(options: OptionWithRole[]) {
   };
 }
 
-interface CalculateOptimisticHoursParams {
+interface CalculateTotalsHoursParams {
   platform: OptionWithRole;
   platformSize: OptionWithRole;
   uxLevel: OptionWithRole;
   hasDesigner: OptionWithRole;
   personalProfiles: OptionWithRole;
+  connected: OptionWithRole;
 
   loginOptions: OptionWithRole[];
   payments: OptionWithRole[];
@@ -349,17 +369,18 @@ interface CalculateOptimisticHoursParams {
   datesAndLocation: OptionWithRole[];
 }
 
-export function calculateOptimisticHours({
+export function calculateTotals({
   platform,
   platformSize,
   uxLevel,
   hasDesigner,
   loginOptions,
+  connected,
   personalProfiles,
   payments,
   admin,
   datesAndLocation,
-}: CalculateOptimisticHoursParams) {
+}: CalculateTotalsHoursParams) {
   const loginOptionsTotals = extractHours(loginOptions);
   const paymentsOptionsTotals = extractHours(payments);
   const adminOptionsTotals = extractHours(admin);
@@ -371,6 +392,7 @@ export function calculateOptimisticHours({
     (uxLevel.optimisticHours ?? 0) +
     (hasDesigner.optimisticHours ?? 0) +
     (personalProfiles.optimisticHours ?? 0) +
+    (connected.optimisticHours ?? 0) +
     (loginOptionsTotals.optimisticHours ?? 0) +
     (paymentsOptionsTotals.optimisticHours ?? 0) +
     (adminOptionsTotals.optimisticHours ?? 0) +
@@ -382,6 +404,7 @@ export function calculateOptimisticHours({
     (uxLevel.pessimisticHours ?? 0) +
     (hasDesigner.pessimisticHours ?? 0) +
     (personalProfiles.pessimisticHours ?? 0) +
+    (connected.optimisticHours ?? 0) +
     (loginOptionsTotals.pessimisticHours ?? 0) +
     (paymentsOptionsTotals.pessimisticHours ?? 0) +
     (adminOptionsTotals.pessimisticHours ?? 0) +

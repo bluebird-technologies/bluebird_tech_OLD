@@ -71,6 +71,12 @@ function FormCard({
     setCurrentOptionSelection(tempOptions);
   };
 
+  const isBrowser = () => typeof window !== 'undefined';
+  function scrollToTop() {
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   const handleSubmit = () => {
     const tempOpt: number[] = [];
     const tempPes: number[] = [];
@@ -93,6 +99,9 @@ function FormCard({
     const pessimisticHours = tempPes.reduce((partialSum, a) => partialSum + a, 0);
 
     submitSelection({ optimisticHours, pessimisticHours, selection });
+    if (currentIndex === 9) {
+      scrollToTop();
+    }
   };
 
   useEffect(() => {

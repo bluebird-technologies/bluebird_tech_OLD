@@ -18,11 +18,6 @@ export interface OptionWithRole {
 }
 
 export interface CalculatorContextProps {
-  optimisticArray: number[] | undefined;
-  setOptimisticArray: (val: number[]) => void;
-  pessimisticArray: number[] | undefined;
-  setPessimisticArray: (val: number[]) => void;
-
   platform: OptionWithRole;
   setPlatform: (val: OptionWithRole) => void;
   platformSize: OptionWithRole;

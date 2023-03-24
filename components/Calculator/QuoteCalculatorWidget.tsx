@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import animation from '../../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
 import { Checkmark } from './icons/Checkmark';
 import { CalculatorContext, OptionWithRole } from './context/CalculatorContext';
-import { calculateOptimisticHours, getAllRoles } from './data/Utility';
+import { calculateTotals, getAllRoles } from './data/Utility';
 
 function QuoteCalculatorWidget() {
   const {
@@ -13,19 +13,21 @@ function QuoteCalculatorWidget() {
     hasDesigner,
     loginOptions,
     personalProfiles,
+    connected,
     payments,
     admin,
     datesAndLocation,
   } = useContext(CalculatorContext);
 
   const [teamMembers, setTeamMembers] = useState<string[]>([]);
-  const totals = calculateOptimisticHours({
+  const totals = calculateTotals({
     platform,
     platformSize,
     uxLevel,
     hasDesigner,
     loginOptions,
     personalProfiles,
+    connected,
     payments,
     admin,
     datesAndLocation,
@@ -47,7 +49,7 @@ function QuoteCalculatorWidget() {
     payments.forEach((opt: OptionWithRole) => {
       if (opt.roles.length > 0) {
         opt.roles.forEach((val) => {
-          loginOptionsRolesAll.push(val);
+          paymentsRolesAll.push(val);
         });
       }
     });
@@ -55,7 +57,7 @@ function QuoteCalculatorWidget() {
     admin.forEach((opt: OptionWithRole) => {
       if (opt.roles.length > 0) {
         opt.roles.forEach((val) => {
-          loginOptionsRolesAll.push(val);
+          adminRolesAll.push(val);
         });
       }
     });
@@ -63,7 +65,7 @@ function QuoteCalculatorWidget() {
     datesAndLocation.forEach((opt: OptionWithRole) => {
       if (opt.roles.length > 0) {
         opt.roles.forEach((val) => {
-          loginOptionsRolesAll.push(val);
+          datesAndLocationRolesAll.push(val);
         });
       }
     });
@@ -76,6 +78,7 @@ function QuoteCalculatorWidget() {
         hasDesigner.roles,
         loginOptionsRolesAll as [],
         personalProfiles.roles,
+        connected.roles,
         paymentsRolesAll as [],
         adminRolesAll as [],
         datesAndLocationRolesAll as []
@@ -96,6 +99,7 @@ function QuoteCalculatorWidget() {
     hasDesigner,
     loginOptions,
     personalProfiles,
+    connected,
     payments,
     admin,
     datesAndLocation,
@@ -103,41 +107,144 @@ function QuoteCalculatorWidget() {
 
   return (
     <div className="bg-white max-h-[650px] w-full shadow-md overflow-scroll overflow-x-hidden scrollbar-hide">
-      <div className="flex flex-row justify-between pt-10 px-8">
-        <div className="text-lightGrey text-xl">Platform:</div>
-        <div className="text-primary text-xl font-semibold">{platform.title ?? ''}</div>
-      </div>
-      <div className="border-t border-lightGrey mx-8 mt-4" />
-
       <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-lightGrey text-xl italic">Title</div>
-        <div className="text-lightGrey text-xl italic">Hours</div>
+        <div className="text-lightGrey text-lg italic">Title</div>
+        <div className="text-lightGrey text-lg italic">Hours</div>
       </div>
 
       <div className="border-t border-lightGrey mx-8 mt-4" />
+
+      {platform.title.length > 0 && (
+        <SectionHours
+          title="Platform"
+          value={platform.title}
+          hours={platform.optimisticHours ?? 0}
+        />
+      )}
 
       {platformSize.title.length > 0 && (
-        <SectionHours title="Size" value={platformSize.title} hours={120} />
+        <SectionHours
+          title="Size"
+          value={platformSize.title}
+          hours={platformSize.optimisticHours ?? 0}
+        />
       )}
-
-      {uxLevel.title.length > 0 && <SectionHours title="UX" value={uxLevel.title} hours={120} />}
 
       {hasDesigner.title.length > 0 && (
-        <SectionHours title="Designer" value={hasDesigner.title} hours={100} />
+        <div className="flex flex-col justify-between mt-4 px-8">
+          <div className="flex justify-start">
+            <div className="text-lightGrey text-lg italic">Designer</div>
+          </div>
+          <div className="flex justify-between mt-4">
+            <div className="text-primary text-lg font-bold">{hasDesigner.title}</div>
+          </div>
+        </div>
       )}
 
-      <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-lightGrey text-xl underline">Total:</div>
+      {uxLevel.title.length > 0 && (
+        <SectionHours title="UX" value={uxLevel.title} hours={uxLevel.optimisticHours ?? 0} />
+      )}
+
+      {loginOptions.length > 0 && (
+        <div className="flex flex-col justify-between mt-4 px-8">
+          <div className="flex justify-start">
+            <div className="text-lightGrey text-lg italic">Login</div>
+          </div>
+          {loginOptions.map((option: OptionWithRole) => {
+            return (
+              <div key={option.title} className="flex justify-between mt-4">
+                <div className="text-primary text-lg font-bold">{option.title}</div>
+                <div className="text-secondary text-lg font-bold">
+                  {option.optimisticHours} hours
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {personalProfiles.title.length > 0 && (
+        <SectionHours
+          title="Profiles"
+          value={personalProfiles.title}
+          hours={personalProfiles.optimisticHours ?? 0}
+        />
+      )}
+
+      {connected.title.length > 0 && (
+        <SectionHours
+          title="Connected"
+          value={connected.title}
+          hours={connected.optimisticHours ?? 0}
+        />
+      )}
+
+      {payments.length > 0 && (
+        <div className="flex flex-col justify-between mt-4 px-8">
+          <div className="flex justify-start">
+            <div className="text-lightGrey text-lg italic">Login</div>
+          </div>
+          {payments.map((option: OptionWithRole) => {
+            return (
+              <div key={option.title} className="flex justify-between mt-4">
+                <div className="text-primary text-lg font-bold">{option.title}</div>
+                <div className="text-secondary text-lg font-bold">
+                  {option.optimisticHours} hours
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {admin.length > 0 && (
+        <div className="flex flex-col justify-between mt-4 px-8">
+          <div className="flex justify-start">
+            <div className="text-lightGrey text-lg italic">Login</div>
+          </div>
+          {admin.map((option: OptionWithRole) => {
+            return (
+              <div key={option.title} className="flex justify-between mt-4">
+                <div className="text-primary text-lg font-bold">{option.title}</div>
+                <div className="text-secondary text-lg font-bold">
+                  {option.optimisticHours} hours
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {datesAndLocation.length > 0 && (
+        <div className="flex flex-col justify-between mt-4 px-8">
+          <div className="flex justify-start">
+            <div className="text-lightGrey text-lg italic">Login</div>
+          </div>
+          {datesAndLocation.map((option: OptionWithRole) => {
+            return (
+              <div key={option.title} className="flex justify-between mt-4">
+                <div className="text-primary text-lg font-bold">{option.title}</div>
+                <div className="text-secondary text-lg font-bold">
+                  {option.optimisticHours} hours
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <div className="flex flex-row justify-between mt-8 px-8">
+        <div className="text-lightGrey text-lg underline">Total:</div>
       </div>
 
       <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-primary text-xl font-bold">Optimistic</div>
-        <div className="text-secondary text-xl font-bold">{optimisticTotal} hours</div>
+        <div className="text-primary text-lg font-bold">Optimistic</div>
+        <div className="text-secondary text-lg font-bold">{optimisticTotal} hours</div>
       </div>
 
       <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-primary text-xl font-bold">Pessimistic</div>
-        <div className="text-secondary text-xl font-bold">{pessimisticTotal} hours</div>
+        <div className="text-primary text-lg font-bold">Pessimistic</div>
+        <div className="text-secondary text-lg font-bold">{pessimisticTotal} hours</div>
       </div>
 
       <div className="mt-24">
@@ -153,7 +260,7 @@ function QuoteCalculatorWidget() {
             {teamMembers.map((member, i) => {
               return (
                 <div key={i} className="flex justify-between">
-                  <div className="text-xl font-medium">{member}</div>
+                  <div className="text-lg font-medium">{member}</div>
                   <div className="text-highlight">
                     <Checkmark />
                   </div>
@@ -177,13 +284,13 @@ interface SectionHoursProps {
 
 const SectionHours = ({ title, value, hours }: SectionHoursProps) => {
   return (
-    <div className="flex flex-col justify-between mt-4 px-8">
+    <div className="flex flex-col justify-between mt-2 px-8">
       <div className="flex justify-start">
-        <div className="text-lightGrey text-xl italic">{title}</div>
+        <div className="text-lightGrey text-lg italic">{title}</div>
       </div>
-      <div className="flex justify-between mt-4">
-        <div className="text-primary text-xl font-bold">{value}</div>
-        <div className="text-secondary text-xl font-bold">{hours} hours</div>
+      <div className="flex justify-between mt-2">
+        <div className="text-primary text-lg font-bold">{value}</div>
+        <div className="text-secondary text-lg font-bold">{hours} hours</div>
       </div>
     </div>
   );
