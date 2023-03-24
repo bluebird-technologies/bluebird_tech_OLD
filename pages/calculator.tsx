@@ -5,7 +5,7 @@ import Swiggle from '../public/swiggle.svg';
 import Lottie from 'lottie-react';
 import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
 import CalculatorAnimation from '../public/lottie/calculatelottie.json';
-import teammemberanimation from '../public/lottie/teammemberanimation.json';
+
 import {
   CalculatorContext,
   OptionWithRole,
@@ -14,6 +14,7 @@ import { FormSection } from '../components/Calculator/FormSection';
 import QuoteCalculatorWidget from '../components/Calculator/QuoteCalculatorWidget';
 import CalculatorSquiggle from '../components/Calculator/icons/CalculatorSquiggle';
 import { calculateTotals, getAllRoles } from '../components/Calculator/data/Utility';
+import YourTeam from '../components/Calculator/YourTeam';
 
 function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
@@ -85,7 +86,6 @@ function Calculator() {
     return selections;
   }
 
-  // aewtaewtaewtawetaewtawetaewtaewtaewtaewtaewtaewtawetaewtawetaewtaewtaewtaewtaewtaewtawetaewtawetaewtaewtaewtaewtaewtaewtawetaewtawetaewtaewtaewtaewtaewtaewtawetaewtawetaewtaewtaewt
   const loginOptionsRolesAll: string[] = [];
   loginOptions.forEach((opt: OptionWithRole) => {
     if (opt.roles.length > 0) {
@@ -141,7 +141,7 @@ function Calculator() {
 
   return (
     <>
-      {formSectionActive ? (
+      {formSectionActive && (
         <div>
           <CalculatorContext.Provider value={contextValue}>
             {!showCalculationScreen && (
@@ -185,31 +185,31 @@ function Calculator() {
                   />
                   <Header />
                   <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
-                    <h1 className="uppercase text-5xl text-white font-bold w-full text-center">
-                      Your Quote Estimate
-                    </h1>
-                    <div className="flex w-full mt-6 px-64">
-                      <div className="w-3/5">
-                        <p className="text-white text-xl">
-                          (Disclaimer)
-                          <br />
-                          <br />
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                          <br />
-                          sed diam nonumy eirmod tempor invidunt
-                          <br />
-                          ut labore et dolore magna aliquyam erat, sed diam
-                        </p>
-                      </div>
-                      <div className="w-2/5">
-                        <div>
-                          <Lottie
-                            animationData={CalculatorAnimation}
-                            style={{
-                              height: '350px',
-                            }}
-                            loop={true}
-                          />
+                    <h1 className="w-full text-center title-1">Your Quote Estimate</h1>
+                    <div className="flex w-full justify-center">
+                      <div className="flex w-full mt-6 px-64 max-w-[1800px]">
+                        <div className="w-3/5">
+                          <p className="text-white text-xl xl:pl-12">
+                            (Disclaimer)
+                            <br />
+                            <br />
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            <br />
+                            sed diam nonumy eirmod tempor invidunt
+                            <br />
+                            ut labore et dolore magna aliquyam erat, sed diam
+                          </p>
+                        </div>
+                        <div className="w-2/5">
+                          <div>
+                            <Lottie
+                              animationData={CalculatorAnimation}
+                              style={{
+                                height: '350px',
+                              }}
+                              loop={true}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -330,38 +330,15 @@ function Calculator() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-primary h-[600px] w-full">
-                  <div className="flex w-full justify-center">
-                    <h1 className="uppercase text-white text-4xl font-bold text-center">
-                      Your Team
-                    </h1>
-                  </div>
-                  <div className="flex w-full justify-center">
-                    {teamMembers?.map((member) => {
-                      return (
-                        <div className="flex flex-col" key={member}>
-                          <div>
-                            <Lottie
-                              animationData={teammemberanimation}
-                              style={{
-                                height: '250px',
-                              }}
-                              loop={true}
-                            />
-                          </div>
-                          <div>{member}</div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+                <YourTeam teamMembers={teamMembers ?? []} />
               </>
             )}
 
             <Footer />
           </CalculatorContext.Provider>
         </div>
-      ) : (
+      )}
+      {!formSectionActive && (
         <div className="w-full flex flex-col items-center relative h-[900px]">
           <div
             className="bg-primary h-full"
@@ -408,8 +385,8 @@ function Calculator() {
 
             {/* divide from top section */}
 
-            <div className="h-[750px] w-full bg-secondary -mt-32">
-              <div className="flex w-full h-full justify-center mt-60">
+            <div className="w-full bg-secondary -mt-32">
+              <div className="flex w-full justify-center mt-60">
                 <div className="flex flex-col w-[1000px]">
                   <div className="flex flex-col text-left">
                     <p className="text-white italic text-5xl font-normal mb-12">I want to:</p>
@@ -430,6 +407,12 @@ function Calculator() {
                     </button>
                   </div>
                 </div>
+              </div>
+              <div className="w-full flex justify-center my-24">
+                <picture className="px-32 xl:px-64">
+                  <source srcSet="/calculator/RateCard.png" />
+                  <img src="/calculator/RateCard.png" alt="rates" />
+                </picture>
               </div>
             </div>
           </div>

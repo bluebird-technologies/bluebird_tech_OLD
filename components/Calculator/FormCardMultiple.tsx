@@ -152,13 +152,15 @@ function FormCard({
           <RightArrow className="origin-center rotate-180 mr-4" />
           BACK
         </button>
-        <button
-          onClick={() => handleSubmit()}
-          className="text-white font-medium text-xl flex items-center justify-center"
-        >
-          <RightArrow className="origin-center mr-4" />
-          PROCEED
-        </button>
+        {currentOptionSelection.length > 0 && (
+          <button
+            onClick={() => handleSubmit()}
+            className="text-white font-medium text-xl flex items-center justify-center"
+          >
+            <RightArrow className="origin-center mr-4" />
+            PROCEED
+          </button>
+        )}
       </div>
     </div>
   );

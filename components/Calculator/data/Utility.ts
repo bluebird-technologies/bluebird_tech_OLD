@@ -26,7 +26,7 @@ export function getPlatform(title: 'Apple iOS' | 'Android' | 'Web' | 'Multi-Plat
     case 'Multi-Platform':
       return {
         title: 'Multi-Platform',
-        roles: [RolesEnum.BE, RolesEnum.FE],
+        roles: [RolesEnum.BE, RolesEnum.FE, RolesEnum.MD],
         optimisticHours: 80,
         pessimisticHours: 114,
       } as OptionWithRole;
