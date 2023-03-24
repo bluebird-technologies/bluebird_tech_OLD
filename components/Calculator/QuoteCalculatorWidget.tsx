@@ -1,6 +1,6 @@
 import Lottie from 'lottie-react';
 import React, { useContext, useEffect, useState } from 'react';
-import animation from '../../public/lottie/724c861b-ff93-4c29-8e91-ab091ab26774.json';
+import animation from '../../public/lottie/quoteWidgetAnimation.json';
 import { Checkmark } from './icons/Checkmark';
 import { CalculatorContext, OptionWithRole } from './context/CalculatorContext';
 import { calculateTotals, getAllRoles } from './data/Utility';

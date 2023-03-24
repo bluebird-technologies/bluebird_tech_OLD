@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import Swiggle from '../public/swiggle.svg';
 import Lottie from 'lottie-react';
-import LottieFile from '../public/lottie/5d49851b-aa9d-4d30-ad87-eb72343de7bc.json';
+import LottieFile from '../public/lottie/QuoteEstimateAnimation.json';
 import CalculatorAnimation from '../public/lottie/calculatelottie.json';
 
 import {
