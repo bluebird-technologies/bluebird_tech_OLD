@@ -16,7 +16,7 @@ const Contact = () => {
     'General Enquiry',
   ];
   return (
-    <div className="flex-1 flex flex-col h-full">
+    <div className="bg-secondary flex-1 flex flex-col h-full">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
           className="bg-primary h-full"
@@ -38,7 +38,7 @@ const Contact = () => {
           <Swiggle />
         </div>
       </div>
-      <div className="flex flex-row px-20 justify-center items-center bg-secondary py-32 -mt-32">
+      <div className="relative flex flex-row px-20 justify-center items-center  py-32 ">
         <form className="flex flex-1 my-8 flex-col items-center justify-center">
           <input
             className="py-4 my-3 px-4 text-lg rounded-[20px]  w-[518px]"
@@ -50,11 +50,13 @@ const Contact = () => {
             type={'text'}
             placeholder={'Your company (optional)'}
           />
-          <SelectDropdown
-            placeholder="Reason for contacting us(select)"
-            options={dropdownOptions}
-            selectedItem={(option) => console.log(option)}
-          />
+          <div>
+            <SelectDropdown
+              placeholder="Reason for contacting us(select)"
+              options={dropdownOptions}
+              selectedItem={(option) => console.log(option)}
+            />
+          </div>
           <input
             className=" my-3 px-4 rounded-[20px] text-lg py-4 w-[518px]"
             type={'email'}
