@@ -13,38 +13,41 @@ import { useRouter } from 'next/router';
 export default function Home() {
   const router = useRouter();
   return (
-    <div className="">
+    <div className="w-full overflow-hidden">
       <div
-        className="w-full h-[704px] bg-cover bg-bottom flex flex-col items-center relative"
+        className="relative flex h-[704px] w-full flex-col items-center bg-cover bg-bottom"
         style={{
           backgroundImage: 'url(/main.jpg)',
         }}
       >
         <Header />
         <Container wide>
-          <h1 className="title-1 mt-[82px]">
-            TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
-          </h1>
-          <div className="w-[138px] h-[4px] bg-secondary my-[44px]"></div>
-          <Button>
-            <a href="#offer">See what we offer</a>
-          </Button>
-          <div className="overflow-hidden">
-            <Lottie
-              style={{ width: '578px' }}
-              src="lottie/30286239-fb21-47f3-ab15-7495d639d72c.json"
-              className="absolute left-[680px] bottom-[-320px]"
-            />
-            <Lottie
-              style={{ width: '276px' }}
-              src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
-              className="absolute left-[400px] bottom-[-190px]"
-            />
-            <Lottie
-              style={{ width: '407px' }}
-              src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
-              className="absolute left-0 bottom-[-340px]"
-            />
+          <div className="flex-1 flex w-full  flex-col items-center justify-center 2xl:items-start 2xl:justify-start">
+            <h1 className="mt-[82px] text-center text-[40px] font-extrabold uppercase leading-[64px] text-white 2xl:text-left 2xl:text-[52px]">
+              TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
+            </h1>
+            <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>
+            <Button className="">
+              <a href="#offer">See what we offer</a>
+            </Button>
+            <div className=" overflow-hidden">
+              <Lottie
+                style={{ width: '598px' }}
+                src="lottie/30286239-fb21-47f3-ab15-7495d639d72c.json"
+                className="hidden 2xl:inline 2xl:absolute 2xl:left-[500px] 2xl:bottom-[-200px]"
+              />
+              <Lottie
+                style={{ width: '276px' }}
+                src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
+                className="absolute top-[50px] -left-[130px] 2xl:top-[250px] 2xl:left-[400px]  "
+              />
+                <Lottie
+                style={{ width: '407px' }}
+                src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
+                className="hidden 2xl:absolute 2xl:inline 2xl:left-0 2xl:bottom-[-340px]"
+              
+              />
+            </div>
           </div>
         </Container>
       </div>
@@ -98,25 +101,25 @@ export default function Home() {
         />
         <picture className="mx-auto">
           <source srcSet="/home/swiggle.svg" type="image/svg+xml" />
-          <img src="/home/swiggle.svg" alt="Swiggle" className="w-[813px] mt-[20px]" />
+          <img src="/home/swiggle.svg" alt="Swiggle" className="mt-[20px] w-[813px]" />
         </picture>
         <div id="offer">
           <WhatWeOffer />
         </div>
       </Container>
-      <div className="flex flex-1 w-full bg-[#f1f1f1] pt-[72px]">
+      <div className="flex w-full flex-1 bg-[#f1f1f1] pt-[72px]">
         <Container wide>
-          <div className="flex flex-col w-full flex-1 items-center justify-center">
+          <div className="flex w-full flex-1 flex-col items-center justify-center">
             <h2 className="title-2 text-center">
-              SOME OF THE PEOPLE WE’VE <span className="text-[#DA7D3B] text-center">WORKED</span>{' '}
+              SOME OF THE PEOPLE WE’VE <span className="text-center text-[#DA7D3B]">WORKED</span>{' '}
               WITH
             </h2>
-            <div className="w-[138px] h-[4px] bg-secondary mt-[27px] mb-[34px]"></div>
+            <div className="mt-[27px] mb-[34px] h-[4px] w-[138px] bg-secondary"></div>
           </div>
           <ClientIcons />
         </Container>
       </div>
-      <div className="pt-[55px] pb-[80px] bg-primary shadow-[0px 9px 11px #00000029]">
+      <div className="shadow-[0px 9px 11px #00000029] bg-primary pt-[55px] pb-[80px]">
         <Container>
           <div className="subtitle mt-[30px] text-2xl">
             <span className="text-2xl">Case studies</span>
@@ -127,49 +130,49 @@ export default function Home() {
           <p className="alt text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
           <div className="mt-[80px] flex space-x-[29px]">
             <div
-              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
+              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
               style={{
                 backgroundImage: 'url(/case-studies/revio.png)',
               }}
               onClick={() => router.push('/case-studies/revio')}
             >
-              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
-                <div className="bg-white h-full w-[59px] relative rounded-full">
+              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
+                <div className="relative h-full w-[59px] rounded-full bg-white">
                   <Image src="/images/revio.png" alt="revio icon" fill />
                 </div>
-                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
                   REVIO
                 </span>
               </div>
             </div>
             <div
-              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
+              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
               style={{
                 backgroundImage: 'url(/case-studies/raubex.png)',
               }}
               onClick={() => router.push('/case-studies/raubex')}
             >
-              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px]">
-                <div className="bg-white h-full w-[59px] relative rounded-full">
+              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
+                <div className="relative h-full w-[59px] rounded-full bg-white">
                   <Image src="/images/raubex.png" alt="raubex icon" fill />
                 </div>
-                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
                   RAUBEX
                 </span>
               </div>
             </div>
             <div
-              className="w-[360px] h-[273px] bg-cover bg-bottom flex flex-1 items-end cursor-pointer"
+              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
               style={{
                 backgroundImage: 'url(/case-studies/aurora.png)',
               }}
               onClick={() => router.push('/case-studies/aurora')}
             >
-              <div className="bg-secondary h-[59px] flex items-center rounded-full mb-[13px] ">
-                <div className="bg-white h-full w-[59px] relative rounded-full">
+              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary ">
+                <div className="relative h-full w-[59px] rounded-full bg-white">
                   <Image src="/images/aurora.png" alt="aurora icon" fill />
                 </div>
-                <span className="text-[35px] leading-[43px] text-white font-medium px-4">
+                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
                   AURORA
                 </span>
               </div>
@@ -178,9 +181,9 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-32">
+      <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-32">
         <div
-          className="bg-secondary h-full"
+          className="h-full bg-secondary"
           style={{
             position: 'absolute',
             left: '-16%',
@@ -200,7 +203,7 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="bg-[#F1F1F1] h-[150px] -mt-32" />
+      <div className="-mt-32 h-[150px] bg-[#F1F1F1]" />
 
       <div className="bg-[#F1F1F1] pb-[54px]">
         <Footer />
