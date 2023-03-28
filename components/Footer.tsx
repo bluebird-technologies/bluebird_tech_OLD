@@ -4,7 +4,7 @@ import LinkedinIcon from '../public/linkedin.svg';
 
 const Footer = () => {
   return (
-    <div className="w-full h-full flex flex-1 bg-grey py-20 px-12 lg:px-32">
+    <div className="w-full h-full flex flex-1 bg-grey py-6 lg:py-20 px-12 lg:px-32">
       <div className="flex w-full">
         <picture className="hidden lg:block">
           <source srcSet="/home/logo.svg" type="image/svg+xml" />
