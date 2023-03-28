@@ -6,13 +6,13 @@ body {
   overflow-x: hidden;
 }
 .title-1 {
-  @apply font-extrabold text-white leading-[64px] text-[52px] uppercase;
+  @apply text-5xl font-extrabold uppercase leading-[64px] text-white;
 }
 .subtitle {
-  @apply text-highlight text-[16px] leading-[20px] font-bold uppercase;
+  @apply text-[16px] font-bold uppercase leading-[20px] text-highlight;
 }
 .title-2 {
-  @apply text-primary font-extrabold text-[35px] leading-[43px];
+  @apply text-[35px] font-extrabold leading-[43px] text-primary;
 }
 .title-2.alt {
   @apply text-white;
@@ -27,7 +27,7 @@ body {
   @apply mt-[12px];
 }
 p {
-  @apply text-black text-[18px] leading-[22px] font-medium flex items-start;
+  @apply flex items-start text-[18px] font-medium leading-[22px] text-black;
 }
 p.alt {
   @apply text-white;
