@@ -38,7 +38,7 @@ const Contact = () => {
           <Swiggle />
         </div>
       </div>
-      <div className="relative flex flex-row px-20 justify-center items-center  py-32 ">
+      <div className="flex flex-row px-20 justify-center items-center pb-32">
         <form className="flex flex-1 my-8 flex-col items-center justify-center">
           <input
             className="py-4 my-3 px-4 text-lg rounded-[20px]  w-[518px]"
@@ -65,7 +65,7 @@ const Contact = () => {
           <textarea
             rows={5}
             cols={50}
-            className="w-[518px] my-3 px-4 py-4 text-lg rounded-[22px] min-h-10"
+            className="w-[518px] my-3 px-4 py-4 text-lg rounded-[22px] min-h-10 resize-none"
             placeholder="Your message"
           />
           <Button className="w-40 flex flex-1 items-center justify-center text-lg mt-8">
