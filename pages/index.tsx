@@ -22,7 +22,7 @@ export default function Home() {
       >
         <Header />
         <Container wide>
-          <div className="flex-1 flex w-full  flex-col items-center justify-center 2xl:items-start 2xl:justify-start">
+          <div className="flex w-full flex-1  flex-col items-center justify-center 2xl:items-start 2xl:justify-start">
             <h1 className="mt-[82px] text-center text-[40px] font-extrabold uppercase leading-[64px] text-white 2xl:text-left 2xl:text-[52px]">
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
@@ -34,35 +34,38 @@ export default function Home() {
               <Lottie
                 style={{ width: '598px' }}
                 src="lottie/30286239-fb21-47f3-ab15-7495d639d72c.json"
-                className="hidden 2xl:inline 2xl:absolute 2xl:left-[500px] 2xl:bottom-[-200px]"
+                className="hidden 2xl:absolute 2xl:left-[500px] 2xl:bottom-[-200px] 2xl:inline"
               />
               <Lottie
                 style={{ width: '276px' }}
                 src="lottie/355a04a6-668d-4fcc-aae2-d2af1451ba80.json"
                 className="absolute top-[50px] -left-[130px] 2xl:top-[250px] 2xl:left-[400px]  "
               />
-                <Lottie
+              <Lottie
                 style={{ width: '407px' }}
                 src="lottie/6c9228ec-9c25-492d-9758-432393638219.json"
-                className="hidden 2xl:absolute 2xl:inline 2xl:left-0 2xl:bottom-[-340px]"
-              
+                className="hidden 2xl:absolute 2xl:left-0 2xl:bottom-[-340px] 2xl:inline"
               />
             </div>
           </div>
         </Container>
       </div>
       <Container>
-        <div className="subtitle mt-[91px]">About us</div>
-        <h2 className="title-2">WHY BLUEBIRD</h2>
-        <p className="mb-[76px]">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet.
-          <Button className="ml-[38px] mt-1">
-            <Link href="/why">read more</Link>
-          </Button>
-        </p>
+        <div className="mt-12 flex flex-col  items-center 2xl:mt-[91px] 2xl:items-start">
+          <div className="subtitle text-center 2xl:text-left">About us</div>
+          <h2 className="title-2 text-center 2xl:text-left">WHY BLUEBIRD</h2>
+          <div className="mb-12 flex flex-col items-center 2xl:mb-[76px] 2xl:flex-row">
+            <p className="mt-4 text-center text-base 2xl:text-left 2xl:text-lg">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <Button className="ml-[38px] mt-4 2xl:mt-0">
+              <Link href="/why">read more</Link>
+            </Button>
+          </div>
+        </div>
         <Tabs
           tabs={[
             {
