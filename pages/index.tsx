@@ -133,13 +133,20 @@ export default function Home() {
       </div>
       <div className="shadow-[0px 9px 11px #00000029] bg-primary pt-[55px] pb-[80px]">
         <Container>
-          <div className="subtitle mt-[30px] text-2xl">
+          <div className="subtitle mt-[30px] flex w-full flex-col items-center text-2xl lg:items-start">
             <span className="text-2xl">Case studies</span>
           </div>
-          <h2 className="title-2 alt">
-            <span className="text-5xl">SEE OUR LATEST WORK</span>
-          </h2>
-          <p className="alt text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+          <div className="flex w-full flex-col items-center  lg:items-start">
+            <h2 className="title-2 alt text-center">
+              <span className="text-center text-xl lg:text-5xl">SEE OUR LATEST WORK</span>
+            </h2>
+          </div>
+          <div className="flex w-full flex-col items-center  lg:items-start">
+            {' '}
+            <p className="alt hidden text-center text-xl lg:block">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+            </p>
+          </div>
           <div className="mt-[80px] flex space-x-[29px]">
             <div
               className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
