@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
 }
 .title-1 {
-  @apply text-5xl font-extrabold uppercase leading-[64px] text-white;
+  @apply text-[52px] font-extrabold uppercase leading-[64px] text-white;
 }
 .subtitle {
   @apply text-[16px] font-bold uppercase leading-[20px] text-highlight;
