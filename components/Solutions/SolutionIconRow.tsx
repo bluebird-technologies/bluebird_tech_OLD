@@ -9,8 +9,8 @@ interface IconRowProps {
 }
 
 function SolutionIconRow({ icons, center, contentType }: IconRowProps) {
-  const rowClassTouchOuter = 'flex justify-between space-x-16';
-  const rowClassFromInner = 'flex justify-center items-center';
+  const rowClassTouchOuter = 'flex justify-between space-x-3 2xl:space-x-16';
+  const rowClassFromInner = 'flex justify-center items-center space-x-3 2xl:space-x-0';
 
   return (
     <div className={center ? rowClassFromInner : rowClassTouchOuter}>
