@@ -9,9 +9,12 @@ import { WhatWeOffer } from '../sections/WhatWeOffer';
 import ClientIcons from '../public/home/ClientIcons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { isMobile } from 'react-device-detect';
+import SolutionCarousel from '../components/Carousel';
 
 export default function Home() {
   const router = useRouter();
+
   return (
     <div className="w-full overflow-hidden">
       <div
@@ -66,47 +69,53 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <Tabs
-          tabs={[
-            {
-              label: 'Boutique',
-              content: (
-                <>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </>
-              ),
-            },
-            {
-              label: 'Lean',
-              content: (
-                <>
-                  {' '}
-                  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum.
-                </>
-              ),
-            },
-            {
-              label: 'Personal',
-              content: (
-                <>
-                  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </>
-              ),
-            },
-          ]}
-        />
+        {isMobile ? (
+          <div className="flex w-full justify-center">
+            <SolutionCarousel />
+          </div>
+        ) : (
+          <Tabs
+            tabs={[
+              {
+                label: 'Boutique',
+                content: (
+                  <>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </>
+                ),
+              },
+              {
+                label: 'Lean',
+                content: (
+                  <>
+                    {' '}
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                  </>
+                ),
+              },
+              {
+                label: 'Personal',
+                content: (
+                  <>
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </>
+                ),
+              },
+            ]}
+          />
+        )}
         <picture className="mx-auto">
           <source srcSet="/home/swiggle.svg" type="image/svg+xml" />
           <img src="/home/swiggle.svg" alt="Swiggle" className="mt-[20px] w-[813px]" />
         </picture>
-        <div id="offer">
+        <div className="flex w-full flex-1 items-center justify-center" id="offer">
           <WhatWeOffer />
         </div>
       </Container>
@@ -184,19 +193,18 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-32">
+      <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-24 2xl:pb-32">
         <div
-          className="h-full bg-secondary"
+          className="absolute left-[-98%] h-full w-[280vw]   bg-secondary  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
           }}
         />
         <Container center>
-          <h2 className="title-2 alt mt-24">HAVE A PROJECT IN MIND?</h2>
+          <h2 className="lg:title-2 alt mt-8 text-center text-[30px] font-extrabold text-white  2xl:mt-24">
+            HAVE A PROJECT IN MIND?
+          </h2>
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
