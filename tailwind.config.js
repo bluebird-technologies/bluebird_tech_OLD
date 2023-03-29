@@ -19,6 +19,7 @@ module.exports = {
         secondary: '#3D6895',
         grey: '#F1F1F1',
         lightGrey: '#AFAFAF',
+        orange: '#DA7D3B',
       },
     },
   },
