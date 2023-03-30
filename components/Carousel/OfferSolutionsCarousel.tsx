@@ -40,16 +40,18 @@ export default function OfferSolutionsCarousel({ slides, onChange }: CarouselPro
 }
 
 function SolutionCarouselIconContainer({ children }: { children: React.ReactNode }) {
-  return <div className="w-16 h-16">{children}</div>;
+  return <div className="w-24 h-24 text-highlight">{children}</div>;
 }
 
 function OfferSolutionsCarouselSlideItem({ icon, label }: SolutionItem) {
   return (
-    <div className="flex flex-col space-y-2 text-white">
+    <div className="flex flex-col space-y-2 text-white cursor-pointer">
       <div className="flex justify-center">
         <SolutionCarouselIconContainer>{icon}</SolutionCarouselIconContainer>
       </div>
-      <div>{label}</div>
+      <div className="flex justify-center  text-center">
+        <h1 className="text-2xl font-semibold max-w-[200px]">{label}</h1>
+      </div>
     </div>
   );
 }

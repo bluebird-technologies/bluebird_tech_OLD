@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import OfferSolutionsCarousel from '../Carousel/OfferSolutionsCarousel';
 import { items } from '../../sections/WhatWeOfferBig';
 import { solutions } from '../../sections/WhatWeOfferBig/solutions';

@@ -4,7 +4,6 @@ import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
 import Lottie from 'lottie-react';
 import offerWaveAnimation from '../public/lottie/offerWaveAnimation.json';
-import RigthArrow from '../public/right-arrow.svg';
 import { Button } from '../components/Button';
 import { solutions } from '../sections/WhatWeOfferBig/solutions';
 import SolutionsCard from '../components/SolutionsCard';
@@ -12,7 +11,8 @@ import Link from 'next/link';
 import MobileWhatWeOffer from '../components/Solutions/MobileWhatWeOffer';
 import { MobileHeader } from '../components/MobileHeader';
 import IconLayout from '../components/Solutions/IconLayout';
-import angular from '../sections/WhatWeOfferBig/icons/angular';
+import SeeBanner from '../components/SeeBanner';
+import SolutionsAnimatedSection from '../components/Solutions/SolutionsAnimatedSection';
 export interface SolutionType {
   title: string;
   firstParagraphDescription: string;
@@ -21,6 +21,7 @@ export interface SolutionType {
   content: {
     contentType: 'text' | 'icon';
     icons: ReactNode[] | 'string'[];
+    iconsMobile?: ReactNode[] | 'string'[];
   };
   amtItemsInFirstRow: number;
   centerSecondRow: boolean;
@@ -31,6 +32,8 @@ export interface SolutionType {
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
 
+  const hideOnMobile = ['API & System Development', 'Developer Outsourcing'];
+
   // for the mobile slider
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
 
@@ -38,7 +41,7 @@ export default function Offer() {
     <div className="flex flex-1 flex-col">
       {/* mobile top section div */}
       <div className="relative block md:hidden w-full h-full overflow-hidden">
-        <div className="w-full h-full bg-primary ">
+        <div className="relative w-full h-full bg-primary">
           <div className="w-full h-full ">
             <MobileHeader />
           </div>
@@ -70,14 +73,13 @@ export default function Offer() {
               />
             </div>
           </div>
-        </div>
-        <div className="relative block md:hidden h-[100px] bg-white overflow-hidden">
           <div
             className="bg-primary"
             style={{
               height: '80px',
               position: 'absolute',
-              top: 0,
+              bottom: 0,
+              marginBottom: '-40px',
               left: '-9%',
               width: '115vw',
               borderBottomLeftRadius: '50%',
@@ -86,25 +88,44 @@ export default function Offer() {
             }}
           />
         </div>
-        <div className="w-full bg-white mb-20">
-          {solutions.map((sol) => {
-            if (sol.title === currentSelectedOption) {
+
+        {solutions.map((sol) => {
+          if (sol.title === currentSelectedOption) {
+            if (!hideOnMobile.includes(sol.title)) {
               return (
-                <div key={sol.title} className="flex flex-col">
-                  <div className="flex mt-8 mb-12 w-full justify-center">
-                    <div className="max-w-[240px]">
-                      <h1 className="text-xl text-highlight text-center font-semibold">
-                        {sol.catchPhrase}
-                      </h1>
+                <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
+                  <div className="flex flex-col">
+                    <div className="flex mt-8 mb-12 w-full justify-center">
+                      <div className="max-w-[240px]">
+                        <h1 className="text-xl text-highlight text-center font-semibold">
+                          {sol.catchPhrase}
+                        </h1>
+                      </div>
                     </div>
+                    <IconLayout
+                      content={{
+                        contentType: sol.content.contentType,
+                        icons: sol.content.iconsMobile ?? sol.content.icons,
+                      }}
+                      amtIconsRowOne={sol.amtItemsInFirstRow}
+                      rowTwoCenter={sol.centerSecondRow}
+                    />
                   </div>
-                  <IconLayout
-                    content={{
-                      contentType: sol.content.contentType,
-                      icons: sol.content.icons,
-                    }}
-                    amtIconsRowOne={sol.amtItemsInFirstRow}
-                    rowTwoCenter={sol.centerSecondRow}
+                </div>
+              );
+            }
+          }
+        })}
+
+        <div className="w-full bg-secondary">
+          {solutions.map((solution) => {
+            if (solution.title === currentSelectedOption) {
+              return (
+                <div key={solution.title}>
+                  <SolutionsAnimatedSection
+                    title={solution.title}
+                    secondLayerTitle={solution.secondLayerTitle}
+                    secondLayerLottie={solution.secondLayerLottie}
                   />
                 </div>
               );
@@ -186,43 +207,24 @@ export default function Offer() {
       </div>
 
       <div className="hidden md:flex items-center justify-center bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
-        {solutions.map((item) => (
-          <div className="flex items-center justify-center" key={item.title}>
-            {solutionOption === item.title && (
-              <div className="flex flex-1 flex-col items-center justify-center">
-                <h1 className="text-white text-5xl font-extrabold uppercase">
-                  {item.secondLayerTitle}
-                </h1>
-                <Lottie
-                  animationData={item.secondLayerLottie}
-                  style={{
-                    marginTop: 30,
-                    marginBottom: 30,
-                    height: '450px',
-                  }}
-                  loop={true}
+        {solutions.map((solution) => {
+          if (solution.title === solutionOption) {
+            return (
+              <div key={solution.title}>
+                <SolutionsAnimatedSection
+                  title={solution.title}
+                  secondLayerTitle={solution.secondLayerTitle}
+                  secondLayerLottie={solution.secondLayerLottie}
                 />
-                <Button className="px-12 py-4 bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
-                  <Link href={'/calculator'}>
-                    <span className="uppercase text-white text-[16px] font-semibold">
-                      Get Started
-                    </span>
-                  </Link>
-                </Button>
               </div>
-            )}
-          </div>
-        ))}
+            );
+          }
+        })}
       </div>
-      {/* 
-      <div className="bg-primary flex flex-1 py-16 flex-row justify-center">
-        <a href={'#'} className="text-white text-xl md:text-4xl font-bold">
-          <div className="flex items-center justify-center">
-            <h1 className="mr-5">EXPLORE OUR OTHER SERVICES</h1>
-            <RigthArrow />
-          </div>
-        </a>
-      </div> */}
+
+      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
+        <SeeBanner label={'EXPLORE OUR OTHER SERVICES'} url={'#'} />
+      </div>
       <div className="z-10 w-full bg-[#F1F1F1]">
         <Footer />
       </div>
