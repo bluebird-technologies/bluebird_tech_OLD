@@ -30,7 +30,7 @@ export interface SolutionType {
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
 
-  const hideOnMobile = ['API & System Development', 'Developer Outsourcing'];
+  const hideOnMobile = ['API & System Development', 'Developer Outsourcing', 'Product Management'];
 
   // for the mobile slider
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
