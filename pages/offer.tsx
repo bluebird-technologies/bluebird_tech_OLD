@@ -4,10 +4,8 @@ import { Header } from '../components/Header';
 import { items } from '../sections/WhatWeOfferBig';
 import Lottie from 'lottie-react';
 import offerWaveAnimation from '../public/lottie/offerWaveAnimation.json';
-import { Button } from '../components/Button';
 import { solutions } from '../sections/WhatWeOfferBig/solutions';
 import SolutionsCard from '../components/SolutionsCard';
-import Link from 'next/link';
 import MobileWhatWeOffer from '../components/Solutions/MobileWhatWeOffer';
 import { MobileHeader } from '../components/MobileHeader';
 import IconLayout from '../components/Solutions/IconLayout';
@@ -123,7 +121,6 @@ export default function Offer() {
               return (
                 <div key={solution.title}>
                   <SolutionsAnimatedSection
-                    title={solution.title}
                     secondLayerTitle={solution.secondLayerTitle}
                     secondLayerLottie={solution.secondLayerLottie}
                   />
@@ -212,7 +209,6 @@ export default function Offer() {
             return (
               <div key={solution.title}>
                 <SolutionsAnimatedSection
-                  title={solution.title}
                   secondLayerTitle={solution.secondLayerTitle}
                   secondLayerLottie={solution.secondLayerLottie}
                 />
