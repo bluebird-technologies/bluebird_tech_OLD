@@ -1,12 +1,7 @@
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { Container } from './Container';
+import { useState } from 'react';
 import { navLeft, navRight } from './headerLinks';
 import MenuIcon from './Header/HamburgerIcon';
-
-interface MobileHeaderProps {
-  toggleShow: () => void;
-}
 
 export function MobileHeader() {
   const [showNavigation, setShowNavigation] = useState(false);
@@ -40,7 +35,10 @@ export function MobileHeader() {
         </div>
       )}
       {!showNavigation && (
-        <div className="w-full flex justify-end p-2 h-[60px]">
+        <div
+          className="fixed w-full flex justify-end p-2 h-[60px] bg-primary border-b border-secondary"
+          style={{ zIndex: 50 }}
+        >
           <div className="text-white">
             <button
               type="button"

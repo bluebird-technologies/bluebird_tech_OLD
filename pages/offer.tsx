@@ -40,10 +40,10 @@ export default function Offer() {
       {/* mobile top section div */}
       <div className="relative block md:hidden w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-primary">
-          <div className="w-full h-full ">
+          <div className="w-full h-full">
             <MobileHeader />
           </div>
-          <div className="pt-6">
+          <div className="pt-[70px]">
             <div className="flex flex-col w-full justify-center text-center">
               <h1 className="font-extrabold text-white leading-[32px] text-[27px] uppercase">
                 <span className="font-bold italic">What we</span> offer
