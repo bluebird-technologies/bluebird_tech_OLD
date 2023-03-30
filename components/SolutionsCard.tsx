@@ -19,7 +19,7 @@ function SolutionsCard({ item }: Props) {
   } = item;
   if (title === 'Developer Outsourcing') {
     return (
-      <div className="flex flex-col mt-28 mb-10 w-[70vw]">
+      <SolutionsCardContainer>
         <div className="w-full mb-14">
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
@@ -35,25 +35,29 @@ function SolutionsCard({ item }: Props) {
           </p>
           <p className="mt-5 text-white text-[27px] leading-8">{secondParagraphDescription}</p>
         </div>
-      </div>
+      </SolutionsCardContainer>
     );
   }
 
   return (
-    <div className="flex flex-col mt-28 mb-10 w-[70vw]">
+    <SolutionsCardContainer>
       {/* heading section */}
       <div className="w-full mb-14">
         {title !== 'API & System Development' ? (
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
-            <SwiggleLine className="ml-20 -mt-5" />
+            <div className="relative">
+              <SwiggleLine className="absolute ml-20 -mt-5" />
+            </div>
           </div>
         ) : (
           <div className="flex w-full">
             <h1 className="text-white font-extrabold uppercase text-5xl">
               {title.split(' ')[0]} {title.split(' ')[1]} {title.split(' ')[2]}
             </h1>
-            <SwiggleLine className="ml-20 -mt-5" />
+            <div className="relative">
+              <SwiggleLine className="absolute ml-20 -mt-5" />
+            </div>
           </div>
         )}
 
@@ -68,10 +72,10 @@ function SolutionsCard({ item }: Props) {
         )}
       </div>
       {/* parralel sections */}
-      <div className="flex flex-row">
+      <div className="flex flex-row justify-between">
         {/* left section */}
         <div className="w-3/5">
-          <div className="mr-32">
+          <div className="w-4/5">
             <p className="text-white text-[27px] leading-8">
               {firstParagraphDescription} <b />
             </p>
@@ -81,8 +85,8 @@ function SolutionsCard({ item }: Props) {
         {/* right section */}
         <div className="w-2/5 -mt-24">
           <div className="flex justify-end">
-            <div className="flex flex-col w-full ml-32 justify-end space-y-8">
-              <p className="text-highlight text-2xl text-right italic">{catchPhrase}</p>
+            <div className="flex flex-col w-full justify-end space-y-8">
+              <p className="text-highlight text-2xl text-right italic pb-6">{catchPhrase}</p>
               <IconLayout
                 content={content}
                 amtIconsRowOne={amtItemsInFirstRow}
@@ -92,8 +96,19 @@ function SolutionsCard({ item }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </SolutionsCardContainer>
   );
 }
 
 export default SolutionsCard;
+
+interface ContainerProps {
+  children: React.ReactNode;
+}
+function SolutionsCardContainer({ children }: ContainerProps) {
+  return (
+    <div className="flex mt-28 mb-10 w-full justify-center">
+      <div className="max-w-[1350px]">{children}</div>
+    </div>
+  );
+}

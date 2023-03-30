@@ -1,18 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
-
-const navLeft = [
-  { label: 'Home', href: '/' },
-  { label: 'Why Bluebird', href: '/why' },
-  { label: 'What we offer', href: '/offer' },
-];
-
-const navRight = [
-  { label: 'Case studies', href: '/case-studies' },
-  { label: 'Quote calculator', href: '/calculator' },
-  { label: 'Contact us', href: '/contact' },
-];
+import { navLeft, navRight } from './headerLinks';
 
 function NavItem({ label, href }: { label: string; href: string }) {
   const ref = useRef<HTMLAnchorElement>(null);
