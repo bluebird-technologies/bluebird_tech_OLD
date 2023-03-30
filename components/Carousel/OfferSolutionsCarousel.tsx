@@ -14,25 +14,28 @@ interface CarouselProps {
 
 export default function OfferSolutionsCarousel({ slides, onChange }: CarouselProps) {
   return (
-    <Carousel
-      emulateTouch
-      infiniteLoop
-      showArrows={false}
-      showStatus={false}
-      showIndicators={false}
-      showThumbs={false}
-      // centerMode={true}
-      // centerSlidePercentage={50}
-      onChange={(val) => onChange(slides[val].label)}
-    >
-      {slides.map((slide, i) => {
-        return (
-          <div key={i}>
-            <OfferSolutionsCarouselSlideItem icon={slide.icon} label={slide.label} />
-          </div>
-        );
-      })}
-    </Carousel>
+    <div className="max-w-[100vw]">
+      <Carousel
+        emulateTouch
+        infiniteLoop
+        showArrows={false}
+        showStatus={false}
+        showIndicators={false}
+        showThumbs={false}
+        // centerMode={true}
+        // centerSlidePercentage={80}
+        // width={500}
+        onChange={(val) => onChange(slides[val].label)}
+      >
+        {slides.map((slide, i) => {
+          return (
+            <div key={i}>
+              <OfferSolutionsCarouselSlideItem icon={slide.icon} label={slide.label} />
+            </div>
+          );
+        })}
+      </Carousel>
+    </div>
   );
 }
 
