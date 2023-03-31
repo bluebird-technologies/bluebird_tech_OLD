@@ -1,3 +1,5 @@
+import React from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
@@ -9,11 +11,29 @@ import { WhatWeOffer } from '../sections/WhatWeOffer';
 import ClientIcons from '../public/home/ClientIcons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { isMobile } from 'react-device-detect';
 import SolutionCarousel from '../components/Carousel';
+import { clientIconsSlide, tabs } from '../components/slideObjects';
 
 export default function Home() {
   const router = useRouter();
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    function updateScreenWidth() {
+      setScreenWidth(window.innerWidth);
+    }
+
+    // Add event listener for window resize
+    window.addEventListener('resize', updateScreenWidth);
+
+    // Call updateScreenWidth initially to get the initial value
+    updateScreenWidth();
+
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener('resize', updateScreenWidth);
+  }, []);
+
+  console.log(screenWidth);
 
   return (
     <div className="w-full overflow-hidden">
@@ -69,9 +89,9 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        {isMobile ? (
+        {screenWidth < 1024 ? (
           <div className="flex w-full justify-center">
-            <SolutionCarousel />
+            <SolutionCarousel item={tabs} />
           </div>
         ) : (
           <Tabs
@@ -128,7 +148,7 @@ export default function Home() {
             </h2>
             <div className="mt-[27px] mb-[34px] h-[4px] w-[138px] bg-secondary"></div>
           </div>
-          <ClientIcons />
+          {screenWidth < 1024 ? <SolutionCarousel item={clientIconsSlide} /> : <ClientIcons />}
         </Container>
       </div>
       <div className="shadow-[0px 9px 11px #00000029] bg-primary pt-[55px] pb-[80px]">
