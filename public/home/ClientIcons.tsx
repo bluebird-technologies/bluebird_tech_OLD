@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function ClientIcons() {
   return (
-    <div className="w-full h-full">
-      <div className="flex flex-row items-center mb-14  justify-between ">
+    <div className="h-full w-full">
+      <div className="mb-14 flex flex-row items-center  justify-between ">
         <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.22seven.com'}>
           <div>
             <picture>
@@ -34,7 +34,7 @@ export default function ClientIcons() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-row items-center mb-14  px-12 justify-between">
+      <div className="mb-14 flex flex-row items-center  justify-between px-12">
         <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.duepay.co.za'}>
           <div>
             <picture>
@@ -57,7 +57,7 @@ export default function ClientIcons() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-row items-center mb-14  justify-between ">
+      <div className="mb-14 flex flex-row items-center  justify-between ">
         <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.thedelta.io'}>
           <div>
             <picture>
@@ -90,7 +90,7 @@ export default function ClientIcons() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-row items-center mb-14  px-12 justify-between ">
+      <div className="mb-14 flex flex-row items-center  justify-between px-12 ">
         <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bvnk.com/'}>
           <div>
             <picture>
@@ -123,7 +123,7 @@ export default function ClientIcons() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-row items-center mb-14  px-12 justify-between ">
+      <div className="mb-14 flex flex-row items-center  justify-between px-12 ">
         <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://greensun.co.za/'}>
           <div>
             <picture>
@@ -149,7 +149,7 @@ export default function ClientIcons() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-row items-center   mb-14  justify-between ">
+      <div className="mb-14 flex flex-row   items-center  justify-between ">
         <Link
           className="bg-grey opacity-50 hover:opacity-100 "
           href={'https://www.overlap-app.com'}

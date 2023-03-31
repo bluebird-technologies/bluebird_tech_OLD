@@ -19,38 +19,38 @@ function SolutionsCard({ item }: Props) {
   } = item;
   if (title === 'Developer Outsourcing') {
     return (
-      <div className="flex flex-col mt-28 mb-10 w-[70vw]">
-        <div className="w-full mb-14">
+      <div className="mt-28 mb-10 flex w-[70vw] flex-col">
+        <div className="mb-14 w-full">
           <div className="flex w-full">
-            <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
+            <h1 className="text-5xl font-extrabold uppercase text-white">{title.split(' ')[0]}</h1>
             <SwiggleLine className="ml-20 -mt-5" />
           </div>
-          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
+          <h1 className="mt-2 text-5xl font-extrabold uppercase text-white">
             {title.split(' ')[1]}
           </h1>
         </div>
         <div className="mr-32">
-          <p className="text-white text-[27px] leading-8">
+          <p className="text-[27px] leading-8 text-white">
             {firstParagraphDescription} <b />
           </p>
-          <p className="mt-5 text-white text-[27px] leading-8">{secondParagraphDescription}</p>
+          <p className="mt-5 text-[27px] leading-8 text-white">{secondParagraphDescription}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col mt-28 mb-10 w-[70vw]">
+    <div className="mt-28 mb-10 flex w-[70vw] flex-col">
       {/* heading section */}
-      <div className="w-full mb-14">
+      <div className="mb-14 w-full">
         {title !== 'API & System Development' ? (
           <div className="flex w-full">
-            <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
+            <h1 className="text-5xl font-extrabold uppercase text-white">{title.split(' ')[0]}</h1>
             <SwiggleLine className="ml-20 -mt-5" />
           </div>
         ) : (
           <div className="flex w-full">
-            <h1 className="text-white font-extrabold uppercase text-5xl">
+            <h1 className="text-5xl font-extrabold uppercase text-white">
               {title.split(' ')[0]} {title.split(' ')[1]} {title.split(' ')[2]}
             </h1>
             <SwiggleLine className="ml-20 -mt-5" />
@@ -58,11 +58,11 @@ function SolutionsCard({ item }: Props) {
         )}
 
         {title !== 'API & System Development' ? (
-          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
+          <h1 className="mt-2 text-5xl font-extrabold uppercase text-white">
             {title.split(' ')[1]}
           </h1>
         ) : (
-          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
+          <h1 className="mt-2 text-5xl font-extrabold uppercase text-white">
             {title.split(' ')[3]}
           </h1>
         )}
@@ -72,17 +72,17 @@ function SolutionsCard({ item }: Props) {
         {/* left section */}
         <div className="w-3/5">
           <div className="mr-32">
-            <p className="text-white text-[27px] leading-8">
+            <p className="text-[27px] leading-8 text-white">
               {firstParagraphDescription} <b />
             </p>
-            <p className="mt-5 text-white text-[27px] leading-8">{secondParagraphDescription}</p>
+            <p className="mt-5 text-[27px] leading-8 text-white">{secondParagraphDescription}</p>
           </div>
         </div>
         {/* right section */}
-        <div className="w-2/5 -mt-24">
+        <div className="-mt-24 w-2/5">
           <div className="flex justify-end">
-            <div className="flex flex-col w-full ml-32 justify-end space-y-8">
-              <p className="text-highlight text-2xl text-right italic">{catchPhrase}</p>
+            <div className="ml-32 flex w-full flex-col justify-end space-y-8">
+              <p className="text-right text-2xl italic text-highlight">{catchPhrase}</p>
               <IconLayout
                 content={content}
                 amtIconsRowOne={amtItemsInFirstRow}
