@@ -1,12 +1,9 @@
 import { clientIcons } from './clientIcons';
 
-interface Slide {
-  label?: string;
-  icon?: React.ReactNode;
-  content?: string;
-}
-
-export const tabs: Slide[] = [
+export const solutionsSlide: {
+  label: string;
+  content: string;
+}[] = [
   {
     label: 'Boutique',
     content:
@@ -24,8 +21,8 @@ export const tabs: Slide[] = [
   },
 ];
 
-export const clientIconsSlide: Slide[] = clientIcons.map((icon) => ({
-  label: '',
-  content: '',
+export const clientIconsSlide: {
+  icon: string;
+}[] = clientIcons.map((icon) => ({
   icon: `/client-icons/${icon}`,
 }));
