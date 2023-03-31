@@ -19,9 +19,11 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
 
   return (
     <div
-      className={`bg-white ${
-        !isOpened ? 'rounded-[20px]' : 'rounded-t-[20px]'
-      }  items-center w-[518px]  my-2  `}
+      className={
+        !isOpened
+          ? 'bg-white relative rounded-[20px] items-center w-[518px] my-2 cursor-pointer'
+          : 'bg-white relative rounded-t-[20px] items-center w-[518px] my-2 cursor-pointer'
+      }
     >
       <div
         onClick={() => setIsOpened((prev) => !prev)}
@@ -31,11 +33,11 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
         <div>{isOpened ? chevronUp : chevronDown}</div>
       </div>
       {isOpened && (
-        <div className="">
+        <div className="absolute bg-white items-center justify-center w-full rounded-b-[20px]">
           {options.map((item, key) => (
             <div
               onClick={() => handleSelect(item)}
-              className="pt-2 pb-4 border border-b border-t-0 flex hover:bg-[#CBCBCB] "
+              className="py-[14px] h-full flex-1 flex hover:bg-[#CBCBCB] cursor-pointer"
               key={key}
             >
               <span className="font-semibold text-lg px-4">{item}</span>

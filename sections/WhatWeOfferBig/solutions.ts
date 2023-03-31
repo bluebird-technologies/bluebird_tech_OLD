@@ -30,6 +30,30 @@ import webflow from './icons/webflow';
 import wordpress from './icons/wordpress';
 import xamarin from './icons/xamarin';
 
+import adobeMobile from './icons/AdobeMobile';
+import angularMobile from './icons/angularMobile';
+import bankingMobile from './icons/bankingMobile';
+import databaseMobile from './icons/databaseMobile';
+import djangoMobile from './icons/djangoMobile';
+import dotnetMobile from './icons/dotnetMobile';
+import figmaMobile from './icons/figmaMobile';
+import flutterMobile from './icons/flutterMobile';
+import ionicMobile from './icons/ionicMobile';
+import itMobile from './icons/itMobile';
+import javaMobile from './icons/javaMobile';
+import layerMobile from './icons/layerMobile';
+import logisticMobile from './icons/logisticMobile';
+import nodeMobile from './icons/nodeMobile';
+import nosqlMobile from './icons/nosqlMobile';
+import reactNativeMobile from './icons/reactNativeMobile';
+import servicesMobile from './icons/servicesMobile';
+import sqlMobile from './icons/sqlMobile';
+import transportMobile from './icons/transportMobile';
+import vueMobile from './icons/vueMobile';
+import webflowMobile from './icons/webflowMobile';
+import wordpressMobile from './icons/wordpressMobile';
+import xamarinMobile from './icons/xamarinMobile';
+
 export const solutions: SolutionType[] = [
   {
     title: 'Web Development',
@@ -38,7 +62,11 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: { contentType: 'icon', icons: [angular, reactNative, vue, django, wordpress] },
+    content: {
+      contentType: 'icon',
+      icons: [angular, reactNative, vue, django, wordpress],
+      iconsMobile: [angularMobile, reactNativeMobile, vueMobile, djangoMobile, wordpressMobile],
+    },
     amtItemsInFirstRow: 3,
     centerSecondRow: true,
     secondLayerTitle: 'Accelerate your website today',
@@ -51,10 +79,14 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: { contentType: 'icon', icons: [flutter, reactNative, ionic, xamarin] },
+    content: {
+      contentType: 'icon',
+      icons: [flutter, reactNative, ionic, xamarin],
+      iconsMobile: [flutterMobile, reactNativeMobile, ionicMobile, xamarinMobile],
+    },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
-    secondLayerTitle: 'Ready your website today',
+    secondLayerTitle: 'Ready for your next-level mobile app?',
     secondLayerLottie: appDevelopmentAnimation,
   },
   {
@@ -64,7 +96,18 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: { contentType: 'icon', icons: [transport, logistic, banking, it, services, database] },
+    content: {
+      contentType: 'icon',
+      icons: [transport, logistic, banking, it, services, database],
+      iconsMobile: [
+        transportMobile,
+        logisticMobile,
+        bankingMobile,
+        itMobile,
+        servicesMobile,
+        databaseMobile,
+      ],
+    },
     amtItemsInFirstRow: 3,
     centerSecondRow: false,
     secondLayerTitle: 'Got something in mind',
@@ -93,7 +136,11 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: { contentType: 'icon', icons: [figma, webflow, adobe, layer] },
+    content: {
+      contentType: 'icon',
+      icons: [figma, webflow, adobe, layer],
+      iconsMobile: [figmaMobile, webflowMobile, adobeMobile, layerMobile],
+    },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'Bring your ideas to life',
@@ -125,6 +172,7 @@ export const solutions: SolutionType[] = [
     content: {
       contentType: 'icon',
       icons: [node, dotnet, java, nosql, sql],
+      iconsMobile: [nodeMobile, dotnetMobile, javaMobile, nosqlMobile, sqlMobile],
     },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
