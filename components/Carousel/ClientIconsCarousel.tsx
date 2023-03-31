@@ -1,14 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { clientIconsSlide } from '../slideObjects';
 
 interface Props {
-  item: {
-    icon: string;
-  }[];
+  icon: string;
 }
 
-export default function ClientIconsCarousel({ item }: Props) {
+export default function ClientIconsCarousel() {
   return (
     <Carousel
       emulateTouch
@@ -22,7 +21,7 @@ export default function ClientIconsCarousel({ item }: Props) {
       centerSlidePercentage={100}
       onChange={(val) => console.log(val)}
     >
-      {item?.map((slide, i) => {
+      {clientIconsSlide?.map((slide, i) => {
         return (
           <div key={i}>
             <CarouselSlideItem icon={slide.icon} />
@@ -33,7 +32,7 @@ export default function ClientIconsCarousel({ item }: Props) {
   );
 }
 
-function CarouselSlideItem({ icon }: { icon: string }) {
+function CarouselSlideItem({ icon }: Props) {
   return (
     <div className="mx-2 mb-4 flex flex-col items-center justify-center   text-primary">
       <picture>

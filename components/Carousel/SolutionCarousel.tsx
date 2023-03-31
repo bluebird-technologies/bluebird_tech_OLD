@@ -1,15 +1,14 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { solutionsSlide } from '../slideObjects';
 
 interface Props {
-  item: {
-    label: string;
-    content: string;
-  }[];
+  label: string;
+  content: string;
 }
 
-export default function SolutionCarousel({ item }: Props) {
+export default function SolutionCarousel() {
   return (
     <Carousel
       emulateTouch
@@ -23,7 +22,7 @@ export default function SolutionCarousel({ item }: Props) {
       centerSlidePercentage={100}
       onChange={(val) => console.log(val)}
     >
-      {item?.map((slide, i) => {
+      {solutionsSlide?.map((slide, i) => {
         return (
           <div key={i}>
             <CarouselSlideItem label={slide?.label} content={slide?.content} />
@@ -34,7 +33,7 @@ export default function SolutionCarousel({ item }: Props) {
   );
 }
 
-function CarouselSlideItem({ label, content }: { label?: string; content?: string }) {
+function CarouselSlideItem({ label, content }: Props) {
   return (
     <div className="flex h-96 flex-col  items-center bg-grey  px-8  py-4 text-primary">
       <div className=" flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px]  text-orange">

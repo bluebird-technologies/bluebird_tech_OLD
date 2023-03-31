@@ -12,7 +12,7 @@ import ClientIcons from '../public/home/ClientIcons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import SolutionCarousel from '../components/Carousel/SolutionCarousel';
-import { solutionsSlide, clientIconsSlide, latestWorkSlide } from '../components/slideObjects';
+import { latestWorkSlide } from '../components/slideObjects';
 import ClientIconsCarousel from '../components/Carousel/ClientIconsCarousel';
 import LatestWorkCarousel from '../components/Carousel/LatestWorkCarousel';
 
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
         {screenWidth < 1024 ? (
           <div className="flex w-full justify-center">
-            <SolutionCarousel item={solutionsSlide} />
+            <SolutionCarousel />
           </div>
         ) : (
           <Tabs
@@ -151,7 +151,7 @@ export default function Home() {
             </h2>
             <div className="mt-[27px] mb-[34px] h-[4px] w-[138px] bg-secondary"></div>
           </div>
-          {screenWidth < 1024 ? <ClientIconsCarousel item={clientIconsSlide} /> : <ClientIcons />}
+          {screenWidth < 1024 ? <ClientIconsCarousel /> : <ClientIcons />}
         </Container>
       </div>
       <div className="shadow-[0px 9px 11px #00000029] flex flex-col items-center bg-primary pt-[55px] pb-[80px]">
