@@ -33,8 +33,6 @@ export default function Home() {
     return () => window.removeEventListener('resize', updateScreenWidth);
   }, []);
 
-  console.log(screenWidth);
-
   return (
     <div className="w-full overflow-hidden">
       <div
