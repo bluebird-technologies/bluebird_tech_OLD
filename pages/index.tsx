@@ -12,8 +12,9 @@ import ClientIcons from '../public/home/ClientIcons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import SolutionCarousel from '../components/Carousel/SolutionCarousel';
-import { solutionsSlide, clientIconsSlide } from '../components/slideObjects';
+import { solutionsSlide, clientIconsSlide, latestWorkSlide } from '../components/slideObjects';
 import ClientIconsCarousel from '../components/Carousel/ClientIconsCarousel';
+import LatestWorkCarousel from '../components/Carousel/LatestWorkCarousel';
 
 export default function Home() {
   const router = useRouter();
@@ -139,7 +140,10 @@ export default function Home() {
         </div>
       </Container>
       <div className="flex w-full flex-1 bg-[#f1f1f1] pt-[72px]">
-        <Container wide>
+        <Container
+          center={screenWidth < 1024 ? true : false}
+          wide={screenWidth >= 1024 ? true : false}
+        >
           <div className="flex w-full flex-1 flex-col items-center justify-center">
             <h2 className="title-2 text-center">
               SOME OF THE PEOPLE WE’VE <span className="text-center text-[#DA7D3B]">WORKED</span>{' '}
@@ -150,8 +154,11 @@ export default function Home() {
           {screenWidth < 1024 ? <ClientIconsCarousel item={clientIconsSlide} /> : <ClientIcons />}
         </Container>
       </div>
-      <div className="shadow-[0px 9px 11px #00000029] bg-primary pt-[55px] pb-[80px]">
-        <Container>
+      <div className="shadow-[0px 9px 11px #00000029] flex flex-col items-center bg-primary pt-[55px] pb-[80px]">
+        <Container
+          center={screenWidth < 1024 ? true : false}
+          wide={screenWidth >= 1024 ? true : false}
+        >
           <div className="subtitle mt-[30px] flex w-full flex-col items-center text-2xl lg:items-start">
             <span className="text-2xl">Case studies</span>
           </div>
@@ -166,59 +173,33 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr
             </p>
           </div>
-          <div className="mt-[80px] flex space-x-[29px]">
-            <div
-              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
-              style={{
-                backgroundImage: 'url(/case-studies/revio.png)',
-              }}
-              onClick={() => router.push('/case-studies/revio')}
-            >
-              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
-                <div className="relative h-full w-[59px] rounded-full bg-white">
-                  <Image src="/images/revio.png" alt="revio icon" fill />
+          {screenWidth < 1024 ? (
+            <LatestWorkCarousel />
+          ) : (
+            <div className="mt-[80px] flex space-x-[29px]">
+              {latestWorkSlide.map((item, key) => (
+                <div
+                  key={key}
+                  className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
+                  style={{
+                    backgroundImage: `url(${item.backgroundImage})`,
+                  }}
+                  onClick={() => router.push(`${item.link}`)}
+                >
+                  <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
+                    <div className="relative h-full w-[59px] rounded-full bg-white">
+                      <Image src={item.icon} alt="revio icon" fill />
+                    </div>
+                    <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
+                      {item.label}
+                    </span>
+                  </div>
                 </div>
-                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
-                  REVIO
-                </span>
-              </div>
+              ))}
             </div>
-            <div
-              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
-              style={{
-                backgroundImage: 'url(/case-studies/raubex.png)',
-              }}
-              onClick={() => router.push('/case-studies/raubex')}
-            >
-              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
-                <div className="relative h-full w-[59px] rounded-full bg-white">
-                  <Image src="/images/raubex.png" alt="raubex icon" fill />
-                </div>
-                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
-                  RAUBEX
-                </span>
-              </div>
-            </div>
-            <div
-              className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
-              style={{
-                backgroundImage: 'url(/case-studies/aurora.png)',
-              }}
-              onClick={() => router.push('/case-studies/aurora')}
-            >
-              <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary ">
-                <div className="relative h-full w-[59px] rounded-full bg-white">
-                  <Image src="/images/aurora.png" alt="aurora icon" fill />
-                </div>
-                <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
-                  AURORA
-                </span>
-              </div>
-            </div>
-          </div>
+          )}
         </Container>
       </div>
-
       <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-24 2xl:pb-32">
         <div
           className="absolute left-[-98%] h-full w-[280vw]   bg-secondary  2xl:left-[-16%] 2xl:w-[130vw]"
