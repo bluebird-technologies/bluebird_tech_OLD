@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
