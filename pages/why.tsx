@@ -13,6 +13,7 @@ import Line from '../public/why/line.svg';
 import Footer from '../components/Footer';
 import { CircleButton } from '../components/WhyBluebird/CircleButton';
 import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverlayTextContainer';
+import { MobileHeader } from '../components/MobileHeader';
 
 const Why = () => {
   type btnOptions = 'Lean' | 'Boutique' | 'Personal';
@@ -59,7 +60,12 @@ const Why = () => {
             zIndex: -1,
           }}
         />
-        <Header />
+        <div className="hidden lg:block">
+          <Header />
+        </div>
+        <div className="block lg:hidden">
+          <MobileHeader />
+        </div>
 
         {/* Heading section */}
         <div
