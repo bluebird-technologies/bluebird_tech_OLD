@@ -26,6 +26,7 @@ function caseStudies() {
               width: '250vw',
               borderBottomLeftRadius: '50%',
               borderBottomRightRadius: '50%',
+              zIndex: -10,
             }}
           />
           <CaseStudiesHeadingSection />
