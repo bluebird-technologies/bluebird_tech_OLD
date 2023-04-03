@@ -1,15 +1,39 @@
 import React from 'react';
-import ClientCard from '../components/ClientCard';
 import Footer from '../components/Footer';
 import { Header } from '../components/Header';
 import { clients } from '../public/case-studies/clients';
-import DownArrow from '../public/down-arrow.svg';
 import { Lottie } from '../components/Lottie';
+import CaseStudiesHeadingSection from '../components/CaseStudies/CaseStudiesHeadingSection';
+import { MobileHeader } from '../components/MobileHeader';
+import ClientCardContainer from '../components/CaseStudies/ClientCardContainer';
 
 function caseStudies() {
   return (
     <div>
-      <div className={`w-full flex flex-col items-center relative h-[900px]`}>
+      {/* mobile top section div */}
+      <div className="relative block md:hidden w-full h-full overflow-hidden">
+        <div className="relative w-full h-full bg-primary">
+          <div className="w-full h-full">
+            <MobileHeader />
+          </div>
+        </div>
+        <div className="relative">
+          <div
+            className="bg-primary h-full"
+            style={{
+              position: 'absolute',
+              left: '-75%',
+              width: '250vw',
+              borderBottomLeftRadius: '50%',
+              borderBottomRightRadius: '50%',
+              zIndex: -10,
+            }}
+          />
+          <CaseStudiesHeadingSection />
+        </div>
+      </div>
+
+      <div className="hidden md:relative md:flex h-[900px] w-full flex-col items-center">
         <div
           className="bg-primary h-full"
           style={{
@@ -34,38 +58,12 @@ function caseStudies() {
           />
         </div>
 
-        <div className="relative flex flex-col items-center mt-20">
-          <h2 className="title-1 alt">CASE STUDIES</h2>
-
-          <div className="flex flex-col my-16 max-w-[800px] space-y-8">
-            <p className="text-xl text-center text-white">
-              Intro about how prestigious our work and clients are, etc.
-              <br />
-              <br />
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-            </p>
-          </div>
-          <DownArrow />
-        </div>
+        <CaseStudiesHeadingSection />
       </div>
 
-      <div className="flex flex-1 relative -mt-40 w-full">
-        <div className="flex flex-col justify-center items-center space-y-8 w-full">
-          {clients.map((item) => (
-            <div className="w-2/3 z-10" key={item.clientName}>
-              <ClientCard
-                clientName={item.clientName}
-                clientLogo={item.clientLogo}
-                responsibilities={item.responsibilities}
-                backgroundImageSrc={item.backgroundImageSrc}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <ClientCardContainer clients={clients} />
 
-      <div className="w-full flex flex-col items-center relative h-[40vh] -mt-[25vh]">
+      <div className="hidden w-full md:flex flex-col items-center relative h-[40vh] -mt-[25vh]">
         <div
           className="bg-primary h-full -z-10"
           style={{

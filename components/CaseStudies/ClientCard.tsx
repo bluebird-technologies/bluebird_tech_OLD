@@ -1,17 +1,17 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Router from 'next/router';
+import Revio from '../../public/case-studies/logo/revio-logo.svg';
+import Raubex from '../../public/case-studies/logo/raubex-logo.svg';
+import Aurora from '../../public/case-studies/logo/aurora-logo.svg';
 
-export interface Props {
+export interface ClientCardProps {
   clientName: string;
-  clientLogo: ReactElement;
   responsibilities: string[];
   backgroundImageSrc: string;
+  backgroundImageSrcMobile: string;
 }
 
-function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageSrc }: Props) {
-  const logoClass = 'flex justify-start max-h-[80px] max-w-[200px] mb-[30px]';
-  const logoClassAurora = 'flex justify-start max-h-[130px] max-w-[130px] mb-[30px]';
-
+function ClientCard({ clientName, responsibilities, backgroundImageSrc }: ClientCardProps) {
   return (
     <div
       onClick={() => {
@@ -22,10 +22,22 @@ function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageS
       }}
       className="group relative flex h-[400px] w-full cursor-pointer flex-col items-center"
     >
-      <div className="absolute z-10 hidden h-[400px] w-full bg-black opacity-50 group-hover:block"></div>
+      <div className="hidden absolute w-full opacity-50 h-[400px] bg-black group-hover:block z-10" />
       <div className="hidden absolute w-full h-[400px] group-hover:block p-16 z-20">
         <div className="flex flex-col h-full justify-center">
-          <div className={clientName === 'aurora' ? logoClassAurora : logoClass}>{clientLogo}</div>
+          {clientName === 'revio' ? (
+            <div className="w-[200px] flex justify-start">
+              <Revio />
+            </div>
+          ) : clientName === 'aurora' ? (
+            <div className="w-[120px] flex justify-start">
+              <Aurora />
+            </div>
+          ) : (
+            <div className="w-[140px] flex justify-start">
+              <Raubex />
+            </div>
+          )}
           <div>
             {responsibilities.map((item, key) => (
               <div className="flex flex-col mt-3" key={key}>
