@@ -15,25 +15,10 @@ import SolutionCarousel from '../components/Carousel/SolutionCarousel';
 import { latestWorkSlide } from '../components/slideObjects';
 import ClientIconsCarousel from '../components/Carousel/ClientIconsCarousel';
 import LatestWorkCarousel from '../components/Carousel/LatestWorkCarousel';
+import { MobileHeader } from '../components/MobileHeader';
 
 export default function Home() {
   const router = useRouter();
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    function updateScreenWidth() {
-      setScreenWidth(window.innerWidth);
-    }
-
-    // Add event listener for window resize
-    window.addEventListener('resize', updateScreenWidth);
-
-    // Call updateScreenWidth initially to get the initial value
-    updateScreenWidth();
-
-    // Clean up the event listener on unmount
-    return () => window.removeEventListener('resize', updateScreenWidth);
-  }, []);
 
   return (
     <div className="w-full overflow-hidden">
@@ -43,10 +28,15 @@ export default function Home() {
           backgroundImage: 'url(/main.jpg)',
         }}
       >
-        <Header />
+        <div className="block h-full w-full lg:hidden">
+          <MobileHeader />
+        </div>
+        <div className="hidden lg:block">
+          <Header />
+        </div>
         <Container wide>
-          <div className="flex w-full flex-1  flex-col items-center justify-center 2xl:items-start 2xl:justify-start">
-            <h1 className="mt-[82px] text-center text-[40px] font-extrabold uppercase leading-[64px] text-white 2xl:text-left 2xl:text-[52px]">
+          <div className="mb-44 flex w-full flex-1 flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start">
+            <h1 className="mt-0 text-center text-[40px] font-extrabold uppercase leading-[64px] text-white lg:mt-[82px] 2xl:text-left 2xl:text-[52px] ">
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
             <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>
@@ -89,11 +79,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        {screenWidth < 1024 ? (
-          <div className="flex w-full justify-center">
-            <SolutionCarousel />
-          </div>
-        ) : (
+        <div className="flex w-full justify-center  lg:hidden">
+          <SolutionCarousel />
+        </div>
+        <div className="hidden lg:block">
           <Tabs
             tabs={[
               {
@@ -130,7 +119,7 @@ export default function Home() {
               },
             ]}
           />
-        )}
+        </div>
         <picture className="mx-auto">
           <source srcSet="/home/swiggle.svg" type="image/svg+xml" />
           <img src="/home/swiggle.svg" alt="Swiggle" className="mt-[20px] w-[813px]" />
@@ -140,10 +129,7 @@ export default function Home() {
         </div>
       </Container>
       <div className="flex w-full flex-1 bg-[#f1f1f1] pt-[72px]">
-        <Container
-          center={screenWidth < 1024 ? true : false}
-          wide={screenWidth >= 1024 ? true : false}
-        >
+        <div className="flex w-full flex-col items-center justify-center px-6 lg:mx-8 lg:block">
           <div className="flex w-full flex-1 flex-col items-center justify-center">
             <h2 className="title-2 text-center">
               SOME OF THE PEOPLE WE’VE <span className="text-center text-[#DA7D3B]">WORKED</span>{' '}
@@ -151,54 +137,55 @@ export default function Home() {
             </h2>
             <div className="mt-[27px] mb-[34px] h-[4px] w-[138px] bg-secondary"></div>
           </div>
-          {screenWidth < 1024 ? <ClientIconsCarousel /> : <ClientIcons />}
-        </Container>
+          <div className="block lg:hidden">
+            <ClientIconsCarousel />
+          </div>
+          <div className="hidden lg:block">
+            <ClientIcons />
+          </div>
+        </div>
       </div>
       <div className="shadow-[0px 9px 11px #00000029] flex flex-col items-center bg-primary pt-[55px] pb-[80px]">
-        <Container
-          center={screenWidth < 1024 ? true : false}
-          wide={screenWidth >= 1024 ? true : false}
-        >
-          <div className="subtitle mt-[30px] flex w-full flex-col items-center text-2xl lg:items-start">
-            <span className="text-2xl">Case studies</span>
+        <div className="flex w-full flex-col items-center justify-center px-6">
+          <div className="subtitle mt-[30px]  flex w-full flex-col items-center text-2xl lg:w-auto">
+            <span className="text-2xl ">Case studies</span>
           </div>
-          <div className="flex w-full flex-col items-center  lg:items-start">
+          <div className="flex w-full flex-col items-center ">
             <h2 className="title-2 alt text-center">
               <span className="text-center text-xl lg:text-5xl">SEE OUR LATEST WORK</span>
             </h2>
           </div>
-          <div className="flex w-full flex-col items-center  lg:items-start">
+          <div className="flex w-full flex-col items-center ">
             {' '}
             <p className="alt hidden text-center text-xl lg:block">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr
             </p>
           </div>
-          {screenWidth < 1024 ? (
+          <div className="block lg:hidden">
             <LatestWorkCarousel />
-          ) : (
-            <div className="mt-[80px] flex space-x-[29px]">
-              {latestWorkSlide.map((item, key) => (
-                <div
-                  key={key}
-                  className="flex h-[273px] w-[360px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
-                  style={{
-                    backgroundImage: `url(${item.backgroundImage})`,
-                  }}
-                  onClick={() => router.push(`${item.link}`)}
-                >
-                  <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
-                    <div className="relative h-full w-[59px] rounded-full bg-white">
-                      <Image src={item.icon} alt="revio icon" fill />
-                    </div>
-                    <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
-                      {item.label}
-                    </span>
+          </div>
+          <div className="hidden lg:mt-[80px] lg:flex lg:space-x-[29px]">
+            {latestWorkSlide.map((item, key) => (
+              <div
+                key={key}
+                className="lg-[360px] flex h-[273px] w-[320px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
+                style={{
+                  backgroundImage: `url(${item.backgroundImage})`,
+                }}
+                onClick={() => router.push(`${item.link}`)}
+              >
+                <div className="mb-[13px] flex h-[59px] items-center rounded-full bg-secondary">
+                  <div className="relative h-full w-[59px] rounded-full bg-white">
+                    <Image src={item.icon} alt="revio icon" fill />
                   </div>
+                  <span className="px-4 text-[35px] font-medium leading-[43px] text-white">
+                    {item.label}
+                  </span>
                 </div>
-              ))}
-            </div>
-          )}
-        </Container>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-24 2xl:pb-32">
         <div
