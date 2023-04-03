@@ -46,7 +46,7 @@ const Why = () => {
   const [isFirstSelected, setIsFirstSelected] = useState(true);
 
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <div className="w-full flex flex-col relative h-[110vh] xl:h-[94vh] ">
         <div
           className="bg-primary h-full"
