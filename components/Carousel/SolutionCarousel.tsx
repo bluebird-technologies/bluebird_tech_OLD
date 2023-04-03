@@ -21,6 +21,14 @@ export default function SolutionCarousel() {
       centerMode={true}
       centerSlidePercentage={100}
       onChange={(val) => console.log(val)}
+      renderIndicator={(clickHandler, isSelected, index, label) => (
+        <span
+          onClick={clickHandler}
+          className={`ml-2 mt-4 text-[140px] ${isSelected ? 'text-darkGrey' : 'text-light'}`}
+        >
+          .
+        </span>
+      )}
     >
       {solutionsSlide?.map((slide, i) => {
         return (
@@ -35,7 +43,7 @@ export default function SolutionCarousel() {
 
 function CarouselSlideItem({ label, content }: Props) {
   return (
-    <div className="flex h-96 flex-col  items-center bg-grey  px-8  py-4 text-primary">
+    <div className="mb-8 flex h-96 flex-col items-center bg-grey  px-8  py-4 text-primary">
       <div className=" flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px]  text-orange">
         <h1 className="text-center">{label}</h1>
       </div>
