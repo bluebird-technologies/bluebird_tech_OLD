@@ -19,7 +19,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
       ref={ref}
       href={href}
       style={{ maxWidth: width }}
-      className="text-white p-2 hover:font-bold transition text-[14px] leading-[17px] font-medium uppercase whitespace-nowrap"
+      className="whitespace-nowrap p-2 text-[12px] font-medium uppercase leading-[17px] text-white transition hover:font-bold lg:text-[14px]"
     >
       {label}
     </a>
@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="mt-[40px] w-full">
       <Container wide center row>
-        <nav className="flex flex-1 justify-around mt-3">
+        <nav className="mt-3 flex flex-1 justify-around">
           {navLeft.map((item) => (
             <NavItem key={item.href} {...item} />
           ))}
@@ -41,11 +41,11 @@ export function Header() {
             <img
               src="/header/logo.svg"
               alt="Bluebird"
-              className="w-[121px] mx-10 hover:cursor-pointer"
+              className="mx-10 w-[121px] hover:cursor-pointer"
             />
           </picture>
         </Link>
-        <nav className="flex flex-1 justify-around mt-3">
+        <nav className="mt-3 flex flex-1 justify-around">
           {navRight.map((item) => (
             <NavItem key={item.href} {...item} />
           ))}
