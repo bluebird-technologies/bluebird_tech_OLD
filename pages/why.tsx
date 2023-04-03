@@ -90,14 +90,14 @@ const Why = () => {
               <source srcSet="/why/laptop_1.png" />
               <img src="/why/laptop_1.png" alt="laptop" />
             </picture>
-            <div className="absolute left-0 top-0 ml-[26vw] 2xl:mt-8 lg:mt-4 2xl:scale-100 lg:scale-90">
-              <div className="flex flex-col space-y-12">
+            <div className="absolute -bottom-[100px] -left-4  xl:left-0 xl:top-0 xl:ml-[26vw] 2xl:mt-8 lg:mt-4 2xl:scale-100 lg:scale-90">
+              <div className="flex  2xl:flex-col space-y-12">
                 {isFirstSelected ? (
-                  <div className="pl-16">
+                  <div className="xl:pl-16">
                     <CircleButton disabled icon={orangeCircleSelected} text="VISION" />
                   </div>
                 ) : (
-                  <div className="pl-16">
+                  <div className=" xl:pl-16">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
                       icon={blueCircle}
@@ -108,16 +108,18 @@ const Why = () => {
                 {!isFirstSelected ? (
                   <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
                 ) : (
-                  <CircleButton
-                    onClick={() => setIsFirstSelected((prev) => !prev)}
-                    icon={blueCircle}
-                    text="MISSION"
-                  />
+                  <div className="">
+                    <CircleButton
+                      onClick={() => setIsFirstSelected((prev) => !prev)}
+                      icon={blueCircle}
+                      text="MISSION"
+                    />
+                  </div>
                 )}
               </div>
             </div>
           </div>
-          <div className="w-1/2 mt-12 2xl:mt-0">
+          <div className="w-1/2 mt-24 xl:mt-0 2xl:mt-0">
             <div className="flex w-full 2xl:justify-start justify-center">
               <div className="hidden xl:block w-1/3" />
               {isFirstSelected ? (
