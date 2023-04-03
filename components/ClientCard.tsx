@@ -23,25 +23,29 @@ function ClientCard({ clientName, clientLogo, responsibilities, backgroundImageS
       className="group relative flex h-[400px] w-full cursor-pointer flex-col items-center"
     >
       <div className="absolute z-10 hidden h-[400px] w-full bg-black opacity-50 group-hover:block"></div>
-      <div className="absolute z-20 hidden h-[400px] w-full p-16 group-hover:block">
-        <div className="flex h-full flex-col justify-center">
+      <div className="hidden absolute w-full h-[400px] group-hover:block p-16 z-20">
+        <div className="flex flex-col h-full justify-center">
           <div className={clientName === 'aurora' ? logoClassAurora : logoClass}>{clientLogo}</div>
           <div>
             {responsibilities.map((item, key) => (
-              <div className="mt-3 flex flex-col" key={key}>
-                <span className="text-xl text-white">{item}</span>
+              <div className="flex flex-col mt-3" key={key}>
+                <span className="text-white text-xl">{item}</span>
               </div>
             ))}
           </div>
-          <div className="absolute right-10 bottom-10 flex">
-            <a href="#" className="text-2xl font-bold uppercase text-highlight">
+          <div className="flex absolute right-10 bottom-10">
+            <a
+              href="#"
+              className="uppercase font-bold text-2xl
+             text-highlight"
+            >
               View Project
             </a>
           </div>
         </div>
       </div>
       <div
-        className="z-0 flex w-full flex-1"
+        className="flex flex-1 w-full z-0"
         style={{
           backgroundImage: `url(/${backgroundImageSrc})`,
           backgroundColor: 'black',

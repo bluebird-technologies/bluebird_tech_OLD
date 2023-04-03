@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="mt-[40px] w-full">
       <Container wide center row>
-        <nav className="mt-3 flex flex-1 justify-around">
+        <nav className="flex flex-1 justify-around mt-3">
           {navLeft.map((item) => (
             <NavItem key={item.href} {...item} />
           ))}
@@ -41,11 +41,11 @@ export function Header() {
             <img
               src="/header/logo.svg"
               alt="Bluebird"
-              className="mx-10 w-[121px] hover:cursor-pointer"
+              className="w-[121px] mx-10 hover:cursor-pointer"
             />
           </picture>
         </Link>
-        <nav className="mt-3 flex flex-1 justify-around">
+        <nav className="flex flex-1 justify-around mt-3">
           {navRight.map((item) => (
             <NavItem key={item.href} {...item} />
           ))}
