@@ -26,29 +26,3 @@ export const clientIconsSlide: {
 }[] = clientIcons.map((icon) => ({
   icon: `/client-icons/${icon}`,
 }));
-
-export const latestWorkSlide: {
-  backgroundImage: string;
-  label: string;
-  link: string;
-  icon: string;
-}[] = [
-  {
-    backgroundImage: '/case-studies/revio.png',
-    label: 'Revio',
-    icon: '/images/revio.png',
-    link: '/case-studies/revio',
-  },
-  {
-    backgroundImage: '/case-studies/raubex.png',
-    label: 'Raubex',
-    icon: '/images/raubex.png',
-    link: '/case-studies/raubex',
-  },
-  {
-    backgroundImage: '/case-studies/aurora.png',
-    label: 'Aurora',
-    icon: '/images/aurora.png',
-    link: '/case-studies/aurora',
-  },
-];
