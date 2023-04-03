@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { clientIconsSlide } from '../slideObjects';
@@ -8,6 +8,15 @@ interface Props {
 }
 
 export default function ClientIconsCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const handleIncrement = () => {
+    if (currentSlide + 2 < clientIconsSlide.length) {
+      setCurrentSlide((prev) => prev + 2);
+    } else {
+      setCurrentSlide(0);
+    }
+  };
+
   return (
     <Carousel
       emulateTouch
@@ -19,12 +28,19 @@ export default function ClientIconsCarousel() {
       width={300}
       centerMode={true}
       centerSlidePercentage={100}
-      onChange={(val) => console.log(val)}
+      onChange={() => handleIncrement()}
     >
-      {clientIconsSlide?.map((slide, i) => {
+      {clientIconsSlide?.map(() => {
         return (
-          <div key={i}>
-            <CarouselSlideItem icon={slide.icon} />
+          <div key={currentSlide}>
+            <div>
+              <CarouselSlideItem icon={clientIconsSlide[currentSlide].icon} />
+            </div>
+            {currentSlide + 1 < clientIconsSlide.length && (
+              <div key={currentSlide + 1}>
+                <CarouselSlideItem icon={clientIconsSlide[currentSlide + 1].icon} />
+              </div>
+            )}
           </div>
         );
       })}
