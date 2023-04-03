@@ -69,17 +69,17 @@ const Why = () => {
 
         {/* Heading section */}
         <div
-          className="flex flex-col justify-center xl:justify-start mt-24 px-12 xl:px-48 2xl:px-60"
+          className="flex  self-center xl:self-start  flex-col justify-center xl:justify-start mt-24 px-12 xl:px-48 2xl:px-60"
           style={{
             width: 'fit-content',
             blockSize: 'fit-content',
           }}
         >
-          <div className="font-bold text-white text-5xl">
-            WHY <span className="italic">BLUEBIRD ?</span>
-          </div>
+          <span className="font-bold text-white text-2xl md:3xl lg:text-5xl">
+            WHY <span className="italic">BLUEBIRD</span>
+          </span>
           <div className="flex justify-end">
-            <div className="w-[250px]">{underline}</div>
+            <div className="w-[120px] lg:w-[250px]">{underline}</div>
           </div>
         </div>
 
