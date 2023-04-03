@@ -1,12 +1,8 @@
-import { Props } from '../../components/ClientCard';
-import revio from '../case-studies/revio-logo';
-import raubex from '../case-studies/raubex-logo';
-import aurora from '../case-studies/aurora-logo';
+import { ClientCardProps } from '../../components/CaseStudies/ClientCard';
 
-export const clients: Props[] = [
+export const clients: ClientCardProps[] = [
   {
     clientName: 'revio',
-    clientLogo: revio,
     responsibilities: [
       'System Architecture',
       'Back-end Development',
@@ -14,10 +10,10 @@ export const clients: Props[] = [
       'Database Design',
     ],
     backgroundImageSrc: '../case-studies/revioBackground.png',
+    backgroundImageSrcMobile: '../case-studies/revio.png',
   },
   {
     clientName: 'raubex',
-    clientLogo: raubex,
     responsibilities: [
       'System Architecture',
       'Back-end Development',
@@ -26,10 +22,10 @@ export const clients: Props[] = [
       'Web Development',
     ],
     backgroundImageSrc: '../case-studies/raubexBackground.png',
+    backgroundImageSrcMobile: '../case-studies/raubex.png',
   },
   {
     clientName: 'aurora',
-    clientLogo: aurora,
     responsibilities: [
       'Web App Architecture and Development',
       'API Architecture and Development',
@@ -37,5 +33,6 @@ export const clients: Props[] = [
       'China Deployment',
     ],
     backgroundImageSrc: '../case-studies/auroraBackground.png',
+    backgroundImageSrcMobile: '../case-studies/aurora.png',
   },
 ];
