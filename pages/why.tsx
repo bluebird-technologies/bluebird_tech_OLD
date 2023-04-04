@@ -48,22 +48,18 @@ const Why = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="w-full flex flex-col relative h-[110vh] xl:h-[94vh] ">
+      <div className="w-full flex flex-col relative h-[100vh] 2xl:h-[94vh] ">
         <div
-          className="bg-primary h-full"
+          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
-            zIndex: -1,
           }}
         />
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Header />
         </div>
-        <div className="block lg:hidden">
+        <div className="block xl:hidden">
           <MobileHeader />
         </div>
 
@@ -75,16 +71,16 @@ const Why = () => {
             blockSize: 'fit-content',
           }}
         >
-          <span className="font-bold text-white text-2xl md:3xl lg:text-5xl">
+          <span className="font-bold z-10 text-white text-4xl  lg:text-5xl">
             WHY <span className="italic">BLUEBIRD</span>
           </span>
           <div className="flex justify-end">
-            <div className="w-[120px] lg:w-[250px]">{underline}</div>
+            <div className="w-[120px] z-10 lg:w-[250px]">{underline}</div>
           </div>
         </div>
 
         {/* Post Heading section */}
-        <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start mt-12 px-12 xl:px-48 2xl:px-60">
+        <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start mt-8 px-12 xl:px-48 2xl:px-60">
           <div className="w-1/2 relative pr-0 2xl:pr-16">
             <picture>
               <source srcSet="/why/laptop_1.png" />
@@ -108,7 +104,7 @@ const Why = () => {
                 {!isFirstSelected ? (
                   <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
                 ) : (
-                  <div className="">
+                  <div className="ml-6">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
                       icon={blueCircle}
@@ -119,18 +115,18 @@ const Why = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 mt-24 xl:mt-0 2xl:mt-0">
+          <div className="2xl:w-1/2 z-10 mt-32 xl:mt-0 2xl:mt-0">
             <div className="flex w-full 2xl:justify-start justify-center">
               <div className="hidden xl:block w-1/3" />
               {isFirstSelected ? (
-                <p className="text-white text-xl w-full xl:w-2/3">
+                <p className="text-white text-lg mt-4 w-full">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                   vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                   no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
               ) : (
-                <p className="text-white text-xl w-full xl:w-2/3">
+                <p className="text-white text-lg mt-4 w-full">
                   Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
                   dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
                   invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
