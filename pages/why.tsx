@@ -144,8 +144,8 @@ const Why = () => {
           className="absolute bg-grey h-[1050px] -mt-[150px] w-full top-0 left-0"
           style={{ zIndex: -5 }}
         />
-        <div className="flex flex-col w-full justify-center h-[full] pt-24">
-          <h1 className="text-center font-bold text-5xl text-secondary uppercase">
+        <div className="flex flex-col w-full justify-center h-[full] pt-12 2xl:pt-24">
+          <h1 className="text-center font-bold text-3xl lg:text-5xl  text-secondary uppercase">
             <span className="italic">WHAT SETS US </span>
             <span className="font-extrabold">APART?</span>
           </h1>
