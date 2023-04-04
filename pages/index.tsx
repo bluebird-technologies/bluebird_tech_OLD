@@ -99,7 +99,6 @@ export default function Home() {
                 label: 'Lean',
                 content: (
                   <>
-                    {' '}
                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
                     amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -131,7 +130,7 @@ export default function Home() {
         <div className="flex w-full flex-col items-center justify-center px-6 lg:mx-8 lg:block">
           <div className="flex w-full flex-1 flex-col items-center justify-center">
             <h2 className="title-2 text-center">
-              SOME OF THE PEOPLE WE’VE <span className="text-center text-[#DA7D3B]">WORKED</span>{' '}
+              SOME OF THE PEOPLE WE’VE <span className="text-center text-[#DA7D3B]">WORKED </span>
               WITH
             </h2>
             <div className="mt-[27px] mb-[34px] h-[4px] w-[138px] bg-secondary"></div>
@@ -154,8 +153,7 @@ export default function Home() {
               <span className="text-center text-xl lg:text-5xl">SEE OUR LATEST WORK</span>
             </h2>
           </div>
-          <div className="flex w-full flex-col items-center ">
-            {' '}
+          <div className="flex w-full flex-col items-center">
             <p className="alt hidden text-center text-xl lg:block">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr
             </p>
@@ -207,9 +205,9 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="-mt-32 h-[150px] bg-[#F1F1F1]" />
+      <div className="bg-[grey] h-[150px] -mt-32" />
 
-      <div className="bg-[#F1F1F1] pb-[54px]">
+      <div className="bg-[grey] pb-[54px]">
         <Footer />
       </div>
     </div>
