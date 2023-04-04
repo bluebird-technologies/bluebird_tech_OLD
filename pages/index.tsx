@@ -20,7 +20,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden -z-10">
       <div
         className="relative flex h-[704px] w-full flex-col items-center bg-cover bg-bottom"
         style={{
@@ -73,7 +73,7 @@ export default function Home() {
               accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
               sanctus est Lorem ipsum dolor sit amet.
             </p>
-            <Button className="ml-[38px] mt-4 2xl:mt-0">
+            <Button className="2xl:ml-[38px]  mt-4 2xl:mt-0">
               <Link href="/why">read more</Link>
             </Button>
           </div>
