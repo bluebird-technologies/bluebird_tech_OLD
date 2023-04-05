@@ -8,7 +8,7 @@ export const clientIcons = [
   'thorchain.svg',
   'theDelta.svg',
   'raubex.svg',
-  'pump_abraison.svg',
+  'pump_abrasion.svg',
   'coinDirect.svg',
   'bvnk.svg',
   'craft.svg',
