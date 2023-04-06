@@ -14,41 +14,42 @@ import Footer from '../components/Footer';
 import { CircleButton } from '../components/WhyBluebird/CircleButton';
 import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverlayTextContainer';
 import { MobileHeader } from '../components/MobileHeader';
+import WhatSetsUpApartCarousel from '../components/Carousel/WhatSetsUsApartCarousel';
+
+export type btnOptions = 'Lean' | 'Boutique' | 'Personal';
+
+export const coreValues: {
+  key: btnOptions;
+  description: string;
+  animation: unknown;
+}[] = [
+  {
+    key: 'Boutique',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    animation: coderAnimation,
+  },
+  {
+    key: 'Lean',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    animation: leanAnimation,
+  },
+  {
+    key: 'Personal',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    animation: personalAnimation,
+  },
+];
 
 const Why = () => {
-  type btnOptions = 'Lean' | 'Boutique' | 'Personal';
   const [activeBtn, setActiveBtn] = React.useState<btnOptions>('Boutique');
 
-  const coreValues: {
-    key: btnOptions;
-    description: string;
-    animation: unknown;
-  }[] = [
-    {
-      key: 'Boutique',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-      animation: coderAnimation,
-    },
-    {
-      key: 'Lean',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-      animation: leanAnimation,
-    },
-    {
-      key: 'Personal',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-      animation: personalAnimation,
-    },
-  ];
-
   const [isFirstSelected, setIsFirstSelected] = useState(true);
-
   return (
     <div className="w-full overflow-hidden">
-      <div className="w-full flex flex-col relative h-[100vh] 2xl:h-[94vh] ">
+      <div className="w-full flex flex-col relative pb-8 2xl:h-[94vh] ">
         <div
           className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
@@ -138,8 +139,12 @@ const Why = () => {
         </div>
       </div>
 
+      <div className="flex  mx-4 items-center justify-center 2xl:hidden">
+        <WhatSetsUpApartCarousel />
+      </div>
+
       {/* What Sets us apart Section */}
-      <div className="w-full h-[900px] relative">
+      <div className="hidden w-full h-[900px] 2xl:relative 2xl:block">
         <div
           className="absolute bg-grey h-[1050px] -mt-[150px] w-full top-0 left-0"
           style={{ zIndex: -5 }}
@@ -190,16 +195,12 @@ const Why = () => {
       </div>
 
       {/* Culture section */}
-      <div className="relative -mt-60">
+      <div className="relative 2xl:-mt-60">
         <div
-          className="h-full bg-secondary"
+          className="absolute bg-secondary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
-            zIndex: -1,
           }}
         />
         <div className="flex flex-col w-full h-[1300px]">
