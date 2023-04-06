@@ -107,8 +107,8 @@ function AuroraDetails() {
           className="bg-secondary h-full -z-20"
           style={{
             position: 'absolute',
-            left: '-26%',
-            width: '150vw',
+            left: '-41%',
+            width: '180vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
           }}
@@ -119,8 +119,8 @@ function AuroraDetails() {
             position: 'absolute',
             height: '50%',
             top: '60%',
-            left: '-26%',
-            width: '150vw',
+            left: '-41%',
+            width: '180vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
           }}

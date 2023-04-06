@@ -108,13 +108,16 @@ function RaubexDetails() {
       >
         <h1 className="text-highlight font-bold uppercase text-8xl">{clientDetails.clientName}</h1>
       </div>
-      <div className="w-full bg-cover h-full -mt-[250px] pt-12 px-12 flex flex-col items-center relative z-20">
+
+      {/* Intro Section */}
+
+      <div className="w-full bg-cover h-full -mt-[250px] pt-12 flex flex-col items-center relative z-20">
         <div
           className="bg-secondary h-full -z-20"
           style={{
             position: 'absolute',
-            left: '-26%',
-            width: '150vw',
+            left: '-41%',
+            width: '180vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
           }}
@@ -125,14 +128,12 @@ function RaubexDetails() {
             position: 'absolute',
             height: '50%',
             top: '60%',
-            left: '-26%',
-            width: '150vw',
+            left: '-41%',
+            width: '180vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
           }}
         />
-
-        {/* Intro Section */}
 
         <IntroAndChallengeSection
           clientName={clientDetails?.clientName}
