@@ -139,7 +139,7 @@ const Why = () => {
         </div>
       </div>
 
-      <div className="flex  mx-4 items-center justify-center 2xl:hidden">
+      <div className="flex w-full justify-center items-center 2xl:hidden">
         <WhatSetsUpApartCarousel />
       </div>
 
