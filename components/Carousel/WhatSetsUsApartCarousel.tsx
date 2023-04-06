@@ -63,13 +63,12 @@ export default function WhatSetsUpApartCarousel() {
     >
       {coreValues?.map((slide, i) => {
         return (
-          <div key={i}>
-            <CarouselSlideItem
-              label={slide?.label}
-              description={slide?.description}
-              animation={slide?.animation}
-            />
-          </div>
+          <CarouselSlideItem
+            label={slide?.label}
+            description={slide?.description}
+            animation={slide?.animation}
+            key={i}
+          />
         );
       })}
     </Carousel>
@@ -78,21 +77,21 @@ export default function WhatSetsUpApartCarousel() {
 
 function CarouselSlideItem({ label, description, animation }: Props) {
   return (
-    <div className="">
+    <div className="mb-20 items-center flex flex-1 justify-center flex-col">
       <div className="flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px] text-center">
         <h1 className="text-highlight">{label}</h1>
       </div>
-      <div className=" ">
-        <div className="flex w-auto items-center border justify-center">
-          <p className="text-black text-base text-center mt-4 mx-4">{description}</p>
-        </div>
+      <div className="flex flex-1 items-center justify-center flex-wrap">
+        <p className="text-black text-base text-center w-2/4   sm:text-base md:text-lg lg:text-xl">
+          {description}
+        </p>
       </div>
       <div className="w-full sm:max-w-md lg:max-w-lg mx-auto my-4 sm:my-8 lg:my-16">
         <Lottie
           animationData={animation}
           loop={true}
           style={{
-            height: '250px',
+            height: '280px',
           }}
         />
       </div>
