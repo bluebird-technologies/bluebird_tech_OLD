@@ -31,25 +31,34 @@ const items = [
 
 export function WhatWeOffer() {
   return (
-    <div className="flex flex-wrap -mx-[16px] gap-y-[32px] mt-[78px] mb-[91px]">
-      <div className="w-1/4 px-[20px] flex items-center">
-        <h2 className="title-2 secondary">WHAT WE OFFER</h2>
+    <div className="mt-[78px] mb-[91px] flex w-full flex-1 flex-col items-center justify-center lg:-mx-[16px] lg:flex-row  lg:flex-wrap lg:gap-y-[32px] ">
+      <div className="mb-4 flex items-center  lg:mb-0 lg:w-1/4 lg:px-[20px]">
+        <h2 className="title-2 secondary text-center">WHAT WE OFFER</h2>
       </div>
       {items.map((i, index) => (
-        <div key={index} className="w-1/4">
-          <div className="mx-[16px] shadow-[2px_4px_16px_#00000029] pt-[22px] pb-[18px] px-[20px] rounded-[25px] hover:-mt-2 transition-all">
-            <div className="w-[54px] h-[54px] rounded-full shadow-[2px_4px_16px_#00000029] flex items-center justify-center p-3">
+        <div
+          key={index}
+          className="mt-4 w-[300px] items-center justify-center lg:mx-0 lg:mt-0 lg:w-1/4"
+        >
+          <div className="flex flex-row items-center justify-start rounded-[25px] px-[20px] pt-[22px] pb-[18px] shadow-[2px_4px_16px_#00000029] transition-all hover:-mt-2 lg:mx-[16px] lg:flex-col lg:items-start">
+            <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full p-3  shadow-[2px_4px_16px_#00000029]   ">
               <picture>
                 <source srcSet={`/what-we-offer/${i.icon}.svg`} type="image/svg+xml" />
-                <img src={`/what-we-offer/${i.icon}.svg`} alt="Bluebird" className="h-full" />
+                <img
+                  src={`/what-we-offer/${i.icon}.svg`}
+                  alt="Bluebird"
+                  className="h-[30px] w-[30px] lg:h-full lg:w-full"
+                />
               </picture>
             </div>
-            <div className="text-primary text-[20px] leading-[25px] font-extrabold uppercase mt-[14px]">
+            <div className="ml-2 font-extrabold uppercase leading-[25px] text-primary lg:ml-0 lg:mt-[14px] lg:text-[20px]">
               {i.label.split(' ').map((t, i) => (
                 <div key={i}>{t}</div>
               ))}
             </div>
-            <div className="mt-[13px] text-highlight text-[17px] leading-[20px]">MORE INFO</div>
+            <div className="mt-[13px] hidden text-[17px] leading-[20px] text-highlight lg:block">
+              MORE INFO
+            </div>
           </div>
         </div>
       ))}
