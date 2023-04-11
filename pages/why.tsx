@@ -216,7 +216,7 @@ const Why = () => {
           }}
         />
         <div className="flex flex-col w-full h-[1300px]">
-          <div className="flex w-full items-center justify-center mt-32">
+          <div className="flex w-full items-center justify-center z-0 mt-32">
             <h1 className="text-white text-center text-5xl font-extrabold">CULTURE</h1>
           </div>
           <div className="flex flex-col w-full h-[1300px]">
