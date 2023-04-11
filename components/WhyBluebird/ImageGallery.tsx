@@ -2,7 +2,9 @@ import React from 'react';
 
 const ImageGallery = () => {
   return (
-    <div className="mx-4 flex flex-col flex-1 items-center justify-center">
+    <div className="mx-4 flex flex-col flex-1 items-center  justify-center">
+      <h1 className="text-white text-center text-4xl z-0 mt-12  font-extrabold">CULTURE</h1>
+
       <div className="relative mb-8">
         <picture>
           <source srcSet="/why/handshake.png" />
@@ -41,7 +43,7 @@ const ImageGallery = () => {
         </div>
       </div>
       <div className="flex justify-center z-0 mb-4 items-center h-full">
-        <h1 className="text-white text-center text-base">
+        <h1 className="text-white text-center text-lg md:text-xl">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
           accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
