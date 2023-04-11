@@ -201,6 +201,9 @@ const Why = () => {
           style={{
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+            paddingBottom: 20,
           }}
         />
         <ImageGallery />
@@ -312,8 +315,8 @@ const Why = () => {
       </div>
 
       {/* Awards section */}
-      <div className="py-24   flex flex-1 items-center flex-col bg-primary justify-center">
-        <h1 className="text-highlight font-extrabold text-4xl pb-6">AWARDS</h1>
+      <div className="py-24   flex flex-1 items-center flex-col -mt-28 2xl:mt-0 bg-primary justify-center">
+        <h1 className="text-highlight font-extrabold text-4xl mt-12 2xl:mt-0 pb-6">AWARDS</h1>
         <Line />
         <div className="max-w-[350px] mt-16">
           <picture>
