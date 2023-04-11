@@ -11,27 +11,37 @@ export function DesignBuildSection({ designProcess, buildingProcess }: DesignBui
     <div className="bg-gray w-full flex flex-1 flex-col items-center justify-center py-12">
       <HeadingWithLine text="Designing Process" swiggleOption={'2'} />
 
-      <div className="flex w-full justify-center mt-12">
-        <div className="max-w-6xl">
-          <ul>
-            {designProcess.map((item, key) => (
-              <li key={key} className="text-black list-disc text-2xl mb-2">
-                {item}
-              </li>
-            ))}
+      <div className="flex justify-center w-full mt-12 mb-12 lg:px-0 px-6">
+        <div className="md:max-w-[80%] xl:max-w-[60%]">
+          <ul className="list-disc list-outside">
+            {designProcess.map((item, i) => {
+              return (
+                <li
+                  key={i}
+                  className="text-primary font-normal text-sm lg:text-2xl lg:text-start text-center"
+                >
+                  {item}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
 
-      <HeadingWithLine text="Building Process" swiggleOption={'2'} className="mt-12" />
-      <div className="flex w-full justify-center mt-12">
-        <div className="max-w-6xl">
-          <ul>
-            {buildingProcess.map((item, key) => (
-              <li key={key} className="text-black list-disc text-2xl mb-2">
-                {item}
-              </li>
-            ))}
+      <HeadingWithLine text="Building Process" swiggleOption={'2'} />
+      <div className="flex justify-center w-full mt-12 lg:px-0 px-6">
+        <div className="md:max-w-[80%] xl:max-w-[60%]">
+          <ul className="list-disc list-outside">
+            {buildingProcess.map((item, i) => {
+              return (
+                <li
+                  key={i}
+                  className="text-primary font-normal text-sm lg:text-2xl lg:text-start text-center"
+                >
+                  {item}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

@@ -5,23 +5,16 @@ import BlueSwiggle from 'public/case-studies/blue-swiggle.svg';
 interface Props {
   text: React.ReactNode | string;
   swiggleOption: '1' | '2';
-  className?: string;
 }
 
-function HeadingWithLine({ text, swiggleOption, className }: Props) {
-  const rowClass = className
-    ? 'hidden lg:flex w-full max-w-7xl justify-center px-4 ' + className
-    : 'hidden lg:flex w-full max-w-7xl justify-center px-4';
+function HeadingWithLine({ text, swiggleOption }: Props) {
   return (
-    <div>
-      <div className={rowClass}>
-        <p className="text-highlight font-normal text-xl lg:text-4xl text-center whitespace-nowrap lg:mr-12">
-          {text}
-        </p>
+    <div className="flex w-full justify-center lg:px-32">
+      <h2 className="text-highlight font-medium text-2xl lg:text-3xl text-center break-keep flex-nowrap lg:pr-16">
+        {text}
+      </h2>
+      <div className="hidden lg:block flex-1">
         {swiggleOption === '1' ? <SwiggleSvg /> : <BlueSwiggle />}
-      </div>
-      <div className="lg:hidden flex justify-center items-center">
-        <p className="text-highlight font-normal text-md text-center whitespace-nowrap">{text}</p>
       </div>
     </div>
   );

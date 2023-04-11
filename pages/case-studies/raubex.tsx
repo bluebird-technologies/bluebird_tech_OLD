@@ -2,19 +2,17 @@ import React from 'react';
 import { Header } from '../../components/Header';
 import SwiggleSvg from 'public/case-studies/swiggle.svg';
 import QuoteSvg from 'public/case-studies/quote.svg';
-import ArrowLeftSvg from 'public/arrow-left.svg';
 import Footer from '../../components/Footer';
 import flashingLottieOrange from '../../public/lottie/flashingLottieOrange.json';
 import Lottie from 'lottie-react';
-import { useRouter } from 'next/router';
 import HeadingWithLine from '../../components/CaseStudies/HeadingWithLine';
 import { DesignBuildSection } from '../../components/CaseStudies/DesignBuildSection';
 import { ResultsSection } from '../../components/CaseStudies/ResultsSection';
 import { IntroAndChallengeSection } from '../../components/CaseStudies/IntroAndChallengeSection';
+import SeeBanner from '../../components/SeeBanner';
+import { MobileHeader } from '../../components/MobileHeader';
 
 function RaubexDetails() {
-  const router = useRouter();
-
   const clientDetails = {
     clientName: 'raubex',
     coverImage: '',
@@ -84,29 +82,54 @@ function RaubexDetails() {
   };
 
   return (
-    <div className="relative flex flex-1 flex-col">
-      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px] z-10">
-        <div
-          className="bg-primary h-full"
-          style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
-            borderBottomLeftRadius: '50%',
-            borderBottomRightRadius: '50%',
-          }}
-        />
-        <Header />
+    <div>
+      {/* mobile top section div */}
+      <div className="relative block lg:hidden w-full h-full lg:overflow-hidden">
+        <div className="relative w-full h-full bg-primary">
+          <div className="w-full h-full">
+            <MobileHeader />
+          </div>
+        </div>
       </div>
-      <div
-        className="w-full bg-cover bg-bottom -z-10 -mt-52 flex flex-col items-center relative justify-center "
-        style={{
-          backgroundImage: `url(raubexBackground-2.png)`,
-          backgroundPosition: 'cover',
-          height: '1000px',
-        }}
-      >
-        <h1 className="text-highlight font-bold uppercase text-8xl">{clientDetails.clientName}</h1>
+
+      {/* desktop header section */}
+      <div className="relative overflow-hidden">
+        <div className="hidden lg:flex lg:flex-col lg:relative w-full bg-cover bg-bottom items-center pb-[90px] z-10">
+          <div
+            className="bg-primary h-full"
+            style={{
+              position: 'absolute',
+              left: '-16%',
+              width: '130vw',
+              borderBottomLeftRadius: '50%',
+              borderBottomRightRadius: '50%',
+            }}
+          />
+          <Header />
+        </div>
+        <div
+          className="lg:bg-bottom w-full -z-10 lg:-mt-52 flex flex-col items-center relative justify-center h-[500px] lg:h-[850px]"
+          style={{
+            backgroundImage: 'url(raubexBackground-2.png)',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        >
+          <h1 className="text-highlight font-bold uppercase text-5xl lg:text-8xl">
+            {clientDetails.clientName}
+          </h1>
+
+          {/* Curve for next contrainer has to be defined inside this container to use the overflow hidden fix */}
+          <div
+            className="block lg:hidden absolute bg-secondary h-[100px] bottom-0"
+            style={{
+              left: '-10%',
+              width: '120vw',
+              borderTopLeftRadius: '50%',
+              borderTopRightRadius: '50%',
+            }}
+          />
+        </div>
       </div>
 
       {/* Intro Section */}
@@ -211,11 +234,7 @@ function RaubexDetails() {
               </div>
             </div>
 
-            <HeadingWithLine
-              text="How did we uncover this info?"
-              swiggleOption="1"
-              className="mt-12"
-            />
+            <HeadingWithLine text="How did we uncover this info?" swiggleOption="1" />
           </div>
         </div>
 
@@ -255,6 +274,7 @@ function RaubexDetails() {
       {/* Results Section */}
       <div>
         <ResultsSection
+          clientName={clientDetails.clientName}
           resultsBackgroundImageString={clientDetails?.resultsBackgroundImage}
           clientResults={clientDetails?.clientResults}
           results={clientDetails?.results}
@@ -263,13 +283,17 @@ function RaubexDetails() {
 
       {/* Navigation back arrow row Section */}
 
-      <div
+      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
+        <SeeBanner label="Back to case studies" url="/case-studies" invert />
+      </div>
+
+      {/* <div
         onClick={() => router.push('/case-studies')}
         className="flex flex-row bg-primary items-center justify-center py-12 cursor-pointer"
       >
         <ArrowLeftSvg />
         <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
-      </div>
+      </div> */}
 
       {/* Footer section */}
 

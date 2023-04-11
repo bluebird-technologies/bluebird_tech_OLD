@@ -19,31 +19,32 @@ function RevioQuoteSection({
   nameAndJob,
   involvedTeam,
 }: RevioQuoteSectionProps) {
+  // using xl breakpoint for this component since the image section breaks the UI sooner
   return (
-    <div className="relative flex flex-col lg:flex-row w-full lg:mt-60 lg:h-full">
-      <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start lg:w-1/2 lg:pl-64">
+    <div className="relative flex flex-col xl:flex-row w-full xl:mt-60 xl:h-full">
+      <div className="flex flex-col justify-center xl:justify-start items-center xl:items-start xl:w-1/2 xl:pl-64">
         <QuoteSvg />
-        <p className="text-white text-center lg:text-left text-2xl lg:text-5xl lg:pb-8 uppercase">
+        <p className="text-white text-center xl:text-left text-2xl xl:text-5xl xl:pb-8 uppercase">
           {quoteLine1}
         </p>
-        <p className="text-white text-center lg:text-left text-2xl lg:text-5xl leading-10 lg:pb-16 uppercase">
+        <p className="text-white text-center xl:text-left text-2xl xl:text-5xl leading-10 xl:pb-16 uppercase">
           {quoteLine2}
         </p>
 
         <div className="relative">
           <div
-            className="absolute top-16 left-0 hidden lg:block"
+            className="absolute top-16 left-0 hidden xl:block"
             style={{
               zIndex: 2,
             }}
           >
             <SwiggleSvg width="1000" />
           </div>
-          <p className="text-highlight italic text-xl lg:text-3xl">- {nameAndJob}</p>
+          <p className="text-highlight italic text-xl xl:text-3xl">- {nameAndJob}</p>
         </div>
-        <p className="hidden lg:block text-highlight text-3xl pt-32">{involvedTeam}</p>
+        <p className="hidden xl:block text-highlight text-3xl pt-32">{involvedTeam}</p>
       </div>
-      <div className="hidden lg:block relative lg:w-1/2 w-full">
+      <div className="hidden xl:block relative xl:w-1/2 w-full">
         <div
           className="absolute right-[250px] top-[200px] scaleLottiex4"
           style={{
@@ -52,19 +53,19 @@ function RevioQuoteSection({
         >
           <Lottie animationData={flashingLottieOrange} loop={true} />
         </div>
-        <picture className="absolute top-0 lg:top-60" style={{ zIndex: 3 }}>
+        <picture className="absolute top-0 xl:top-60" style={{ zIndex: 3 }}>
           <source srcSet="/case-studies/clay.png" />
           <img src="/case-studies/clay.png" alt={clientName + 'image'} className="w-full" />
         </picture>
       </div>
-      <div className="lg:hidden block">
+      <div className="xl:hidden block">
         <picture className="h-full" style={{ zIndex: 3 }}>
           <source srcSet="/case-studies/clay.png" />
           <img src="/case-studies/clay.png" alt={clientName + 'image'} className="w-full" />
         </picture>
       </div>
-      <div className="lg:hidden w-full flex justify-center items-center mb-10">
-        <p className="text-highlight text-xl lg:text-3xl pt-4 text-center">{involvedTeam}</p>
+      <div className="xl:hidden w-full flex justify-center items-center mb-10">
+        <p className="text-highlight text-xl xl:text-3xl pt-4 text-center">{involvedTeam}</p>
       </div>
     </div>
   );

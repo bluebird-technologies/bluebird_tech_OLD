@@ -27,15 +27,15 @@ export default function Home() {
           backgroundImage: 'url(/main.jpg)',
         }}
       >
-        <div className="block h-full w-full lg:hidden">
+        <div className="block h-full w-full md:hidden">
           <MobileHeader />
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <Header />
         </div>
         <Container wide>
           <div className="mb-44 flex w-full flex-1 flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start">
-            <h1 className="mt-0 text-center text-[40px] font-extrabold uppercase leading-[64px] text-white lg:mt-[82px] 2xl:text-left 2xl:text-[52px] ">
+            <h1 className="text-center text-[40px] font-extrabold uppercase leading-[64px] text-white mt-0 md:mt-12 lg:mt-[82px] 2xl:text-left 2xl:text-[52px] ">
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
             <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>

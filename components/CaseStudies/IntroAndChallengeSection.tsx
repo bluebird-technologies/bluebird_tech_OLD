@@ -57,7 +57,7 @@ export function IntroAndChallengeSection({
 
       <div className="text-xl max-w-6xl mt-20">
         {challenges.map((item, key) => (
-          <div key={key}>
+          <div key={key} className="lg:pr-6">
             <div className="hidden lg:flex flex-row items-start mb-16">
               <Lottie
                 animationData={flashingLottieWhite}
@@ -79,7 +79,7 @@ export function IntroAndChallengeSection({
             </div>
           </div>
         ))}
-        <div className="flex flex-row flex-wrap w-full justify-center lg:justify-between mb-6">
+        <div className="flex flex-row flex-wrap w-full justify-center lg:justify-between mb-6 lg:px-2 xl:px-0">
           {services.map((item, key) => (
             <a
               key={key}

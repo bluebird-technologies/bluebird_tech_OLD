@@ -1,18 +1,15 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import ArrowLeftSvg from 'public/arrow-left.svg';
 import Footer from '../../components/Footer';
-import { useRouter } from 'next/router';
 import { DesignBuildSection } from '../../components/CaseStudies/DesignBuildSection';
 import { ResultsSection } from '../../components/CaseStudies/ResultsSection';
 import { IntroAndChallengeSection } from '../../components/CaseStudies/IntroAndChallengeSection';
 import { MobileHeader } from '../../components/MobileHeader';
 import QuoteSection from '../../components/CaseStudies/QuoteSection';
 import OurApproachSection from '../../components/CaseStudies/OurApproachSection';
+import SeeBanner from '../../components/SeeBanner';
 
 function RevioDetails() {
-  const router = useRouter();
-
   const clientDetails = {
     clientName: 'revio',
     coverImage: '',
@@ -120,7 +117,7 @@ function RevioDetails() {
         <div
           className="lg:bg-bottom w-full -z-10 lg:-mt-52 flex flex-col items-center relative justify-center h-[500px] lg:h-[850px]"
           style={{
-            backgroundImage: `url(revioBackground-2.png)`,
+            backgroundImage: 'url(revioBackground-2.png)',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           }}
@@ -180,9 +177,9 @@ function RevioDetails() {
       </div>
 
       {/* Quote Section */}
-      <div className="flex relative bg-primary lg:h-[1100px] w-full overflow-hidden">
+      <div className="flex relative bg-primary xl:h-[1100px] w-full overflow-hidden">
         <div
-          className="absolute hidden lg:block bg-secondary h-[150px] z-20"
+          className="absolute hidden xl:block bg-secondary h-[150px] z-20"
           style={{
             left: '-10%',
             width: '120vw',
@@ -210,30 +207,27 @@ function RevioDetails() {
 
       {/* Designing/ Building process Section */}
 
-      {/* <div className="w-full">
+      <div className="w-full">
         <DesignBuildSection
           designProcess={clientDetails?.designProcess}
           buildingProcess={clientDetails?.buildingProcess}
         />
-      </div> */}
+      </div>
 
       {/* Results Section */}
-      {/* <div className="hidden lg:block">
+      <div>
         <ResultsSection
+          clientName={clientDetails.clientName}
           resultsBackgroundImageString={clientDetails?.resultsBackgroundImage}
           clientResults={clientDetails?.clientResults}
           results={clientDetails?.results}
         />
-      </div> */}
+      </div>
 
       {/* Navigation back arrow row Section */}
 
-      <div
-        onClick={() => router.push('/case-studies')}
-        className="flex flex-row bg-primary items-center justify-center py-12 cursor-pointer"
-      >
-        <ArrowLeftSvg />
-        <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
+      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
+        <SeeBanner label="Back to case studies" url="/case-studies" invert />
       </div>
 
       {/* Footer section */}
