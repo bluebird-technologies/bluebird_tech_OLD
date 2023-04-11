@@ -15,6 +15,7 @@ import { CircleButton } from '../components/WhyBluebird/CircleButton';
 import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverlayTextContainer';
 import { MobileHeader } from '../components/MobileHeader';
 import WhatSetsUpApartCarousel from '../components/Carousel/WhatSetsUsApartCarousel';
+import ImageGallery from '../components/WhyBluebird/ImageGallery';
 
 export type btnOptions = 'Lean' | 'Boutique' | 'Personal';
 
@@ -81,8 +82,8 @@ const Why = () => {
         </div>
 
         {/* Post Heading section */}
-        <div className="flex flex-col xl:flex-row items-center  justify-center xl:justify-start mt-8 px-12 xl:px-48 2xl:px-60">
-          <div className="w-1/2 relative pr-0 2xl:pr-16">
+        <div className="flex flex-col xl:flex-row items-center  justify-center xl:justify-start mt-8 px-8 xl:px-48 2xl:px-60">
+          <div className="2xl:w-1/2 relative pr-0 2xl:pr-16">
             <picture>
               <source srcSet="/why/laptop_1.png" />
               <img src="/why/laptop_1.png" alt="laptop" />
@@ -193,9 +194,17 @@ const Why = () => {
           </div>
         </div>
       </div>
+      {/* Culture section Mobile */}
+      <div className="block bg-secondary 2xl:hidden">
+        <div className="mt-8">
+          <h1 className="text-white text-center text-5xl zfont-extrabold">CULTURE</h1>
+        </div>
+        <div className="bg-secondary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]" />
+        <ImageGallery />
+      </div>
 
       {/* Culture section */}
-      <div className="relative 2xl:-mt-60">
+      <div className="hidden 2xl:block relative 2xl:-mt-60">
         <div
           className="absolute bg-secondary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
@@ -285,7 +294,7 @@ const Why = () => {
                 </picture>
               </div>
             </div>
-            <div className="flex justify-center items-end h-full mb-24">
+            <div className="flex justify-center z-0 items-end h-full mt-24">
               <div className="max-w-[1200px] min-w-[400px]">
                 <h1 className="text-white text-center text-2xl">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
