@@ -49,7 +49,7 @@ const Why = () => {
 
   const [isFirstSelected, setIsFirstSelected] = useState(true);
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full  overflow-hidden">
       <div className="w-full flex flex-col relative pv-20  2xl:pb-40 ">
         <div
           className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
@@ -195,16 +195,19 @@ const Why = () => {
         </div>
       </div>
       {/* Culture section Mobile */}
-      <div className="block bg-secondary 2xl:hidden">
-        <div className="mt-8">
-          <h1 className="text-white text-center text-5xl zfont-extrabold">CULTURE</h1>
-        </div>
-        <div className="bg-secondary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]" />
+      <div className="relative h-full 2xl:hidden">
+        <div
+          className="absolute bg-secondary h-[100%] w-[285vw]  left-[-98%] 2xl:hidden"
+          style={{
+            borderTopLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+          }}
+        />
         <ImageGallery />
       </div>
 
       {/* Culture section */}
-      <div className="hidden 2xl:block relative 2xl:-mt-60">
+      <div className="hidden 2xl:block pb-16 relative 2xl:-mt-60">
         <div
           className="absolute bg-secondary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
@@ -294,7 +297,7 @@ const Why = () => {
                 </picture>
               </div>
             </div>
-            <div className="flex justify-center z-0 items-end h-full mt-24">
+            <div className="flex justify-center z-0 items-end h-full mb-48">
               <div className="max-w-[1200px] min-w-[400px]">
                 <h1 className="text-white text-center text-2xl">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -309,7 +312,7 @@ const Why = () => {
       </div>
 
       {/* Awards section */}
-      <div className="py-24 flex flex-1 items-center flex-col bg-primary justify-center">
+      <div className="py-24   flex flex-1 items-center flex-col bg-primary justify-center">
         <h1 className="text-highlight font-extrabold text-4xl pb-6">AWARDS</h1>
         <Line />
         <div className="max-w-[350px] mt-16">
