@@ -5,7 +5,7 @@ import LinkedinIcon from '../public/linkedin.svg';
 const Footer = () => {
   return (
     <div className="w-full h-full flex flex-1 bg-grey py-6 lg:py-20 px-12 lg:px-32">
-      <div className="flex w-full">
+      <div className="flex flex-col lg:flex-row w-full">
         <picture className="hidden lg:block">
           <source srcSet="/home/logo.svg" type="image/svg+xml" />
           <img src="/home/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
@@ -72,8 +72,8 @@ const LinksSections = () => {
   ];
 
   return (
-    <div className="hidden md:flex flex-col flex-1 min-w-[210px] justify-end">
-      <ol className="text-primary font-semibold text-[14px] leading-[20px] text-right uppercase">
+    <div className=" md:flex ml-4 flex-col flex-1 lg:min-w-[210px] justify-start lg:justify-end">
+      <ol className="hidden lg:block text-primary font-semibold text-[14px] leading-[20px] text-right uppercase">
         {navItems.map((item, index) => {
           return (
             <li key={index}>
@@ -84,7 +84,7 @@ const LinksSections = () => {
           );
         })}
       </ol>
-      <div className="flex flex-row justify-end mt-4">
+      <div className="flex flex-row lg:justify-end lg:t-4 mt-8">
         <a href="https://www.linkedin.com/company/bluebirddev/">
           <LinkedinIcon className="mr-4" />
         </a>
