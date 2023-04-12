@@ -6,6 +6,7 @@ import Lottie from 'lottie-react';
 import Card from '../public/contact/cardAnimation.json';
 import Footer from '../components/Footer';
 import SelectDropdown from '../components/SelectDropdown';
+import { MobileHeader } from '../components/MobileHeader';
 
 const Contact = () => {
   const dropdownOptions = [
@@ -16,7 +17,7 @@ const Contact = () => {
     'General Enquiry',
   ];
   return (
-    <div className="bg-secondary flex-1 flex flex-col h-full">
+    <div className="bg-secondary flex-1 flex flex-col h-full overflow-hidden">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
           className="bg-primary h-full"
@@ -28,13 +29,18 @@ const Contact = () => {
             borderBottomRightRadius: '50%',
           }}
         />
-        <Header />
+        <div className="hidden lg:block">
+          <Header />
+        </div>
+        <div className="block h-full w-full lg:hidden">
+          <MobileHeader />
+        </div>
+
         <div className="flex z-1 relative flex-col mt-20 items-center">
           <h3 className="text-[27px] font-mediumitalic italic text-highlight">Get in Touch</h3>
-          <div className="flex flex-row ">
-            <h1 className="uppercase text-white font-extrabold text-[52px]">CONTACT</h1>
-            <h1 className="uppercase text-white ml-3 font-extrabold italic text-[52px]">US</h1>
-          </div>
+          <span className="uppercase mt-4 text-white text-4xl font-extrabold 2xl:text-[52px]">
+            CONTACT <span className="italic">US</span>
+          </span>
           <Swiggle />
         </div>
       </div>
