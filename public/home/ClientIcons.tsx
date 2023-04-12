@@ -5,28 +5,31 @@ export default function ClientIcons() {
   return (
     <div className="w-full h-full">
       <div className="flex flex-row items-center mb-14  justify-between ">
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.22seven.com'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.22seven.com'}
+        >
           <div>
             <picture>
               <img src="/client-icons/22seven.svg" alt="22seven" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bank.tech'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://bank.tech'}>
           <div>
             <picture>
               <img src="/client-icons/bankTech.svg" alt="bank Tech" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://revix.com'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://revix.com'}>
           <div>
             <picture>
               <img src="/client-icons/revix.svg" alt="revix" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://layup.co.za'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://layup.co.za'}>
           <div>
             <picture>
               <img src="/client-icons/layup.svg" alt="layup" />
@@ -35,21 +38,27 @@ export default function ClientIcons() {
         </Link>
       </div>
       <div className="flex flex-row items-center mb-14  px-12 justify-between">
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.duepay.co.za'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.duepay.co.za'}
+        >
           <div>
             <picture>
               <img src="/client-icons/duepay.svg" alt="duepay" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.doctorly.de/en'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.doctorly.de/en'}
+        >
           <div>
             <picture>
               <img src="/client-icons/doctorly.svg" alt="doctorly" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://thorchain.org'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://thorchain.org'}>
           <div>
             <picture>
               <img src="/client-icons/thorchain.svg" alt="thorchain" />
@@ -58,14 +67,17 @@ export default function ClientIcons() {
         </Link>
       </div>
       <div className="flex flex-row items-center mb-14  justify-between ">
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.thedelta.io'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.thedelta.io'}
+        >
           <div>
             <picture>
               <img src="/client-icons/theDelta.svg" alt="theDelta" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://raubex.com'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://raubex.com'}>
           <div>
             <picture>
               <img src="/client-icons/raubex.svg" alt="raubex" />
@@ -73,7 +85,7 @@ export default function ClientIcons() {
           </div>
         </Link>
         <Link
-          className="bg-grey opacity-50 hover:opacity-100 "
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
           href={'https://www.pabtglobal.com/'}
         >
           <div>
@@ -82,7 +94,10 @@ export default function ClientIcons() {
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.coindirect.com'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4"
+          href={'https://www.coindirect.com'}
+        >
           <div>
             <picture>
               <img src="/client-icons/coindirect.svg" alt="Coin Direct" />
@@ -91,7 +106,7 @@ export default function ClientIcons() {
         </Link>
       </div>
       <div className="flex flex-row items-center mb-14  px-12 justify-between ">
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bvnk.com/'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://bvnk.com/'}>
           <div>
             <picture>
               <img src="/client-icons/bvnk.svg" alt="Bvnk" />
@@ -99,7 +114,7 @@ export default function ClientIcons() {
           </div>
         </Link>
         <Link
-          className="bg-grey opacity-50 hover:opacity-100 "
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
           href={'https://www.craft.financial/'}
         >
           <div>
@@ -108,14 +123,17 @@ export default function ClientIcons() {
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.pepsi.co.za/'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.pepsi.co.za/'}
+        >
           <div>
             <picture>
               <img src="/client-icons/pepsi.svg" alt="Pepsi" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://breez.insure'}>
+        <Link className="bg-grey opacity-50 hover:opacity-100 ml-4 " href={'https://breez.insure'}>
           <div>
             <picture>
               <img src="/client-icons/breez.svg" alt="Breez" />
@@ -124,14 +142,20 @@ export default function ClientIcons() {
         </Link>
       </div>
       <div className="flex flex-row items-center mb-14  px-12 justify-between ">
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://greensun.co.za/'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://greensun.co.za/'}
+        >
           <div>
             <picture>
               <img src="/client-icons/greensun.svg" alt="Greensun" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://bscglobal.com/'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://bscglobal.com/'}
+        >
           <div>
             <picture>
               <img src="/client-icons/bsc.svg" alt="Bsc global" />
@@ -139,7 +163,7 @@ export default function ClientIcons() {
           </div>
         </Link>
         <Link
-          className="bg-grey opacity-50 hover:opacity-100 "
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
           href={'https://www.polygonprop.com/'}
         >
           <div>
@@ -151,7 +175,7 @@ export default function ClientIcons() {
       </div>
       <div className="flex flex-row items-center   mb-14  justify-between ">
         <Link
-          className="bg-grey opacity-50 hover:opacity-100 "
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
           href={'https://www.overlap-app.com'}
         >
           <div>
@@ -160,14 +184,20 @@ export default function ClientIcons() {
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://ambercircle.co.za/'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://ambercircle.co.za/'}
+        >
           <div>
             <picture>
               <img src="/client-icons/ambercircle.svg" alt="Ambercircle" />
             </picture>
           </div>
         </Link>
-        <Link className="bg-grey opacity-50 hover:opacity-100 " href={'https://www.asklulo.com/'}>
+        <Link
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
+          href={'https://www.asklulo.com/'}
+        >
           <div>
             <picture>
               <img src="/client-icons/asklulo.svg" alt="Asklulo" />
@@ -175,7 +205,7 @@ export default function ClientIcons() {
           </div>
         </Link>
         <Link
-          className="bg-grey opacity-50 hover:opacity-100 "
+          className="bg-grey opacity-50 hover:opacity-100 ml-4 "
           href={'https://www.tweakcarbon.com/'}
         >
           <div>
