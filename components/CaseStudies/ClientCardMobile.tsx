@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { ClientCardProps } from './ClientCard';
-import Revio from '../../public/case-studies/logo/revio-logo.svg';
+import RevioX from '../../public/case-studies/logo/revio-logo-2.svg';
 import Raubex from '../../public/case-studies/logo/raubex-logo.svg';
 import Aurora from '../../public/case-studies/logo/aurora-logo.svg';
 
@@ -30,7 +30,7 @@ export default function ClientCardMobile({
         <div className="flex w-full justify-center mt-4">
           {clientName === 'revio' ? (
             <div className="w-[90px]">
-              <Revio />
+              <RevioX />
             </div>
           ) : clientName === 'aurora' ? (
             <div className="w-[70px]">

@@ -6,6 +6,11 @@ import MenuIcon from './Header/HamburgerIcon';
 export function MobileHeader() {
   const [showNavigation, setShowNavigation] = useState(false);
 
+  const handleShowMenu = () => {
+    setShowNavigation((prev) => !prev);
+    scrollTo(0, 0);
+  };
+
   const navLinks = navLeft.concat(navRight);
 
   return (
@@ -40,11 +45,7 @@ export function MobileHeader() {
           style={{ zIndex: 50 }}
         >
           <div className="text-white">
-            <button
-              type="button"
-              className="text-white w-12 h-12"
-              onClick={() => setShowNavigation((prev) => !prev)}
-            >
+            <button type="button" className="text-white w-12 h-12" onClick={() => handleShowMenu()}>
               <MenuIcon />
             </button>
           </div>

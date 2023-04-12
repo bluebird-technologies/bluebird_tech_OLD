@@ -29,12 +29,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
 export function Header() {
   return (
     <header className="mt-[40px] w-full">
-      <Container wide center row>
-        <nav className="flex flex-1 justify-around mt-3">
-          {navLeft.map((item) => (
-            <NavItem key={item.href} {...item} />
-          ))}
-        </nav>
+      <div className="hidden md:flex lg:hidden w-full my-1 justify-center">
         <Link href="/">
           <picture>
             <source srcSet="/header/logo.svg" type="image/svg+xml" />
@@ -45,6 +40,25 @@ export function Header() {
             />
           </picture>
         </Link>
+      </div>
+      <Container wide center row>
+        <nav className="flex flex-1 justify-around mt-3">
+          {navLeft.map((item) => (
+            <NavItem key={item.href} {...item} />
+          ))}
+        </nav>
+        <div className="hidden lg:block">
+          <Link href="/">
+            <picture>
+              <source srcSet="/header/logo.svg" type="image/svg+xml" />
+              <img
+                src="/header/logo.svg"
+                alt="Bluebird"
+                className="w-[121px] mx-10 hover:cursor-pointer"
+              />
+            </picture>
+          </Link>
+        </div>
         <nav className="flex flex-1 justify-around mt-3">
           {navRight.map((item) => (
             <NavItem key={item.href} {...item} />
