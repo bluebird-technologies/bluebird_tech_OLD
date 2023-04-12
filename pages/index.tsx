@@ -20,7 +20,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="w-full overflow-hidden -z-10">
+    <div className="overflow-hidden">
       <div
         className="relative flex h-[704px] w-full flex-col items-center bg-cover bg-bottom"
         style={{
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="block h-full w-full md:hidden">
           <MobileHeader />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block w-full">
           <Header />
         </div>
         <Container wide>
