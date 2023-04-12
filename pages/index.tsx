@@ -34,7 +34,7 @@ export default function Home() {
           <Header />
         </div>
         <Container wide>
-          <div className="mb-44 flex w-full flex-1 flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start">
+          <div className="mb-44 flex w-full flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start">
             <h1 className="text-center text-[40px] font-extrabold uppercase leading-[64px] text-white mt-0 md:mt-12 lg:mt-[82px] 2xl:text-left 2xl:text-[52px] ">
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
@@ -65,7 +65,7 @@ export default function Home() {
       <Container>
         <div className="mt-12 flex flex-col  items-center 2xl:mt-[91px] 2xl:items-start">
           <div className="subtitle text-center 2xl:text-left">About us</div>
-          <h2 className="title-2 text-center 2xl:text-left">WHY BLUEBIRD</h2>
+          <h2 className="title-2 text-center 2xl:text-left uppercase">WHY BLUEBIRD</h2>
           <div className="mb-12 flex flex-col items-center 2xl:mb-[76px] 2xl:flex-row">
             <p className="mt-4 text-center text-base 2xl:text-left 2xl:text-lg">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -186,12 +186,15 @@ export default function Home() {
       </div>
       <div className="relative flex w-full flex-col items-center bg-cover bg-bottom pb-24 2xl:pb-32">
         <div
-          className="absolute left-[-98%] h-full w-[280vw]   bg-secondary  2xl:left-[-16%] 2xl:w-[130vw]"
+          className="absolute bg-secondary h-full"
           style={{
+            left: '-76%',
+            width: '250vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
           }}
         />
+
         <Container center>
           <h2 className="lg:title-2 alt mt-8 text-center text-[30px] font-extrabold text-white  2xl:mt-24">
             HAVE A PROJECT IN MIND?
@@ -205,9 +208,7 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="bg-[grey] h-[150px] -mt-32" />
-
-      <div className="bg-[grey] pb-[54px]">
+      <div className="bg-grey -mt-6 py-[54px]">
         <Footer />
       </div>
     </div>

@@ -76,9 +76,7 @@ function caseStudies() {
         />
       </div>
 
-      <div className="flex flex-1 h-full border self-end items-end justify-end">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
