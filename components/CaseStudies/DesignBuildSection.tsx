@@ -13,7 +13,7 @@ export function DesignBuildSection({ designProcess, buildingProcess }: DesignBui
 
       <div className="flex justify-center w-full mt-12 mb-12 lg:px-0 px-6">
         <div className="md:max-w-[80%] xl:max-w-[60%]">
-          <ul className="list-disc list-outside">
+          <ul className="list-disc list-inside lg:list-outside">
             {designProcess.map((item, i) => {
               return (
                 <li
@@ -31,7 +31,7 @@ export function DesignBuildSection({ designProcess, buildingProcess }: DesignBui
       <HeadingWithLine text="Building Process" swiggleOption={'2'} />
       <div className="flex justify-center w-full mt-12 lg:px-0 px-6">
         <div className="md:max-w-[80%] xl:max-w-[60%]">
-          <ul className="list-disc list-outside">
+          <ul className="list-disc list-inside lg:list-outside">
             {buildingProcess.map((item, i) => {
               return (
                 <li

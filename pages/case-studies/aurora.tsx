@@ -1,20 +1,15 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import SwiggleSvg from 'public/case-studies/swiggle.svg';
-import QuoteSvg from 'public/case-studies/quote.svg';
-import ArrowLeftSvg from 'public/arrow-left.svg';
 import Footer from '../../components/Footer';
-import flashingLottieOrange from '../../public/lottie/flashingLottieOrange.json';
-import Lottie from 'lottie-react';
-import { useRouter } from 'next/router';
-import HeadingWithLine from '../../components/CaseStudies/HeadingWithLine';
 import { DesignBuildSection } from '../../components/CaseStudies/DesignBuildSection';
 import { ResultsSection } from '../../components/CaseStudies/ResultsSection';
 import { IntroAndChallengeSection } from '../../components/CaseStudies/IntroAndChallengeSection';
+import { MobileHeader } from '../../components/MobileHeader';
+import QuoteSection from '../../components/CaseStudies/QuoteSection';
+import OurApproachSection from '../../components/CaseStudies/OurApproachSection';
+import SeeBanner from '../../components/SeeBanner';
 
 function AuroraDetails() {
-  const router = useRouter();
-
   const clientDetails = {
     clientName: 'aurora',
     coverImage: '',
@@ -46,6 +41,10 @@ function AuroraDetails() {
     ],
     teamSize: 4,
     quoteSectionImage: '/../public/case-studies/aurora-clay.png',
+    quoteSectionQuoteLine1: 'QUOTE/FEEDBACK',
+    quoteSectionQuoteLine2: 'FROM KEY PERSON',
+    quoteSectionNameAndJob: 'Name & Job Title',
+    quoteSectionTeamInvolved: 'Involved Team',
     infoGathered: [
       'The most complex part of the initial product was how the App’s questions translated into carbon emissions. The project we took over had an obscure implementation, constructed and implemented by certain data scientists with whom we had no contact with.',
       'We have never launched a product in China before.We had to learn the requirements around hosting as well as determine which dependencies would need to be replaced due to their firewall.',
@@ -76,35 +75,61 @@ function AuroraDetails() {
   };
 
   return (
-    <div className="relative flex flex-1 flex-col">
-      <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px] z-10">
+    <div>
+      {/* mobile top section div */}
+      <div className="relative block lg:hidden w-full h-full lg:overflow-hidden">
+        <div className="relative w-full h-full bg-primary">
+          <div className="w-full h-full">
+            <MobileHeader />
+          </div>
+        </div>
+      </div>
+
+      {/* desktop header section */}
+      <div className="relative overflow-hidden">
+        <div className="hidden lg:flex lg:flex-col lg:relative w-full bg-cover bg-bottom items-center pb-[90px] z-10">
+          <div
+            className="bg-primary h-full"
+            style={{
+              position: 'absolute',
+              left: '-16%',
+              width: '130vw',
+              borderBottomLeftRadius: '50%',
+              borderBottomRightRadius: '50%',
+            }}
+          />
+          <Header />
+        </div>
         <div
-          className="bg-primary h-full"
+          className="lg:bg-bottom w-full -z-10 lg:-mt-52 flex flex-col items-center relative justify-center h-[500px] lg:h-[850px]"
           style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
-            borderBottomLeftRadius: '50%',
-            borderBottomRightRadius: '50%',
+            backgroundImage: 'url(raubexBackground-2.png)',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
           }}
-        />
-        <Header />
+        >
+          <h1 className="text-highlight font-bold uppercase text-5xl lg:text-8xl">
+            {clientDetails.clientName}
+          </h1>
+
+          {/* Curve for next contrainer has to be defined inside this container to use the overflow hidden fix */}
+          <div
+            className="block lg:hidden absolute bg-secondary h-[100px] bottom-0"
+            style={{
+              left: '-10%',
+              width: '120vw',
+              borderTopLeftRadius: '50%',
+              borderTopRightRadius: '50%',
+            }}
+          />
+        </div>
       </div>
-      <div
-        className="w-full bg-cover bg-bottom -z-10 -mt-24 flex flex-col items-center relative justify-center "
-        style={{
-          backgroundImage: `url(auroraBackground-2.png)`,
-          backgroundPosition: 'cover',
-          height: '850px',
-        }}
-      >
-        <h1 className="text-highlight font-bold uppercase text-8xl -mt-24">
-          {clientDetails.clientName}
-        </h1>
-      </div>
-      <div className="w-full bg-cover h-full -mt-[250px] pt-12 px-12 flex flex-col items-center relative z-20">
+
+      {/* Intro Section */}
+
+      <div className="relative w-full h-full hidden lg:flex flex-col bg-cover -mt-32 lg:-mt-[150px] items-center z-20 lg:overflow-hidden">
         <div
-          className="bg-secondary h-full -z-20"
+          className="hidden lg:block bg-secondary h-full -z-20"
           style={{
             position: 'absolute',
             left: '-41%',
@@ -113,20 +138,21 @@ function AuroraDetails() {
             borderTopRightRadius: '50%',
           }}
         />
-        <div
-          className="bg-secondary -z-20"
-          style={{
-            position: 'absolute',
-            height: '50%',
-            top: '60%',
-            left: '-41%',
-            width: '180vw',
-            borderBottomLeftRadius: '50%',
-            borderBottomRightRadius: '50%',
-          }}
-        />
 
-        {/* Intro Section */}
+        <IntroAndChallengeSection
+          clientName={clientDetails?.clientName}
+          problem={clientDetails?.problem}
+          solution={clientDetails?.solution}
+          challenges={clientDetails?.challenge}
+          services={clientDetails?.services}
+        />
+      </div>
+
+      {/* Intro section mobile */}
+      <div className="relative w-full h-full flex flex-col lg:hidden bg-secondary z-20">
+        <div className="flex w-full justify-center items-center text-center absolute -top-[70px]">
+          <h1 className="text-white uppercase font-bold text-3xl">{clientDetails?.clientName}</h1>
+        </div>
 
         <IntroAndChallengeSection
           clientName={clientDetails?.clientName}
@@ -139,101 +165,33 @@ function AuroraDetails() {
 
       {/* Quote Section */}
 
-      <div className="relative flex -mt-20 h-[1300px] w-full overflow-hidden">
-        <div className="absolute bg-primary h-[1300px] w-full overflow-hidden -z-10" />
-        <div className="flex w-full mt-60">
-          <div className="w-1/3 pl-64">
-            <QuoteSvg />
-            <p className="text-white text-5xl pb-1">QUOTE/FEEDBACK</p>
-            <p className="text-white text-5xl pb-16">FROM KEY PERSON</p>
-
-            <div className="relative">
-              <div
-                className="absolute top-16 left-0"
-                style={{
-                  zIndex: '-1',
-                }}
-              >
-                <SwiggleSvg width="1000" />
-              </div>
-              <p className="text-highlight italic text-3xl">- Name & Job Title</p>
-            </div>
-            <p className="text-highlight text-3xl pt-32">Involved Team</p>
-          </div>
-          <div className="relative w-2/3">
-            <div
-              className="absolute right-[250px] top-[200px] scaleLottiex4"
-              style={{
-                zIndex: '-2',
-              }}
-            >
-              <Lottie animationData={flashingLottieOrange} loop={true} />
-            </div>
-            <picture className="absolute right-0 bottom-0">
-              <source srcSet="/case-studies/aurora-clay.png" />
-              <img
-                src="/case-studies/aurora-clay.png"
-                alt={clientDetails?.clientName + 'image'}
-                className=""
-              />
-            </picture>
-          </div>
-        </div>
+      <div className="flex relative bg-primary xl:h-[1100px] w-full overflow-hidden">
+        <div
+          className="absolute hidden xl:block bg-secondary h-[150px] z-20"
+          style={{
+            left: '-10%',
+            width: '120vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
+        <QuoteSection
+          clientName={clientDetails.clientName}
+          quoteLine1={clientDetails.quoteSectionQuoteLine1}
+          quoteLine2={clientDetails.quoteSectionQuoteLine2}
+          nameAndJob={clientDetails.quoteSectionNameAndJob}
+          involvedTeam={clientDetails.quoteSectionTeamInvolved}
+        />
       </div>
 
       {/* Our Approach Section */}
 
-      <div className="bg-secondary flex flex-1 flex-col w-full">
-        <h1 className="text-white font-bold text-4xl text-center justify-center mt-20">
-          OUR APPROACH
-        </h1>
-
-        <div className="flex justify-center items-center mt-12">
-          <div className="flex flex-col">
-            <HeadingWithLine text="What did we need to know?" swiggleOption="1" />
-
-            <div className="flex flex-row w-full justify-center items-center mt-12">
-              <div className="flex flex-col max-w-5xl justify-center">
-                <ul>
-                  {clientDetails?.infoGathered.map((item, key) => (
-                    <li key={key} className="text-white text-2xl mb-6 leading-8 list-disc">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <HeadingWithLine
-              text="How did we uncover this info?"
-              swiggleOption="1"
-              className="mt-12"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-row mt-8 w-full items-center justify-center pb-32 pt-12">
-          <div className="w-3/5 pr-12">
-            <picture
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-              }}
-            >
-              <source srcSet="/case-studies/aurora-solutions.png" />
-              <img src="/case-studies/aurora-solutions.png" alt={'raubex-solution-image'} />
-            </picture>
-          </div>
-          <div className="w-2/5 pr-64">
-            <ul>
-              {clientDetails?.infoGatheringMethod.map((item, key) => (
-                <li key={key} className="text-white list-disc mb-4 text-2xl leading-[3rem]">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="flex w-full bg-secondary">
+        <OurApproachSection
+          clientName={clientDetails.clientName}
+          infoGathered={clientDetails.infoGathered}
+          infoGatheringMethod={clientDetails.infoGatheringMethod}
+        />
       </div>
 
       {/* Designing/ Building process Section */}
@@ -248,6 +206,7 @@ function AuroraDetails() {
       {/* Results Section */}
       <div>
         <ResultsSection
+          clientName={clientDetails.clientName}
           resultsBackgroundImageString={clientDetails?.resultsBackgroundImage}
           clientResults={clientDetails?.clientResults}
           results={clientDetails?.results}
@@ -256,12 +215,8 @@ function AuroraDetails() {
 
       {/* Navigation back arrow row Section */}
 
-      <div
-        onClick={() => router.push('/case-studies')}
-        className="flex flex-row bg-primary items-center justify-center py-12 cursor-pointer"
-      >
-        <ArrowLeftSvg />
-        <span className="uppercase text-white font-bold text-3xl ml-8">Back to case studies</span>
+      <div className="bg-primary w-full flex justify-center items-center">
+        <SeeBanner label="Back to case studies" url="/case-studies" invert />
       </div>
 
       {/* Footer section */}

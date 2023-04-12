@@ -215,6 +215,7 @@ function RevioDetails() {
       </div>
 
       {/* Results Section */}
+
       <div>
         <ResultsSection
           clientName={clientDetails.clientName}
@@ -226,7 +227,7 @@ function RevioDetails() {
 
       {/* Navigation back arrow row Section */}
 
-      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
+      <div className="bg-primary w-full flex justify-center items-center">
         <SeeBanner label="Back to case studies" url="/case-studies" invert />
       </div>
 

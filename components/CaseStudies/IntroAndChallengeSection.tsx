@@ -83,7 +83,7 @@ export function IntroAndChallengeSection({
           {services.map((item, key) => (
             <a
               key={key}
-              className="text-white border text-center rounded-full py-2 mr-2 px-4 my-3 mx-4 lg:my-0 lg:mx-0"
+              className="text-white border text-center rounded-full py-2 mr-2 px-4 my-3 mx-4 lg:mx-0"
             >
               {item}
             </a>

@@ -18,13 +18,14 @@ export function ResultsSection({
       ? '/case-studies/revioLandingPage.png'
       : clientName === 'raubex'
       ? '/case-studies/raubexLandingPage.png'
-      : '';
+      : '/case-studies/auroraLandingPage.png';
+
   return (
     <div className="flex flex-col lg:flex-row lg:h-[620px]">
       <div className="lg:hidden w-full relative">
         <div className="flex w-full justify-center items-center absolute bottom-10">
           <div className="flex bg-highlight p-3 rounded-full max-w-[350px]">
-            <span className="text-white font-medium text-xl lg:text-2xl text-center">
+            <span className="text-white font-normal lg:font-medium text-xl lg:text-2xl text-center">
               {clientResults}
             </span>
           </div>

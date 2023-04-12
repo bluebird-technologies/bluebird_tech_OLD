@@ -11,7 +11,7 @@ interface SeeBannerProps {
 
 export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
   return (
-    <div className="flex flex-row justify-center">
+    <div className="flex flex-row justify-center py-8 lg:py-20">
       <Link href={url}>
         <div className="hidden lg:flex items-center justify-center">
           {invert ? (

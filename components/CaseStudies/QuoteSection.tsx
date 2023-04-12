@@ -19,6 +19,12 @@ function RevioQuoteSection({
   nameAndJob,
   involvedTeam,
 }: RevioQuoteSectionProps) {
+  const imgSrc =
+    clientName === 'revio'
+      ? '/case-studies/clay.png'
+      : clientName === 'raubex'
+      ? 'raubex-clay.png'
+      : 'aurora-clay.png';
   // using xl breakpoint for this component since the image section breaks the UI sooner
   return (
     <div className="relative flex flex-col xl:flex-row w-full xl:mt-60 xl:h-full">
@@ -53,15 +59,23 @@ function RevioQuoteSection({
         >
           <Lottie animationData={flashingLottieOrange} loop={true} />
         </div>
-        <picture className="absolute top-0 xl:top-60" style={{ zIndex: 3 }}>
-          <source srcSet="/case-studies/clay.png" />
-          <img src="/case-studies/clay.png" alt={clientName + 'image'} className="w-full" />
-        </picture>
+
+        {clientName !== 'aurora' ? (
+          <picture className="absolute top-0 xl:top-60" style={{ zIndex: 3 }}>
+            <source srcSet={imgSrc} />
+            <img src={imgSrc} alt={clientName + 'image'} className="w-full" />
+          </picture>
+        ) : (
+          <picture className="absolute top-0 xl:-top-20" style={{ zIndex: 3 }}>
+            <source srcSet={imgSrc} />
+            <img src={imgSrc} alt={clientName + 'image'} className="w-full" />
+          </picture>
+        )}
       </div>
       <div className="xl:hidden block">
         <picture className="h-full" style={{ zIndex: 3 }}>
-          <source srcSet="/case-studies/clay.png" />
-          <img src="/case-studies/clay.png" alt={clientName + 'image'} className="w-full" />
+          <source srcSet={imgSrc} />
+          <img src={imgSrc} alt={clientName + 'image'} className="w-full" />
         </picture>
       </div>
       <div className="xl:hidden w-full flex justify-center items-center mb-10">

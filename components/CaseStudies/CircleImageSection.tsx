@@ -1,25 +1,12 @@
 import React from 'react';
-// import CircleArrow from '../../components/CaseStudies/icons/circle-arrow';
-import Circle from 'public/case-studies/circular-arrow.svg';
+import CircleArrow from '../../components/CaseStudies/icons/circle-arrow';
 import Image from 'next/image';
 
-// 'md': '768px',
-
-// 'lg': '1024px',
-
-// 'xl': '1280px',
-
-// '2xl': '1536px',
-
 export function CircleImageSection() {
-  const margins = 'ml-0 md:ml-0 lg:-ml-32 xl:-ml-10';
-  const widths = 'w-[100px] md:w-[100px] lg:w-[500px] xl:w-[550px]';
   return (
-    <div className="relative w-full">
-      <div className="w-[300px]">
-        <Circle />
-      </div>
-      {/* <div className="absolute">
+    <div className="w-[700px] relative">
+      {CircleArrow}
+      <div className="absolute">
         <span className="absolute -top-[220px] left-[230px] font-bold text-2xl text-center">
           1-4 WEEKS
         </span>
@@ -59,7 +46,7 @@ export function CircleImageSection() {
             <span className="absolute text-white font-bold text-2xl">DELIVERY</span>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
