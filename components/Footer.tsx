@@ -1,6 +1,6 @@
 import React from 'react';
-import FacebookIcon from '../public/facebook.svg';
-import LinkedinIcon from '../public/linkedin.svg';
+import FacebookIcon from '../public/footer/facebook.svg';
+import LinkedinIcon from '../public/footer/linkedin.svg';
 
 const Footer = () => {
   return (
@@ -26,10 +26,14 @@ const Footer = () => {
             <div className="font-normal">info@bluebird.tech</div>
             <div className="lg:hidden flex flex-row mt-12">
               <a href="https://www.linkedin.com/company/bluebirddev/">
-                <LinkedinIcon className="mr-4" />
+                <div className="h-[40px] mr-4">
+                  <LinkedinIcon />
+                </div>
               </a>
               <a href="https://www.facebook.com/BluebirdDevelopment">
-                <FacebookIcon />
+                <div className="h-[40px]">
+                  <FacebookIcon />
+                </div>
               </a>
             </div>
           </div>
@@ -97,10 +101,14 @@ const LinksSections = () => {
       </ol>
       <div className="flex flex-row justify-end mt-4">
         <a href="https://www.linkedin.com/company/bluebirddev/">
-          <LinkedinIcon className="mr-4" />
+          <div className="h-[57px] mr-4">
+            <LinkedinIcon />
+          </div>
         </a>
         <a href="https://www.facebook.com/BluebirdDevelopment">
-          <FacebookIcon />
+          <div className="h-[57px]">
+            <FacebookIcon />
+          </div>
         </a>
       </div>
     </div>

@@ -208,7 +208,7 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="bg-grey -mt-6 py-[54px]">
+      <div className="bg-grey -mt-6 pt-[54px]">
         <Footer />
       </div>
     </div>
