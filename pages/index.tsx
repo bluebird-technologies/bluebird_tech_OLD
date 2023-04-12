@@ -34,8 +34,11 @@ export default function Home() {
           <Header />
         </div>
         <Container wide>
-          <div className="mb-44 flex w-full flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start">
-            <h1 className="text-center text-[40px] font-extrabold uppercase leading-[64px] text-white mt-0 md:mt-12 lg:mt-[82px] 2xl:text-left 2xl:text-[52px] ">
+          <div
+            className="mb-44 flex w-full flex-col items-center justify-center lg:mb-0 2xl:items-start 2xl:justify-start"
+            style={{ zIndex: 1 }}
+          >
+            <h1 className="text-center text-[40px] font-extrabold uppercase leading-[64px] text-white mt-0 md:mt-12 lg:mt-[82px] 2xl:text-left 2xl:text-[52px]">
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
             <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>

@@ -16,7 +16,7 @@ export function MobileHeader() {
   return (
     <>
       {showNavigation && (
-        <div className="relative bg-primary flex w-full h-[100vh] p-4">
+        <div className="fixed bg-primary flex w-full h-[100vh] p-4" style={{ zIndex: 50 }}>
           <div className="flex flex-col w-[40vw]">
             {navLinks.map((nav) => {
               return (
