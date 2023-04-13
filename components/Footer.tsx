@@ -1,15 +1,18 @@
 import React from 'react';
-import FacebookIcon from '../public/facebook.svg';
-import LinkedinIcon from '../public/linkedin.svg';
+import FacebookIcon from '../public/footer/facebook.svg';
+import LinkedinIcon from '../public/footer/linkedin.svg';
 
 const Footer = () => {
   return (
     <div className="w-full h-full flex flex-1 bg-grey py-6 lg:py-20 px-12 lg:px-32">
       <div className="flex w-full">
-        <picture className="hidden lg:block">
-          <source srcSet="/home/logo.svg" type="image/svg+xml" />
-          <img src="/home/logo.svg" alt="Bluebird" className="w-[121px] mx-10" />
-        </picture>
+        <div className="hidden xl:flex h-full justify-end items-end pr-14 pb-6">
+          <picture>
+            <source srcSet="/home/logo.svg" type="image/svg+xml" />
+            <img src="/home/logo.svg" alt="Bluebird" className="w-36" />
+          </picture>
+        </div>
+
         <div className="text-[18px] leading-[21px] ml-4">
           <div className="lg:border-b-2 border-primary pb-6 mb-6 flex flex-col lg:flex lg:flex-row lg:items-end ">
             <AddressOne />
@@ -21,6 +24,18 @@ const Footer = () => {
           <div>
             <div className="font-semibold uppercase mb-1">Contact us</div>
             <div className="font-normal">info@bluebird.tech</div>
+            <div className="lg:hidden flex flex-row mt-12">
+              <a href="https://www.linkedin.com/company/bluebirddev/">
+                <div className="h-[40px] mr-4">
+                  <LinkedinIcon />
+                </div>
+              </a>
+              <a href="https://www.facebook.com/BluebirdDevelopment">
+                <div className="h-[40px]">
+                  <FacebookIcon />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <LinksSections />
@@ -86,10 +101,14 @@ const LinksSections = () => {
       </ol>
       <div className="flex flex-row justify-end mt-4">
         <a href="https://www.linkedin.com/company/bluebirddev/">
-          <LinkedinIcon className="mr-4" />
+          <div className="h-[57px] mr-4">
+            <LinkedinIcon />
+          </div>
         </a>
         <a href="https://www.facebook.com/BluebirdDevelopment">
-          <FacebookIcon />
+          <div className="h-[57px]">
+            <FacebookIcon />
+          </div>
         </a>
       </div>
     </div>
