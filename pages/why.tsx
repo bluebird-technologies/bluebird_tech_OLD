@@ -199,7 +199,7 @@ const Why = () => {
       {/* Culture section Mobile */}
       <div className="relative h-full 2xl:hidden">
         <div
-          className="absolute bg-secondary h-[100%] w-[360vw]  left-[-132%] 2xl:hidden"
+          className="absolute bg-secondary h-[100%] w-[362vw]  left-[-132%] 2xl:hidden"
           style={{
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
