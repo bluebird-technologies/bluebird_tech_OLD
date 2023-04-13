@@ -77,14 +77,14 @@ export default function WhatSetsUpApartCarousel() {
 
 function CarouselSlideItem({ label, description, animation }: Props) {
   return (
-    <div className="mb-20 items-center flex flex-1 justify-center flex-col">
+    <div className="mb-20 pt-8 items-center flex flex-1 justify-center flex-col">
       <div className="flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px] text-center">
         <h1 className="text-highlight">{label}</h1>
       </div>
-      <div className="flex flex-1 items-center justify-center flex-wrap">
-        <p className="text-black text-base text-center w-2/4   sm:text-base md:text-lg lg:text-xl">
+      <div className="flex flex-1 items-center mx-4 justify-center w-[280px] min-[400px]:w-[340px] sm:w-[480px] md:w-[550px] lg:w-[620px] flex-wrap">
+        <span className="text-black  text-center sm:text-base md:text-lg lg:text-xl ">
           {description}
-        </p>
+        </span>
       </div>
       <div className="w-full sm:max-w-md lg:max-w-lg mx-auto my-4 sm:my-8 lg:my-16">
         <Lottie
