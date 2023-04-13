@@ -49,7 +49,7 @@ const Why = () => {
 
   const [isFirstSelected, setIsFirstSelected] = useState(true);
   return (
-    <div className="w-full  overflow-hidden">
+    <div className="w-full overflow-hidden">
       <div className="w-full flex flex-col relative pv-20  2xl:pb-40 ">
         <div
           className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
@@ -123,14 +123,14 @@ const Why = () => {
             <div className="flex w-full  2xl:justify-start  justify-center">
               <div className="hidden xl:block w-1/3" />
               {isFirstSelected ? (
-                <p className="text-white text-lg mb-8 mt-4 xl:px-2 w-full">
+                <p className="text-white text-lg text-center mb-8 mt-4 xl:px-2 w-full">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                   vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                   no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
               ) : (
-                <p className="text-white text-lg mb-8 mt-4 xl:px-2 w-full">
+                <p className="text-white text-lg mb-8 text-center mt-4 xl:px-2 w-full">
                   Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
                   dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
                   invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
@@ -199,7 +199,7 @@ const Why = () => {
       {/* Culture section Mobile */}
       <div className="relative h-full 2xl:hidden">
         <div
-          className="absolute bg-secondary h-[100%] w-[285vw]  left-[-98%] 2xl:hidden"
+          className="absolute bg-secondary h-[100%] w-[360vw]  left-[-132%] 2xl:hidden"
           style={{
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
@@ -317,7 +317,7 @@ const Why = () => {
       </div>
 
       {/* Awards section */}
-      <div className="py-24 flex flex-1 items-center flex-col -mt-32 2xl:mt-0 bg-primary justify-center">
+      <div className="py-32 flex flex-1 items-center flex-col -mt-32 2xl:mt-0 bg-primary justify-center">
         <h1 className="text-highlight font-extrabold text-4xl mt-12 2xl:mt-0 pb-6">AWARDS</h1>
         <Line />
         <div className="max-w-[350px] mt-16">
