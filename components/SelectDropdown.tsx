@@ -21,15 +21,17 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
     <div
       className={
         !isOpened
-          ? 'bg-white relative rounded-[20px] items-center w-[518px] my-2 cursor-pointer'
-          : 'bg-white relative rounded-t-[20px] items-center w-[518px] my-2 cursor-pointer'
+          ? 'bg-white relative rounded-[20px] items-center lg:w-[518px] my-2 cursor-pointer w-5/6'
+          : 'bg-white relative rounded-t-[20px] items-center lg:w-[518px] my-2 cursor-pointer w-5/6'
       }
     >
       <div
         onClick={() => setIsOpened((prev) => !prev)}
         className={'flex flex-1 py-4  px-4 justify-between items-center'}
       >
-        <span className="text-lg font-medium">{selectedOption ? selectedOption : placeholder}</span>
+        <span className="md:text-lg text-base font-medium">
+          {selectedOption ? selectedOption : placeholder}
+        </span>
         <div>{isOpened ? chevronUp : chevronDown}</div>
       </div>
       {isOpened && (
@@ -40,7 +42,7 @@ function SelectDropdown({ placeholder, options, selectedItem }: Props) {
               className="py-[14px] h-full flex-1 flex hover:bg-[#CBCBCB] cursor-pointer"
               key={key}
             >
-              <span className="font-semibold text-lg px-4">{item}</span>
+              <span className="font-semibold text-base md:text-lg px-4">{item}</span>
             </div>
           ))}
         </div>
