@@ -30,29 +30,29 @@ import webflow from './icons/webflow';
 import wordpress from './icons/wordpress';
 import xamarin from './icons/xamarin';
 
-import adobeMobile from './icons/AdobeMobile';
-import angularMobile from './icons/angularMobile';
+import adobeMobile from './icons/mobile/AdobeIllustratorMobile';
+import angularMobile from './icons/mobile/AngularMobile';
 import bankingMobile from './icons/bankingMobile';
 import databaseMobile from './icons/databaseMobile';
-import djangoMobile from './icons/djangoMobile';
+import djangoMobile from './icons/mobile/DjangoMobile';
 import dotnetMobile from './icons/dotnetMobile';
-import figmaMobile from './icons/figmaMobile';
-import flutterMobile from './icons/flutterMobile';
-import ionicMobile from './icons/ionicMobile';
+import figmaMobile from './icons/mobile/FigmaMobile';
+import flutterMobile from './icons/mobile/FlutterMobile';
+import ionicMobile from './icons/mobile/IonicMobile';
 import itMobile from './icons/itMobile';
 import javaMobile from './icons/javaMobile';
 import layerMobile from './icons/layerMobile';
 import logisticMobile from './icons/logisticMobile';
 import nodeMobile from './icons/nodeMobile';
 import nosqlMobile from './icons/nosqlMobile';
-import reactNativeMobile from './icons/reactNativeMobile';
+import reactNativeMobile from './icons/mobile/ReactNativeMobile';
 import servicesMobile from './icons/servicesMobile';
 import sqlMobile from './icons/sqlMobile';
 import transportMobile from './icons/transportMobile';
-import vueMobile from './icons/vueMobile';
-import webflowMobile from './icons/webflowMobile';
-import wordpressMobile from './icons/wordpressMobile';
-import xamarinMobile from './icons/xamarinMobile';
+import vueMobile from './icons/mobile/VueMobile';
+import webflowMobile from './icons/mobile/WebflowMobile';
+import wordpressMobile from './icons/mobile/WordpressMobile';
+import xamarinMobile from './icons/mobile/XamarinMobile';
 
 export const solutions: SolutionType[] = [
   {

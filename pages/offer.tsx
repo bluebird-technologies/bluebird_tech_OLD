@@ -30,14 +30,13 @@ export interface SolutionType {
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
 
-  const hideOnMobile = ['API & System Development', 'Developer Outsourcing', 'Product Management'];
-
   // for the mobile slider
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
 
   return (
     <div className="flex flex-1 flex-col">
       {/* mobile top section div */}
+      {/* whole div is hidden on desktop width */}
       <div className="relative block md:hidden w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-primary">
           <div className="w-full h-full">
@@ -89,29 +88,27 @@ export default function Offer() {
 
         {solutions.map((sol) => {
           if (sol.title === currentSelectedOption) {
-            if (!hideOnMobile.includes(sol.title)) {
-              return (
-                <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
-                  <div className="flex flex-col">
-                    <div className="flex mt-8 mb-12 w-full justify-center">
-                      <div className="max-w-[240px]">
-                        <h1 className="text-xl text-highlight text-center font-semibold">
-                          {sol.catchPhrase}
-                        </h1>
-                      </div>
+            return (
+              <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
+                <div className="flex flex-col">
+                  <div className="flex mt-8 mb-12 w-full justify-center">
+                    <div className="max-w-[240px]">
+                      <h1 className="text-xl text-highlight text-center font-semibold">
+                        {sol.catchPhrase}
+                      </h1>
                     </div>
-                    <IconLayout
-                      content={{
-                        contentType: sol.content.contentType,
-                        icons: sol.content.iconsMobile ?? sol.content.icons,
-                      }}
-                      amtIconsRowOne={sol.amtItemsInFirstRow}
-                      rowTwoCenter={sol.centerSecondRow}
-                    />
                   </div>
+                  <IconLayout
+                    content={{
+                      contentType: sol.content.contentType,
+                      icons: sol.content.iconsMobile ?? sol.content.icons,
+                    }}
+                    amtIconsRowOne={sol.amtItemsInFirstRow}
+                    rowTwoCenter={sol.centerSecondRow}
+                  />
                 </div>
-              );
-            }
+              </div>
+            );
           }
         })}
 
@@ -130,7 +127,7 @@ export default function Offer() {
           })}
         </div>
       </div>
-
+      {/* whole div is hidden on mobile */}
       <div className="hidden md:flex md:flex-col w-full bg-cover bg-bottom items-center relative pb-[150px]">
         <div
           className="bg-primary h-full"
@@ -202,7 +199,6 @@ export default function Offer() {
           </div>
         </div>
       </div>
-
       <div className="hidden md:flex items-center justify-center bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
         {solutions.map((solution) => {
           if (solution.title === solutionOption) {
@@ -217,9 +213,8 @@ export default function Offer() {
           }
         })}
       </div>
-
-      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
-        <SeeBanner label={'EXPLORE OUR OTHER SERVICES'} url={'#'} />
+      <div className="bg-primary w-full flex justify-center items-center">
+        <SeeBanner label="EXPLORE OUR OTHER SERVICES" url={'#'} />
       </div>
       <div className="z-10 w-full bg-[#F1F1F1]">
         <Footer />
