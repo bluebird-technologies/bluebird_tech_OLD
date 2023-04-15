@@ -86,13 +86,11 @@ function CarouselSlideItem({ label, description, animation }: Props) {
           {description}
         </span>
       </div>
-      <div className="w-full sm:max-w-md lg:max-w-lg mx-auto my-4 sm:my-8 lg:my-16">
+      <div className=" flex items-center justify-center w-full sm:max-w-md lg:max-w-lg mx-auto my-4 sm:my-8 lg:my-16">
         <Lottie
           animationData={animation}
           loop={true}
-          style={{
-            height: '280px',
-          }}
+          className="h-[250px] w-[400px] sm:h-[280px] sm:w-[500px]"
         />
       </div>
     </div>
