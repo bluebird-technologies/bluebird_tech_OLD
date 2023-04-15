@@ -37,7 +37,7 @@ const ImageGallery = () => {
         </picture>
       </div>
       <div className="flex justify-center z-0 mb-20 items-center h-full">
-        <h1 className="text-white text-center text-lg mt-8 md:text-xl">
+        <h1 className="text-white text-center text-base mt-8 sm:text-lg md:text-xl">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
           accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
