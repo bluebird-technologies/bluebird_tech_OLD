@@ -11,8 +11,8 @@ export function CircleButton({ icon, text, disabled, onClick }: CircleButtonProp
   return (
     <button onClick={onClick} disabled={disabled} className="h-[70px]">
       <div className="flex justify-start space-x-3 text-white group h-full">
-        <div className="w-[50px] xl:w-[70px]">{icon}</div>
-        <div className="flex flex-col h-full justify-center items-center text-lg md:4xl font-bold uppercase group-hover:scale-110">
+        <div className="w-[50px] sm:w-[70px] xl:w-[100px] 2xl:w-[90px]">{icon}</div>
+        <div className="flex flex-col h-full justify-center items-center text-lg sm:text-2xl lg:text-4xl font-bold uppercase group-hover:scale-110">
           {text}
         </div>
       </div>
