@@ -122,14 +122,14 @@ const Why = () => {
             <div className="flex w-full  2xl:justify-start  justify-center">
               <div className="hidden 2xl:block w-1/3" />
               {isFirstSelected ? (
-                <p className="text-white  xl:text-2xl text-justify mb-8  2xl:px-2 w-full">
+                <p className="text-white  xl:text-2xl text-left mb-8  2xl:px-2 w-full">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                   vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                   no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
               ) : (
-                <p className="text-white xl:text-2xl text-lg mb-8 text-justify  2xl:px-2 w-full">
+                <p className="text-white xl:text-2xl text-lg mb-8 text-left  2xl:px-2 w-full">
                   Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
                   dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
                   invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
