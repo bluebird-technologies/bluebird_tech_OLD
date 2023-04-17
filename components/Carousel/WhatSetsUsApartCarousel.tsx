@@ -79,10 +79,10 @@ function CarouselSlideItem({ label, description, animation }: Props) {
   return (
     <div className="mb-20 pt-8 items-center flex flex-1 justify-center flex-col">
       <div className="flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px] text-center">
-        <h1 className="text-highlight">{label}</h1>
+        <h1 className="text-highlight text-2xl md:text-4xl lg:text-5xl mb-4">{label}</h1>
       </div>
       <div className="flex flex-1 items-center mx-4 justify-center w-[280px] min-[400px]:w-[340px] sm:w-[480px] md:w-[550px] lg:w-[620px] flex-wrap">
-        <span className="text-black  text-center sm:text-base md:text-lg lg:text-xl ">
+        <span className="text-black  text-center sm:text-base md:text-xl lg:text-2xl ">
           {description}
         </span>
       </div>

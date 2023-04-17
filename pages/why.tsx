@@ -50,9 +50,9 @@ const Why = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="w-full flex flex-col relative pv-20  2xl:pb-40 ">
+      <div className="w-full flex flex-col relative pv-20 xl:pb-40 ">
         <div
-          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
+          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%] xl:left-[-16%] xl:w-[130vw]"
           style={{
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
@@ -66,35 +66,66 @@ const Why = () => {
         </div>
 
         {/* Heading section */}
-        <div
-          className="flex  self-center 2xl:self-start  flex-col justify-center 2xl:justify-start mt-24 px-12 xl:px-48 2xl:px-60"
-          style={{
-            width: 'fit-content',
-            blockSize: 'fit-content',
-          }}
-        >
-          <span className="font-bold z-10 text-white text-3xl  lg:text-5xl">
-            WHY <span className="italic">BLUEBIRD ?</span>
-          </span>
-          <div className="flex justify-end">
-            <div className="w-[120px] z-10 lg:w-[250px]">{underline}</div>
+        <div className="flex w-full justify-center mt-24">
+          <div className="flex w-full max-w-[1280px] z-10 justify-center 2xl:justify-start">
+            <div className="flex flex-col">
+              <div className="font-bold z-10 text-white text-3xl lg:text-5xl text-center">
+                WHY <span className="italic">BLUEBIRD?</span>
+              </div>
+              <div className="flex justify-end">
+                <div className="w-[120px] lg:w-[250px] z-10">{underline}</div>
+              </div>
+            </div>
           </div>
         </div>
+
         {/* Post Heading section */}
-        <div className="flex flex-col 2xl:flex-row   2xl:justify-start mt-8 px-8  pb-20 2xl:px-60">
-          <div className="2xl:w-1/2 relative pr-0 2xl:pr-16">
-            <picture>
-              <source srcSet="/why/laptop_1.png" />
-              <img src="/why/laptop_1.png" alt="laptop" />
-            </picture>
-            <div className="absolute -bottom-[100px] -left-4 lg:-left-8 ml-0  2xl:ml-[26vw]  2xl:left-0 2xl:top-0  2xl:mt-8 lg:mt-4 2xl:scale-100 lg:scale-90">
-              <div className="flex  2xl:flex-col">
+        <div className="flex w-full justify-center mt-12 lg:mt-24">
+          <div className="flex flex-col 2xl:flex-row w-full 2xl:max-w-[1280px] px-12 md:px-32 2xl:px-0">
+            {/* left side */}
+            <div className="relative w-full 2xl:w-1/2 z-10 2xl:mr-64">
+              <picture>
+                <source srcSet="/why/laptop_1.png" />
+                <img src="/why/laptop_1.png" alt="laptop" />
+              </picture>
+              <div className="hidden 2xl:block 2xl:absolute top-10 right-0 -mr-44">
+                <div className="flex flex-col">
+                  {isFirstSelected ? (
+                    <div className="ml-12 z-20">
+                      <CircleButton disabled icon={orangeCircleSelected} text="VISION" />
+                    </div>
+                  ) : (
+                    <div className="ml-12 z-20">
+                      <CircleButton
+                        onClick={() => setIsFirstSelected((prev) => !prev)}
+                        icon={blueCircle}
+                        text="VISION"
+                      />
+                    </div>
+                  )}
+                  {!isFirstSelected ? (
+                    <div className="mt-12 z-20">
+                      <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
+                    </div>
+                  ) : (
+                    <div className="mt-12 z-20">
+                      <CircleButton
+                        onClick={() => setIsFirstSelected((prev) => !prev)}
+                        icon={blueCircle}
+                        text="MISSION"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="2xl:hidden flex -mt-8 -ml-6 md:ml-20">
                 {isFirstSelected ? (
-                  <div className=" 2xl:ml-44 mb-12">
+                  <div className="z-20">
                     <CircleButton disabled icon={orangeCircleSelected} text="VISION" />
                   </div>
                 ) : (
-                  <div className=" 2xl:ml-44 mb-12">
+                  <div className="z-20">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
                       icon={blueCircle}
@@ -103,11 +134,11 @@ const Why = () => {
                   </div>
                 )}
                 {!isFirstSelected ? (
-                  <div className="2xl:ml-32  mt-12 2xl:mt-0">
+                  <div className="z-20 ml-3 md:ml-12 mt-16">
                     <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
                   </div>
                 ) : (
-                  <div className="2xl:ml-32  mt-12 2xl:mt-0">
+                  <div className="z-20 ml-3 md:ml-12 mt-16">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
                       icon={blueCircle}
@@ -117,33 +148,35 @@ const Why = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="2xl:w-1/2 z-10  pt-8 mt-24  items-center justify-center  2xl:mt-0">
-            <div className="flex w-full  2xl:justify-start  justify-center">
-              <div className="hidden 2xl:block w-1/3" />
-              {isFirstSelected ? (
-                <p className="text-white  xl:text-2xl text-left mb-8  2xl:px-2 w-full">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-              ) : (
-                <p className="text-white xl:text-2xl text-lg mb-8 text-left  2xl:px-2 w-full">
-                  Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
-                  dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
-                  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-                  et accusam et justo duo dolores et ea rebum.
-                </p>
-              )}
+            {/* right side */}
+            <div className="flex flex-1 z-10 mb-24 mt-12 lg:mt-24 2xl:mt-12 2xl:mb-8">
+              <div className="flex">
+                {isFirstSelected ? (
+                  <p className="text-white w-full lg:text-xl 2xl:text-2xl">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </p>
+                ) : (
+                  <p className="text-white w-full lg:text-xl 2xl:text-2xl">
+                    Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                    et accusam et justo duo dolores et ea rebum.
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* What Sets us apart Section */}
       <div className="flex flex-1 w-full px-4 items-center justify-center 2xl:hidden">
         <WhatSetsUpApartCarousel />
       </div>
-      {/* What Sets us apart Section */}
+
       <div className="hidden w-full 2xl:relative items-center 2xl:flex flex-col h-[1100px] pb-20 relative">
         <div
           className="absolute bg-grey h-[1500px] -mt-[180px] w-full top-0 left-0"
@@ -203,16 +236,41 @@ const Why = () => {
       {/* Culture section Mobile */}
       <div className="relative h-full 2xl:hidden">
         <div
-          className="absolute bg-secondary h-[100%] w-[330vw] left-[-118%] min-[320px]:w-[330vw] min-[320px]:left-[-118%]  min-[380px]:left-[-145%] min-[380px]:w-[382vw] min-[375px]:w-[360vw]  min-[375px]:left-[-133%] min-[517px]:w-[362vw]  min-[517px]:left-[-132%] 2xl:hidden"
+          className="bg-secondary"
           style={{
+            height: '10%',
+            position: 'absolute',
+            top: 0,
+            left: '-12.5%',
+            width: '125vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
-            borderBottomLeftRadius: '50%',
-            borderBottomRightRadius: '50%',
-            paddingBottom: 20,
           }}
         />
-        <ImageGallery />
+        <div
+          className="bg-secondary"
+          style={{
+            height: '80%',
+            position: 'absolute',
+            top: '10%',
+            width: '100vw',
+          }}
+        />
+        <div
+          className="bg-secondary"
+          style={{
+            height: '10%',
+            position: 'absolute',
+            bottom: 0,
+            left: '-12.5%',
+            width: '125vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
+        <div className="pt-12">
+          <ImageGallery />
+        </div>
       </div>
 
       {/* Culture section */}
@@ -221,8 +279,8 @@ const Why = () => {
           className="h-full bg-secondary"
           style={{
             position: 'absolute',
-            left: '-16%',
-            width: '130vw',
+            left: '-26%',
+            width: '150vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
             zIndex: -1,

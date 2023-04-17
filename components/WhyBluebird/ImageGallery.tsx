@@ -2,8 +2,8 @@ import React from 'react';
 
 const ImageGallery = () => {
   return (
-    <div className="mx-4 flex flex-col flex-1 items-center  justify-center">
-      <h1 className="text-white text-center text-4xl z-0 mt-12  font-extrabold">CULTURE</h1>
+    <div className="mx-4 flex flex-col flex-1 items-center justify-center">
+      <h1 className="text-white text-center text-4xl z-0 mt-12 font-extrabold pb-12">CULTURE</h1>
 
       <div className="relative mb-8">
         <picture>
