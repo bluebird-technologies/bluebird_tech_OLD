@@ -344,13 +344,13 @@ function Calculator() {
           </div>
         )}
         {!formSectionActive && (
-          <div className="w-full flex-1 flex flex-col  items-center   ">
+          <div className="w-full overflow-hidden flex-1 flex flex-col  items-center   ">
             <div className=" lg:hidden w-full">
               <MobileHeader />
             </div>
             <div className=" relative xl:h-[900px]">
               <div
-                className="   w-[285vw] -z-1 left-[-98%] bg-primary -z-1  absolute xl:left-[-16%] xl:w-[130vw] h-full"
+                className="   w-[285vw] -z-1 left-[-98%] bg-primary -z-1  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                 style={{
                   borderBottomLeftRadius: '50%',
                   borderBottomRightRadius: '50%',
@@ -371,16 +371,16 @@ function Calculator() {
                       <Lottie
                         animationData={LottieFile}
                         style={{
-                          height: '500px',
                           transform: 'rotate(280deg)',
                         }}
+                        className="h-[200px] 2xl:h-[500px]"
                         loop={true}
                       />
                     </div>
                   </div>
-                  <div className="xl:w-1/2 mt-8 mx-8 xl:mx-0 xl:mt-52">
-                    <div className="xl:pr-64">
-                      <p className=" text-center text-lg text-white font-normal mb-4 xl:text-2xl">
+                  <div className="2xl:w-1/2 px-12  flex items-center justify-center  mt-8 mx-8 xl:mx-0 xl:mt-8 2xl:mt-52">
+                    <div className="flex items-center justify-center flex-col xl:pr-64">
+                      <p className=" text-center text-lg  text-white font-normal mb-4 xl:text-2xl">
                         Intro line of what this page is about (Get an estimate of what you want
                         done).
                       </p>
