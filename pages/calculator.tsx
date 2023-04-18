@@ -15,6 +15,7 @@ import QuoteCalculatorWidget from '../components/Calculator/QuoteCalculatorWidge
 import CalculatorSquiggle from '../components/Calculator/icons/CalculatorSquiggle';
 import { calculateTotals, getAllRoles } from '../components/Calculator/data/Utility';
 import YourTeam from '../components/Calculator/YourTeam';
+import { MobileHeader } from '../components/MobileHeader';
 
 function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
@@ -140,13 +141,13 @@ function Calculator() {
   const teamMembers = combineAndDisplayRoles();
 
   return (
-    <>
+    <div>
       {formSectionActive && (
         <div>
           <CalculatorContext.Provider value={contextValue}>
             {!showCalculationScreen && (
-              <>
-                <div className="w-full flex flex-col items-center relative h-[200px]">
+              <div>
+                <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
                   <div
                     className="bg-primary h-full"
                     style={{
@@ -157,7 +158,12 @@ function Calculator() {
                       borderBottomRightRadius: '50%',
                     }}
                   />
-                  <Header />
+                  <div className="w-full 2xl:hidden">
+                    <MobileHeader />
+                  </div>
+                  <div className="hidden 2xl:block">
+                    <Header />
+                  </div>
                 </div>
 
                 <div className="flex bg-secondary h-[1100px] w-full -mt-64">
@@ -168,7 +174,7 @@ function Calculator() {
                     <QuoteCalculatorWidget />
                   </div>
                 </div>
-              </>
+              </div>
             )}
             {showCalculationScreen && (
               <>
@@ -183,7 +189,9 @@ function Calculator() {
                       borderBottomRightRadius: '50%',
                     }}
                   />
-                  <Header />
+                  <div className="hidden">
+                    <Header />
+                  </div>
                   <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
                     <h1 className="w-full text-center title-1">Your Quote Estimate</h1>
                     <div className="flex w-full justify-center">
@@ -350,7 +358,12 @@ function Calculator() {
               borderBottomRightRadius: '50%',
             }}
           />
-          <Header />
+          <div className=" lg:hidden w-full">
+            <MobileHeader />
+          </div>
+          <div className="hidden lg:block w-full">
+            <Header />
+          </div>
           <div className="w-full flex flex-col">
             <div className="flex w-full mt-32" style={{ zIndex: 5 }}>
               <div className="flex flex-col justify-center text-center w-1/2">
@@ -419,7 +432,7 @@ function Calculator() {
           <Footer />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
