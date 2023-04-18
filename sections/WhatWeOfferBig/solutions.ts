@@ -82,7 +82,7 @@ export const solutions: SolutionType[] = [
     content: {
       contentType: 'icon',
       icons: [flutter, reactNative, ionic, xamarin],
-      iconsMobile: [flutterMobile, reactNativeMobile, ionicMobile, xamarinMobile],
+      iconsMobile: [reactNativeMobile, flutterMobile, ionicMobile, xamarinMobile],
     },
     amtItemsInFirstRow: 2,
     centerSecondRow: false,

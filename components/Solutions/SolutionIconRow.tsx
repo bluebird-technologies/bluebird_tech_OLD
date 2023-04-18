@@ -9,7 +9,7 @@ interface IconRowProps {
 }
 
 function SolutionIconRow({ icons, center, contentType }: IconRowProps) {
-  const rowClassTouchOuter = 'flex justify-between space-x-3 2xl:space-x-16 px-2';
+  const rowClassTouchOuter = 'flex justify-between space-x-3 2xl:space-x-16 px-3';
   const rowClassFromInner = 'flex justify-center items-center space-x-3 2xl:space-x-0 px-2';
 
   return (
