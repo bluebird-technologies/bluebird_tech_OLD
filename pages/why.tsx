@@ -13,6 +13,9 @@ import Line from '../public/why/line.svg';
 import Footer from '../components/Footer';
 import { CircleButton } from '../components/WhyBluebird/CircleButton';
 import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverlayTextContainer';
+import { MobileHeader } from '../components/MobileHeader';
+import WhatSetsUpApartCarousel from '../components/Carousel/WhatSetsUsApartCarousel';
+import ImageGallery from '../components/WhyBluebird/ImageGallery';
 
 const Why = () => {
   type btnOptions = 'Lean' | 'Boutique' | 'Personal';
@@ -46,52 +49,83 @@ const Why = () => {
   const [isFirstSelected, setIsFirstSelected] = useState(true);
 
   return (
-    <div>
-      <div className="w-full flex flex-col relative h-[110vh] xl:h-[94vh] ">
+    <div className="w-full overflow-hidden">
+      <div className="w-full flex flex-col relative pv-20 xl:pb-40 ">
         <div
-          className="bg-primary h-full"
+          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%] xl:left-[-16%] xl:w-[130vw]"
           style={{
-            position: 'absolute',
-            left: '-16%',
-            width: '130vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
-            zIndex: -1,
           }}
         />
-        <Header />
+        <div className="hidden xl:block">
+          <Header />
+        </div>
+        <div className="block xl:hidden">
+          <MobileHeader />
+        </div>
 
         {/* Heading section */}
-        <div
-          className="flex flex-col justify-center xl:justify-start mt-24 px-12 xl:px-48 2xl:px-60"
-          style={{
-            width: 'fit-content',
-            blockSize: 'fit-content',
-          }}
-        >
-          <div className="font-bold text-white text-5xl">
-            WHY <span className="italic">BLUEBIRD ?</span>
-          </div>
-          <div className="flex justify-end">
-            <div className="w-[250px]">{underline}</div>
+        <div className="flex w-full justify-center mt-24">
+          <div className="flex w-full max-w-[1280px] z-10 justify-center 2xl:justify-start">
+            <div className="flex flex-col">
+              <div className="font-bold z-10 text-white text-3xl lg:text-5xl text-center">
+                WHY <span className="italic">BLUEBIRD?</span>
+              </div>
+              <div className="flex justify-end">
+                <div className="w-[120px] lg:w-[250px] z-10">{underline}</div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Post Heading section */}
-        <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start mt-12 px-12 xl:px-48 2xl:px-60">
-          <div className="w-1/2 relative pr-0 2xl:pr-16">
-            <picture>
-              <source srcSet="/why/laptop_1.png" />
-              <img src="/why/laptop_1.png" alt="laptop" />
-            </picture>
-            <div className="absolute left-0 top-0 ml-[26vw] 2xl:mt-8 lg:mt-4 2xl:scale-100 lg:scale-90">
-              <div className="flex flex-col space-y-12">
+        <div className="flex w-full justify-center mt-12 lg:mt-24">
+          <div className="flex flex-col 2xl:flex-row w-full 2xl:max-w-[1280px] px-12 md:px-32 2xl:px-0">
+            {/* left side */}
+            <div className="relative w-full 2xl:w-1/2 z-10 2xl:mr-64">
+              <picture>
+                <source srcSet="/why/laptop_1.png" />
+                <img src="/why/laptop_1.png" alt="laptop" />
+              </picture>
+              <div className="hidden 2xl:block 2xl:absolute top-10 right-0 -mr-44">
+                <div className="flex flex-col">
+                  {isFirstSelected ? (
+                    <div className="ml-12 z-20">
+                      <CircleButton disabled icon={orangeCircleSelected} text="VISION" />
+                    </div>
+                  ) : (
+                    <div className="ml-12 z-20">
+                      <CircleButton
+                        onClick={() => setIsFirstSelected((prev) => !prev)}
+                        icon={blueCircle}
+                        text="VISION"
+                      />
+                    </div>
+                  )}
+                  {!isFirstSelected ? (
+                    <div className="mt-12 z-20">
+                      <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
+                    </div>
+                  ) : (
+                    <div className="mt-12 z-20">
+                      <CircleButton
+                        onClick={() => setIsFirstSelected((prev) => !prev)}
+                        icon={blueCircle}
+                        text="MISSION"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="2xl:hidden flex -mt-8 -ml-6 md:ml-20">
                 {isFirstSelected ? (
-                  <div className="pl-16">
+                  <div className="z-20">
                     <CircleButton disabled icon={orangeCircleSelected} text="VISION" />
                   </div>
                 ) : (
-                  <div className="pl-16">
+                  <div className="z-20">
                     <CircleButton
                       onClick={() => setIsFirstSelected((prev) => !prev)}
                       icon={blueCircle}
@@ -100,47 +134,55 @@ const Why = () => {
                   </div>
                 )}
                 {!isFirstSelected ? (
-                  <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
+                  <div className="z-20 ml-3 md:ml-12 mt-16">
+                    <CircleButton disabled icon={orangeCircleSelected} text="MISSION" />
+                  </div>
                 ) : (
-                  <CircleButton
-                    onClick={() => setIsFirstSelected((prev) => !prev)}
-                    icon={blueCircle}
-                    text="MISSION"
-                  />
+                  <div className="z-20 ml-3 md:ml-12 mt-16">
+                    <CircleButton
+                      onClick={() => setIsFirstSelected((prev) => !prev)}
+                      icon={blueCircle}
+                      text="MISSION"
+                    />
+                  </div>
                 )}
               </div>
             </div>
-          </div>
-          <div className="w-1/2 mt-12 2xl:mt-0">
-            <div className="flex w-full 2xl:justify-start justify-center">
-              <div className="hidden xl:block w-1/3" />
-              {isFirstSelected ? (
-                <p className="text-white text-xl w-full xl:w-2/3">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-              ) : (
-                <p className="text-white text-xl w-full xl:w-2/3">
-                  Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
-                  dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
-                  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-                  et accusam et justo duo dolores et ea rebum.
-                </p>
-              )}
+            {/* right side */}
+            <div className="flex flex-1 z-10 mb-24 mt-12 lg:mt-24 2xl:mt-12 2xl:mb-8">
+              <div className="flex">
+                {isFirstSelected ? (
+                  <p className="text-white w-full lg:text-xl 2xl:text-2xl">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  </p>
+                ) : (
+                  <p className="text-white w-full lg:text-xl 2xl:text-2xl">
+                    Lorem ipsum dolor sit amet sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore magna aliquyam erat, sed diam voluptua. Sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                    et accusam et justo duo dolores et ea rebum.
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* What Sets us apart Section */}
-      <div className="w-full h-[900px] relative">
+      <div className="flex flex-1 w-full px-4 items-center justify-center 2xl:hidden">
+        <WhatSetsUpApartCarousel />
+      </div>
+
+      <div className="hidden w-full 2xl:relative items-center 2xl:flex flex-col h-[1100px] pb-20 relative">
         <div
-          className="absolute bg-grey h-[1050px] -mt-[150px] w-full top-0 left-0"
+          className="absolute bg-grey h-[1500px] -mt-[180px] w-full top-0 left-0"
           style={{ zIndex: -5 }}
         />
-        <div className="flex flex-col w-full justify-center h-[full] pt-24">
+        <div className="flex flex-col items-center w-6/7  justify-center  pt-24">
           <h1 className="text-center font-bold text-5xl text-secondary uppercase">
             <span className="italic">WHAT SETS US </span>
             <span className="font-extrabold">APART?</span>
@@ -160,13 +202,13 @@ const Why = () => {
                 );
               })}
             </div>
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 items-center justify-center flex flex-col">
               <div className="w-[300px]">{waveLines}</div>
               <div className="pt-8">
                 {coreValues.map((res) => {
                   if (res.key === activeBtn) {
                     return (
-                      <p key={res.key} className="text-2xl">
+                      <p key={res.key} className=" text-center text-2xl">
                         {res.description}
                       </p>
                     );
@@ -177,7 +219,13 @@ const Why = () => {
             <div className="flex-1 flex">
               {coreValues.map((item, index) => (
                 <div key={index} className={item.key === 'Personal' ? '-mt-24' : ''}>
-                  {item.key === activeBtn && <Lottie animationData={item.animation} loop={true} />}
+                  {item.key === activeBtn && (
+                    <Lottie
+                      className="h-[400px] w-[600px]"
+                      animationData={item.animation}
+                      loop={true}
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -185,14 +233,54 @@ const Why = () => {
         </div>
       </div>
 
+      {/* Culture section Mobile */}
+      <div className="relative h-full 2xl:hidden">
+        <div
+          className="bg-secondary"
+          style={{
+            height: '10%',
+            position: 'absolute',
+            top: 0,
+            left: '-12.5%',
+            width: '125vw',
+            borderTopLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+          }}
+        />
+        <div
+          className="bg-secondary"
+          style={{
+            height: '80%',
+            position: 'absolute',
+            top: '10%',
+            width: '100vw',
+          }}
+        />
+        <div
+          className="bg-secondary"
+          style={{
+            height: '10%',
+            position: 'absolute',
+            bottom: 0,
+            left: '-12.5%',
+            width: '125vw',
+            borderBottomLeftRadius: '50%',
+            borderBottomRightRadius: '50%',
+          }}
+        />
+        <div className="pt-12">
+          <ImageGallery />
+        </div>
+      </div>
+
       {/* Culture section */}
-      <div className="relative -mt-60">
+      <div className="hidden 2xl:block 2xl:relative -mt-60">
         <div
           className="h-full bg-secondary"
           style={{
             position: 'absolute',
-            left: '-16%',
-            width: '130vw',
+            left: '-26%',
+            width: '150vw',
             borderTopLeftRadius: '50%',
             borderTopRightRadius: '50%',
             zIndex: -1,
@@ -280,8 +368,8 @@ const Why = () => {
                 </picture>
               </div>
             </div>
-            <div className="flex justify-center items-end h-full mb-24">
-              <div className="max-w-[1200px] min-w-[400px]">
+            <div className="flex  justify-center items-end content-end h-full mb-52">
+              <div className="max-w-[1200px] min-w-[400px] ">
                 <h1 className="text-white text-center text-2xl">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -295,13 +383,19 @@ const Why = () => {
       </div>
 
       {/* Awards section */}
-      <div className="py-24 flex flex-1 items-center flex-col bg-primary justify-center">
-        <h1 className="text-highlight font-extrabold text-4xl pb-6">AWARDS</h1>
-        <Line />
+      <div className="py-28 sm:py-32 flex flex-1 items-center flex-col -mt-32 2xl:mt-0 bg-primary justify-center">
+        <h1 className="text-highlight font-extrabold text-4xl mt-20 sm:mt-12 2xl:mt-0 sm:pb-6">
+          AWARDS
+        </h1>
+        <Line className="hidden lg:block" />
         <div className="max-w-[350px] mt-16">
-          <picture>
+          <picture className="h-20 w-20">
             <source srcSet="/why/topDevelopers.png" />
-            <img src="/why/topDevelopers.png" alt="award" />
+            <img
+              src="/why/topDevelopers.png"
+              className="h-60 w-60 sm:h-auto sm:w-auto object-contain"
+              alt="award"
+            />
           </picture>
         </div>
       </div>
