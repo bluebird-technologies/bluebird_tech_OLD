@@ -163,7 +163,7 @@ export default function Offer() {
             </div>
 
             <div className="flex w-full justify-center mt-20">
-              <div className="flex w-full max-w-[1080px]">
+              <div className="flex w-full max-w-[1280px]">
                 {items.map((i) => (
                   <div
                     onClick={() => setSolutionOption(i.label)}
