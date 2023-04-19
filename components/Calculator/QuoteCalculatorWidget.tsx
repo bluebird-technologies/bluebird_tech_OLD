@@ -259,9 +259,9 @@ function QuoteCalculatorWidget() {
           <div>
             {teamMembers.map((member, i) => {
               return (
-                <div key={i} className="flex justify-between">
+                <div key={i} className="flex items-center justify-between">
                   <div className="text-lg font-medium">{member}</div>
-                  <div className="text-highlight">
+                  <div className="h-8 w-8 text-highlight">
                     <Checkmark />
                   </div>
                 </div>
