@@ -105,11 +105,11 @@ function FormCard({
 
   return (
     <div className="flex flex-col">
-      <h3 className="text-white text-4xl font-semibold">{title}</h3>
-      <div className="mt-8">
-        <span className="text-white text-2xl">{description}</span>
+      <h3 className="text-white text-3xl text-center xl:text-4xl font-semibold">{title}</h3>
+      <div className="mt-8 flex  items-center justify-center px-2">
+        <span className="text-white text-lg text-center xl:text-2xl">{description}</span>
       </div>
-      <div className="flex flex-row mt-16 justify-between">
+      <div className="inline-grid grid-cols-2 mt-8  gap-4 xl:flex xl:flex-row xl:mt-16 xl:justify-between">
         {options.map((option) => (
           <div
             onClick={() => {
