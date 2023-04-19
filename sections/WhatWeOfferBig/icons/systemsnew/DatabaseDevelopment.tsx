@@ -1,13 +1,11 @@
 export default (
   <svg
-    id="Component_109_1"
-    data-name="Component 109 – 1"
     xmlns="http://www.w3.org/2000/svg"
-    height="137.995"
-    viewBox="0 0 112 137.995"
+    height="88.292"
+    viewBox="0 0 49.188 88.292"
     className="w-full h-full"
   >
-    <g id="open-data-1518223" transform="translate(33.132)" opacity="0.6">
+    <g id="open-data-1518223" opacity="0.6">
       <path
         id="Path_3025"
         data-name="Path 3025"
@@ -37,23 +35,5 @@ export default (
         fill="#fff"
       />
     </g>
-    <text
-      id="Database_Development"
-      data-name="Database
-Development"
-      transform="translate(56 114.995)"
-      fill="#fff"
-      fontSize="16"
-      fontFamily="Montserrat-Medium, Montserrat"
-      fontWeight="500"
-      opacity="0.6"
-    >
-      <tspan x="-38" y="0">
-        Database
-      </tspan>
-      <tspan x="-55" y="19">
-        Development
-      </tspan>
-    </text>
   </svg>
 );

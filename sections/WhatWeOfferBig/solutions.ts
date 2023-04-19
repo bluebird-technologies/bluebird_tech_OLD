@@ -6,25 +6,26 @@ import productAnimation from '../../public/what-we-offer/product.json';
 import structureAnimation from '../../public/what-we-offer/structure.json';
 import uiAnimation from '../../public/what-we-offer/ui.json';
 import webDevelopmentAnimation from '../../public/what-we-offer/websiteAnimation.json';
+
 import adobe from './icons/Adobe';
 import angular from './icons/angular';
-import banking from './icons/banking';
-import database from './icons/database';
+import banking from './icons/systemsnew/BankingSolution';
+import database from './icons/systemsnew/DatabaseDevelopment';
 import django from './icons/django';
 import dotnet from './icons/dotnet';
 import figma from './icons/figma';
 import flutter from './icons/flutter';
 import ionic from './icons/ionic';
-import it from './icons/it';
+import itsolutions from './icons/systemsnew/WholisticItSolutions';
 import java from './icons/java';
 import layer from './icons/layer';
-import logistic from './icons/logistic';
+import logistic from './icons/systemsnew/LogisticsSystems';
 import node from './icons/node';
 import nosql from './icons/nosql';
 import reactNative from './icons/reactNative';
-import services from './icons/services';
+import services from './icons/systemsnew/ServicesDevelopment';
 import sql from './icons/sql';
-import transport from './icons/transport';
+import transport from './icons/systemsnew/TransportSystems';
 import vue from './icons/vue';
 import webflow from './icons/webflow';
 import wordpress from './icons/wordpress';
@@ -39,7 +40,7 @@ import dotnetMobile from './icons/dotnetMobile';
 import figmaMobile from './icons/mobile/FigmaMobile';
 import flutterMobile from './icons/mobile/FlutterMobile';
 import ionicMobile from './icons/mobile/IonicMobile';
-import itMobile from './icons/itMobile';
+import itSolutionsMobile from './icons/itMobile';
 import javaMobile from './icons/javaMobile';
 import layerMobile from './icons/layerMobile';
 import logisticMobile from './icons/logisticMobile';
@@ -62,11 +63,13 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'icon',
-      icons: [angular, reactNative, vue, django, wordpress],
-      iconsMobile: [angularMobile, reactNativeMobile, vueMobile, djangoMobile, wordpressMobile],
-    },
+    icons: [
+      { title: 'angular', icon: angular, iconMobile: angularMobile },
+      { title: 'reactNative', icon: reactNative, iconMobile: reactNativeMobile },
+      { title: 'vue', icon: vue, iconMobile: vueMobile },
+      { title: 'django', icon: django, iconMobile: djangoMobile },
+      { title: 'wordpress', icon: wordpress, iconMobile: wordpressMobile },
+    ],
     amtItemsInFirstRow: 3,
     centerSecondRow: true,
     secondLayerTitle: 'Accelerate your website today',
@@ -79,11 +82,12 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'icon',
-      icons: [flutter, reactNative, ionic, xamarin],
-      iconsMobile: [reactNativeMobile, flutterMobile, ionicMobile, xamarinMobile],
-    },
+    icons: [
+      { title: 'flutter', icon: flutter, iconMobile: flutterMobile },
+      { title: 'reactNative', icon: reactNative, iconMobile: reactNativeMobile },
+      { title: 'ionic', icon: ionic, iconMobile: ionicMobile },
+      { title: 'xamarin', icon: xamarin, iconMobile: xamarinMobile },
+    ],
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'Ready for your next-level mobile app?',
@@ -96,18 +100,14 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'icon',
-      icons: [transport, logistic, banking, it, services, database],
-      iconsMobile: [
-        transportMobile,
-        logisticMobile,
-        bankingMobile,
-        itMobile,
-        servicesMobile,
-        databaseMobile,
-      ],
-    },
+    icons: [
+      { title: 'Transport Systems', icon: transport, iconMobile: transportMobile },
+      { title: 'Logistic Systems', icon: logistic, iconMobile: logisticMobile },
+      { title: 'Banking Solutions', icon: banking, iconMobile: bankingMobile },
+      { title: 'Holistic IT Solutions', icon: itsolutions, iconMobile: itSolutionsMobile },
+      { title: 'Services Development', icon: services, iconMobile: servicesMobile },
+      { title: 'Database Development', icon: database, iconMobile: databaseMobile },
+    ],
     amtItemsInFirstRow: 3,
     centerSecondRow: false,
     secondLayerTitle: 'Got something in mind',
@@ -120,10 +120,14 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'text',
-      icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
-    },
+    icons: [
+      { title: 'Scrum Master', icon: '', iconMobile: '' },
+      { title: 'Product Lead', icon: '', iconMobile: '' },
+      { title: 'Product Owner', icon: '', iconMobile: '' },
+      { title: 'Kanban', icon: '', iconMobile: '' },
+      { title: 'Agile', icon: '', iconMobile: '' },
+      { title: 'Waterfall', icon: '', iconMobile: '' },
+    ],
     amtItemsInFirstRow: 3,
     centerSecondRow: false,
     secondLayerTitle: 'Sounds good',
@@ -136,11 +140,12 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'icon',
-      icons: [figma, webflow, adobe, layer],
-      iconsMobile: [figmaMobile, webflowMobile, adobeMobile, layerMobile],
-    },
+    icons: [
+      { title: 'figma', icon: figma, iconMobile: figmaMobile },
+      { title: 'layer', icon: layer, iconMobile: layerMobile },
+      { title: 'adobe', icon: adobe, iconMobile: adobeMobile },
+      { title: 'webflow', icon: webflow, iconMobile: webflowMobile },
+    ],
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'Bring your ideas to life',
@@ -153,10 +158,12 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: 'Experts in technology that’s here to stay',
-    content: {
-      contentType: 'text',
-      icons: ['Scrum Master', 'Product Lead', 'Product Owner', 'Kanban', 'Agile Transformation'],
-    },
+    icons: [
+      { title: 'placeholder', icon: '', iconMobile: '' },
+      { title: 'placeholder2', icon: '', iconMobile: '' },
+      { title: 'placeholder3', icon: '', iconMobile: '' },
+      { title: 'placeholder4', icon: '', iconMobile: '' },
+    ],
     amtItemsInFirstRow: 3,
     centerSecondRow: true,
     secondLayerTitle: 'In need of an expert',
@@ -169,11 +176,13 @@ export const solutions: SolutionType[] = [
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
     catchPhrase: '',
-    content: {
-      contentType: 'icon',
-      icons: [node, dotnet, java, nosql, sql],
-      iconsMobile: [nodeMobile, dotnetMobile, javaMobile, nosqlMobile, sqlMobile],
-    },
+    icons: [
+      { title: 'node', icon: node, iconMobile: nodeMobile },
+      { title: 'dotnet', icon: dotnet, iconMobile: dotnetMobile },
+      { title: 'java', icon: java, iconMobile: javaMobile },
+      { title: 'nosql', icon: nosql, iconMobile: nosqlMobile },
+      { title: 'sql', icon: sql, iconMobile: sqlMobile },
+    ],
     amtItemsInFirstRow: 2,
     centerSecondRow: false,
     secondLayerTitle: 'FOUND WHAT YOU’VE BEEN LOOKING FOR?',

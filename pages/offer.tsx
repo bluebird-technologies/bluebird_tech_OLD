@@ -11,16 +11,18 @@ import { MobileHeader } from '../components/MobileHeader';
 import IconLayout from '../components/Solutions/IconLayout';
 import SeeBanner from '../components/SeeBanner';
 import SolutionsAnimatedSection from '../components/Solutions/SolutionsAnimatedSection';
+
+export interface IconWithTextType {
+  title: string;
+  icon: ReactNode;
+  iconMobile: ReactNode;
+}
 export interface SolutionType {
   title: string;
   firstParagraphDescription: string;
   secondParagraphDescription: string;
   catchPhrase: string;
-  content: {
-    contentType: 'text' | 'icon';
-    icons: ReactNode[] | 'string'[];
-    iconsMobile?: ReactNode[] | 'string'[];
-  };
+  icons: IconWithTextType[];
   amtItemsInFirstRow: number;
   centerSecondRow: boolean;
   secondLayerTitle: string;
@@ -87,7 +89,7 @@ export default function Offer() {
         </div>
 
         {solutions.map((sol) => {
-          if (sol.title === currentSelectedOption) {
+          if (sol.title === currentSelectedOption && sol.title !== 'Developer Outsourcing') {
             return (
               <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
                 <div className="flex flex-col">
@@ -98,14 +100,7 @@ export default function Offer() {
                       </h1>
                     </div>
                   </div>
-                  <IconLayout
-                    content={{
-                      contentType: sol.content.contentType,
-                      icons: sol.content.iconsMobile ?? sol.content.icons,
-                    }}
-                    amtIconsRowOne={sol.amtItemsInFirstRow}
-                    rowTwoCenter={sol.centerSecondRow}
-                  />
+                  <IconLayout title={sol.title} icons={sol.icons} />
                 </div>
               </div>
             );
