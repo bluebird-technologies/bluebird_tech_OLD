@@ -19,19 +19,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i < 3) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -41,19 +31,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i > 2) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -67,19 +47,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i < 2) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -89,19 +59,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i > 1) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -111,14 +71,14 @@ function IconLayout({ title, icons }: IconLayoutProps) {
       {title === 'Infrastructure Development' && icons && (
         <div className="flex flex-col">
           {/* row 1 */}
-          <div className="flex justify-between">
+          <div className="flex w-full px-2">
             {icons.map((section, i) => {
               if (i < 3) {
                 return (
-                  <div key={i} className="flex">
+                  <div key={'icons-' + i} className="w-1/3">
                     <IconWithTextView
                       icon={section.icon}
-                      // iconMobile={section.iconMobile}
+                      iconMobile={section.iconMobile}
                       iconText={section.title}
                     />
                   </div>
@@ -127,14 +87,14 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             })}
           </div>
           {/* row 2 */}
-          <div className="flex justify-between mt-4">
+          <div className="flex w-full mt-4 px-2">
             {icons.map((section, i) => {
               if (i > 2) {
                 return (
-                  <div key={i}>
+                  <div key={i} className="w-1/3">
                     <IconWithTextView
                       icon={section.icon}
-                      // iconMobile={section.iconMobile}
+                      iconMobile={section.iconMobile}
                       iconText={section.title}
                     />
                   </div>
@@ -171,19 +131,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i < 2) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -193,19 +143,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i > 1) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -219,19 +159,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i < 2) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}
@@ -241,19 +171,9 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i > 1) {
                 return (
-                  <>
-                    <div className="lg:hidden block">
-                      <IconView
-                        isMobile
-                        icon={section.icon}
-                        iconMobile={section.iconMobile}
-                        key={i}
-                      />
-                    </div>
-                    <div className="hidden lg:block">
-                      <IconView icon={section.icon} iconMobile={section.iconMobile} key={i} />
-                    </div>
-                  </>
+                  <div key={'icons-' + i}>
+                    <IconView icon={section.icon} iconMobile={section.iconMobile} />
+                  </div>
                 );
               }
             })}

@@ -5,7 +5,7 @@ export default (
     viewBox="0 0 99.435 63.464"
     className="w-full h-full"
   >
-    <g id="layer1" opacity="0.6">
+    <g id="layer1">
       <g id="Group_1035" data-name="Group 1035" transform="translate(0 0)">
         <g id="Group_1027" data-name="Group 1027" transform="translate(4.7 0)">
           <path

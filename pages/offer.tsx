@@ -35,6 +35,11 @@ export default function Offer() {
   // for the mobile slider
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
 
+  const styleButtonDisengaged =
+    'w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover';
+  const styleButtonEngaged =
+    'w-[30px] h-[30px] rounded-full bg-highlight border-[6px] border-[#FFFFFF27] my-[-2px]';
+
   return (
     <div className="flex flex-1 flex-col">
       {/* mobile top section div */}
@@ -122,6 +127,7 @@ export default function Offer() {
           })}
         </div>
       </div>
+
       {/* whole div is hidden on mobile */}
       <div className="hidden md:flex md:flex-col w-full bg-cover bg-bottom items-center relative pb-[150px]">
         <div
@@ -175,11 +181,9 @@ export default function Offer() {
                       )}
                     </div>
                     <div
-                      className={`w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] ${
-                        i.label === solutionOption
-                          ? 'bg-highlight border-[#FFFFFF27] h-[30px] w-[30px] my-[-2px]'
-                          : ''
-                      } group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:`}
+                      className={
+                        i.label === solutionOption ? styleButtonEngaged : styleButtonDisengaged
+                      }
                     />
                   </div>
                 ))}

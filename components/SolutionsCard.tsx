@@ -12,7 +12,7 @@ function SolutionsCard({ item }: Props) {
   if (title === 'Developer Outsourcing') {
     return (
       <div className="flex justify-center mt-28 mb-10 w-full">
-        <div className="flex flex-col max-w-[1080px] overflow-hidden w-full">
+        <div className="flex flex-col max-w-[1350px] overflow-hidden w-full">
           <div className="flex pb-12 ">
             <div className="text-white font-extrabold uppercase text-5xl">{title}</div>
             <SwiggleLine />

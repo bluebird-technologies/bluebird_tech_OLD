@@ -7,7 +7,7 @@ export default (
     className="w-full h-full"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_418"
           data-name="Rectangle 418"
@@ -18,7 +18,7 @@ export default (
       </clipPath>
     </defs>
     <g id="Group_1038" data-name="Group 1038" opacity="0.6">
-      <g id="Group_1037" data-name="Group 1037" clip-path="url(#clip-path)">
+      <g id="Group_1037" data-name="Group 1037" clipPath="url(#clipPath)">
         <path
           id="Path_3030"
           data-name="Path 3030"
