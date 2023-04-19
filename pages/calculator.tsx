@@ -148,27 +148,28 @@ function Calculator() {
             <CalculatorContext.Provider value={contextValue}>
               {!showCalculationScreen && (
                 <div>
+                  <div className="w-full 2xl:hidden">
+                    <MobileHeader />
+                  </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
                     <div
-                      className="bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
+                      className=" w-[285vw] -z-1 left-[-98%]  -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-3/4"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
                       }}
                     />
-                    <div className="w-full 2xl:hidden">
-                      <MobileHeader />
-                    </div>
+
                     <div className="hidden 2xl:block">
                       <Header />
                     </div>
                   </div>
 
-                  <div className="flex bg-secondary h-[1100px] w-full -mt-64">
-                    <div className="flex grow pt-32 max-w-[900px] ml-12 2xl:ml-32">
+                  <div className="flex flex-col xl:flex-row  bg-secondary xl:h-[1100px] w-full -mt-64">
+                    <div className="flex grow xl:pt-32 max-w-[900px] mx-4 xl:ml-12 2xl:ml-32">
                       <FormSection setShowCalc={setShowCalculationScreen} />
                     </div>
-                    <div className="flex mt-[350px] ml-12 2xl:ml-64 w-[440px] pr-12">
+                    <div className="flex  xl:mt-[350px]  xl:ml-12 2xl:ml-64 xl:w-[440px] xl:pr-12">
                       <QuoteCalculatorWidget />
                     </div>
                   </div>
@@ -178,7 +179,7 @@ function Calculator() {
                 <>
                   <div className="w-full flex flex-col items-center relative h-[600px]">
                     <div
-                      className="bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
+                      className=" bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
