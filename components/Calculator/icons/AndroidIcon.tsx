@@ -3,8 +3,8 @@ export default (
     id="Component_162_1"
     data-name="Component 162 – 1"
     xmlns="http://www.w3.org/2000/svg"
-    height="140.799"
-    viewBox="0 0 110 140.799"
+    height="80"
+    viewBox="0 0 110 80"
     className="w-full h-full"
   >
     <path
