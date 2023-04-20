@@ -427,8 +427,8 @@ function Calculator() {
                   </div>
                 </div>
               </div>
-              <div className="w-full hidden xl:flex justify-center my-24">
-                <picture className="px-32 xl:px-64">
+              <div className="w-full  xl:flex justify-center my-16 xl:my-24">
+                <picture className="xl:px-64">
                   <source srcSet="/calculator/RateCard.png" />
                   <img src="/calculator/RateCard.png" alt="rates" />
                 </picture>
