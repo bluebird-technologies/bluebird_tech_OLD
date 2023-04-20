@@ -72,7 +72,7 @@ function SolutionsCard({ item }: Props) {
           </div>
         </div>
         {/* right section */}
-        <div className="w-1/2 -mt-24 pl-16 2xl:pl-24">
+        <div className="w-1/2 -mt-24 pl-8 lg:pl-16 2xl:pl-24">
           <div className="flex justify-end">
             <div className="flex flex-col w-full justify-end space-y-8">
               <p className="text-highlight text-2xl text-right italic pb-6">{catchPhrase}</p>
