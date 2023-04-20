@@ -75,7 +75,7 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i < 3) {
                 return (
-                  <div key={'icons-' + i} className="w-1/3">
+                  <div key={'icons-' + i} className="w-1/3 px-2">
                     <IconWithTextView
                       icon={section.icon}
                       iconMobile={section.iconMobile}
@@ -91,7 +91,7 @@ function IconLayout({ title, icons }: IconLayoutProps) {
             {icons.map((section, i) => {
               if (i > 2) {
                 return (
-                  <div key={i} className="w-1/3">
+                  <div key={i} className="w-1/3 px-2">
                     <IconWithTextView
                       icon={section.icon}
                       iconMobile={section.iconMobile}
