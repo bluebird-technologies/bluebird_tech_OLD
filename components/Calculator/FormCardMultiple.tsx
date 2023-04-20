@@ -109,7 +109,7 @@ function FormCard({
       <div className="mt-8 flex  items-center justify-center px-2">
         <span className="text-white text-lg text-center xl:text-2xl">{description}</span>
       </div>
-      <div className="inline-grid grid-cols-2 mt-8  gap-4 xl:flex xl:flex-row xl:mt-16 xl:justify-between">
+      <div className="mx-auto inline-grid grid-cols-2 mt-8  gap-4 xl:flex xl:flex-row xl:mt-16 xl:justify-between">
         {options.map((option) => (
           <div
             onClick={() => {
@@ -120,7 +120,7 @@ function FormCard({
               }
             }}
             key={option.optionIndex}
-            className="relative cursor-pointer justify-center items-center text-center max-w-[150px]"
+            className="relative mb-8 mx-4 xl:mx-0 cursor-pointer justify-center items-center text-center max-w-[150px]"
           >
             {currentOptionSelection.includes(option.optionIndex) && (
               <div className="absolute w-full h-full text-5xl text-white" style={{ zIndex: 10 }}>
