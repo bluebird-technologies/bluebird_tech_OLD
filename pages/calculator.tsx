@@ -148,7 +148,7 @@ function Calculator() {
             <CalculatorContext.Provider value={contextValue}>
               {!showCalculationScreen && (
                 <div>
-                  <div className="w-full 2xl:hidden">
+                  <div className="w-full xl:hidden">
                     <MobileHeader />
                   </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
@@ -176,24 +176,27 @@ function Calculator() {
                 </div>
               )}
               {showCalculationScreen && (
-                <>
+                <div className="overflow-hidden">
                   <div className="w-full flex flex-col items-center relative h-[600px]">
                     <div
-                      className=" bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
+                      className=" w-[285vw] -z-1 left-[-98%] bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
                       }}
                     />
-                    <div className="hidden">
+                    <div className="w-full xl:hidden">
+                      <MobileHeader />
+                    </div>
+                    <div className="hidden xl:block">
                       <Header />
                     </div>
                     <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
-                      <h1 className="w-full text-center title-1">Your Quote Estimate</h1>
+                      <h1 className="w-full  text-center title-1">Your Quote Estimate</h1>
                       <div className="flex w-full justify-center">
-                        <div className="flex w-full mt-6 px-64 max-w-[1800px]">
-                          <div className="w-3/5">
-                            <p className="text-white text-xl xl:pl-12">
+                        <div className="flex  items-center justify-center xl:justify-start xl:items-start  mt-6 xl:flex xl:w-full xl:mt-6 xl:px-64 xl:max-w-[1800px]">
+                          <div className="flex mx-4 items-center justify-center  xl:mx-0 w-3/4 xl:w-3/5">
+                            <p className="text-white text-center text-xl xl:pl-12">
                               (Disclaimer)
                               <br />
                               <br />
@@ -204,13 +207,11 @@ function Calculator() {
                               ut labore et dolore magna aliquyam erat, sed diam
                             </p>
                           </div>
-                          <div className="w-2/5">
+                          <div className="xl:w-2/5 absolute mt-6 xl:mt-0  left-1/2 top-3/4 transform -translate-x-1/2 xl:static xl:transform-none">
                             <div>
                               <Lottie
                                 animationData={CalculatorAnimation}
-                                style={{
-                                  height: '350px',
-                                }}
+                                className="h-[350px]"
                                 loop={true}
                               />
                             </div>
@@ -223,13 +224,13 @@ function Calculator() {
                   <div className="flex flex-col bg-grey w-full -mt-64 pb-52">
                     <div className="mt-64" />
                     <div className="flex w-full px-64 mt-16">
-                      <div className="w-3/5">
+                      <div className="hidden xl:block w-3/5">
                         <div className="w-[650px]">{CalculatorSquiggle}</div>
                       </div>
                       <div className="w-2/5" />
                     </div>
 
-                    <div className="w-full px-64 grid grid-cols-3 gap-x-4">
+                    <div className="w-full mt-16 xl:mt-0  xl:px-64 xl:grid xl:grid-cols-3 xl:gap-x-4">
                       <QuoteScreenRow
                         mainTitle="Platform:"
                         title={platform.title}
@@ -269,7 +270,7 @@ function Calculator() {
                       {sortOptionsToSelections(payments).map((row, i) => {
                         return (
                           <QuoteScreenRow
-                            mainTitle={i === 0 ? 'Payemnts:' : ''}
+                            mainTitle={i === 0 ? 'Payments:' : ''}
                             title={row.title}
                             hours={row.hours}
                             key={'Payments' + i}
@@ -289,7 +290,7 @@ function Calculator() {
                       {sortOptionsToSelections(datesAndLocation).map((row, i) => {
                         return (
                           <QuoteScreenRow
-                            mainTitle={i === 0 ? 'Dates/ Location:' : ''}
+                            mainTitle={i === 0 ? 'Dates/Location:' : ''}
                             title={row.title}
                             hours={row.hours}
                             key={'Dates' + i}
@@ -301,11 +302,8 @@ function Calculator() {
 
                   <div className="relative flex h-[600px] w-full -mt-32">
                     <div
-                      className="bg-secondary h-full"
+                      className=" w-[285vw] -z-1 left-[-98%] bg-secondary  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                       style={{
-                        position: 'absolute',
-                        left: '-16%',
-                        width: '130vw',
                         borderTopLeftRadius: '50%',
                         borderTopRightRadius: '50%',
                       }}
@@ -337,7 +335,7 @@ function Calculator() {
                     </div>
                   </div>
                   <YourTeam teamMembers={teamMembers ?? []} />
-                </>
+                </div>
               )}
 
               <Footer />
@@ -351,7 +349,7 @@ function Calculator() {
             </div>
             <div className=" relative xl:h-[900px]">
               <div
-                className="   w-[285vw] -z-1 left-[-98%] bg-primary -z-1  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
+                className="   w-[285vw] -z-1 left-[-98%] bg-primary  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                 style={{
                   borderBottomLeftRadius: '50%',
                   borderBottomRightRadius: '50%',
@@ -452,16 +450,24 @@ const QuoteScreenRow = ({
 }) => {
   return (
     <>
-      <div className="text-3xl text-primary pt-6 font-bold">{mainTitle}</div>
-      <div className="text-2xl text-primary pt-6 font-medium">{title}</div>
+      <div className="hidden xl:block text-3xl text-primary pt-6 font-bold">{mainTitle}</div>
+      <div className="hidden xl:block text-2xl text-primary pt-6 font-medium">{title}</div>
       <div
-        className="max-w-[200px]"
+        className="hidden xl:block max-w-[200px]"
         style={{
           backgroundColor: 'rgba(233, 119, 36, 0.36)',
         }}
       >
-        <div className="w-[200px] px-3 pt-6 text-center text-2xl text-highlight font-bold">
+        <div className="hidden xl:block w-[200px] px-3 pt-6 text-center text-2xl text-highlight font-bold">
           {hours ?? 0} h
+        </div>
+      </div>
+      {/* Mobile View */}
+      <div className="xl:hidden flex flex-col mx-8 items-left">
+        <div className="text-2xl mt-8 mb-2 font-bold">{mainTitle}</div>
+        <div className="flex items-center justify-between">
+          <div className="text-xl underline">{title}</div>
+          <div className="text-2xl font-bold text-highlight">{hours ?? 0} h</div>
         </div>
       </div>
     </>
