@@ -19,11 +19,15 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
               <div className="mr-5 rotate-180">
                 <RigthArrow />
               </div>
-              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase">{label}</h1>
+              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase text-center lg:text-start">
+                {label}
+              </h1>
             </>
           ) : (
             <>
-              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase">{label}</h1>
+              <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase text-center lg:text-start">
+                {label}
+              </h1>
               <div className="ml-5">
                 <RigthArrow />
               </div>
@@ -34,7 +38,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
           {invert ? (
             <>
               <div className="lg:max-w-[220px] mb-6 lg:mb-0 px-2 lg:px-0">
-                <h1 className="text-white text-xl uppercase">{label}</h1>
+                <h1 className="text-white text-xl uppercase text-center lg:text-start">{label}</h1>
               </div>
               <div className="ml-3 h-6 rotate-180">
                 <RigthArrowMobile />
@@ -43,7 +47,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
           ) : (
             <>
               <div className="lg:max-w-[220px] mb-6 lg:mb-0 px-2 lg:px-0">
-                <h1 className="text-white text-xl uppercase">{label}</h1>
+                <h1 className="text-white text-xl uppercase text-center lg:text-start">{label}</h1>
               </div>
               <div className="ml-3 h-6">
                 <RigthArrowMobile />
