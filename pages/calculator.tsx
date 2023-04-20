@@ -351,7 +351,7 @@ function Calculator() {
             <div className=" lg:hidden w-full">
               <MobileHeader />
             </div>
-            <div className=" relative xl:h-[900px]">
+            <div className="w-full flex flex-col relative pv-20 xl:pb-8 ">
               <div
                 className="   w-[285vw] -z-1 left-[-98%] bg-primary  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                 style={{
