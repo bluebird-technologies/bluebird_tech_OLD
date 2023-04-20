@@ -67,7 +67,7 @@ function FormCard({
         ))}
       </div>
       {backButton && goBack && (
-        <div className="w-full flex justify-center items-center  mt-12">
+        <div className="w-full flex  justify-center items-center xl:justify-start xl:items-start  mt-12">
           <button
             onClick={() => goBack()}
             className="text-white font-medium xl:text-xl flex items-center justify-center"
