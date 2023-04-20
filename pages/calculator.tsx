@@ -341,7 +341,6 @@ function Calculator() {
                   <YourTeam teamMembers={teamMembers ?? []} />
                 </div>
               )}
-
               <Footer />
             </CalculatorContext.Provider>
           </div>
@@ -454,6 +453,7 @@ const QuoteScreenRow = ({
 }) => {
   return (
     <>
+      {/* Desktop view */}
       <div className="hidden xl:block text-3xl text-primary pt-6 font-bold">{mainTitle}</div>
       <div className="hidden xl:block text-2xl text-primary pt-6 font-medium">{title}</div>
       <div
