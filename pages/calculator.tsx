@@ -21,7 +21,7 @@ function Calculator() {
   const [formSectionActive, setFormSectionActive] = useState(false);
   const [showCalculationScreen, setShowCalculationScreen] = useState(false);
   const buttonClass = `bg-highlight inline-flex rounded-full text-white font-bold uppercase text-xl
-    leading-[17px] px-8 py-3 whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724]
+    leading-[17px] px-16 py-6 xl:px-8 xl:py-3 whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724]
     transition-all hover:duration-1000 ease-in-out`;
 
   // context state getters and setters. This tracks all the choices and the hours
@@ -309,21 +309,25 @@ function Calculator() {
                       }}
                     />
                     <div className="w-full" style={{ zIndex: 10 }}>
-                      <div className="flex w-full justify-center mt-32">
+                      <div className="flex w-full justify-center mt-16 xl:mt-32">
                         <h1 className="uppercase text-white text-4xl font-bold text-center">
                           Total
                         </h1>
                       </div>
-                      <div className="flex flex-col w-full justify-center items-center mt-16">
-                        <div className="flex justify-between w-[600px]">
-                          <h1 className="text-white text-4xl font-semibold">Optimistic</h1>
-                          <h1 className="text-highlight text-4xl font-bold">
+                      <div className="flex flex-col w-full px-4 justify-center items-center mt-16">
+                        <div className="flex w-full justify-between xl:w-[600px]">
+                          <h1 className="text-white text-3xl xl:text-4xl font-semibold">
+                            Optimistic
+                          </h1>
+                          <h1 className="text-highlight text-3xl xl:text-4xl font-bold">
                             {totals.totalOptimistic}h
                           </h1>
                         </div>
-                        <div className="flex justify-between w-[600px] mt-12">
-                          <h1 className="text-white text-4xl font-semibold">Pessimistic</h1>
-                          <h1 className="text-highlight text-4xl font-bold">
+                        <div className="flex w-full justify-between xl:w-[600px] mt-12">
+                          <h1 className="text-white text-3xl xl:text-4xl font-semibold">
+                            Pessimistic
+                          </h1>
+                          <h1 className="text-highlight text-3xl xl:text-4xl font-bold">
                             {totals.totalPessimistic}h
                           </h1>
                         </div>
