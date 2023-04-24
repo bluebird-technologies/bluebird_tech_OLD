@@ -16,6 +16,7 @@ import { ImageOverlayTextContainer } from '../components/WhyBluebird/ImageOverla
 import { MobileHeader } from '../components/MobileHeader';
 import WhatSetsUpApartCarousel from '../components/Carousel/WhatSetsUsApartCarousel';
 import ImageGallery from '../components/WhyBluebird/ImageGallery';
+import { HoverButton } from '../components/WhyBluebird/HoverButton';
 
 const Why = () => {
   type btnOptions = 'Lean' | 'Boutique' | 'Personal';
@@ -52,10 +53,14 @@ const Why = () => {
     <div className="w-full overflow-hidden">
       <div className="w-full flex flex-col relative pv-20 xl:pb-40 ">
         <div
-          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%] xl:left-[-16%] xl:w-[130vw]"
+          className="absolute bg-primary h-full"
           style={{
+            position: 'absolute',
+            left: '-41%',
+            width: '180vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
+            zIndex: -1,
           }}
         />
         <div className="hidden xl:block">
@@ -191,14 +196,13 @@ const Why = () => {
             <div className="flex-none w-[350px] flex flex-col space-y-16 justify-start mr-32">
               {coreValues.map((val, i) => {
                 return (
-                  <Button
+                  <HoverButton
                     key={i}
                     active={activeBtn !== val.key}
-                    className="h-[75px] text-center items-center justify-center max-w-[400px]"
                     onClick={() => setActiveBtn(val.key)}
                   >
-                    <span className="text-3xl">{val.key}</span>
-                  </Button>
+                    {val.key}
+                  </HoverButton>
                 );
               })}
             </div>
@@ -368,8 +372,8 @@ const Why = () => {
                 </picture>
               </div>
             </div>
-            <div className="flex  justify-center items-end content-end h-full mb-52">
-              <div className="max-w-[1200px] min-w-[400px] ">
+            <div className="flex justify-center items-end content-end h-full mb-52 3xl:mb-24">
+              <div className="max-w-[1200px] min-w-[400px]">
                 <h1 className="text-white text-center text-2xl">
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                   tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
