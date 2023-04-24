@@ -22,9 +22,8 @@ export default function OfferSolutionsCarousel({ slides, onChange }: CarouselPro
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
-        // centerMode={true}
-        // centerSlidePercentage={80}
-        // width={500}
+        preventMovementUntilSwipeScrollTolerance={true}
+        swipeScrollTolerance={50}
         onChange={(val) => onChange(slides[val].label)}
       >
         {slides.map((slide, i) => {

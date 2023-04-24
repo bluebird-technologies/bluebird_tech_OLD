@@ -48,6 +48,8 @@ export default function WhatSetsUpApartCarousel() {
       showStatus={false}
       showIndicators={true}
       showThumbs={false}
+      preventMovementUntilSwipeScrollTolerance={true}
+      swipeScrollTolerance={50}
       width={800}
       centerMode={true}
       centerSlidePercentage={100}
@@ -77,7 +79,7 @@ export default function WhatSetsUpApartCarousel() {
 
 function CarouselSlideItem({ label, description, animation }: Props) {
   return (
-    <div className="mb-20 pt-8 items-center flex flex-1 justify-center flex-col">
+    <div className="mb-20 pt-8 items-center flex flex-1 justify-center flex-col cursor-pointer">
       <div className="flex-wrap items-center justify-center text-2xl font-extrabold uppercase leading-[64px] text-center">
         <h1 className="text-highlight text-2xl md:text-4xl lg:text-5xl mb-4">{label}</h1>
       </div>
