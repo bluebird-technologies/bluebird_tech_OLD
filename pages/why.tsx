@@ -182,18 +182,18 @@ const Why = () => {
         <WhatSetsUpApartCarousel />
       </div>
 
-      <div className="hidden w-full 2xl:relative items-center 2xl:flex flex-col h-[1100px] pb-20 relative">
+      <div className="hidden w-full items-center 2xl:flex flex-col h-[900px] pb-20 relative">
         <div
-          className="absolute bg-grey h-[1500px] -mt-[180px] w-full top-0 left-0"
+          className="absolute bg-grey h-[1300px] -mt-[180px] w-full top-0 left-0"
           style={{ zIndex: -5 }}
         />
-        <div className="flex flex-col items-center w-6/7  justify-center  pt-24">
+        <div className="flex flex-col items-center w-6/7 justify-center pt-24">
           <h1 className="text-center font-bold text-5xl text-secondary uppercase">
             <span className="italic">WHAT SETS US </span>
             <span className="font-extrabold">APART?</span>
           </h1>
-          <div className="flex mt-12 px-40">
-            <div className="flex-none w-[350px] flex flex-col space-y-16 justify-start mr-32">
+          <div className="flex mt-12 px-32 3xl:px-48">
+            <div className="w-1/3 flex flex-col space-y-16 justify-start">
               {coreValues.map((val, i) => {
                 return (
                   <HoverButton
@@ -206,13 +206,13 @@ const Why = () => {
                 );
               })}
             </div>
-            <div className="flex-1 items-center justify-center flex flex-col">
-              <div className="w-[300px]">{waveLines}</div>
+            <div className="w-1/3 flex flex-col mx-24 mt-6">
+              <div className="w-64">{waveLines}</div>
               <div className="pt-8">
                 {coreValues.map((res) => {
                   if (res.key === activeBtn) {
                     return (
-                      <p key={res.key} className=" text-center text-2xl">
+                      <p key={res.key} className="text-left text-xl 3xl:text-2xl">
                         {res.description}
                       </p>
                     );
@@ -220,12 +220,12 @@ const Why = () => {
                 })}
               </div>
             </div>
-            <div className="flex-1 flex">
+            <div className="flex w-1/3">
               {coreValues.map((item, index) => (
                 <div key={index} className={item.key === 'Personal' ? '-mt-24' : ''}>
                   {item.key === activeBtn && (
                     <Lottie
-                      className="h-[400px] w-[600px]"
+                      className="h-[400px] w-full"
                       animationData={item.animation}
                       loop={true}
                     />
