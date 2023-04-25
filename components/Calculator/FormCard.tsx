@@ -55,7 +55,7 @@ function FormCard({
               })
             }
             key={option.optionIndex}
-            className={`cursor-pointer mx-2 my-8 flex flex-col justify-center items-center text-center ${
+            className={`cursor-pointer mx-2 my-8 flex flex-col  justify-center items-center text-center ${
               index === options.length - 1 && options.length % 2 !== 0 ? 'col-span-2' : ''
             }`}
           >
@@ -73,9 +73,15 @@ function FormCard({
             className="text-white font-medium xl:text-xl flex items-center justify-center"
           >
             <div className="flex items-center justify-center xl:h-auto xl:w-auto ">
-              <RightArrow className="origin-center rotate-180 xl:mr-4" />
+              <picture>
+                <img
+                  src="/right-arrow.svg"
+                  className="origin-center h-16 w-16 xl:h-auto xl:w-auto rotate-180 xl:mr-4"
+                  alt="right arrow"
+                />
+              </picture>
             </div>
-            <h1 className="ml-8 xl:ml-0">BACK</h1>
+            <h1 className="ml-8 text-md md:text-base xl:text-xl  xl:ml-0">BACK</h1>
           </button>
         </div>
       )}

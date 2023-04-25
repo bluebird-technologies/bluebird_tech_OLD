@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import RightArrow from '../../public/right-arrow.svg';
 import { Checkmark } from './icons/Checkmark';
 
 interface TFormOption {
@@ -149,7 +148,13 @@ function FormCard({
           onClick={() => goBack()}
           className="text-white font-medium text-md md:text-base xl:text-xl flex items-center justify-center"
         >
-          <RightArrow className="origin-center  rotate-180 mr-4" />
+          <picture>
+            <img
+              src="/right-arrow.svg"
+              className="origin-center mr-2 h-12 w-12 xl:h-auto xl:w-auto rotate-180 xl:mr-4"
+              alt="right arrow"
+            />
+          </picture>
           BACK
         </button>
         {currentOptionSelection.length > 0 && (
@@ -157,7 +162,13 @@ function FormCard({
             onClick={() => handleSubmit()}
             className="text-white font-medium  text-md md:text-base xl:text-xl flex items-center justify-center"
           >
-            <RightArrow className="origin-center mr-4" />
+            <picture>
+              <img
+                src="/right-arrow.svg"
+                className="origin-center mr-2 h-12 w-12 xl:h-auto xl:w-auto ml-2 xl:mr-4"
+                alt="right arrow"
+              />
+            </picture>
             PROCEED
           </button>
         )}

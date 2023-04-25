@@ -24,8 +24,10 @@ export default function TeamCarousel({ item }: Props) {
       onChange={(val) => console.log(val)}
       renderArrowNext={(clickHandler) => {
         return (
-          <div onClick={clickHandler} className="absolute top-28 right-4">
-            <ChevronRight />
+          <div onClick={clickHandler} className="min-[320px]:block hidden absolute top-28 right-4 ">
+            <picture>
+              <img src="/chevron-right.svg" alt="chevron-right svg" className="h-16 w-16 " />
+            </picture>
           </div>
         );
       }}
