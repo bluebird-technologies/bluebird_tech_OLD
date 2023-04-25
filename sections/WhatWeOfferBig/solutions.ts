@@ -62,7 +62,7 @@ export const solutions: SolutionType[] = [
       'Using modern technologies combined with the latest web standards, we create performant, responsive, sleek, and secure websites.',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Experts in technology that’s here to stay',
+    catchPhrase: 'Unleash the power of your product with our web-based solutions',
     icons: [
       { title: 'angular', icon: angular, iconMobile: angularMobile },
       { title: 'reactNative', icon: reactNative, iconMobile: reactNativeMobile },
@@ -99,7 +99,7 @@ export const solutions: SolutionType[] = [
       'We develop everything from banking solutions to logistic systems and have the server-, database-, and services development experience to tackle any problem',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Experts in technology that’s here to stay',
+    catchPhrase: 'Building the foundation for your success',
     icons: [
       { title: 'Transport Systems', icon: transport, iconMobile: transportMobile },
       { title: 'Logistic Systems', icon: logistic, iconMobile: logisticMobile },
@@ -119,7 +119,7 @@ export const solutions: SolutionType[] = [
       'Using Agile methodologies and effective time management we provide accurate expectations and deliver on time',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Experts in technology that’s here to stay',
+    catchPhrase: 'Streamlining your product journey for success!',
     icons: [
       { title: 'Scrum Master', icon: '', iconMobile: '' },
       { title: 'Product Lead', icon: '', iconMobile: '' },
@@ -139,7 +139,7 @@ export const solutions: SolutionType[] = [
       'Working with a wide range of designers and employing a multi-iterative approach, we invent powerful brands and provide pixel perfect fine tuning to existing solutions.',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Experts in technology that’s here to stay',
+    catchPhrase: 'User-centric design to drive enjoyment and engagement',
     icons: [
       { title: 'figma', icon: figma, iconMobile: figmaMobile },
       { title: 'layer', icon: layer, iconMobile: layerMobile },
@@ -157,7 +157,7 @@ export const solutions: SolutionType[] = [
       'WLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. ',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Experts in technology that’s here to stay',
+    catchPhrase: 'Lorem ipsum lorem ipsum',
     icons: [
       { title: 'placeholder', icon: '', iconMobile: '' },
       { title: 'placeholder2', icon: '', iconMobile: '' },
@@ -175,7 +175,7 @@ export const solutions: SolutionType[] = [
       'WLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. ',
     secondParagraphDescription:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: '',
+    catchPhrase: 'Building robust APIs and systems to power your digital ambitions',
     icons: [
       { title: 'node', icon: node, iconMobile: nodeMobile },
       { title: 'dotnet', icon: dotnet, iconMobile: dotnetMobile },
