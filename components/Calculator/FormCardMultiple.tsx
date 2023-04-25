@@ -147,15 +147,15 @@ function FormCard({
       <div className="w-full flex justify-between mt-12">
         <button
           onClick={() => goBack()}
-          className="text-white font-medium text-xl flex items-center justify-center"
+          className="text-white font-medium text-md md:text-base xl:text-xl flex items-center justify-center"
         >
-          <RightArrow className="origin-center rotate-180 mr-4" />
+          <RightArrow className="origin-center  rotate-180 mr-4" />
           BACK
         </button>
         {currentOptionSelection.length > 0 && (
           <button
             onClick={() => handleSubmit()}
-            className="text-white font-medium text-xl flex items-center justify-center"
+            className="text-white font-medium  text-md md:text-base xl:text-xl flex items-center justify-center"
           >
             <RightArrow className="origin-center mr-4" />
             PROCEED
