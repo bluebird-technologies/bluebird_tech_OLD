@@ -18,7 +18,7 @@ export default function TeamCarousel({ item }: Props) {
       showStatus={false}
       showIndicators={false}
       showThumbs={false}
-      width={420}
+      width={350}
       centerMode={true}
       centerSlidePercentage={100}
       onChange={(val) => console.log(val)}
@@ -53,7 +53,7 @@ function CarouselSlideItem({ label }: CarouselSlideItemProps) {
       <div className="flex justify-center text-center items-center">
         <Lottie className="h-[300px]" animationData={teammemberanimation} loop={true} />
       </div>
-      <div className="text-4xl text-white font-medium text-center">{label}</div>
+      <div className="text-2xl md:text-4xl text-white font-medium text-center">{label}</div>
     </div>
   );
 }
