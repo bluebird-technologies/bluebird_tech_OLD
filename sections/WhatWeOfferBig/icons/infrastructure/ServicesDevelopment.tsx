@@ -1,13 +1,11 @@
 export default (
   <svg
-    id="Component_110_1"
-    data-name="Component 110 – 1"
     xmlns="http://www.w3.org/2000/svg"
-    height="132.784"
-    viewBox="0 0 112 132.784"
+    height="81.476"
+    viewBox="0 0 74 81.476"
     className="w-full h-full"
   >
-    <g id="Layer_x0020_1" transform="translate(21.687 0)" opacity="0.6">
+    <g id="Layer_x0020_1" opacity="0.6">
       <path
         id="Path_3029"
         data-name="Path 3029"
@@ -17,23 +15,5 @@ export default (
         fillRule="evenodd"
       />
     </g>
-    <text
-      id="Services_Development"
-      data-name="Services
-Development"
-      transform="translate(56 109.784)"
-      fill="#fff"
-      fontSize="16"
-      fontFamily="Montserrat-Medium, Montserrat"
-      fontWeight="500"
-      opacity="0.6"
-    >
-      <tspan x="-33" y="0">
-        Services
-      </tspan>
-      <tspan x="-55" y="19">
-        Development
-      </tspan>
-    </text>
   </svg>
 );

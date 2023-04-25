@@ -11,16 +11,18 @@ import { MobileHeader } from '../components/MobileHeader';
 import IconLayout from '../components/Solutions/IconLayout';
 import SeeBanner from '../components/SeeBanner';
 import SolutionsAnimatedSection from '../components/Solutions/SolutionsAnimatedSection';
+
+export interface IconWithTextType {
+  title: string;
+  icon: ReactNode;
+  iconMobile: ReactNode;
+}
 export interface SolutionType {
   title: string;
   firstParagraphDescription: string;
   secondParagraphDescription: string;
   catchPhrase: string;
-  content: {
-    contentType: 'text' | 'icon';
-    icons: ReactNode[] | 'string'[];
-    iconsMobile?: ReactNode[] | 'string'[];
-  };
+  icons: IconWithTextType[];
   amtItemsInFirstRow: number;
   centerSecondRow: boolean;
   secondLayerTitle: string;
@@ -30,14 +32,18 @@ export interface SolutionType {
 export default function Offer() {
   const [solutionOption, setSolutionOption] = useState<string>('Web Development');
 
-  const hideOnMobile = ['API & System Development', 'Developer Outsourcing', 'Product Management'];
-
   // for the mobile slider
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
+
+  const styleButtonDisengaged =
+    'w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover';
+  const styleButtonEngaged =
+    'w-[30px] h-[30px] rounded-full bg-highlight border-[6px] border-[#FFFFFF27] my-[-2px]';
 
   return (
     <div className="flex flex-1 flex-col">
       {/* mobile top section div */}
+      {/* whole div is hidden on desktop width */}
       <div className="relative block md:hidden w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-primary">
           <div className="w-full h-full">
@@ -88,30 +94,21 @@ export default function Offer() {
         </div>
 
         {solutions.map((sol) => {
-          if (sol.title === currentSelectedOption) {
-            if (!hideOnMobile.includes(sol.title)) {
-              return (
-                <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
-                  <div className="flex flex-col">
-                    <div className="flex mt-8 mb-12 w-full justify-center">
-                      <div className="max-w-[240px]">
-                        <h1 className="text-xl text-highlight text-center font-semibold">
-                          {sol.catchPhrase}
-                        </h1>
-                      </div>
+          if (sol.title === currentSelectedOption && sol.title !== 'Developer Outsourcing') {
+            return (
+              <div className="w-full bg-white mb-20 mt-12" key={sol.title}>
+                <div className="flex flex-col">
+                  <div className="flex mt-8 mb-12 w-full justify-center">
+                    <div className="max-w-[240px]">
+                      <h1 className="text-xl text-highlight text-center font-semibold">
+                        {sol.catchPhrase}
+                      </h1>
                     </div>
-                    <IconLayout
-                      content={{
-                        contentType: sol.content.contentType,
-                        icons: sol.content.iconsMobile ?? sol.content.icons,
-                      }}
-                      amtIconsRowOne={sol.amtItemsInFirstRow}
-                      rowTwoCenter={sol.centerSecondRow}
-                    />
                   </div>
+                  <IconLayout title={sol.title} icons={sol.icons} />
                 </div>
-              );
-            }
+              </div>
+            );
           }
         })}
 
@@ -131,6 +128,7 @@ export default function Offer() {
         </div>
       </div>
 
+      {/* whole div is hidden on mobile */}
       <div className="hidden md:flex md:flex-col w-full bg-cover bg-bottom items-center relative pb-[150px]">
         <div
           className="bg-primary h-full"
@@ -165,7 +163,7 @@ export default function Offer() {
             </div>
 
             <div className="flex w-full justify-center mt-20">
-              <div className="flex w-full max-w-[1080px]">
+              <div className="flex w-full max-w-[1280px]">
                 {items.map((i) => (
                   <div
                     onClick={() => setSolutionOption(i.label)}
@@ -183,11 +181,9 @@ export default function Offer() {
                       )}
                     </div>
                     <div
-                      className={`w-[26px] h-[26px] rounded-full bg-white border-[6px] border-[#EAEAEA] ${
-                        i.label === solutionOption
-                          ? 'bg-highlight border-[#FFFFFF27] h-[30px] w-[30px] my-[-2px]'
-                          : ''
-                      } group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover:`}
+                      className={
+                        i.label === solutionOption ? styleButtonEngaged : styleButtonDisengaged
+                      }
                     />
                   </div>
                 ))}
@@ -202,7 +198,6 @@ export default function Offer() {
           </div>
         </div>
       </div>
-
       <div className="hidden md:flex items-center justify-center bg-secondary pb-[150px] pt-[280px] -mt-[200px]">
         {solutions.map((solution) => {
           if (solution.title === solutionOption) {
@@ -217,9 +212,8 @@ export default function Offer() {
           }
         })}
       </div>
-
-      <div className="bg-primary w-full h-[200px] flex justify-center items-center">
-        <SeeBanner label={'EXPLORE OUR OTHER SERVICES'} url={'#'} />
+      <div className="bg-primary w-full flex justify-center items-center">
+        <SeeBanner label="EXPLORE OUR OTHER SERVICES" url={'#'} />
       </div>
       <div className="z-10 w-full bg-[#F1F1F1]">
         <Footer />

@@ -8,34 +8,23 @@ export interface Props {
 }
 
 function SolutionsCard({ item }: Props) {
-  const {
-    title,
-    catchPhrase,
-    firstParagraphDescription,
-    secondParagraphDescription,
-    content,
-    amtItemsInFirstRow,
-    centerSecondRow,
-  } = item;
+  const { title, catchPhrase, firstParagraphDescription, secondParagraphDescription, icons } = item;
   if (title === 'Developer Outsourcing') {
     return (
-      <SolutionsCardContainer>
-        <div className="w-full mb-14">
-          <div className="flex w-full">
-            <h1 className="text-white font-extrabold uppercase text-5xl">{title.split(' ')[0]}</h1>
-            <SwiggleLine className="ml-20 -mt-5" />
+      <div className="flex justify-center mt-28 mb-10 w-full">
+        <div className="flex flex-col max-w-[1350px] overflow-hidden w-full">
+          <div className="flex pb-12 ">
+            <div className="text-white font-extrabold uppercase text-5xl">{title}</div>
+            <SwiggleLine />
           </div>
-          <h1 className="text-white font-extrabold uppercase text-5xl mt-2">
-            {title.split(' ')[1]}
-          </h1>
+          <div className="mr-32">
+            <p className="text-white text-[27px] leading-8">
+              {firstParagraphDescription} <b />
+            </p>
+            <p className="mt-5 text-white text-[27px] leading-8">{secondParagraphDescription}</p>
+          </div>
         </div>
-        <div className="mr-32">
-          <p className="text-white text-[27px] leading-8">
-            {firstParagraphDescription} <b />
-          </p>
-          <p className="mt-5 text-white text-[27px] leading-8">{secondParagraphDescription}</p>
-        </div>
-      </SolutionsCardContainer>
+      </div>
     );
   }
 
@@ -74,8 +63,8 @@ function SolutionsCard({ item }: Props) {
       {/* parralel sections */}
       <div className="flex flex-row justify-between">
         {/* left section */}
-        <div className="w-3/5">
-          <div className="w-4/5">
+        <div className="w-1/2">
+          <div className="">
             <p className="text-white text-[27px] leading-8">
               {firstParagraphDescription} <b />
             </p>
@@ -83,15 +72,11 @@ function SolutionsCard({ item }: Props) {
           </div>
         </div>
         {/* right section */}
-        <div className="w-2/5 -mt-24">
+        <div className="w-1/2 -mt-24 pl-8 lg:pl-16 2xl:pl-24">
           <div className="flex justify-end">
             <div className="flex flex-col w-full justify-end space-y-8">
               <p className="text-highlight text-2xl text-right italic pb-6">{catchPhrase}</p>
-              <IconLayout
-                content={content}
-                amtIconsRowOne={amtItemsInFirstRow}
-                rowTwoCenter={centerSecondRow}
-              />
+              <IconLayout title={title} icons={icons} />
             </div>
           </div>
         </div>
