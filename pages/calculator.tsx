@@ -43,6 +43,8 @@ function Calculator() {
   const [admin, setAdmin] = useState<OptionWithRole[] | []>([]);
   const [datesAndLocation, setDatesAndLocation] = useState<OptionWithRole[] | []>([]);
 
+  const [showRateCard, setShowRateCard] = useState<boolean>(false);
+
   const contextValue = {
     platform,
     setPlatform,
@@ -141,7 +143,7 @@ function Calculator() {
   const teamMembers = combineAndDisplayRoles();
 
   return (
-    <div className="w-full overflow-hidden xl:overflow-visible">
+    <div className="w-full overflow-hidden xl:overflow-visible ">
       <div>
         {formSectionActive && (
           <div>
@@ -153,7 +155,7 @@ function Calculator() {
                   </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
                     <div
-                      className=" w-[285vw] -z-1 left-[-98%]  -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-3/4"
+                      className=" w-[285vw] -z-1 left-[-98%]  -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-3/4 xl:h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
@@ -179,7 +181,7 @@ function Calculator() {
                 <div className="overflow-hidden">
                   <div className="w-full flex flex-col items-center relative h-[600px]">
                     <div
-                      className=" w-[285vw] -z-1 left-[-98%] bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
+                      className=" w-[285vw] -z-1 left-[-98%] bg-primary absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
@@ -421,18 +423,24 @@ function Calculator() {
                     >
                       Build a Platform
                     </button>
-                    <button className="px-8 text-xl xl:px-0 xl:w-[420px] h-[66px] font-bold xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full">
+                    <button
+                      onClick={() => setShowRateCard(true)}
+                      className="px-8 text-xl xl:px-0 xl:w-[420px] h-[66px] font-bold xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
+                    >
                       Find a Particular Resource
                     </button>
                   </div>
                 </div>
               </div>
-              <div className="w-full  xl:flex justify-center my-16 xl:my-24">
-                <picture className="xl:px-64">
-                  <source srcSet="/calculator/RateCard.png" />
-                  <img src="/calculator/RateCard.png" alt="rates" />
-                </picture>
-              </div>
+              {/* Rate card */}
+              {showRateCard && (
+                <div className="w-full  xl:flex justify-center my-16 xl:my-24">
+                  <picture className="xl:px-64">
+                    <source srcSet="/calculator/RateCard.png" />
+                    <img src="/calculator/RateCard.png" alt="rates" />
+                  </picture>
+                </div>
+              )}
             </div>
             <Footer />
           </div>
