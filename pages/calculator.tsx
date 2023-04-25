@@ -386,13 +386,13 @@ function Calculator() {
                       />
                     </div>
                   </div>
-                  <div className="2xl:w-1/2 px-12  flex items-center justify-center  mt-8 mx-8 xl:mx-0 xl:mt-8 2xl:mt-52">
+                  <div className="2xl:w-1/2 px-12  flex items-center justify-center  mt-8 mx-8 xl:mx-0 xl:mt-8 2xl:mt-32">
                     <div className="flex items-center justify-center flex-col xl:pr-64">
-                      <p className=" text-center text-lg  text-white font-normal mb-4 xl:text-2xl">
+                      <p className="text-center xl:text-left text-lg  text-white font-normal mb-4 xl:text-2xl">
                         Intro line of what this page is about (Get an estimate of what you want
                         done).
                       </p>
-                      <p className="text-center text-lg text-white font-normal mb-4 xl:text-2xl">
+                      <p className="text-center mt-2 xl:mt-8  xl:text-left text-lg text-white font-normal mb-4 xl:text-2xl">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
                       </p>
