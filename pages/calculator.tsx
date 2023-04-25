@@ -194,11 +194,15 @@ function Calculator() {
                       <Header />
                     </div>
                     <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
-                      <h1 className="w-full  text-center title-1">Your Quote Estimate</h1>
+                      <div className="mx-8 xl:mx-0">
+                        <h1 className=" xl:w-full text-center font-extrabold text-white xl:leading-[64px] text-[32px] xl:text-[52px] uppercase">
+                          Your Quote Estimate
+                        </h1>
+                      </div>
                       <div className="flex w-full justify-center">
                         <div className="flex  items-center justify-center xl:justify-start xl:items-start  mt-6 xl:flex xl:w-full xl:mt-6 xl:px-64 xl:max-w-[1800px]">
                           <div className="flex mx-4 items-center justify-center  xl:mx-0 w-3/4 xl:w-3/5">
-                            <p className="text-white text-center text-xl xl:pl-12">
+                            <p className="text-white text-center xl:text-xl xl:pl-12">
                               (Disclaimer)
                               <br />
                               <br />
