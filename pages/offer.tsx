@@ -36,9 +36,9 @@ export default function Offer() {
   const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
 
   const styleButtonDisengaged =
-    'w-[26px] h-[26px] absolute top-0 rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover';
+    'w-[26px] h-[26px] top-0 rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover';
   const styleButtonEngaged =
-    'w-[30px] h-[30px] absolute top-0 rounded-full bg-highlight border-[6px] border-[#FFFFFF27] my-[-2px]';
+    'w-[30px] h-[30px] top-0 rounded-full bg-highlight border-[6px] border-[#FFFFFF27] my-[-2px]';
 
   return (
     <div className="flex flex-1 flex-col">
@@ -172,9 +172,7 @@ export default function Offer() {
                       i.label === solutionOption ? 'text-secondary group ' : ''
                     } text-highlight hover:text-secondary hover:cursor-pointer group transition-all`}
                   >
-                    <div className="relative w-20 h-20">
-                      <div className="absolute w-16 h-16">{i.icon}</div>
-                    </div>
+                    <div className="w-16 h-16">{i.icon}</div>
                     <div className="text-white text-[13px] leading-[15px] font-extrabold uppercase text-center my-4">
                       {i.label !== 'API & System Development' ? (
                         i.label.split(' ').map((t, i) => <div key={i}>{t}</div>)
@@ -182,12 +180,14 @@ export default function Offer() {
                         <div>{i.label}</div>
                       )}
                     </div>
-                    <div className="relative h-[30px] w-[30px]">
-                      <div
-                        className={
-                          i.label === solutionOption ? styleButtonEngaged : styleButtonDisengaged
-                        }
-                      />
+                    <div className="relative h-[30px] w-full flex justify-center items-center">
+                      <div className="absolute">
+                        <div
+                          className={
+                            i.label === solutionOption ? styleButtonEngaged : styleButtonDisengaged
+                          }
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}

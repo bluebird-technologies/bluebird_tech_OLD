@@ -59,9 +59,9 @@ export const solutions: SolutionType[] = [
   {
     title: 'Web Development',
     firstParagraphDescription:
-      'Using modern technologies combined with the latest web standards, we create performant, responsive, sleek, and secure websites.',
+      'Using modern technologies combined with the latest web standards, we create performant, responsive, sleek, and secure websites. We are dedicated to helping you establish a powerful online presence.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      'Our expertise and experience in coding, design, and user experience allows us to build custom web solutions that meet the unique needs of our clients.',
     catchPhrase: 'Unleash the power of your product with our web-based solutions',
     icons: [
       { title: 'angular', icon: angular, iconMobile: angularMobile },
@@ -78,9 +78,9 @@ export const solutions: SolutionType[] = [
   {
     title: 'App Development',
     firstParagraphDescription:
-      'Using modern technologies combined with the latest web standards, we create performant, responsive, sleek, and secure websites.',
+      'We are passionate about creating innovative and engaging mobile experiences that help individuals and businesses reach their full potential.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      'With expertise in both iOS and Android platforms, we specialize in developing high-quality, customized mobile applications to help our clients achieve their vision.',
     catchPhrase: 'Experts in technology that’s here to stay',
     icons: [
       { title: 'flutter', icon: flutter, iconMobile: flutterMobile },
@@ -96,9 +96,9 @@ export const solutions: SolutionType[] = [
   {
     title: 'Infrastructure Development',
     firstParagraphDescription:
-      'We develop everything from banking solutions to logistic systems and have the server-, database-, and services development experience to tackle any problem',
+      'Our services encompass a wide range of expertise enabling us to tackle even the most complex challenges.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      'We develop everything from banking solutions to logistic systems and have the server-, database-, and services development experience to tackle any problem',
     catchPhrase: 'Building the foundation for your success',
     icons: [
       { title: 'Transport Systems', icon: transport, iconMobile: transportMobile },
@@ -116,9 +116,9 @@ export const solutions: SolutionType[] = [
   {
     title: 'Product Management',
     firstParagraphDescription:
-      'Using Agile methodologies and effective time management we provide accurate expectations and deliver on time',
+      'Using Agile methodologies and effective time management we provide accurate expectations and deliver on time.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      'We provide the strategic guidance and expertise needed to create and launch successful products that meet the needs of your customers.',
     catchPhrase: 'Streamlining your product journey for success!',
     icons: [
       { title: 'Scrum Master', icon: '', iconMobile: '' },
@@ -138,7 +138,7 @@ export const solutions: SolutionType[] = [
     firstParagraphDescription:
       'Working with a wide range of designers and employing a multi-iterative approach, we invent powerful brands and provide pixel perfect fine tuning to existing solutions.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      "We understand the critical importance of effective branding and design. That's why we employ a multi-iterative approach to create powerful brands that stand out in todays crowded marketplace.",
     catchPhrase: 'User-centric design to drive enjoyment and engagement',
     icons: [
       { title: 'figma', icon: figma, iconMobile: figmaMobile },
@@ -154,10 +154,10 @@ export const solutions: SolutionType[] = [
   {
     title: 'Developer Outsourcing',
     firstParagraphDescription:
-      'WLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. ',
+      'We understand the critical importance of high-quality software development, but building and maintaining an in-house development team can be costly and time-consuming.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
-    catchPhrase: 'Lorem ipsum lorem ipsum',
+      "That's why we offer developer outsourcing services that provide access to talented developers with the skills and expertise you need to take your software development projects to the next level.",
+    catchPhrase: 'Scale your development capacity with seamless outsourcing solutions',
     icons: [
       { title: 'placeholder', icon: '', iconMobile: '' },
       { title: 'placeholder2', icon: '', iconMobile: '' },
@@ -172,9 +172,9 @@ export const solutions: SolutionType[] = [
   {
     title: 'API & System Development',
     firstParagraphDescription:
-      'WLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. ',
+      'Connect your digital assets and streamline your business operations with our API and system development services.',
     secondParagraphDescription:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam',
+      'Our expert team can design, develop, and deploy robust APIs and systems that enable seamless communication and data exchange between your software applications.',
     catchPhrase: 'Building robust APIs and systems to power your digital ambitions',
     icons: [
       { title: 'node', icon: node, iconMobile: nodeMobile },

@@ -2,10 +2,17 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
 import { navLeft, navRight } from './headerLinks';
+import { useRouter } from 'next/router';
 
 function NavItem({ label, href }: { label: string; href: string }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [width, setWidth] = useState<number | undefined>(undefined);
+  const { pathname } = useRouter();
+
+  const activeStyle =
+    'text-white p-2 font-bold text-[14px] leading-[17px] uppercase whitespace-nowrap';
+  const inactiveStyle =
+    'text-white p-2 hover:font-bold transition text-[14px] leading-[17px] font-medium uppercase whitespace-nowrap';
 
   // ensure element do not jump when hovering/bold
   useEffect(() => {
@@ -19,7 +26,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
       ref={ref}
       href={href}
       style={{ maxWidth: width }}
-      className="text-white p-2 hover:font-bold transition text-[14px] leading-[17px] font-medium uppercase whitespace-nowrap"
+      className={pathname == href ? activeStyle : inactiveStyle}
     >
       {label}
     </a>
