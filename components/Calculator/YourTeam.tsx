@@ -11,7 +11,9 @@ export default function YourTeam({ teamMembers }: YourTeamProps) {
   return (
     <div className="bg-primary h-[600px] w-full">
       <div className="flex w-full justify-center">
-        <h1 className="uppercase text-white text-5xl font-bold text-center mt-24">Your Team</h1>
+        <h1 className="uppercase text-white text-2xl xl:text-5xl font-bold text-center mt-24">
+          Your Team
+        </h1>
       </div>
       <div className="hidden xl:flex w-full justify-center mt-24">
         {teamMembers?.map((member, i) => {

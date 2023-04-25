@@ -252,7 +252,7 @@ function QuoteCalculatorWidget() {
       </div>
       {teamMembers.length > 0 && (
         <div className="px-8 py-8">
-          <div className="text-primary text-2xl font-bold justify-center text-center mb-4">
+          <div className="text-primary  xl:text-2xl font-bold justify-center text-center mb-4">
             Your Team:
           </div>
 
