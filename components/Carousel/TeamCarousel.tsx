@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Lottie from 'lottie-react';
 import teammemberanimation from '../../public/lottie/teammemberanimation.json';
+import ChevronRight from '../../public/chevron-right.svg';
 
 interface Props {
   item: string[];
@@ -13,14 +14,21 @@ export default function TeamCarousel({ item }: Props) {
     <Carousel
       emulateTouch
       infiniteLoop
-      showArrows={true}
+      showArrows={false}
       showStatus={false}
       showIndicators={false}
-      showThumbs={true}
-      width={350}
+      showThumbs={false}
+      width={420}
       centerMode={true}
       centerSlidePercentage={100}
       onChange={(val) => console.log(val)}
+      renderArrowNext={(clickHandler) => {
+        return (
+          <div onClick={clickHandler} className="absolute top-28 right-4">
+            <ChevronRight />
+          </div>
+        );
+      }}
     >
       {item?.map((label, i) => {
         return (
