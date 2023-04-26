@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Button } from '../components/Button';
 import Swiggle from '../public/contact/wave-line.svg';
@@ -16,6 +16,11 @@ const Contact = () => {
     'Formal Quote',
     'General Enquiry',
   ];
+
+  // TODO what are the form options used for? Mailer?
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [selectedOption, setSelectedOption] = useState('');
+
   return (
     <div className="bg-secondary flex-1 flex flex-col h-full overflow-hidden">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
@@ -57,7 +62,7 @@ const Contact = () => {
             <SelectDropdown
               placeholder="Reason for contacting us(select)"
               options={dropdownOptions}
-              selectedItem={(option) => console.log(option)}
+              selectedItem={(option) => setSelectedOption(option)}
             />
           </div>
           <input
