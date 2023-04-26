@@ -49,7 +49,7 @@ export default function ClientIconsCarousel() {
 }
 
 function CarouselSlideItem({ icon }: Props) {
-  var altText = icon.split('/')[2].split('.')[0];
+  const altText = icon.split('/')[2].split('.')[0];
   return (
     <div className="mx-2 mb-4 flex flex-col items-center justify-center   text-primary">
       <picture>
