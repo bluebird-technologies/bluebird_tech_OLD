@@ -42,9 +42,9 @@ export default function Home() {
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
             <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>
-            <Button className="">
-              <a href="#offer">See what we offer</a>
-            </Button>
+            <Link href="#offer">
+              <Button className="">See what we offer</Button>
+            </Link>
             <div className=" overflow-hidden">
               <Lottie
                 style={{ width: '598px' }}
@@ -76,9 +76,9 @@ export default function Home() {
               accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
               sanctus est Lorem ipsum dolor sit amet.
             </p>
-            <Button className="2xl:ml-[38px]  mt-4 2xl:mt-0">
-              <Link href="/why">read more</Link>
-            </Button>
+            <Link href="/why">
+              <Button className="2xl:ml-[38px]  mt-4 2xl:mt-0">read more</Button>
+            </Link>
           </div>
         </div>
         <div className="flex w-full justify-center  lg:hidden">
@@ -205,9 +205,9 @@ export default function Home() {
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
-          <Button>
-            <Link href="/contact">Get in touch</Link>
-          </Button>
+          <Link href="/contact">
+            <Button>Get in touch</Button>
+          </Link>
         </Container>
       </div>
 
