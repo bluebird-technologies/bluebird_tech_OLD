@@ -41,7 +41,7 @@ export function FormSection({ setShowCalc }: Props) {
   const multiSelectionIndexes = [4, 7, 8, 9];
   const hasBackButtonIndexes = [1, 2, 3, 5, 6];
 
-  const handleSingleSelection = (optimistic: number, pessimistic: number, option: TFormOption) => {
+  const handleSingleSelection = (option: TFormOption) => {
     // need to access setters from here, so cannot move them to the util function
     if (currentFormIndex === 0) {
       const res = getPlatform(option.title as 'Apple iOS' | 'Android' | 'Web' | 'Multi-Platform');
@@ -216,13 +216,7 @@ export function FormSection({ setShowCalc }: Props) {
             currentIndex={currentFormIndex}
             title={forms[currentFormIndex].title}
             description={forms[currentFormIndex].description}
-            setSelectedOption={(val) =>
-              handleSingleSelection(
-                val.option.optimisticHours ?? 0,
-                val.option.pessimisticHours ?? 0,
-                val.option
-              )
-            }
+            setSelectedOption={(val) => handleSingleSelection(val.option)}
             backButton={hasBackButtonIndexes.includes(currentFormIndex)}
             goBack={() => handleBack()}
             options={forms[currentFormIndex].options}

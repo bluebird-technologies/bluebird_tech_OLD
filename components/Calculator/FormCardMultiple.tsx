@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import RightArrow from '../../public/right-arrow.svg';
 import { Checkmark } from './icons/Checkmark';
 
 interface TFormOption {
@@ -104,11 +105,11 @@ function FormCard({
 
   return (
     <div className="flex flex-col">
-      <h3 className="text-white text-3xl text-center xl:text-4xl font-semibold">{title}</h3>
-      <div className="mt-8 flex  items-center justify-center px-2">
-        <span className="text-white text-lg text-center xl:text-2xl">{description}</span>
+      <h3 className="text-white text-4xl font-semibold">{title}</h3>
+      <div className="mt-8">
+        <span className="text-white text-2xl">{description}</span>
       </div>
-      <div className="mx-auto xl:mx-0 inline-grid grid-cols-2 mt-8  gap-4 xl:flex xl:flex-row xl:mt-16 xl:justify-between">
+      <div className="flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-between">
         {options.map((option) => (
           <div
             onClick={() => {
@@ -119,7 +120,7 @@ function FormCard({
               }
             }}
             key={option.optionIndex}
-            className="relative mb-8 mx-4 xl:mx-0 cursor-pointer justify-center items-center text-center max-w-[150px]"
+            className="relative cursor-pointer justify-center items-center text-center max-w-[150px] even:ml-4 md:even:ml-0 mt-3 md:mt-0"
           >
             {currentOptionSelection.includes(option.optionIndex) && (
               <div className="absolute w-full h-full text-5xl text-white" style={{ zIndex: 10 }}>
@@ -132,8 +133,8 @@ function FormCard({
             <div
               className={
                 currentOptionSelection.includes(option.optionIndex)
-                  ? 'h-[120px] transition transform hover:scale-125 duration-300 opacity-50'
-                  : 'h-[120px] transition transform hover:scale-125 duration-300'
+                  ? 'h-[7.5rem] transition transform hover:scale-125 duration-300 opacity-50'
+                  : 'h-[7.5rem] transition transform hover:scale-125 duration-300'
               }
             >
               {option.icon}
@@ -143,33 +144,21 @@ function FormCard({
         ))}
       </div>
 
-      <div className="w-full flex justify-between mt-12">
+      <div className="w-full flex justify-between mt-12 h-8 md:h-12">
         <button
           onClick={() => goBack()}
-          className="text-white font-medium text-md md:text-base xl:text-xl flex items-center justify-center"
+          className="text-white font-medium text-xl flex items-center justify-center"
         >
-          <picture>
-            <img
-              src="/right-arrow.svg"
-              className="origin-center mr-2 h-12 w-12 xl:h-auto xl:w-auto rotate-180 xl:mr-4"
-              alt="right arrow"
-            />
-          </picture>
-          BACK
+          <RightArrow className="origin-center rotate-180 mr-4 h-[3rem]" />
+          <span className="text-sm md:text-2xl">BACK</span>
         </button>
         {currentOptionSelection.length > 0 && (
           <button
             onClick={() => handleSubmit()}
-            className="text-white font-medium  text-md md:text-base xl:text-xl flex items-center justify-center"
+            className="text-white font-medium text-xl flex items-center justify-center"
           >
-            <picture>
-              <img
-                src="/right-arrow.svg"
-                className="origin-center mr-2 h-12 w-12 xl:h-auto xl:w-auto ml-2 xl:mr-4"
-                alt="right arrow"
-              />
-            </picture>
-            PROCEED
+            <RightArrow className="origin-center mr-4" />
+            <span className="text-sm md:text-2xl">PROCEED</span>
           </button>
         )}
       </div>

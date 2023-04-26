@@ -162,7 +162,7 @@ function Calculator() {
                       }}
                     />
 
-                    <div className="hidden 2xl:block">
+                    <div className="w-full hidden xl:block">
                       <Header />
                     </div>
                   </div>
@@ -187,10 +187,10 @@ function Calculator() {
                         borderBottomRightRadius: '50%',
                       }}
                     />
-                    <div className="w-full xl:hidden">
+                    <div className="block lg:hidden">
                       <MobileHeader />
                     </div>
-                    <div className="hidden xl:block">
+                    <div className="hidden lg:block">
                       <Header />
                     </div>
                     <div className="flex flex-col w-full mt-32" style={{ zIndex: 10 }}>
@@ -352,13 +352,13 @@ function Calculator() {
           </div>
         )}
         {!formSectionActive && (
-          <div className="w-full overflow-hidden flex-1 flex flex-col  items-center   ">
-            <div className=" lg:hidden w-full">
+          <div className="w-full overflow-hidden flex-1 flex flex-col items-center">
+            <div className="block lg:hidden w-full">
               <MobileHeader />
             </div>
             <div className="w-full flex flex-col relative pv-20 xl:pb-8 ">
               <div
-                className="   w-[285vw] -z-1 left-[-98%] bg-primary  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
+                className="w-[285vw] -z-1 left-[-98%] bg-primary  absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
                 style={{
                   borderBottomLeftRadius: '50%',
                   borderBottomRightRadius: '50%',
@@ -367,10 +367,10 @@ function Calculator() {
               <div className="hidden lg:block w-full">
                 <Header />
               </div>
-              <div className="w-full flex-1   items-center justify-center  flex flex-col">
-                <div className="flex z-10  flex-col items-center 2xl:flex-row w-full pb-8 mt-32">
-                  <div className="flex flex-col  justify-center w-full items-center text-center xl:w-1/2">
-                    <h3 className="text-3xl xl:text-6xl text-center uppercase  font-bold text-white">
+              <div className="flex w-full mt-20 md:mt-32 pb-8 2xl:pb-0">
+                <div className="flex z-10 flex-col 2xl:flex-row w-full px-4 md:px-20 2xl:px-0">
+                  <div className="flex flex-col justify-center w-full items-center text-center 2xl:w-1/2">
+                    <h3 className="text-3xl xl:text-6xl text-center uppercase font-bold text-white">
                       Get a hassle-free
                       <br />
                       quote estimate
@@ -386,13 +386,13 @@ function Calculator() {
                       />
                     </div>
                   </div>
-                  <div className="2xl:w-1/2 px-12  flex items-center justify-center  mt-8 mx-8 xl:mx-0 xl:mt-8 2xl:mt-32">
-                    <div className="flex items-center justify-center flex-col xl:pr-64">
-                      <p className="text-center xl:text-left text-lg  text-white font-normal mb-4 xl:text-2xl">
+                  <div className="flex 2xl:w-1/2 justify-center 2xl:justify-start mt-12 2xl:mt-40">
+                    <div className="flex flex-col 2xl:pr-32 justify-center items-center 2xl:justify-start 2xl:items-start">
+                      <p className="text-center 2xl:text-left text-lg text-white font-normal mb-4 xl:text-2xl">
                         Intro line of what this page is about (Get an estimate of what you want
                         done).
                       </p>
-                      <p className="text-center mt-2 xl:mt-8  xl:text-left text-lg text-white font-normal mb-4 xl:text-2xl">
+                      <p className="text-center mt-2 2xl:mt-8  2xl:text-left text-lg text-white font-normal mb-4 xl:text-2xl">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
                       </p>

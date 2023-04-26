@@ -1,6 +1,5 @@
 import React from 'react';
 import RigthArrow from '../public/right-arrow.svg';
-import RigthArrowMobile from '../public/right-arrow-mobile.svg';
 import Link from 'next/link';
 
 interface SeeBannerProps {
@@ -16,7 +15,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
         <div className="hidden lg:flex items-center justify-center">
           {invert ? (
             <>
-              <div className="mr-5 rotate-180">
+              <div className="mr-5 rotate-180 h-[3rem]">
                 <RigthArrow />
               </div>
               <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase text-center lg:text-start">
@@ -28,7 +27,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
               <h1 className="text-white text-3xl lg:text-4xl font-bold uppercase text-center lg:text-start">
                 {label}
               </h1>
-              <div className="ml-5">
+              <div className="ml-5 h-[3rem]">
                 <RigthArrow />
               </div>
             </>
@@ -41,7 +40,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
                 <h1 className="text-white text-xl uppercase text-center lg:text-start">{label}</h1>
               </div>
               <div className="ml-3 h-6 rotate-180">
-                <RigthArrowMobile />
+                <RigthArrow />
               </div>
             </>
           ) : (
@@ -50,7 +49,7 @@ export default function SeeBanner({ label, url, invert }: SeeBannerProps) {
                 <h1 className="text-white text-xl uppercase text-center lg:text-start">{label}</h1>
               </div>
               <div className="ml-3 h-6">
-                <RigthArrowMobile />
+                <RigthArrow />
               </div>
             </>
           )}
