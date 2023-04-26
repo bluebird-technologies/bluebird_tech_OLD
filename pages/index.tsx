@@ -146,17 +146,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="shadow-[0px 9px 11px #00000029] flex flex-col items-center bg-primary pt-[55px] pb-[80px]">
-        <div className="flex w-full flex-col items-center justify-center px-6">
+      <div className="shadow-[0px 9px 11px #00000029] flex flex-1 flex-col items-center bg-primary pt-[55px] pb-[80px]">
+        <div className="flex flex-1  flex-col items-start justify-center px-6">
           <div className="subtitle mt-[30px]  flex w-full flex-col items-center text-2xl lg:w-auto">
             <span className="text-2xl ">Case studies</span>
           </div>
-          <div className="flex w-full flex-col items-center ">
+          <div className="flex w-full lg:w-auto lg:my-6 flex-col  ">
             <h2 className="title-2 alt text-center">
-              <span className="text-center text-xl lg:text-5xl">SEE OUR LATEST WORK</span>
+              <span className="text-center text-xl  lg:text-5xl">SEE OUR LATEST WORK</span>
             </h2>
           </div>
-          <div className="flex w-full flex-col items-center">
+          <div className="flex w-full lg:w-auto  flex-col ">
             <p className="alt hidden text-center text-xl lg:block">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr
             </p>
