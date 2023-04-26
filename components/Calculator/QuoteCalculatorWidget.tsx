@@ -106,7 +106,7 @@ function QuoteCalculatorWidget() {
   ]);
 
   return (
-    <div className="bg-white max-h-[650px] min-w-[350px] w-full shadow-md overflow-scroll overflow-x-hidden scrollbar-hide">
+    <div className="bg-white lg:max-h-[650px] min-w-[350px] w-full shadow-md overflow-x-hidden scrollbar-hide lg:overflow-scroll">
       <div className="flex flex-row justify-between mt-4 px-8">
         <div className="text-lightGrey text-lg italic">Title</div>
         <div className="text-lightGrey text-lg italic">Hours</div>

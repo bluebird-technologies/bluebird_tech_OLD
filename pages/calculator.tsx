@@ -171,7 +171,7 @@ function Calculator() {
                     <div className="flex grow xl:pt-32 max-w-[900px] mx-4 xl:ml-12 2xl:ml-32">
                       <FormSection setShowCalc={setShowCalculationScreen} />
                     </div>
-                    <div className="flex  xl:mt-[350px]  xl:ml-12 2xl:ml-64 xl:w-[440px] xl:pr-12">
+                    <div className="flex xl:mt-[350px] xl:ml-12 2xl:ml-64 xl:w-[440px] xl:pr-12">
                       <QuoteCalculatorWidget />
                     </div>
                   </div>
