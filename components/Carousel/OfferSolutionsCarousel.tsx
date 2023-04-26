@@ -10,9 +10,10 @@ export interface SolutionItem {
 interface CarouselProps {
   slides: SolutionItem[];
   onChange: (val: string) => void;
+  selectedItem: number;
 }
 
-export default function OfferSolutionsCarousel({ slides, onChange }: CarouselProps) {
+export default function OfferSolutionsCarousel({ slides, onChange, selectedItem }: CarouselProps) {
   return (
     <div className="max-w-[100vw]">
       <Carousel
@@ -25,6 +26,7 @@ export default function OfferSolutionsCarousel({ slides, onChange }: CarouselPro
         preventMovementUntilSwipeScrollTolerance={true}
         swipeScrollTolerance={50}
         onChange={(val) => onChange(slides[val].label)}
+        selectedItem={selectedItem}
       >
         {slides.map((slide, i) => {
           return (

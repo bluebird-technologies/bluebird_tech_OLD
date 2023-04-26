@@ -3,7 +3,6 @@ import { Header } from '../components/Header';
 import underline from '../components/WhyBluebird/icons/underline';
 import orangeCircleSelected from '../components/WhyBluebird/icons/orange-circle-selected';
 import blueCircle from '../components/WhyBluebird/icons/blue-circle';
-import { Button } from '../components/Button';
 import waveLines from '../components/WhyBluebird/icons/wave-lines';
 import Lottie from 'lottie-react';
 import coderAnimation from '../public/why/teaLottie.json';
