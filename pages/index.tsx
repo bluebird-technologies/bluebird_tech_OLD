@@ -168,7 +168,7 @@ export default function Home() {
             {latestWorkSlide.map((item, key) => (
               <div
                 key={key}
-                className="lg-[360px] flex h-[273px] w-[320px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
+                className="lg-[360px] hover:scale-110 transition duration-150 flex h-[273px] w-[320px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
                 style={{
                   backgroundImage: `url(${item.backgroundImage})`,
                 }}
