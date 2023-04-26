@@ -3,7 +3,6 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Lottie from 'lottie-react';
 import teammemberanimation from '../../public/lottie/teammemberanimation.json';
-import ChevronRight from '../../public/chevron-right.svg';
 
 interface Props {
   item: string[];
@@ -21,10 +20,12 @@ export default function TeamCarousel({ item }: Props) {
       width={350}
       centerMode={true}
       centerSlidePercentage={100}
-      onChange={(val) => console.log(val)}
       renderArrowNext={(clickHandler) => {
         return (
-          <div onClick={clickHandler} className="min-[320px]:block hidden absolute top-28 right-4 ">
+          <div
+            onClick={clickHandler}
+            className="block sm:hidden absolute top-28 right-4 cursor-pointer z-10"
+          >
             <picture>
               <img src="/chevron-right.svg" alt="chevron-right svg" className="h-16 w-16 " />
             </picture>

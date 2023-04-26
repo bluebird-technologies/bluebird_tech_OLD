@@ -137,8 +137,8 @@ function FormCard({
             <div
               className={
                 currentOptionSelection.includes(option.optionIndex)
-                  ? 'h-[7.5rem] transition transform hover:scale-125 duration-300 opacity-50'
-                  : 'h-[7.5rem] transition transform hover:scale-125 duration-300'
+                  ? 'h-[7.5rem] transition transform lg:hover:scale-125 duration-300 opacity-50'
+                  : 'h-[7.5rem] transition transform lg:hover:scale-125 duration-300'
               }
             >
               {option.icon}

@@ -62,7 +62,7 @@ function FormCard({
               }
               className="cursor-pointer justify-center items-center text-center"
             >
-              <div className="h-[7.5rem] transition transform hover:scale-125 duration-300">
+              <div className="h-[7.5rem] transition transform lg:hover:scale-125 duration-300">
                 {option.icon}
               </div>
               <div className="text-center text-white font-medium text-xl mt-2 lg:mt-6">
