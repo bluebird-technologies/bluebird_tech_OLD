@@ -30,11 +30,11 @@ function SolutionsAnimatedSection({
           }}
           loop={true}
         />
-        <Button className="bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
-          <Link href={'/calculator'}>
+        <Link href={'/calculator'}>
+          <Button className="bg-[#e97724] inline-flex rounded-full whitespace-nowrap hover:bg-gradient-to-t from-[#f6c4a1] to-[#e97724] transition-all hover:duration-1000 ease-in-out">
             <span className="uppercase text-white text-[16px] font-semibold">Get Started</span>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </div>
   );

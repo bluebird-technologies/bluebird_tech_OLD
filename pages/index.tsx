@@ -42,9 +42,9 @@ export default function Home() {
               TAILORED SOLUTIONS <br /> THAT SUIT YOUR NEEDS
             </h1>
             <div className="my-[44px] h-[4px] w-[138px] bg-secondary"></div>
-            <Button className="">
-              <a href="#offer">See what we offer</a>
-            </Button>
+            <Link href="#offer">
+              <Button className="">See what we offer</Button>
+            </Link>
             <div className=" overflow-hidden">
               <Lottie
                 style={{ width: '598px' }}
@@ -76,9 +76,9 @@ export default function Home() {
               accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
               sanctus est Lorem ipsum dolor sit amet.
             </p>
-            <Button className="2xl:ml-[38px]  mt-4 2xl:mt-0">
-              <Link href="/why">read more</Link>
-            </Button>
+            <Link href="/why">
+              <Button className="2xl:ml-[38px]  mt-4 2xl:mt-0">read more</Button>
+            </Link>
           </div>
         </div>
         <div className="flex w-full justify-center  lg:hidden">
@@ -146,17 +146,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="shadow-[0px 9px 11px #00000029] flex flex-col items-center bg-primary pt-[55px] pb-[80px]">
-        <div className="flex w-full flex-col items-center justify-center px-6">
+      <div className="shadow-[0px 9px 11px #00000029] flex flex-1 flex-col items-center bg-primary pt-[55px] pb-[80px]">
+        <div className="flex flex-1  flex-col items-start justify-center px-6">
           <div className="subtitle mt-[30px]  flex w-full flex-col items-center text-2xl lg:w-auto">
             <span className="text-2xl ">Case studies</span>
           </div>
-          <div className="flex w-full flex-col items-center ">
+          <div className="flex w-full lg:w-auto lg:my-6 flex-col  ">
             <h2 className="title-2 alt text-center">
-              <span className="text-center text-xl lg:text-5xl">SEE OUR LATEST WORK</span>
+              <span className="text-center text-xl  lg:text-5xl">SEE OUR LATEST WORK</span>
             </h2>
           </div>
-          <div className="flex w-full flex-col items-center">
+          <div className="flex w-full lg:w-auto  flex-col ">
             <p className="alt hidden text-center text-xl lg:block">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr
             </p>
@@ -168,7 +168,7 @@ export default function Home() {
             {latestWorkSlide.map((item, key) => (
               <div
                 key={key}
-                className="lg-[360px] flex h-[273px] w-[320px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
+                className="lg-[360px] hover:scale-110 transition duration-150 flex h-[273px] w-[320px] flex-1 cursor-pointer items-end bg-cover bg-bottom"
                 style={{
                   backgroundImage: `url(${item.backgroundImage})`,
                 }}
@@ -205,9 +205,9 @@ export default function Home() {
           <div className="-my-8">
             <Lottie src="lottie/8455f50a-6938-486b-b2bf-4f187cc737bf.json" />
           </div>
-          <Button>
-            <Link href="/contact">Get in touch</Link>
-          </Button>
+          <Link href="/contact">
+            <Button>Get in touch</Button>
+          </Link>
         </Container>
       </div>
 

@@ -24,7 +24,6 @@ export default function LatestWorkCarousel() {
       width={300}
       centerMode={true}
       centerSlidePercentage={100}
-      onChange={(val) => console.log(val)}
     >
       {latestWorkSlide?.map((slide, i) => {
         return (

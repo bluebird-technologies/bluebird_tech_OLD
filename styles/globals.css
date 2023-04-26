@@ -5,6 +5,9 @@
 body {
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 .title-1 {
   @apply font-extrabold text-white leading-[64px] text-[52px] uppercase;
 }

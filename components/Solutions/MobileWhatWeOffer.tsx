@@ -17,10 +17,16 @@ export default function MobileWhatWeOffer({
     onChangeSelected(currentOption);
   };
 
+  const selectedItem = items.findIndex((item) => item.label === currentSelectedOption);
+
   return (
     <div style={{ zIndex: 5 }} className="flex md:hidden w-full justify-center">
       <div className="flex flex-col">
-        <OfferSolutionsCarousel slides={items} onChange={(val) => handleChangeSlider(val)} />
+        <OfferSolutionsCarousel
+          selectedItem={selectedItem}
+          slides={items}
+          onChange={(val) => handleChangeSlider(val)}
+        />
         <div className="mt-12">
           <div className="w-full px-12">
             <SwiggleMobile />
