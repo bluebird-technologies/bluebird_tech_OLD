@@ -45,7 +45,7 @@ function FormCard({
       <div
         className={
           alignOptionsLeft
-            ? 'flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-start space-x-2 lg:space-x-24'
+            ? 'flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-start space-x-2 sm:space-x-8 lg:space-x-24'
             : 'flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-between space-x-2 lg:space-x-0'
         }
       >
