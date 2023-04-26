@@ -49,10 +49,11 @@ export default function ClientIconsCarousel() {
 }
 
 function CarouselSlideItem({ icon }: Props) {
+  var altText = icon.split('/')[2].split('.')[0];
   return (
     <div className="mx-2 mb-4 flex flex-col items-center justify-center   text-primary">
       <picture>
-        <img src={icon} alt="revix" className="max-w-10 h-12" />
+        <img src={icon} alt={altText} className="max-w-10 h-12" />
       </picture>
     </div>
   );
