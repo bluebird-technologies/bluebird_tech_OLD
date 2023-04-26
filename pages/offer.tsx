@@ -11,6 +11,7 @@ import { MobileHeader } from '../components/MobileHeader';
 import IconLayout from '../components/Solutions/IconLayout';
 import SeeBanner from '../components/SeeBanner';
 import SolutionsAnimatedSection from '../components/Solutions/SolutionsAnimatedSection';
+import { useRouter } from 'next/router';
 
 export interface IconWithTextType {
   title: string;
@@ -30,10 +31,16 @@ export interface SolutionType {
 }
 
 export default function Offer() {
-  const [solutionOption, setSolutionOption] = useState<string>('Web Development');
+  const router = useRouter();
+  const { label } = router.query;
+  const [solutionOption, setSolutionOption] = useState<string>(
+    (label as string) ?? 'Web Development'
+  );
 
   // for the mobile slider
-  const [currentSelectedOption, setCurrentSelectedOption] = useState('Web Development');
+  const [currentSelectedOption, setCurrentSelectedOption] = useState(
+    (label as string) ?? 'Web Development'
+  );
 
   const styleButtonDisengaged =
     'w-[26px] h-[26px] top-0 rounded-full bg-white border-[6px] border-[#EAEAEA] group-hover:bg-highlight group-hover:border-[#FFFFFF27] group-hover:h-[30px] group-hover:w-[30px] group-hover';

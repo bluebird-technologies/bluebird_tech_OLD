@@ -20,7 +20,6 @@ export default function SolutionCarousel() {
       width={800}
       centerMode={true}
       centerSlidePercentage={100}
-      onChange={(val) => console.log(val)}
       renderIndicator={(clickHandler, isSelected) => (
         <span
           onClick={clickHandler}
