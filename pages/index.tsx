@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 import { Lottie } from '../components/Lottie';
 import { Tabs } from '../components/Tabs';
 import { WhatWeOffer } from '../sections/WhatWeOffer';
-import ClientIcons from '../public/home/ClientIcons';
+import ClientIcons from '../components/home/ClientIcons';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import SolutionCarousel from '../components/Carousel/SolutionCarousel';
