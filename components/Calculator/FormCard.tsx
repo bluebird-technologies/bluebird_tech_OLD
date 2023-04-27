@@ -36,42 +36,52 @@ function FormCard({
 
   return (
     <div className="flex flex-col">
-      <h3 className="text-white text-4xl font-semibold">{title}</h3>
-      <div className="mt-8">
-        <span className="text-white text-2xl">{description}</span>
+      <h3 className="text-white text-2xl lg:text-4xl font-semibold text-center lg:text-left">
+        {title}
+      </h3>
+      <div className="mt-8 text-white text-xl lg:text-2xl text-center lg:text-left">
+        {description}
       </div>
       <div
         className={
           alignOptionsLeft
-            ? 'flex flex-row mt-16 justify-start space-x-24'
-            : 'flex flex-row mt-16 justify-between'
+            ? 'flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-start space-x-2 sm:space-x-8 lg:space-x-24'
+            : 'flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-center lg:justify-between space-x-2 lg:space-x-0'
         }
       >
         {options.map((option) => (
           <div
-            onClick={() =>
-              setSelectedOption({
-                option,
-              })
-            }
             key={option.optionIndex}
-            className="cursor-pointer justify-center items-center text-center"
+            className="flex min-w-[150px] justify-center items-center m-2 lg:m-0"
           >
-            <div className="h-[120px] transition transform hover:scale-125 duration-300">
-              {option.icon}
+            <div
+              onClick={() =>
+                setSelectedOption({
+                  option,
+                })
+              }
+              className="cursor-pointer justify-center items-center text-center"
+            >
+              <div className="h-[7.5rem] transition transform lg:hover:scale-125 duration-300">
+                {option.icon}
+              </div>
+              <div className="text-center text-white font-medium text-xl mt-2 lg:mt-6">
+                {option.title}
+              </div>
             </div>
-            <div className="text-center text-white font-medium text-xl mt-6">{option.title}</div>
           </div>
         ))}
       </div>
       {backButton && goBack && (
-        <div className="w-full flex justify-between mt-12">
+        <div className="w-full flex justify-between mt-12 h-8 md:h-12">
           <button
             onClick={() => goBack()}
             className="text-white font-medium text-xl flex items-center justify-center"
           >
-            <RightArrow className="origin-center rotate-180 mr-4" />
-            BACK
+            <div className="mr-4 rotate-180 h-[3rem]">
+              <RightArrow className="origin-center" />
+            </div>
+            <span className="text-sm md:text-2xl">BACK</span>
           </button>
         </div>
       )}

@@ -105,11 +105,15 @@ function FormCard({
 
   return (
     <div className="flex flex-col">
-      <h3 className="text-white text-4xl font-semibold">{title}</h3>
+      <h3 className="text-white text-2xl lg:text-4xl font-semibold text-center lg:text-left">
+        {title}
+      </h3>
       <div className="mt-8">
-        <span className="text-white text-2xl">{description}</span>
+        <span className="text-white text-xl lg:text-2xl text-center lg:text-left">
+          {description}
+        </span>
       </div>
-      <div className="flex flex-row mt-16 justify-between">
+      <div className="flex flex-row flex-wrap lg:flex-nowrap mt-16 justify-between px-6 md:px-0">
         {options.map((option) => (
           <div
             onClick={() => {
@@ -120,7 +124,7 @@ function FormCard({
               }
             }}
             key={option.optionIndex}
-            className="relative cursor-pointer justify-center items-center text-center max-w-[150px]"
+            className="relative cursor-pointer justify-center items-center text-center max-w-[100px] ml-4 md:ml-0 mt-4 md:mt-0"
           >
             {currentOptionSelection.includes(option.optionIndex) && (
               <div className="absolute w-full h-full text-5xl text-white" style={{ zIndex: 10 }}>
@@ -133,32 +137,38 @@ function FormCard({
             <div
               className={
                 currentOptionSelection.includes(option.optionIndex)
-                  ? 'h-[120px] transition transform hover:scale-125 duration-300 opacity-50'
-                  : 'h-[120px] transition transform hover:scale-125 duration-300'
+                  ? 'h-[7.5rem] transition transform lg:hover:scale-125 duration-300 opacity-50'
+                  : 'h-[7.5rem] transition transform lg:hover:scale-125 duration-300'
               }
             >
               {option.icon}
             </div>
-            <div className="text-center text-white font-medium text-xl">{option.title}</div>
+            <div className="text-center text-white font-medium text-md md:text-xl">
+              {option.title}
+            </div>
           </div>
         ))}
       </div>
 
-      <div className="w-full flex justify-between mt-12">
+      <div className="w-full flex flex-col xs:flex-row justify-between mt-12 h-8 md:h-12">
         <button
           onClick={() => goBack()}
           className="text-white font-medium text-xl flex items-center justify-center"
         >
-          <RightArrow className="origin-center rotate-180 mr-4" />
-          BACK
+          <div className="mr-4 rotate-180 h-[3rem]">
+            <RightArrow className="origin-center" />
+          </div>
+          <span className="text-sm md:text-2xl">BACK</span>
         </button>
         {currentOptionSelection.length > 0 && (
           <button
             onClick={() => handleSubmit()}
-            className="text-white font-medium text-xl flex items-center justify-center"
+            className="text-white font-medium text-xl flex flex-row-reverse xs:flex-row items-center justify-center"
           >
-            <RightArrow className="origin-center mr-4" />
-            PROCEED
+            <div className="mr-4 h-[3rem] ml-4 xs:ml-0">
+              <RightArrow className="origin-center" />
+            </div>
+            <span className="text-sm md:text-2xl">PROCEED</span>
           </button>
         )}
       </div>
