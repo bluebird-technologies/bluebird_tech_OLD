@@ -1,5 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fontFamily } = require('tailwindcss/defaultTheme');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,10 +11,12 @@ module.exports = {
     './sections/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      xs: '320px',
+      '3xl': '1850px',
+      ...defaultTheme.screens,
+    },
     extend: {
-      screens: {
-        '3xl': '1850px',
-      },
       fontFamily: {
         main: ['var(--font-montserrat)', ...fontFamily.sans],
       },
