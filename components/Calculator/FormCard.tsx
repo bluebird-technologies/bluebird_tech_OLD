@@ -78,7 +78,9 @@ function FormCard({
             onClick={() => goBack()}
             className="text-white font-medium text-xl flex items-center justify-center"
           >
-            <RightArrow className="origin-center rotate-180 mr-4" />
+            <div className="mr-4 rotate-180 h-[3rem]">
+              <RightArrow className="origin-center" />
+            </div>
             <span className="text-sm md:text-2xl">BACK</span>
           </button>
         </div>

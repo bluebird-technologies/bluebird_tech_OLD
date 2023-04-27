@@ -423,13 +423,13 @@ function Calculator() {
                         setFormSectionActive(true);
                         window.scrollTo(0, 0);
                       }}
-                      className="px-8 text-xl xl:px-0 xl:w-[340px] mb-8 xl:mb-0 h-[66px] font-bold xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
+                      className="px-4 xl:px-0 w-full xl:w-[340px] mb-8 xl:mb-0 h-[66px] font-bold text-md xs:text-xl xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
                     >
                       Build a Platform
                     </button>
                     <button
                       onClick={() => setShowRateCard(true)}
-                      className="px-8 text-xl xl:px-0 xl:w-[420px] h-[66px] font-bold xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
+                      className="px-4 xl:px-0 w-full xl:w-[420px] h-[66px] font-bold text-md xs:text-xl xl:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
                     >
                       Find a Particular Resource
                     </button>

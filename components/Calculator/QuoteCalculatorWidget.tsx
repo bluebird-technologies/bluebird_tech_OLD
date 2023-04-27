@@ -106,10 +106,10 @@ function QuoteCalculatorWidget() {
   ]);
 
   return (
-    <div className="bg-white lg:max-h-[650px] min-w-[350px] w-full shadow-md overflow-x-hidden scrollbar-hide lg:overflow-scroll">
+    <div className="bg-white lg:max-h-[650px] xs:min-w-[350px] w-full shadow-md overflow-x-hidden scrollbar-hide lg:overflow-scroll">
       <div className="flex flex-row justify-between mt-4 px-8">
         <div className="text-lightGrey text-lg italic">Title</div>
-        <div className="text-lightGrey text-lg italic">Hours</div>
+        <div className="text-lightGrey text-lg italic hidden xs:block">Hours</div>
       </div>
 
       <div className="border-t border-lightGrey mx-8 mt-4" />
@@ -152,9 +152,9 @@ function QuoteCalculatorWidget() {
           </div>
           {loginOptions.map((option: OptionWithRole) => {
             return (
-              <div key={option.title} className="flex justify-between mt-4">
+              <div key={option.title} className="flex flex-col xs:flex-row justify-between mt-4">
                 <div className="text-primary text-lg font-bold">{option.title}</div>
-                <div className="text-secondary text-lg font-bold">
+                <div className="text-secondary text-lg font-bold mt-2 xs:mt-0">
                   {option.optimisticHours} hours
                 </div>
               </div>
@@ -182,13 +182,13 @@ function QuoteCalculatorWidget() {
       {payments.length > 0 && (
         <div className="flex flex-col justify-between mt-4 px-8">
           <div className="flex justify-start">
-            <div className="text-lightGrey text-lg italic">Login</div>
+            <div className="text-lightGrey text-lg italic">Payments</div>
           </div>
           {payments.map((option: OptionWithRole) => {
             return (
-              <div key={option.title} className="flex justify-between mt-4">
+              <div key={option.title} className="flex flex-col xs:flex-row justify-between mt-4">
                 <div className="text-primary text-lg font-bold">{option.title}</div>
-                <div className="text-secondary text-lg font-bold">
+                <div className="text-secondary text-lg font-bold mt-2 xs:mt-0">
                   {option.optimisticHours} hours
                 </div>
               </div>
@@ -200,13 +200,13 @@ function QuoteCalculatorWidget() {
       {admin.length > 0 && (
         <div className="flex flex-col justify-between mt-4 px-8">
           <div className="flex justify-start">
-            <div className="text-lightGrey text-lg italic">Login</div>
+            <div className="text-lightGrey text-lg italic">Admin</div>
           </div>
           {admin.map((option: OptionWithRole) => {
             return (
-              <div key={option.title} className="flex justify-between mt-4">
+              <div key={option.title} className="flex flex-col xs:flex-row justify-between mt-4">
                 <div className="text-primary text-lg font-bold">{option.title}</div>
-                <div className="text-secondary text-lg font-bold">
+                <div className="text-secondary text-lg font-bold mt-2 xs:mt-0">
                   {option.optimisticHours} hours
                 </div>
               </div>
@@ -218,13 +218,13 @@ function QuoteCalculatorWidget() {
       {datesAndLocation.length > 0 && (
         <div className="flex flex-col justify-between mt-4 px-8">
           <div className="flex justify-start">
-            <div className="text-lightGrey text-lg italic">Login</div>
+            <div className="text-lightGrey text-lg italic">Dates</div>
           </div>
           {datesAndLocation.map((option: OptionWithRole) => {
             return (
-              <div key={option.title} className="flex justify-between mt-4">
+              <div key={option.title} className="flex flex-col xs:flex-row justify-between mt-4">
                 <div className="text-primary text-lg font-bold">{option.title}</div>
-                <div className="text-secondary text-lg font-bold">
+                <div className="text-secondary text-lg font-bold mt-2 xs:mt-0">
                   {option.optimisticHours} hours
                 </div>
               </div>
@@ -237,14 +237,18 @@ function QuoteCalculatorWidget() {
         <div className="text-lightGrey text-lg underline">Total:</div>
       </div>
 
-      <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-primary text-lg font-bold">Optimistic</div>
-        <div className="text-secondary text-lg font-bold">{optimisticTotal} hours</div>
+      <div className="flex flex-col xs:flex-row justify-between mt-4 px-8">
+        <div className="text-primary text-lg font-bold text-center xs:text-left">Optimistic</div>
+        <div className="text-secondary text-lg font-bold mt-2 xs:mt-0 text-center xs:text-left">
+          {optimisticTotal} hours
+        </div>
       </div>
 
-      <div className="flex flex-row justify-between mt-4 px-8">
-        <div className="text-primary text-lg font-bold">Pessimistic</div>
-        <div className="text-secondary text-lg font-bold">{pessimisticTotal} hours</div>
+      <div className="flex flex-col xs:flex-row justify-between mt-4 px-8">
+        <div className="text-primary text-lg font-bold text-center xs:text-left">Pessimistic</div>
+        <div className="text-secondary text-lg font-bold mt-2 xs:mt-0 text-center xs:text-left">
+          {pessimisticTotal} hours
+        </div>
       </div>
 
       <div className="mt-24">
@@ -288,9 +292,9 @@ const SectionHours = ({ title, value, hours }: SectionHoursProps) => {
       <div className="flex justify-start">
         <div className="text-lightGrey text-lg italic">{title}</div>
       </div>
-      <div className="flex justify-between mt-2">
+      <div className="flex flex-col xs:flex-row justify-between mt-2">
         <div className="text-primary text-lg font-bold">{value}</div>
-        <div className="text-secondary text-lg font-bold">{hours} hours</div>
+        <div className="text-secondary text-lg font-bold mt-2 xs:mt-0">{hours} hours</div>
       </div>
     </div>
   );

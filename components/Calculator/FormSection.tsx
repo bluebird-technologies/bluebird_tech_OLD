@@ -104,8 +104,6 @@ export function FormSection({ setShowCalc }: Props) {
 
   const handleMultiSelection = (selection: string[]) => {
     if (currentFormIndex === 4) {
-      console.log(selection);
-
       const res = getLoginOptions({ selection });
       setLoginOptions(res);
     }
