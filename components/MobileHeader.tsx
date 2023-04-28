@@ -16,14 +16,18 @@ export function MobileHeader() {
   return (
     <>
       {showNavigation && (
-        <div className="fixed  bg-primary flex w-full h-[100vh]  px-4" style={{ zIndex: 50 }}>
+        <div className="fixed bg-primary flex w-full h-[100vh]  " style={{ zIndex: 50 }}>
           <div className="flex w-full flex-col">
-            <div className="flex  w-full     items-center justify-between flex-row">
+            <div
+              className=" w-full flex pt-4 px-4  p-2 h-[80px] items-center  justify-between bg-inherit"
+              style={{ zIndex: 50 }}
+            >
               <picture>
-                <img className="h-32   w-32" src="/header/mobile-logo.svg" alt="logo" />
+                <img className="h-32 w-32" src="/header/mobile-logo.svg" alt="logo" />
               </picture>
               <div className=" right-0 px-2">
                 <button
+                  title="menu"
                   type="button"
                   className="text-white text-4xl"
                   onClick={() => setShowNavigation((prev) => !prev)}
@@ -52,7 +56,7 @@ export function MobileHeader() {
 
       {!showNavigation && (
         <div
-          className=" w-full flex  p-2 h-[80px] items-center  justify-between bg-inherit"
+          className=" w-full flex pt-4 px-4 p-2 h-[80px] items-center  justify-between bg-inherit"
           style={{ zIndex: 50 }}
         >
           <picture>
