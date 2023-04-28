@@ -149,8 +149,8 @@ function Calculator() {
           <div>
             <CalculatorContext.Provider value={contextValue}>
               {!showCalculationScreen && (
-                <div>
-                  <div className="w-full xl:hidden">
+                <div className="">
+                  <div className="flex bg-primary lg:hidden w-full">
                     <MobileHeader />
                   </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
@@ -179,6 +179,9 @@ function Calculator() {
               )}
               {showCalculationScreen && (
                 <div className="overflow-hidden">
+                  <div className="block bg-primary lg:hidden w-full">
+                    <MobileHeader />
+                  </div>
                   <div className="w-full flex flex-col items-center relative h-[600px]">
                     <div
                       className=" w-[285vw] -z-1 left-[-98%] bg-primary absolute xl:left-[-16%]  xl:w-[130vw]  h-full"
@@ -187,9 +190,7 @@ function Calculator() {
                         borderBottomRightRadius: '50%',
                       }}
                     />
-                    <div className="block lg:hidden w-full">
-                      <MobileHeader />
-                    </div>
+
                     <div className="hidden lg:block w-full">
                       <Header />
                     </div>
@@ -353,7 +354,7 @@ function Calculator() {
         )}
         {!formSectionActive && (
           <div className="w-full overflow-hidden flex-1 flex flex-col items-center">
-            <div className="block lg:hidden w-full">
+            <div className="block bg-primary lg:hidden w-full">
               <MobileHeader />
             </div>
             <div className="w-full flex flex-col relative pv-20 xl:pb-8 ">
