@@ -150,12 +150,12 @@ function Calculator() {
             <CalculatorContext.Provider value={contextValue}>
               {!showCalculationScreen && (
                 <div>
-                  <div className="w-full md:hidden">
+                  <div className="w-full md:hidden block">
                     <MobileHeader />
                   </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
                     <div
-                      className=" w-[285vw] -z-1 left-[-98%] -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-3/4 xl:h-full"
+                      className="hidden md:block w-[285vw] -z-1 left-[-98%] -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
@@ -167,7 +167,7 @@ function Calculator() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col md:flex-row  bg-secondary md:h-[1100px] w-full -mt-64">
+                  <div className="flex flex-col md:flex-row bg-secondary lg:h-[1100px] w-full -mt-64">
                     <div className="flex grow md:pt-32 max-w-[900px] mx-4 md:ml-12 2xl:ml-32">
                       <FormSection setShowCalc={setShowCalculationScreen} />
                     </div>
@@ -187,10 +187,10 @@ function Calculator() {
                         borderBottomRightRadius: '50%',
                       }}
                     />
-                    <div className="block lg:hidden w-full">
+                    <div className="block md:hidden w-full">
                       <MobileHeader />
                     </div>
-                    <div className="hidden lg:block w-full">
+                    <div className="hidden md:block w-full">
                       <Header />
                     </div>
                     <div className="flex flex-col w-full mt-20 md:mt-32" style={{ zIndex: 10 }}>
@@ -213,7 +213,7 @@ function Calculator() {
                               ut labore et dolore magna aliquyam erat, sed diam
                             </p>
                           </div>
-                          <div className="xl:w-2/5 absolute -mt-12 lg:mt-4 md:mt-0  left-1/2 top-3/4 transform -translate-x-1/2 md:static md:transform-none">
+                          <div className="xl:w-2/5 absolute -mt-12 md:mt-4 left-1/2 top-3/4 transform -translate-x-1/2 md:static md:transform-none">
                             <div>
                               <Lottie
                                 animationData={CalculatorAnimation}
@@ -353,7 +353,7 @@ function Calculator() {
         )}
         {!formSectionActive && (
           <div className="w-full overflow-hidden flex-1 flex flex-col items-center">
-            <div className="block lg:hidden w-full">
+            <div className="block md:hidden w-full">
               <MobileHeader />
             </div>
             <div className="w-full flex flex-col relative pv-20 md:pb-8 ">
@@ -364,10 +364,10 @@ function Calculator() {
                   borderBottomRightRadius: '50%',
                 }}
               />
-              <div className="hidden lg:block w-full">
+              <div className="hidden md:block w-full">
                 <Header />
               </div>
-              <div className="flex w-full mt-20 md:mt-32 pb-8 md:pb-24 lg:pb-20 xl:pb-16 2xl:pb-0">
+              <div className="flex w-full mt-20 md:mt-32 pb-8 md:pb-24 md:pb-20 xl:pb-16 2xl:pb-0">
                 <div className="flex z-10 flex-col 2xl:flex-row w-full px-4 md:px-20 2xl:px-0">
                   <div className="flex flex-col justify-center w-full items-center text-center 2xl:w-1/2">
                     <h3 className="text-3xl md:text-6xl text-center uppercase font-bold text-white">
@@ -413,22 +413,12 @@ function Calculator() {
                         I want to:
                       </p>
                     </div>
-                    <div className="flex justify-center lg:justify-start items-center lg:items-start">
-                      <Swiggle className="max-w-[300px] md:max-w-[550px] xl:max-w-[900px]" />
+                    <div className="flex justify-center lg:justify-start items-center md:items-start">
+                      <Swiggle className="max-w-[300px] lg:max-w-[550px] xl:max-w-[900px]" />
                     </div>
                   </div>
 
-                  {/* <div className="flex flex-col mx-4 w-full  item-center lg:items-start justify-center">
-                    <div className="flex flex-col items-center">
-                      <p className="text-3xl text-white italic text-center md:text-5xl font-normal mb-12">
-                        I want to:
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <Swiggle className="w-2/3 md:w-[900px]" />
-                    </div>
-                  </div> */}
-                  <div className="flex w-full flex-col md:flex-row items-center justify-between space-x-0 md:space-x-4 px-12 mt-20">
+                  <div className="flex w-full flex-col lg:flex-row items-center justify-between space-x-0 lg:space-x-4 px-12 mt-20">
                     <button
                       onClick={() => {
                         setFormSectionActive(true);
@@ -440,7 +430,7 @@ function Calculator() {
                     </button>
                     <button
                       onClick={() => setShowRateCard(true)}
-                      className="px-4 md:px-0 w-full md:w-[420px] h-[66px] font-bold text-md xs:text-xl md:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full"
+                      className="px-4 md:px-0 w-full md:w-[420px] h-[66px] font-bold text-md xs:text-xl md:text-2xl text-dark transition delay-75 bg-white hover:border-4 hover:border-black duration-300 rounded-full mt-3 lg:mt-0"
                     >
                       Find a Particular Resource
                     </button>
