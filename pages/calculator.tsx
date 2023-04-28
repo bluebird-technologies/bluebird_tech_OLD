@@ -367,7 +367,7 @@ function Calculator() {
               <div className="hidden md:block w-full">
                 <Header />
               </div>
-              <div className="flex w-full mt-20 md:mt-32 pb-8 md:pb-24 md:pb-20 xl:pb-16 2xl:pb-0">
+              <div className="flex w-full mt-20 md:mt-32 pb-8 md:pb-20 xl:pb-16 2xl:pb-0">
                 <div className="flex z-10 flex-col 2xl:flex-row w-full px-4 md:px-20 2xl:px-0">
                   <div className="flex flex-col justify-center w-full items-center text-center 2xl:w-1/2">
                     <h3 className="text-3xl md:text-6xl text-center uppercase font-bold text-white">
