@@ -155,7 +155,7 @@ function Calculator() {
                   </div>
                   <div className="w-full flex flex-col items-center relative h-[200px] overflow-hidden">
                     <div
-                      className=" w-[285vw] -z-1 left-[-98%]  -z-1 bg-primary absolute md:left-[-16%] md:w-[130vw] h-3/4 md:h-full"
+                      className=" w-[285vw] -z-1 left-[-98%] -z-1 bg-primary absolute xl:left-[-16%] xl:w-[130vw] h-3/4 xl:h-full"
                       style={{
                         borderBottomLeftRadius: '50%',
                         borderBottomRightRadius: '50%',
