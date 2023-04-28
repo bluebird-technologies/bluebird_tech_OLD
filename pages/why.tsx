@@ -62,10 +62,10 @@ const Why = () => {
             zIndex: -1,
           }}
         />
-        <div className="hidden xl:block">
+        <div className="hidden md:block">
           <Header />
         </div>
-        <div className="block xl:hidden">
+        <div className="block md:hidden">
           <MobileHeader />
         </div>
 

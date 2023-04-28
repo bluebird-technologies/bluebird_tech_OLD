@@ -37,16 +37,20 @@ export function Header() {
   return (
     <header className="mt-[40px] w-full">
       <div className="hidden md:flex lg:hidden w-full my-1 justify-center">
-        <Link href="/">
-          <picture>
-            <source srcSet="/header/logo.svg" type="image/svg+xml" />
-            <img
-              src="/header/logo.svg"
-              alt="Bluebird"
-              className="w-[121px] mx-10 hover:cursor-pointer"
-            />
-          </picture>
-        </Link>
+        <div className="relative w-[7.5rem] h-20">
+          <div className="absolute top-0 left-0 z-10">
+            <Link href="/">
+              <picture>
+                <source srcSet="/header/logo.svg" type="image/svg+xml" />
+                <img
+                  src="/header/logo.svg"
+                  alt="Bluebird"
+                  className="w-[7.5rem] hover:cursor-pointer"
+                />
+              </picture>
+            </Link>
+          </div>
+        </div>
       </div>
       <Container wide center row>
         <nav className="flex flex-1 justify-around mt-3">
@@ -61,7 +65,7 @@ export function Header() {
               <img
                 src="/header/logo.svg"
                 alt="Bluebird"
-                className="w-[121px] mx-10 hover:cursor-pointer"
+                className="w-[7.5rem] mx-10 hover:cursor-pointer"
               />
             </picture>
           </Link>

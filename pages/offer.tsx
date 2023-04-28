@@ -145,6 +145,7 @@ export default function Offer() {
             width: '180vw',
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
+            zIndex: 0,
           }}
         />
         <Header />
