@@ -91,7 +91,7 @@ function RevioDetails() {
   return (
     <div>
       {/* mobile top section div */}
-      <div className="relative block lg:hidden w-full h-full lg:overflow-hidden">
+      <div className="relative block md:hidden w-full h-full md:overflow-hidden">
         <div className="relative w-full h-full bg-primary">
           <div className="w-full h-full">
             <MobileHeader />
@@ -101,7 +101,7 @@ function RevioDetails() {
 
       {/* desktop header section */}
       <div className="relative overflow-hidden">
-        <div className="hidden lg:flex lg:flex-col lg:relative w-full bg-cover bg-bottom items-center pb-[90px] z-10">
+        <div className="hidden md:flex md:flex-col md:relative w-full bg-cover bg-bottom items-center pb-[90px] z-10">
           <div
             className="bg-primary h-full"
             style={{
@@ -115,7 +115,7 @@ function RevioDetails() {
           <Header />
         </div>
         <div
-          className="lg:bg-bottom w-full -z-10 lg:-mt-52 flex flex-col items-center relative justify-center h-[500px] lg:h-[850px]"
+          className="md:bg-bottom w-full -z-10 md:-mt-52 flex flex-col items-center relative justify-center h-[500px] md:h-[850px]"
           style={{
             backgroundImage: 'url(revioBackground-2.png)',
             backgroundPosition: 'center',
@@ -128,7 +128,7 @@ function RevioDetails() {
 
           {/* Curve for next contrainer has to be defined inside this container to use the overflow hidden fix */}
           <div
-            className="block lg:hidden absolute bg-secondary h-[100px] bottom-0"
+            className="block md:hidden absolute bg-secondary h-[100px] bottom-0"
             style={{
               left: '-10%',
               width: '120vw',
@@ -140,9 +140,9 @@ function RevioDetails() {
       </div>
 
       {/* Intro Section */}
-      <div className="relative w-full h-full hidden lg:flex flex-col bg-cover -mt-32 lg:-mt-[150px] items-center z-20 lg:overflow-hidden">
+      <div className="relative w-full h-full hidden md:flex flex-col bg-cover -mt-32 md:-mt-[150px] items-center z-20 md:overflow-hidden">
         <div
-          className="hidden lg:block bg-secondary h-full -z-20"
+          className="hidden md:block bg-secondary h-full -z-20"
           style={{
             position: 'absolute',
             left: '-41%',
@@ -162,7 +162,7 @@ function RevioDetails() {
       </div>
 
       {/* Intro section mobile */}
-      <div className="relative w-full h-full flex flex-col lg:hidden bg-secondary z-20">
+      <div className="relative w-full h-full flex flex-col md:hidden bg-secondary z-20">
         <div className="flex w-full justify-center items-center text-center absolute -top-[70px]">
           <h1 className="text-white uppercase font-bold text-3xl">{clientDetails?.clientName}</h1>
         </div>
