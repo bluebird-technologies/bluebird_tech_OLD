@@ -23,9 +23,6 @@ const Contact = () => {
 
   return (
     <div className="bg-secondary flex-1 flex flex-col h-full overflow-hidden">
-      <div className="block bg-primary h-full w-full lg:hidden">
-        <MobileHeader />
-      </div>
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
           className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
@@ -36,6 +33,9 @@ const Contact = () => {
         />
         <div className="hidden lg:block">
           <Header />
+        </div>
+        <div className="block h-full w-full lg:hidden">
+          <MobileHeader />
         </div>
 
         <div className="flex z-1 relative flex-col mt-20 items-center">
