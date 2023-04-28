@@ -22,19 +22,19 @@ const Contact = () => {
   const [selectedOption, setSelectedOption] = useState('');
 
   return (
-    <div className="bg-secondary flex-1 flex flex-col h-full overflow-hidden">
+    <div className="bg-secondary w-full flex flex-col h-full overflow-hidden">
       <div className="relative w-full bg-cover bg-bottom flex flex-col items-center pb-[90px]">
         <div
-          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%]  2xl:left-[-16%] 2xl:w-[130vw]"
+          className="absolute bg-primary h-full w-[285vw] -z-1 left-[-98%] 2xl:left-[-16%] 2xl:w-[130vw]"
           style={{
             borderBottomLeftRadius: '50%',
             borderBottomRightRadius: '50%',
           }}
         />
-        <div className="hidden lg:block">
+        <div className="hidden md:block w-full">
           <Header />
         </div>
-        <div className="block h-full w-full lg:hidden">
+        <div className="block md:hidden h-full w-full">
           <MobileHeader />
         </div>
 

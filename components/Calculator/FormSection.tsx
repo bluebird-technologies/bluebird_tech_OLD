@@ -195,7 +195,7 @@ export function FormSection({ setShowCalc }: Props) {
   ]);
 
   return (
-    <div className="flex pt-[280px] pb-16 bg-secondary w-full justify-between">
+    <div className="flex pt-12 md:pt-[17.5rem] pb-16 bg-secondary w-full justify-between">
       <div className="flex w-full">
         {/* some specific forms require a multi select instead */}
         {multiSelectionIndexes.includes(currentFormIndex) && (
